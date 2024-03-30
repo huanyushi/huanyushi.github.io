@@ -1,8 +1,8 @@
 ---
 title:      "HTML and CSS study notes: CSS introduction"
 date:       2024-03-21
-categories: [HTML and CSS, HTML]
-tag: [HTML]
+categories: [HTML and CSS, CSS]
+tag: [HTML, CSS]
 ---
 
 ## 认识 CSS

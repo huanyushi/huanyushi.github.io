@@ -4,6 +4,7 @@ date:       2023-05-10
 categories: [Mathematics, Integration]
 tag: [integration]
 math: true
+image: /img/in-post/2023-05-10/preface.PNG
 ---
 ## Question:
 Try to solve the following integral:
@@ -17,7 +18,7 @@ I have answered this question on Zhihu, you can find it [here](https://www.zhihu
 ## Solution:
 We define $ f(z) = z \ln(1+z)/(1+z^4) $ firstly, and choose the following quarter-circle contour:
 
-![contour](/img/in-post/Contour/2023-5-10.JPG){: width="400" }
+![contour](/img/in-post/2023-05-10/contour.JPG){: width="400" }
 
 Note that $ z = \mathrm{e}^{\pi i/4}$ is a singularity. Since there are no singularities within the contour, we can know from Cauchy's theorem that:
 

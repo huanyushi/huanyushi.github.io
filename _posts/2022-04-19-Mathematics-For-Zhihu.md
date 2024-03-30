@@ -4,6 +4,7 @@ date:       2022-04-19
 categories: [Mathematics, Integration]
 tag: [special function, integration]
 toc: false
+image: /img/in-post/2022-04-19/preface.PNG
 ---
 >To each individual the world will take on a different connotation of meaning-the important lies in the desire to search for an answer.
 >

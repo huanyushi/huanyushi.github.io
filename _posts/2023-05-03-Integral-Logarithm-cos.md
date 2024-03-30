@@ -4,6 +4,7 @@ date:       2023-05-03
 categories: [Mathematics, Integration]
 tag: [integration]
 math: true
+image: /img/in-post/Contour/semicircle-1.JPG
 ---
 ## Question:
 Try to solve the following integral:

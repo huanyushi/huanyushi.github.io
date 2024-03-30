@@ -12,7 +12,7 @@ math: true
 
 有两种方法可供选择。第一种就是直接访问 Chirpy 的 github 项目页面，从它的源码里扒出来样式文件及代码。第二种则利用 git，通过命令 `bundle info --path jekyll-theme-chirpy` 获取封装的样式文件地址，如下图所示
 
-![theme file](/img/in-post/2024-03-30/theme-file.png)
+![theme file](/img/in-post/2024-03-30/theme-file.PNG)
 
 在里面找到相应的样式文件后，把它放入自己 blog 对应的文件里，就可以进行个性化定制了。注意放入自己 blog 文件的样式文件会覆盖原先 gem 包里的同名文件，所以不需要修改的样式文件实际上没必要导入，这样也方便后续跟随模板作者进行更新。本篇文章就是记录一些我个人对 Chirpy 进行的部分修改（一些细节上的修改就不写了）。
 
@@ -45,3 +45,5 @@ MathJax = {
 };
 </script>
 ```
+### 增加主页 preview 公式预览
+Blog 主页预览文章时，会直接显示数学代码，要想能够在主页也预览公式，可以参考。

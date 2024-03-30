@@ -3,6 +3,7 @@ title:      "中山大学物理与天文学院本科实验报告模板"
 date:       2023-04-10
 categories: [LaTeX]
 tag: [LaTeX]
+image: /img/in-post/2023-04-10/preface.PNG
 ---
 > "The laws of physics is the canvas God laid down on which to paint his masterpiece" <br>
 > --- Dan Brown.
