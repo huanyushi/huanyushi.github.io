@@ -6,13 +6,23 @@
 # - type: twitter
 #   icon: "fa-brands fa-x-twitter"
 
+- type: zhihu
+  icon: "fab fa-zhihu"
+  url: 'https://www.zhihu.com/people/za-ran-zhu-fu-liu-xing'
+
+
+- type: stack-exchange
+  icon: 'fab fa-stack-exchange'
+  url:  'https://stackexchange.com/users/24950721/huanyu-shi'                  # Fill with your stackoverflow homepage
+
 - type: email
   icon: "fas fa-envelope"
   noblank: true # open link in current tab
 
-- type: rss
-  icon: "fas fa-rss"
-  noblank: true
+
+# - type: rss
+#   icon: "fas fa-rss"
+#   noblank: true
 # Uncomment and complete the url below to enable more contact options
 #
 # - type: mastodon
@@ -23,6 +33,4 @@
 #   icon: 'fab fa-linkedin'   # icons powered by <https://fontawesome.com/>
 #   url:  ''                  # Fill with your Linkedin homepage
 #
-# - type: stack-overflow
-#   icon: 'fab fa-stack-overflow'
-#   url:  ''                  # Fill with your stackoverflow homepage
+

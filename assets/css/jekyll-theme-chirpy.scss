@@ -5,3 +5,45 @@
 
 /* append your custom style below */
 
+#sidebar {
+    padding-left: 0;
+    padding-right: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    overflow-y: auto;
+    width: 260px;
+    z-index: 99;
+    /* background: var(--sidebar-bg); */
+    background-image: url(https://cdn.jsdelivr.net/gh/huanyushi/Blog-Image-Bed@main/img/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    border-right: 1px solid var(--sidebar-border-color);
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+#sidebar .site-title a {
+    color: rgb(255 255 255);
+}
+
+#sidebar .site-subtitle {
+    // font-size: 95%;
+    color: #ffffff;
+    margin-top: .25rem;
+    word-spacing: 1px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#sidebar .sidebar-bottom .mode-toggle, #sidebar a {
+    color: #ffffff;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}

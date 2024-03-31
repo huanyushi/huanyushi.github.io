@@ -74,7 +74,7 @@ theme_mode: # [light | dark]
 # will be added to all image (site avatar & posts' images) paths starting with '/'
 #
 # e.g. 'https://cdn.com'
-img_cdn: "https://cdn.jsdelivr.net/gh/huanyushi/Blog-Image-Bed@main"
+# img_cdn: "https://cdn.jsdelivr.net/gh/huanyushi/Blog-Image-Bed@main"
 
 # the avatar on sidebar, support local or CORS resources
 avatar: "https://cdn.jsdelivr.net/gh/huanyushi/Blog-Image-Bed@main/avatar.jpg"

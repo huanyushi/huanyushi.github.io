@@ -47,3 +47,65 @@ MathJax = {
 ```
 ### 增加主页 preview 公式预览
 Blog 主页预览文章时，会直接显示数学代码，要想能够在主页也预览公式，可以参考。
+
+## 侧边栏的修改
+### 侧边栏增加背景图片
+在 `/assets/css/jekyll-theme-chirpy.scss` 文件中，增加对侧边栏的 CSS 代码，其中 `background-image` 便是用来添加背景图片的基本命令，只需后面添加图片的 url 即可，如下：
+```css
+#sidebar {
+    padding-left: 0;
+    padding-right: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    overflow-y: auto;
+    width: 260px;
+    z-index: 99;
+    /* background: var(--sidebar-bg); */
+    background-image: url(https://cdn.jsdelivr.net/gh/huanyushi/Blog-Image-Bed@main/background.jpg); /* background image */
+    background-size: cover; /* customize the image size */
+    background-repeat: no-repeat;
+    background-position: top;
+    border-right: 1px solid var(--sidebar-border-color);
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+```
+同样也要注意修改相应文字的颜色，我这里选的是深色背景，所以对应文字都是白色，
+```css
+#sidebar .site-title a {
+    color: rgb(255 255 255);
+}
+
+#sidebar .site-subtitle {
+    // font-size: 95%;
+    color: #ffffff;
+    margin-top: .25rem;
+    word-spacing: 1px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#sidebar .sidebar-bottom .mode-toggle, #sidebar a {
+    color: #ffffff;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+```
+
+## 其他问题
+### git push 失败: couldn't connet to server
+将本地文件 push 到 github 远程仓库里，经常出现 `couldn't connet to server` 的报错，经过查询没有明显有效的办法。以下是**可能有效**的措施：
+
+1. 关掉梯子 (VPN)；
+2. 在 `git` 中运行以下代码
+
+```git
+git config --global --unset http.proxy 
+git config --global --unset https.proxy 
+```
