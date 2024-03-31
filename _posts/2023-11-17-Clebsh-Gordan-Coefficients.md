@@ -339,7 +339,7 @@ Substituting it into $\eqref{equ:31}$, we can obtain
 $$
 \begin{align}
     C_{j_1m_1j_2m_2}^{JJ} &= (-1)^{j_1-m_1} \delta_{m_1+m_2,J}\notag \\[.3cm]
-    &\times \sqrt{\frac{(j_1+m_1)!(j_2+m_2)!}{(j_1-m_1)!(j_2-m_2)!}} \sqrt{\frac{(j_2+j_2-J)!(2J+1)!}{(J+j_2-j_1)!(j_1+j_2+J+1)!(J+j_1-j_2)!}},
+    &\times \sqrt{\frac{(j_1+m_1)!(j_2+m_2)!}{(j_1-m_1)!(j_2-m_2)!}} \sqrt{\frac{(j_2+j_2-J)!(2J+1)!}{(J+j_2-j_1)!(j_1+j_2+J+1)!(J+j_1-j_2)!}},\label{equ:34}
 \end{align}
 
 $$
@@ -389,7 +389,7 @@ $$
 \end{align*}
 $$
 
-Utilizing the result from $(34)$, we obtain the final expression for the CG coefficients
+Utilizing the result from $\eqref{equ:34}$, we obtain the final expression for the CG coefficients
 
 $$
 \begin{equation}

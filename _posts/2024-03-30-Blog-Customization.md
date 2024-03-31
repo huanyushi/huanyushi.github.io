@@ -1,7 +1,7 @@
 ---
 title:      "Chirpy Blog Customization"
 date:       2024-03-30
-categories: [HTML and CSS]
+categories: [HTML and CSS, Blog]
 tag: [HTML]
 math: true
 ---
@@ -12,12 +12,12 @@ math: true
 
 有两种方法可供选择。第一种就是直接访问 Chirpy 的 github 项目页面，从它的源码里扒出来样式文件及代码。第二种则利用 git，通过命令 `bundle info --path jekyll-theme-chirpy` 获取封装的样式文件地址，如下图所示
 
-![theme file](/img/in-post/2024-03-30/theme-file.PNG)
+![theme file](/img/in-post/2024-03-30/theme-file.PNG){: .shadow .rounded-10 width="700" }
 
 在里面找到相应的样式文件后，把它放入自己 blog 对应的文件里，就可以进行个性化定制了。注意放入自己 blog 文件的样式文件会覆盖原先 gem 包里的同名文件，所以不需要修改的样式文件实际上没必要导入，这样也方便后续跟随模板作者进行更新。本篇文章就是记录一些我个人对 Chirpy 进行的部分修改（一些细节上的修改就不写了）。
 
 ## MathJax 的修改
-MathJax 自从进入 3.x 时代后，渲染数学公式的速度几乎比肩 KaTeX，再考虑到 MathJax 支持丰富的拓展包，功能相比 KaTeX 更为强大，所以优先考虑 MathJax。模板作者对 MathJax 的设置在 `_includes/js-selector.html` 文件中，找到相应代码，即可进行修改。
+MathJax 自从进入 3.x 时代后，渲染数学公式的速度几乎比肩 KaTeX，再考虑到 MathJax 支持丰富的拓展包，功能相比 KaTeX 更为强大，所以优先考虑 MathJax。模板作者对 MathJax 的设置在 `_includes/js-selector.html` 文件中，在隐藏的 gem 包里找到相应代码，即可进行修改。
 ### MathJax 添加拓展包
 添加了一些拓展包，如 `physics`，代码修改如下：
 ```html
@@ -47,10 +47,12 @@ MathJax = {
 ```
 ### 增加主页 preview 公式预览
 Blog 主页预览文章时，会直接显示数学代码，要想能够在主页也预览公式，可以参考。
+> To be continued
+{: .prompt-tip }
 
 ## 侧边栏的修改
 ### 侧边栏增加背景图片
-在 `/assets/css/jekyll-theme-chirpy.scss` 文件中，增加对侧边栏的 CSS 代码，其中 `background-image` 便是用来添加背景图片的基本命令，只需后面添加图片的 url 即可，如下：
+在 `assets/css/jekyll-theme-chirpy.scss` 文件中，增加对侧边栏的 CSS 代码，其中 `background-image` 便是用来添加背景图片的基本命令，只需后面添加图片的 url 即可，如下：
 ```css
 #sidebar {
     padding-left: 0;
@@ -63,9 +65,9 @@ Blog 主页预览文章时，会直接显示数学代码，要想能够在主页
     width: 260px;
     z-index: 99;
     /* background: var(--sidebar-bg); */
-    background-image: url(https://cdn.jsdelivr.net/gh/huanyushi/Blog-Image-Bed@main/background.jpg); /* background image */
-    background-size: cover; /* customize the image size */
-    background-repeat: no-repeat;
+    background-image: url(/img/background.jpg); /* <- change background image */
+    background-size: cover; /* <- customize the image size */
+    background-repeat: no-repeat; /* <- */
     background-position: top;
     border-right: 1px solid var(--sidebar-border-color);
     -ms-overflow-style: none;
@@ -75,12 +77,12 @@ Blog 主页预览文章时，会直接显示数学代码，要想能够在主页
 同样也要注意修改相应文字的颜色，我这里选的是深色背景，所以对应文字都是白色，
 ```css
 #sidebar .site-title a {
-    color: rgb(255 255 255);
+    color: rgb(255 255 255); /* <- */
 }
 
 #sidebar .site-subtitle {
-    // font-size: 95%;
-    color: #ffffff;
+    /* font-size: 95%;*/
+    color: #ffffff; /* <- */
     margin-top: .25rem;
     word-spacing: 1px;
     -webkit-user-select: none;
@@ -90,13 +92,47 @@ Blog 主页预览文章时，会直接显示数学代码，要想能够在主页
 }
 
 #sidebar .sidebar-bottom .mode-toggle, #sidebar a {
-    color: #ffffff;
+    color: #ffffff; /* <- */
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
 }
 ```
+
+### 侧边栏增加友链
+在隐藏的 gem 包里找到 `_includes/side.html` 文件，在其中添加以下几行代码即可（目前还没封装在 `config.yml` 里设置，所以直接动手写的 `html`），
+```html
+  <div class="friends">
+    <hr style="color:white;border: 1px solid ">
+    <p style="color:white;font-family: inherit;font-weight:600;"> FRIENDS </p>
+    <ul>
+        <li><a href="link1">name1</a></li>
+        <li><a href="link2">name2</a></li>
+    </ul>
+  </div>
+```
+而相关的样式设置添加到了 `assets/css/jekyll-theme-chirpy.scss` 中，如下：
+```css
+#sidebar .friends {
+    padding-left: 2.5rem;
+    padding-right: 1.25rem;
+    width: 100%;
+    margin-bottom: 3rem;
+}
+#sidebar .friends ul {
+    color:white;font-size:95%;
+}
+#sidebar .friends ul li {
+    margin-bottom: 0.4rem;
+    
+}
+```
+
+## 评论区添加
+待续
+> To be continued
+{: .prompt-tip }
 
 ## 其他问题
 ### git push 失败: couldn't connet to server
