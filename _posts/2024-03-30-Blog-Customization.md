@@ -14,12 +14,14 @@ math: true
 
 ![theme file](/img/in-post/2024-03-30/theme-file.PNG){: .shadow .rounded-10 width="700" }
 
-在里面找到相应的样式文件后，把它放入自己 blog 对应的文件里，就可以进行个性化定制了。注意放入自己 blog 文件的样式文件会覆盖原先 gem 包里的同名文件，所以不需要修改的样式文件实际上没必要导入，这样也方便后续跟随模板作者进行更新。本篇文章就是记录一些我个人对 Chirpy 进行的部分修改（一些细节上的修改就不写了）。
+在里面找到相应的样式文件后，把它放入自己 blog 对应的文件里，就可以进行个性化定制了。
+
+注意生成博客时，放入自己 `.github.io` 文件夹的样式文件会覆盖原先 gem 包里的同名文件，而未修改的样式文件则照样从 gem 包里读取，所以未修改的样式文件没必要导入，这样也方便后续跟随模板作者进行更新。本篇文章就是记录一些我个人对 Chirpy 进行的部分修改（一些小的修改就不写了）。
 
 ## MathJax 的修改
 MathJax 自从进入 3.x 时代后，渲染数学公式的速度几乎比肩 KaTeX，再考虑到 MathJax 支持丰富的拓展包，功能相比 KaTeX 更为强大，所以优先考虑 MathJax。模板作者对 MathJax 的设置在 `_includes/js-selector.html` 文件中，在隐藏的 gem 包里找到相应代码，即可进行修改。
 ### MathJax 添加拓展包
-添加了一些拓展包，如 `physics`，代码修改如下：
+添加了一些拓展包，如 `physics`，代码修改如下（更多内容可以从 MathJax 官网文档里找到说明）：
 ```html
 <script>
 /* see: <https://docs.mathjax.org/en/latest/options/input/tex.html#tex-options> */
@@ -46,13 +48,13 @@ MathJax = {
 </script>
 ```
 ### 增加主页 preview 公式预览
-Blog 主页预览文章时，会直接显示数学代码，要想能够在主页也预览公式，可以参考。
+在 Blog 主页，对每篇文章的预览部分会直接显示数学代码，要想能够在主页也预览公式，可以参考。
 > To be continued
 {: .prompt-tip }
 
 ## 侧边栏的修改
 ### 侧边栏增加背景图片
-在 `assets/css/jekyll-theme-chirpy.scss` 文件中，增加对侧边栏的 CSS 代码，其中 `background-image` 便是用来添加背景图片的基本命令，只需后面添加图片的 url 即可，如下：
+在 `assets/css/jekyll-theme-chirpy.scss` 文件中，增加对侧边栏样式设置的 CSS 代码，其中 `background-image` 便是用来添加背景图片的基本命令，只需后面添加图片的 url 即可，如下：
 ```css
 #sidebar {
     padding-left: 0;
@@ -79,7 +81,6 @@ Blog 主页预览文章时，会直接显示数学代码，要想能够在主页
 #sidebar .site-title a {
     color: rgb(255 255 255); /* <- */
 }
-
 #sidebar .site-subtitle {
     /* font-size: 95%;*/
     color: #ffffff; /* <- */
@@ -90,42 +91,60 @@ Blog 主页预览文章时，会直接显示数学代码，要想能够在主页
     -ms-user-select: none;
     user-select: none;
 }
-
 #sidebar .sidebar-bottom .mode-toggle, #sidebar a {
     color: #ffffff; /* <- */
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+    padding: 0;
+    border: 0
+}
+#sidebar .sidebar-bottom .btn {
+    color: var(--sidebar-btn-color);
 }
 ```
 
 ### 侧边栏增加友链
-在隐藏的 gem 包里找到 `_includes/side.html` 文件，在其中添加以下几行代码即可（目前还没封装在 `config.yml` 里设置，所以直接动手写的 `html`），
+在隐藏的 gem 包里找到 `_includes/side.html` 文件，在其中添加以下几行代码即可（目前还没能封装在 `config.yml` 里设置，所以直接动手写的 `html`），
 ```html
+  <!-- Friends link -->
   <div class="friends">
     <hr style="color:white;border: 1px solid ">
-    <p style="color:white;font-family: inherit;font-weight:600;"> FRIENDS </p>
+    <p><i class="fas fa-user-friends"></i><span>FRIENDS</span></p>
     <ul>
-        <li><a href="link1">name1</a></li>
-        <li><a href="link2">name2</a></li>
+      <li><a href="https://quantumobserveriastu.github.io">Quantum observers</a></li>
+      <li><a href="http://zhiqihuang.top">Zhiqi Huang</a></li>
+      <li><a href="https://sirohune.site">白舟尘</a></li>
     </ul>
   </div>
 ```
 而相关的样式设置添加到了 `assets/css/jekyll-theme-chirpy.scss` 中，如下：
 ```css
 #sidebar .friends {
-    padding-left: 2.5rem;
+    padding-left: 1.5rem;
     padding-right: 1.25rem;
     width: 100%;
     margin-bottom: 3rem;
 }
+#sidebar .friends p {
+    color: rgb(255,255,255,0.95);
+    font-family: inherit;
+    font-weight:600;
+    font-size: 95%;
+}
+#sidebar .friends p i {
+    opacity: 0.8;
+    margin-right: 1.5rem;
+}
+#sidebar .friends p span {
+    letter-spacing: 0.2px;
+    opacity: 0.9;
+}
 #sidebar .friends ul {
-    color:white;font-size:95%;
+    color:white;
+    font-size:95%;
+    opacity: 0.95;
 }
 #sidebar .friends ul li {
     margin-bottom: 0.4rem;
-    
+    opacity: 0.9;
 }
 ```
 
@@ -141,7 +160,7 @@ Blog 主页预览文章时，会直接显示数学代码，要想能够在主页
 1. 关掉梯子 (VPN)；
 2. 在 `git` 中运行以下代码
 
-```git
+```bash
 git config --global --unset http.proxy 
 git config --global --unset https.proxy 
 ```

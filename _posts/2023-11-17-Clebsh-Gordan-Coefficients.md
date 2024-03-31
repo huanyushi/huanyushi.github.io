@@ -6,7 +6,7 @@ tag: [quantum mechanics]
 math: true
 ---
 ## Introduction
-The addition of angular momenta is a fundamental concept in modern physics. For instance, when dealing with systems composed of multiple particles, such as atoms with multiple electrons, the total angular momentum of system is crucial. Specifically, we often inquire about how to add the orbital angular momentum and intrinsic spin momentum of an electron.
+The addition of angular momenta is a fundamental problem in modern physics. For instance, when dealing with systems composed of multiple particles, such as atoms with multiple electrons, the total angular momentum of system is crucial. Specifically, we often inquire about how to add the orbital angular momentum and intrinsic spin momentum of an electron.
 
 In this post, we will discuss the addition of two angular momenta for a quantum system and provide the general formula for the Clebsch-Gordan coefficients (CG coefficients). These coefficients are numbers that relate the total angular momentum eigenstates to the uncoupled tensor product basis.
 
@@ -319,6 +319,7 @@ $$
 
 The summation can be shown to be:
 > Q. How to prove it?
+{: .prompt-info }
 
 $$
 \begin{equation}
