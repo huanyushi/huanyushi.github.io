@@ -162,7 +162,7 @@ MathJax = {
     <i class="fa fa-eye" aria-hidden="true"></i> <span id="busuanzi_value_site_pv"></span>
   </p>
 ```
-另外更多详细的站点统计信息（如用户量、用户地区、用户访问了哪些页面等内容）可以使用 [Google Analytics](https://analytics.google.com/analytics/web/#/provision)来获取，在 `_config.yml` 中加入 ID 即可。
+另外更多详细的站点统计信息（如用户量、用户地区、用户访问了哪些页面等内容）可以使用 [Google Analytics](https://analytics.google.com/analytics/web/#/provision) 来获取，在 `_config.yml` 中加入 ID 即可。
 
 ## 其他问题
 ### git push 失败: couldn't connet to server

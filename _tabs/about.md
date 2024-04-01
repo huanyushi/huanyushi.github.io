@@ -3,6 +3,9 @@
 icon: fas fa-info-circle
 order: 4
 ---
+> 天地有正气，杂然赋流形。
+> 
+> --- 文天祥
 
 你好，我是 Huanyu Shi，一位物理学本科生，来自于中山大学物理与天文学院。这里是我的 Blog ，基于 Jekyll 在 Github 上搭建的静态网页生成，**欢迎你的到访**。
 
@@ -17,7 +20,7 @@ order: 4
 
 * [知乎](https://www.zhihu.com/people/za-ran-zhu-fu-liu-xing)
 * [Github](https://github.com/huanyushi)
-* [Math Stackexchange](https://math.stackexchange.com/users/1048299/huanyu-shi)
+* [Stack Exchange](https://stackexchange.com/users/24950721/huanyu-shi)
 
 联系方式：
 

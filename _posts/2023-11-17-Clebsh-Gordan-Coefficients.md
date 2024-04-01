@@ -447,8 +447,8 @@ Out:= sqrt{5/33}
 
 ## Reference
 
-- [1] A. R. Edmonds. Angular Momentum in Quantum Mechanics. Princeton University Press. 1996
-- [2] J. J. Sakurai, Jim Napolitano. Modern Quantum Mechanics. Cambridge University Press. 2020
-- [3] Claude Cohen-Tannoudji, Bernard Diu, Franck Laloë. Quantum Mechanics, Volume 2: Angular Momentum, Spin, and Approximation Methods. Wiley-VCH. 2019
+- [1] A. R. Edmonds. *Angular Momentum in Quantum Mechanics*. Princeton University Press. 1996
+- [2] J. J. Sakurai, Jim Napolitano. *Modern Quantum Mechanics*. Cambridge University Press. 2020
+- [3] Claude Cohen-Tannoudji, Bernard Diu, Franck Laloë. *Quantum Mechanics, Volume 2: Angular Momentum, Spin, and Approximation Methods*. Wiley-VCH. 2019
 - [4] 金彪. 高等量子力学讲义. 2023年秋
 
