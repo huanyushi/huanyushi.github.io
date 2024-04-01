@@ -149,9 +149,9 @@ MathJax = {
 ```
 
 ## 评论区添加
-待续
-> To be continued
-{: .prompt-tip }
+评论区使用 giscus，模板作者已经将相关选项封装好了，在 `_config.yml` 文件中填上个人信息即可。
+
+教程请见 [giscus](https://giscus.app/) 项目，关于它的高级功能设置请见 [Advanced usage](https://github.com/giscus/giscus/blob/main/ADVANCED-USAGE.md)。
 
 ## 其他问题
 ### git push 失败: couldn't connet to server

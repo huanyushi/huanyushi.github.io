@@ -87,7 +87,7 @@ social_preview_image: "https://cdn.jsdelivr.net/gh/huanyushi/Blog-Image-Bed@main
 toc: true
 
 comments:
-  active: # The global switch for posts comments, e.g., 'disqus'.  Keep it empty means disable
+  active: giscus # The global switch for posts comments, e.g., 'disqus'.  Keep it empty means disable
   # The active options are as follows:
   disqus:
     shortname: # fill with the Disqus shortname. › https://help.disqus.com/en/articles/1717111-what-s-a-shortname
@@ -97,10 +97,10 @@ comments:
     issue_term: # < url | pathname | title | ...>
   # Giscus options › https://giscus.app
   giscus:
-    repo: # <gh-username>/<repo>
-    repo_id:
-    category:
-    category_id:
+    repo: huanyushi/huanyushi.github.io # <gh-username>/<repo>
+    repo_id: R_kgDOLnc4kg
+    category: Announcements
+    category_id: DIC_kwDOLnc4ks4CeX5Y
     mapping: # optional, default to 'pathname'
     input_position: # optional, default to 'bottom'
     lang: # optional, default to the value of `site.lang`
