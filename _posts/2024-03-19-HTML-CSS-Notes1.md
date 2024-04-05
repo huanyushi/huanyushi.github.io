@@ -1,7 +1,7 @@
 ---
 title:      "HTML and CSS study notes: HTML introduction"
 date:       2024-03-19
-categories: [HTML and CSS, HTML]
+categories: [HTML and CSS]
 tag: [HTML]
 ---
 ## 认识 HTML

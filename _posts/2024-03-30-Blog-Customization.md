@@ -1,8 +1,8 @@
 ---
 title:      "Chirpy Blog Customization"
 date:       2024-03-30
-categories: [HTML and CSS, Blog]
-tag: [HTML]
+categories: [HTML and CSS]
+tag: [HTML, CSS]
 math: true
 ---
 ## 简介

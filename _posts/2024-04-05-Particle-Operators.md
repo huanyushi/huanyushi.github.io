@@ -116,7 +116,7 @@ $$
 
 $$
 \begin{align}
-\hat{n}(\vb{y}) &= \sum_{\alpha}\sum_{\beta}\int\dd[3]{x} \hat{\psi}^{\dagger}_{\alpha}(\vb{x}) \qty[\delta(\vb{y}-\vb{x})\delta_{\alpha\beta}]\hat{\psi}_{\beta}(\vb{x})\\
+\hat{n}(\vb{y}) &= \sum_{\alpha}\sum_{\beta}\int\dd[3]{x} \hat{\psi}^{\dagger}_{\alpha}(\vb{x}) \qty[\delta(\vb{y}-\vb{x})\delta_{\alpha\beta}]\hat{\psi}_{\beta}(\vb{x})\notag\\
 &=\sum_{\alpha} \int \dd[3]{x} \hat{\psi}^{\dagger}_{\alpha}(\vb{x}) \delta(\vb{y}-\vb{x})\hat{\psi}_{\alpha}(\vb{x}) = \sum_{\alpha} \hat{\psi}_{\alpha}^{\dagger}(\vb{y})\hat{\psi}_{\alpha}(\vb{y}).
 \end{align}
 $$
