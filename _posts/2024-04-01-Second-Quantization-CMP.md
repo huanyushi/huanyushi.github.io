@@ -259,7 +259,8 @@ It is often convenient to form the linear combinations of the creation and destr
 
 $$
 \begin{equation}
-    \hat{\psi}_{\alpha}(\vb{x}) \equiv \sum_{k} \psi_{k}(\vb{x}) \hat{a}_{k\alpha},\quad \hat{\psi}^{\dagger}_{\alpha}(\vb{x}) \equiv \sum_{k} \psi_{k}^\dagger(\vb{x}) \hat{a}_{k\alpha}^\dagger,
+\textcolor{Red}{
+    \hat{\psi}_{\alpha}(\vb{x}) \equiv \sum_{k} \psi_{k}(\vb{x}) \hat{a}_{k\alpha},\quad \hat{\psi}^{\dagger}_{\alpha}(\vb{x}) \equiv \sum_{k} \psi_{k}^\dagger(\vb{x}) \hat{a}_{k\alpha}^\dagger,}
 \end{equation}
 $$
 
@@ -271,7 +272,7 @@ $$
 \end{equation}
 $$
 
-where the upper (lower) sign refers to boson (fermions).
+where the upper (lower) sign refers to bosons (fermions).
 
 The Hamiltonian operator can be rewritten in terms of these field operators as follows:
 

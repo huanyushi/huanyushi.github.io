@@ -1,5 +1,5 @@
 ---
-title:      "An integral with Log"
+title:      "An Integral with Log"
 date:       2023-05-10
 categories: [Mathematics, Integration]
 tag: [integration]
