@@ -168,10 +168,25 @@ MathJax = {
 ### git push 失败: couldn't connet to server
 将本地文件 push 到 github 远程仓库里，经常出现 `couldn't connet to server` 的报错，经过查询没有明显有效的办法。以下是**可能有效**的措施：
 
-1. 关掉梯子 (VPN)；
-2. 在 `git` 中运行以下代码
+1. 关掉梯子 (VPN) 再 push 一下试试；
+2. 在 `git` 中运行以下代码来取消代理。
 
 ```bash
 git config --global --unset http.proxy 
 git config --global --unset https.proxy 
 ```
+3. 打开梯子的情况下。对右下角网络点击右键，打开`网络和 Internet 设置`，点击代理，查看地址和端口号，如 `127.0.0.1:7890`。在终端 (cmd) 中输入 
+```shell 
+git config --global http.proxy http://127.0.0.1:7890
+```
+可通过 `git config --global -l` 查看是否设置成功。之后再进行 push 即可。
+
+### jekyll serve 预览速度较慢
+方法很多，比如减少文件夹数量、压缩图片大小等。还可以通过设置增量构建的方法（即只重新建构发生更改的文件，而不是每次重新构建整个站点），
+可以在 `_config.yml` 中添加
+
+```yml
+incremental: true
+```
+
+之后每次 jekyll 都将重新构建发生更改的文件。另外也可以使用 `jekyll s --incremental` 构建可以达到同样效果（这样可以不用在 `_config.yml` 中设置了）。

@@ -1,9 +1,9 @@
 ---
-title:      "Python Notes: Introduction and Study Resources"
+title:      "&sect;1 Python: Introduction and Study Resources"
 date:       2024-04-05
 categories: [Python]
 tag: [Python]
-image: /img/in-post/2024-04-05/python.jpeg
+image: /img/in-post/2024-04-05/python.jpg
 ---
 ## Python 简介
 Python 是一种高级的解释型、动态类型和面向对象的计算机编程语言，Python 的设计哲学，强调代码的可读性和简洁的语法，尤其是使用空格缩进来划分代码块。相比于 C 语言或 Java，Python 让开发者能够用更少的代码表达想法。对于编程初学者来说，学习 Python 是十分推荐的。

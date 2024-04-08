@@ -2,7 +2,6 @@
 ---
 
 @import 'main';
-
 /* append your custom style below */
 
 /* 侧边栏背景图片添加 */
@@ -17,7 +16,7 @@
     width: 260px;
     z-index: 99;
     /* background: var(--sidebar-bg); */
-    background-image: url(/img/background.jpg); /* <- change background image */
+    background-image: url(https://cdn.jsdelivr.net/gh/huanyushi/Blog-Image-Bed@main/img/background.jpg); /* <- change background image */
     background-size: cover; /* <- customize the image size */
     background-repeat: no-repeat; /* <- */
     background-position: top;

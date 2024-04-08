@@ -3,6 +3,7 @@ title:      "HTML and CSS study notes: CSS introduction"
 date:       2024-03-21
 categories: [HTML and CSS]
 tag: [HTML, CSS]
+image: /img/in-post/2024-03-21/preface.jpg
 ---
 
 ## 认识 CSS
@@ -62,7 +63,8 @@ CSS 规则由两个主要部分构成：选择器 (selector)，以及一条或�
 <!-- 下面的示例代码可以改变段落的颜色和左外边距 -->
 <p style = "color:sienna;margin-left:20px">这是一个段落。 </p>
 ```
-
+> to be continued ...
+{: .prompt-danger}
 
 ## Reference
 

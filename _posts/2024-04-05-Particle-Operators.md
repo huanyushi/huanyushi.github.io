@@ -26,7 +26,7 @@ This is its expression in first quantization. In second quantization (or occupat
 $$
 \begin{equation}
 \textcolor{Green}{
-    \hat{F}^{(1)} = \sum_{\alpha}\sum_{\beta} \int \dd[3]{x} \hat{\psi}^{\dagger}_{\alpha}(\vb{x}) \mel{\alpha}{\hat{f}(\vb{x}_i,\vb{p}_i,\hat{s}_i)}{\beta} \hat{\psi}_{\beta}(\vb{x}).}
+    \hat{F}^{(1)} = \sum_{\alpha}\sum_{\beta} \int \dd[3]{x} \hat{\psi}^{\dagger}_{\alpha}(\vb{x}) \mel{\alpha}{\hat{f}(\vb{x}_i,\hat{\vb{p}}_i,\hat{s}_i)}{\beta} \hat{\psi}_{\beta}(\vb{x}).}
     \label{equ:single-particle operator}
 \end{equation}
 $$
@@ -42,8 +42,7 @@ We can calculate the matrix elements of $\hat{F}^{(1)}$ in both first and second
 $$
 \begin{align*}
 \mel{\Phi'}{\hat{F}^{(1)}}{\Phi} &= \mel{n_1'n_2'\cdots n_\infty'}{\sum_{\tilde{\alpha}}f_{\tilde{\alpha}}\hat{n}_{\tilde{\alpha}}}{n_1n_2\cdots n_{\infty}}\\
-&=\sum_{\tilde{\alpha}}f_{\tilde{\alpha}}\braket{n_{1}'n_2'\cdots n_{\infty}'}{n_1n_2\cdots n_{\infty}}\\
-&=\delta_{\Phi \Phi'} \sum_{\tilde{\alpha}}f_{\tilde{\alpha}}n_{\tilde{\alpha}}.
+&=\sum_{\tilde{\alpha}}f_{\tilde{\alpha}}\braket{n_{1}'n_2'\cdots n_{\infty}'}{n_1n_2\cdots n_{\infty}}=\delta_{\Phi \Phi'} \sum_{\tilde{\alpha}}f_{\tilde{\alpha}}n_{\tilde{\alpha}}.
 \end{align*}
 $$
 
@@ -52,8 +51,7 @@ In first quantization, this is
 $$
 \begin{align*}
     \mel{\Phi'}{\hat{F}^{(1)}}{\Phi} &= \int \dd[3]{x_1}\cdots \dd[3]{x_N} \Phi'^{*}(\vb{x}_1\cdots\vb{x}_N)\qty(\sum_{i=1}^{N} \hat{f}) \Phi(\vb{x}_1\cdots \vb{x}_N)\\
-    &=\sum_{\tilde{\alpha}}f_{\tilde{\alpha}} n_{\tilde{\alpha}}\int \int \dd[3]{x_1}\cdots \dd[3]{x_N} \Phi'^{*}(\vb{x}_1\cdots\vb{x}_N)\Phi(\vb{x}_1\cdots \vb{x}_N)\\
-    &=\delta_{\Phi\Phi'}\sum_{\tilde{\alpha}} f_{\tilde{\alpha}}n_{\tilde{\alpha}},
+    &=\sum_{\tilde{\alpha}}f_{\tilde{\alpha}} n_{\tilde{\alpha}}\int \int \dd[3]{x_1}\cdots \dd[3]{x_N} \Phi'^{*}(\vb{x}_1\cdots\vb{x}_N)\Phi(\vb{x}_1\cdots \vb{x}_N)=\delta_{\Phi\Phi'}\sum_{\tilde{\alpha}} f_{\tilde{\alpha}}n_{\tilde{\alpha}},
 \end{align*}
 $$
 
@@ -130,11 +128,29 @@ $$
 $$
 
 #### Spin density operator
+Spin density operator is defined as $\displaystyle{\hat{S}(\vb{y})} = \sum_{i=1}^{N} \hat{s}_i \delta(\vb{y}-\vb{x}_i)$. In second quantization, it is
+
+$$
+\begin{align}
+    \hat{S}(y)&= \sum_{\alpha}\sum_{\beta} \int\dd[3]{x} \hat{\psi}_{\alpha}^{\dagger}(\vb{x})\mel{\alpha}{\delta(\vb{y}-\vb{x})\hat{s}}{\beta} \hat{\psi}_{\beta}(\vb{x})\notag\\
+    &=\sum_{\alpha}\sum_{\beta}\int \dd[3]{x} \hat{\psi}^{\dagger}_{\alpha}(\vb{x}) \delta(\vb{y}-\vb{x})\mel{\alpha}{\hat{s}}{\beta}\hat{\psi}_{\beta}(\vb{x})\notag
+    \\
+    &=\sum_{\alpha}\sum_{\beta} \hat{\psi}_{\alpha}^{\dagger} \mel{\alpha}{\hat{s}}{\beta}\hat{\psi}_{\beta}(\vb{y}).
+\end{align}
+$$
+
+Similarly, the **total spin operator** is
+
+$$
+\begin{equation}
+    \hat{S} = \int\dd[3]{y} \hat{S}(\vb{y}) = \sum_{\alpha}\sum_{\beta}\int\dd[3]{y} \hat{\psi}^{\dagger}_{\alpha}(\vb{y}) \mel{\alpha}{\hat{s}}{\beta}\hat{\psi}_{\beta}(\vb{y}).
+\end{equation}
+$$
+> **Example**
+{: .prompt-tip}
 #### Current density operator
+
 > To be continued...
 {: .prompt-danger}
-
-
-
 
 
