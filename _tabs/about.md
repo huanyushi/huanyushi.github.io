@@ -8,22 +8,28 @@ order: 4
 >
 > --- T.S. Eliot
 
-Hey, I'm Huanyu Shi, a physics undergraduate student, from School of Physics and Astronomy, Sun Yat-Sen University. This is my Blog, which is generated based on the static web page built by Jekyll on Github. **Welcome to visit**.
+Hey there, I'm Huanyu Shi, a first-year PhD student specializing in condensed matter physics. 
 
-This blog is mainly used to record some study notes and ideas. Irregularly updated. You may be able to catch the clues of me from the following keywords:
+Welcome to my Blog! It's generated from a static web page built using Jekyll on Github. Here, I share study notes and ideas related to my research journey. While updates may be irregular, feel free to drop by anytime to explore. Your visit is appreciated!
+
+🎓 **Education:**
+- 2019/09 - 2023/06: B. S. in Physics, School of Physics and Astronomy, Sun Yat-Sen University, China.
+- 2023/09 - Present: PhD student in Condensed Matter Physics, Kavli Institute for Theoretical Sciences, University of Chinese Academy of Sciences, China.
+
+🔍 **Keywords:**
 
 * Physics Undergraduate Student / Mathematics Enthusiasts / Integration lover 
 * Painting / Stiff Pen Calligraphy
 * C / Fortran / Python / Matlab / Mathematica
 * 2019-2020 / 2020-2021 / National scholarship
 
-In spare time, high-intensity Internet surfing, you can find me at:
+🌐 **Online Presence:**
 
 * [Github](https://github.com/huanyushi)
-* [Zhihu](https://www.zhihu.com/people/za-ran-zhu-fu-liu-xing)
+* [Zhihu](https://www.zhihu.com/people/za-ran-zhu-fu-liu-xing) (A Chinese Q&A website)
 * [Stack Exchange](https://stackexchange.com/users/24950721/huanyu-shi)
 
-Contact information:
+📧 **Contact information:**
 
 * Email: [huanyushi2001@gmail.com](mailto:huanyushi2001@gmail.com)
 
@@ -34,21 +40,26 @@ Contact information:
 > 
 > --- 文天祥
 
-你好，我是 Huanyu Shi，一位物理学本科生，来自于中山大学物理与天文学院。这里是我的 Blog ，基于 Jekyll 在 Github 上搭建的静态网页生成，**欢迎你的到访**。
+你好，我是 Huanyu Shi，一位凝聚态物理学一年级博士生。
 
-此 Blog 主要用于记录一些学习笔记、个人感想和生活日常，不定期更新。或许你可以从以下关键词捕捉到我个人形象的蛛丝马迹：
+欢迎来到我的 Blog！这是一个由在 Github 上使用 Jekyll 构建的静态网页生成的 Blog。此 Blog 主要用于记录一些学习笔记、个人感想和生活日常，不定期更新。随时欢迎你来访问探索。
 
+🎓 **教育经历：**
+- 2019/09 - 2023/06： 物理学学士，物理与天文学院，中山大学。
+- 2023/09 - 现在： 凝聚态物理学博士生， 卡弗里理论科学研究所，中国科学院大学。
+
+🔍 **关键词：**
 * 物理学本科牲 / 数学爱好者 / 积佬
 * 绘画 / 硬笔书法
 * C / Fortran / Python / Matlab / Mathematica
 * 2019-2020 / 2020-2021 / 国家奖学金
 
-闲暇之余高强度上网冲浪，影分身：
+🌐 **互联网影分身：**
 
 * [Github](https://github.com/huanyushi)
 * [知乎](https://www.zhihu.com/people/za-ran-zhu-fu-liu-xing)
 * [Stack Exchange](https://stackexchange.com/users/24950721/huanyu-shi)
 
-联系方式：
+📧 **联系方式：**
 
 * Email: [huanyushi2001@gmail.com](mailto:huanyushi2001@gmail.com)
