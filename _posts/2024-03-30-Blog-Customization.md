@@ -48,9 +48,9 @@ MathJax = {
 </script>
 ```
 ### 增加主页 preview 公式预览
-在 Blog 主页，对每篇文章的预览部分会直接显示数学代码，要想能够在主页也预览公式，可以参考。
-> To be continued
-{: .prompt-tip }
+在 Blog 主页，对每篇文章的预览部分会直接显示数学代码，要想能够在主页也预览公式，可以参考 [issue-1140](https://github.com/cotes2020/jekyll-theme-chirpy/issues/1140)。
+> 暂时没有这个打算，这个功能似乎相对鸡肋。以后有需要再开吧。
+{: .prompt-info}
 
 ## 侧边栏的修改
 ### 侧边栏增加背景图片
@@ -170,7 +170,6 @@ MathJax = {
 
 1. 关掉梯子 (VPN) 再 push 一下试试；
 2. 在 `git` 中运行以下代码来取消代理。
-
 ```bash
 git config --global --unset http.proxy 
 git config --global --unset https.proxy 
@@ -179,6 +178,7 @@ git config --global --unset https.proxy
 ```shell 
 git config --global http.proxy http://127.0.0.1:7890
 ```
+
 可通过 `git config --global -l` 查看是否设置成功。之后再进行 push 即可。
 
 ### jekyll serve 预览速度较慢
