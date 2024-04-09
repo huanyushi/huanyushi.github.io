@@ -260,7 +260,7 @@ $$
 \end{equation}
 $$
 
-Then the field operator can be written as
+Then the field operators can be written as
 
 $$
 \begin{equation}
@@ -324,7 +324,7 @@ $$
 \end{align}
 $$
 ### Bloch representation
-Bloch's theorem tell us that solutions to the Schr&ouml;dinger equation in a periodic potential can be expressed as plane waves modulated by periodic functions. The **BLoch function** is defined as $\psi_{\vb{k}}^{B}(\vb{x}) = \mathrm{e}^{i\vb{k}\cdot\vb{x}}u_{\vb{k}}(\vb{x})$, where $$u_{\vb{k}}(\vb{x}) = u_{\vb{k}}(\vb{x}+\vb{R}_{l})$$, $$\vb{R}_{l}$$ is lattice vector. $$\qty{\psi_{\vb{k}}^{B}(\vb{x})}$$ is also a set of orthonormal and complete functions,
+Bloch's theorem tell us that solutions to the Schr&ouml;dinger equation in a periodic potential can be expressed as plane waves modulated by periodic functions. The **Bloch function** is defined as $\psi_{\vb{k}}^{B}(\vb{x}) = \mathrm{e}^{i\vb{k}\cdot\vb{x}}u_{\vb{k}}(\vb{x})$, where $$u_{\vb{k}}(\vb{x}) = u_{\vb{k}}(\vb{x}+\vb{R}_{l})$$, $$\vb{R}_{l}$$ is lattice vector. $$\qty{\psi_{\vb{k}}^{B}(\vb{x})}$$ is also a set of orthonormal and complete functions,
 
 $$
 \begin{equation}
@@ -343,11 +343,11 @@ $$
 \end{equation}
 $$
 
-The field operator in this representation is
+The field operators in this representation are
 
 $$
 \begin{equation}
-    \hat{\psi}_{\sigma}(\vb{x}) = \sum_\vb{k} \hat{b}_{\vb{k}\sigma}\psi_{k}^{B}(\vb{x}),\quad \hat{\psi}^{\dagger}_{\sigma}(\vb{x}) = \sum_{\vb{k}}\hat{b}_{\vb{k}\sigma}^\dagger \psi_{\vb{x}}^{B*}(\vb{x})
+    \hat{\psi}_{\sigma}(\vb{x}) = \sum_\vb{k} \hat{b}_{\vb{k}\sigma}\psi_{k}^{B}(\vb{x}),\quad \hat{\psi}^{\dagger}_{\sigma}(\vb{x}) = \sum_{\vb{k}}\hat{b}_{\vb{k}\sigma}^\dagger \psi_{\vb{x}}^{B*}(\vb{x}).
 \end{equation}
 $$
 
@@ -391,7 +391,7 @@ $$
 \end{align*}
 $$
 
-So we can define a new creation operator $$\hat{a}_{l\sigma}$$ (the same as annihilation operator $$\hat{a}_{l\sigma}^{\dagger}$$). Thus the field operator in Wannier representation is:
+So we can define a new creation operator $$\hat{a}_{l\sigma}$$ (the same as annihilation operator $$\hat{a}_{l\sigma}^{\dagger}$$). Thus the field operators in Wannier representation are:
 
 $$
 \begin{equation}
@@ -417,8 +417,8 @@ In the case where $\hat{H}$ is independent of $t$, the time evolution operator i
 
 $$
 \begin{equation}
-    \hat{\psi}_{H\alpha} (\vb{x},t) = \mathrm{e}^{iH(t-t_0)/\hbar}\hat{\psi}_{\alpha}(\vb{x})\mathrm{e}^{-i\hat{H}(t-t_0)/\hbar}, \quad 
-    \hat{\psi}_{H\alpha}^\dagger (\vb{x},t) = \mathrm{e}^{iH(t-t_0)/\hbar}\hat{\psi}_{\alpha}^{\dagger}(\vb{x})\mathrm{e}^{-i\hat{H}(t-t_0)/\hbar}.
+    \hat{\psi}_{H\alpha} (\vb{x},t) = \mathrm{e}^{i\hat{H}(t-t_0)/\hbar}\hat{\psi}_{\alpha}(\vb{x})\mathrm{e}^{-i\hat{H}(t-t_0)/\hbar}, \quad 
+    \hat{\psi}_{H\alpha}^\dagger (\vb{x},t) = \mathrm{e}^{i\hat{H}(t-t_0)/\hbar}\hat{\psi}_{\alpha}^{\dagger}(\vb{x})\mathrm{e}^{-i\hat{H}(t-t_0)/\hbar}.
 \end{equation}
 $$
 
