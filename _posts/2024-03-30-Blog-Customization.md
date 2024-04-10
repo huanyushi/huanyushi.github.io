@@ -199,3 +199,4 @@ incremental: true
 利用这个技巧可以在 post 中插入 html, pdf 等文件进行预览。
 
 > **警告：**这个功能在谷歌浏览器上可以正常使用，但是其他浏览器不一定支持，且加 overflow 在移动端也不能产生滚动条，慎用！
+{: .prompt-danger}

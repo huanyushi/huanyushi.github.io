@@ -18,7 +18,9 @@ image: /img/in-post/2023-04-10/preface.PNG
 * [GitHub](https://github.com/huanyushi/SYSU-SPA-Labreport-Template) 
 * [知乎](https://zhuanlan.zhihu.com/p/620722147)
 
-**Demo请见 [PDF](/pdf/SYSU-SPA-LabReport-Template.pdf) ，源码可在 [release](https://github.com/huanyushi/SYSU-SPA-Labreport-Template/releases/tag/latex-template) 上下载。**
+Demo 请见 [PDF](/pdf/SYSU-SPA-LabReport-Template.pdf) ，源码可在 [release](https://github.com/huanyushi/SYSU-SPA-Labreport-Template/releases) 上下载。
+
+![GitHub license](https://img.shields.io/github/license/huanyushi/SYSU-SPA-labreport-Template.svg) ![Github Version](https://img.shields.io/github/release/huanyushi/SYSU-SPA-labreport-Template.svg)
 
 
 ## 模板功能说明
@@ -96,8 +98,12 @@ rulesepcolor=\color{gray!30!white}
 }
 ```
 ![colorbox](/img/in-post/2023-04-10/readme2.jpg)
+4. TikZ 作为一个知名的绘图宏包（其文档说明高达1000多页，超乎常人想象），在此补充了一些 TikZ 实例
+![](/img/in-post/2023-04-10/readme3.JPG)
 
 ## 声明
 * 本模板仅供学习交流所用，_非学院官方模板_。
 * 本模板不再进行更新维护，若有任何额外需求请自行设计更改。
 * **欢迎报考中山大学物理与天文学院**。
+## 许可证
+该项目是在 MIT 许可下发布的。
