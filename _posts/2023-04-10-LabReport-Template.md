@@ -20,6 +20,7 @@ image: /img/in-post/2023-04-10/preface.PNG
 
 **Demo请见 [PDF](/pdf/SYSU-SPA-LabReport-Template.pdf) ，源码可在 [release](https://github.com/huanyushi/SYSU-SPA-Labreport-Template/releases/tag/latex-template) 上下载。**
 
+
 ## 模板功能说明
 
 ### 更新内容

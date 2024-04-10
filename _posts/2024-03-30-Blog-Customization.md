@@ -190,3 +190,12 @@ incremental: true
 ```
 
 之后每次 jekyll 都将重新构建发生更改的文件。另外也可以使用 `jekyll s --incremental` 构建可以达到同样效果（这样可以不用在 `_config.yml` 中设置了）。
+
+### 在 blog 中插入文件
+使用 `<iframe>` 元素即可，如
+```html
+<iframe src="file path" width="100%" height='800'></iframe>
+```
+利用这个技巧可以在 post 中插入 html, pdf 等文件进行预览。
+
+> **警告：**这个功能在谷歌浏览器上可以正常使用，但是其他浏览器不一定支持，且加 overflow 在移动端也不能产生滚动条，慎用！
