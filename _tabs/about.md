@@ -13,7 +13,7 @@ Hey there, I'm Huanyu Shi, a first-year PhD student in physics.
 Welcome to my Blog! It's generated from a static web page built using Jekyll on Github. Here, I share study notes and ideas related to my research journey. While updates may be irregular, feel free to drop by anytime to explore. Your visit is appreciated!
 
 🎓 **Education:**
-- 2019/09 - 2023/06: B. S. in Physics, School of Physics and Astronomy, Sun Yat-Sen University, China.
+- 2019/09 - 2023/06: B. S. in Physics, School of Physics and Astronomy, Sun Yat-sen University, China.
 - 2023/09 - Present: PhD student in Condensed Matter Physics, Kavli Institute for Theoretical Sciences, University of Chinese Academy of Sciences, China.
 
 🔍 **Keywords:**
