@@ -102,26 +102,31 @@ MathJax = {
 ```
 
 ### 侧边栏增加友链
-在隐藏的 gem 包里找到 `_includes/side.html` 文件，在其中添加以下几行代码即可（目前还没能封装在 `config.yml` 里设置，所以直接动手写的 `html`），
+在隐藏的 gem 包里找到 `_includes/side.html` 文件，在其中添加以下几行代码即可：
+<!-- {% raw %} -->
 ```html
-  <!-- Friends link -->
-  <div class="friends">
+<!-- Friends link -->
+<div class="friends">
+{% if site.friends %}
     <hr style="color:white;border: 1px solid ">
     <p><i class="fas fa-user-friends"></i><span>FRIENDS</span></p>
     <ul>
-      <li><a href="https://quantumobserveriastu.github.io">Quantum observers</a></li>
-      <li><a href="http://zhiqihuang.top">Zhiqi Huang</a></li>
-      <li><a href="https://sirohune.site">白舟尘</a></li>
+    {% for friend in site.friends %}
+    <li><a href="{{friend.href}}">{{friend.title}}</a></li>
+    {% endfor %}
     </ul>
-  </div>
+{% endif %}
+</div>
 ```
+<!-- {% endraw %}) -->
 而相关的样式设置添加到了 `assets/css/jekyll-theme-chirpy.scss` 中，如下：
 ```css
+/* 侧边栏友链样式设置 */
 #sidebar .friends {
     padding-left: 1.5rem;
     padding-right: 1.25rem;
     width: 100%;
-    margin-bottom: 3rem;
+    margin-bottom: 1.5rem;
 }
 #sidebar .friends p {
     color: rgb(255,255,255,0.95);
@@ -141,12 +146,29 @@ MathJax = {
     color:white;
     font-size:95%;
     opacity: 0.95;
+    margin-bottom: 0rem;
 }
 #sidebar .friends ul li {
     margin-bottom: 0.4rem;
     opacity: 0.9;
 }
+
 ```
+已成功封装，只需要在 `_config.yml` 里添加以下设置即可（可以一直往后叠加）：
+```yml
+friends:
+  [
+    { title: "title1", href: "link1" },
+    { title: "title2", href: "link2" },
+    { title: "title3", href: "link3"},
+  ]
+```
+
+> **注意**
+> 1. 友链不能加太多，容易挤占底部社交平台的空间，让它跑到屏幕外面去了（不过这也和系统分辨率有关系）。如果友链太多建议在侧边栏新开一个选项卡，也就是在 `_tabs` 文件夹下新建一个 `.md` 文件。
+> 2. 我这里设置的是友链沉底，保持在底部社交平台上方。如果分辨率拉大，会发现它和上面侧边栏选项卡之间有很大间距。如果想调整友链位置紧跟选项卡之后，可以在 `_includes/sidebar.html` 中修改选项卡的样式，将 `<nav class="flex-column flex-grow-1 w-100 ps-0">` 中的 `flex-grow-1` 删除；并加入到友链样式中原先的 `<div class="friends">` 修改为 `<div class="friends flex-grow-1">`。同时 `assets/css/jekyll-theme-chirpy.scss` 中 `#sidebar .friends` 里的 `margin-bottom: 2rem` 修改为上间距 `margin-top: ? rem`, ? 的值可以自己选定。
+{: .prompt-warning}
+
 
 ## 评论区添加
 评论区使用 giscus，模板作者已经将相关选项封装好了，在 `_config.yml` 文件中填上个人信息即可。
@@ -189,7 +211,7 @@ git config --global http.proxy http://127.0.0.1:7890
 incremental: true
 ```
 
-之后每次 jekyll 都将重新构建发生更改的文件。另外也可以使用 `jekyll s --incremental` 构建可以达到同样效果（这样可以不用在 `_config.yml` 中设置了）。
+之后每次 jekyll 都将重新构建发生更改的文件。另外也可以使用 `bundle exec jekyll s --incremental` 构建可以达到同样效果（这样可以不用在 `_config.yml` 中设置了）。
 
 ### 在 blog 中插入文件
 使用 `<iframe>` 元素即可，如
