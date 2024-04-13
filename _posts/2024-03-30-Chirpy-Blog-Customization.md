@@ -57,44 +57,24 @@ MathJax = {
 在 `assets/css/jekyll-theme-chirpy.scss` 文件中，增加对侧边栏样式设置的 CSS 代码，其中 `background-image` 便是用来添加背景图片的基本命令，只需后面添加图片的 url 即可，如下：
 ```css
 #sidebar {
-    padding-left: 0;
-    padding-right: 0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    overflow-y: auto;
-    width: 260px;
-    z-index: 99;
-    /* background: var(--sidebar-bg); */
-    background-image: url(/img/background.jpg); /* <- change background image */
+    background-image: url(https://cdn.jsdelivr.net/gh/huanyushi/Blog-Image-Bed@main/img/background.jpg); /* <- change background image */
     background-size: cover; /* <- customize the image size */
-    background-repeat: no-repeat; /* <- */
-    background-position: top;
-    border-right: 1px solid var(--sidebar-border-color);
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+    background-repeat: no-repeat; /* <- no-repeat */
+    background-position: top; /* <- image position */
 }
 ```
 同样也要注意修改相应文字的颜色，我这里选的是深色背景，所以对应文字都是白色，
 ```css
 #sidebar .site-title a {
-    color: rgb(255 255 255); /* <- */
+    color: #ffffff; 
+    text-shadow: 5px 5px 10px rgba(0,0,0,0.5);
 }
 #sidebar .site-subtitle {
-    /* font-size: 95%;*/
-    color: #ffffff; /* <- */
-    margin-top: .25rem;
-    word-spacing: 1px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+    color: #ffffff;
+    text-shadow: 2px 2px 3px rgba(0,0,0, 0.7);
 }
 #sidebar .sidebar-bottom .mode-toggle, #sidebar a {
-    color: #ffffff; /* <- */
-    padding: 0;
-    border: 0
+    color: #ffffff;
 }
 #sidebar .sidebar-bottom .btn {
     color: var(--sidebar-btn-color);
@@ -123,7 +103,7 @@ MathJax = {
 ```css
 /* 侧边栏友链样式设置 */
 #sidebar .friends {
-    padding-left: 1.5rem;
+    padding-left: 2.5rem;
     padding-right: 1.25rem;
     width: 100%;
     margin-bottom: 1.5rem;
