@@ -10,7 +10,7 @@ Python 是一种高级的解释型、动态类型和面向对象的计算机编�
 
 目前世界上有数百种编程语言，但实际真正流行的编程语言只有十几种。查看最近的 TIBOE 排行榜（反应不同编程语言的流行程度）可以发现 Python 在近几年使用量与日俱增，且目前位列第一。
 
-![TIBOE](/img/in-post/2024-04-05/TIBOE.PNG){: .shadow width="700"}
+![TIBOE](/img/in-post/2024-04-05/TIBOE.PNG){: .shadow style="border-radius: 10px;"}
 
 当然这也并不意味着其他编程语言一无是处，Python 毫无缺点。事实上，作为一门高级语言，它最大的缺点就是运行速度较慢。考虑到 Python 是一门解释型语言，在开发过程中它省去了编译的环节，没能将代码编译成底层的二进制代码，所以 Python 程序相比类似于 C 语言的完全编译的语言程序要慢很多。但实际上，Python 里一些程序是通过发送到其内部已经编译好的 C 语言代码处理的，在绝大部分领域运行的速度也足够快。且日常使用中，很少需要编写处理海量数据的大型代码，类似于 0.001s 和 1s 的编译时间差实际上基本没什么影响。
 
@@ -33,6 +33,7 @@ Python 网站资源（注意只有官方手册是最新的）：
 - [Python 官方手册（英文）](https://docs.python.org/3/)
 - [Python 3 教程 - 菜鸟教程](https://www.runoob.com/python3/python3-tutorial.html)
 - [廖雪峰的 Python 教程](https://www.liaoxuefeng.com/wiki/1016959663602400)
+- [Python - 100天从新手到大师](https://github.com/jackfrued/Python-100-Days/tree/master)
 
 Python 入门教程书籍（第二本更侧重办公自动化）：
 - Eric Matthes 著, 袁国忠译. *Python编程-从入门到实践*（第二版）. 人民邮电出版社
@@ -77,7 +78,7 @@ pip show jupyter_contrib_nbextensions
 python application.py install
 ```
 最后启动 Jupyter notebook 便可以看到插件了。
-![extensions](/img/in-post/2024-04-05/extensions.PNG){: width = "600"}
+![extensions](/img/in-post/2024-04-05/extensions.PNG){: .rounded-10 .shadow }
 注意如果安装失败，需要卸载再重新安装，通过
 ```shell
 pip uninstall jupyter_contrib_nbextensions
@@ -105,6 +106,23 @@ pip install notebook==6.4.6
 ![kuaijie1](/img/in-post/2024-04-05/kuaijie1.JPG)
 
 ![kuaijie2](/img/in-post/2024-04-05/kuaijie2.JPG)
+
+### Colorbox
+在 Jupyter Notebook 的单元格里（markdown格式）使用以下代码可以生成 colorbox，
+
+```html
+<div class="alert alert-block alert-info"> <b>NOTE</b> Use blue boxes for Tips and notes. </div>
+
+<div class="alert alert-block alert-success"> Use green boxes sparingly, and only for some specific purpose that the other boxes can't cover. For example, if you have a lot of related content to link to, maybe you decide to use green boxes for related links from each section of a notebook. </div>
+
+<div class="alert alert-block alert-warning"> Use yellow boxes for examples that are not inside code cells, or use for mathematical formulas if needed. </div>
+
+<div class="alert alert-block alert-danger"> In general, just avoid the red boxes. </div>
+```
+也可以直接加入各种 emoji 表情包，如 😂😆📑🌐🔍🎓 ，具体效果如下图所示：
+
+![colorbox](/img/in-post/2024-04-05/colorbox_light.PNG){: .light  .shadow}
+![colorbox](/img/in-post/2024-04-05/colorbox_dark.PNG){: .dark  .shadow}
 
 将一切准备工作做好后，就可以安心写代码了。
 
