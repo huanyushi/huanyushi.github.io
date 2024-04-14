@@ -127,10 +127,11 @@ print(b*5)          # 666666666666666
 ```
 ```python
 d = 'I'm "OK"!'
-# --- 会报错
-#     d = 'I'm "OK"!'
-#                   ^
-# SyntaxError: unterminated string literal (detected at line 1)
+---------------------------------------------------------------------------
+  Cell In[25], line 1
+    d = 'I'm "OK"!'
+                  ^
+SyntaxError: unterminated string literal (detected at line 1)
 ```
 ```python
 d = 'I\'m \"OK\"!'
@@ -164,6 +165,7 @@ print('''line1
 但实际上这还能玩出花来，具体请见以下的实例。
 ```python
 a = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+
 # 打印整个字符
 print(a)          # ABCDEFGHIJKLMNOPQRSTUVWXYZ
 # 打印字符串第一个到倒数第二个字符（不包含倒数第一个）
@@ -293,7 +295,7 @@ print(keyword.kwlist)
 
 ```python
 import math
-print(abs(-3.2),'\n',           # 3.2 
+print(abs(-3.2),'\n',           #  3.2 
       math.ceil(3.5),'\n',      #  4 
       math.floor(3.5),'\n',     #  3 
       round(3.1415926,3),'\n',  #  3.142 

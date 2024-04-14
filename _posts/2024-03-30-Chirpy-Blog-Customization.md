@@ -176,7 +176,7 @@ friends:
 git config --global --unset http.proxy 
 git config --global --unset https.proxy 
 ```
-3. 打开梯子的情况下。对右下角网络点击右键，打开`网络和 Internet 设置`，点击代理，查看地址和端口号，如 `127.0.0.1:7890`。在终端 (cmd) 中输入 
+3. 打开梯子的情况下。对右下角网络点击右键，打开`网络和 Internet 设置`，点击代理，查看地址和端口号，如 `127.0.0.1:7890`。在命令行 (cmd) 中输入 
 ```shell 
 git config --global http.proxy http://127.0.0.1:7890
 ```

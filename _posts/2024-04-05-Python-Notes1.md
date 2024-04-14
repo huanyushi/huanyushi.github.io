@@ -44,7 +44,7 @@ Jupyter notebook 是一种基于网页的交互式计算环境，支持多种编
 
 使用 Jupyter Notebook 可以创建和共享包含实时代码、可视化和解释型文本的文档，这种结合了代码和文本的方式，让它成为数据分析、机器学习、科学研究和教学等领域中非常受欢迎的工具。
 
-从 Anaconda 里打开 Jupyter notebook 或者 Jupyter Lab 均可，只是前者通过网页打开，后者通过终端打开，没有本质区别。往后的几篇 Python 入门教程均围绕 Jupyter notebook 进行介绍。
+从 Anaconda 里打开 Jupyter notebook 或者 Jupyter Lab 均可，两者没有本质区别。往后的几篇 Python 入门教程均围绕 Jupyter notebook 进行介绍。
 ### 修改默认打开路径
 Jupyter notebook 默认打开的是 C 盘 `Users/Username` 的文件夹，想要修改它的默认打开路径，可以打开它的配置文件进行修改，通常是放在 `C:\Users\Username\.jupyter\jupyter_notebook_config.py` 文件里，如果找不到也可以打开 Anaconda Prompt，输入 `jupyter notebook --generate-config` 找到配置文件，再输入 `y` 后 <kbd>Enter</kbd>。 
 
@@ -78,7 +78,10 @@ pip show jupyter_contrib_nbextensions
 python application.py install
 ```
 最后启动 Jupyter notebook 便可以看到插件了。
-![extensions](/img/in-post/2024-04-05/extensions.PNG){: .rounded-10 .shadow }
+
+![extensions](/img/in-post/2024-04-05/extensions_light.PNG){: .light .rounded-10 .shadow }
+![extensions](/img/in-post/2024-04-05/extensions_dark.PNG){: .dark .rounded-10 .shadow }
+
 注意如果安装失败，需要卸载再重新安装，通过
 ```shell
 pip uninstall jupyter_contrib_nbextensions
@@ -93,6 +96,7 @@ pip uninstall jupyter_nbextensions_configurator
 
 > **警告：** Jupyter notebook 在 6.5 版本后不再支持第三方插件。如果想继续使用的话要考虑回退版本。说实话，过程很麻烦，还不如用 VS code.
 {: .prompt-danger}
+
 解决办法，管理员模式运行 Anaconda Prompt，卸载 Jupyter notebook，
 ```shell
 pip uninstall notebook
@@ -103,9 +107,47 @@ pip install notebook==6.4.6
 ```
 ### 常用快捷键
 在 `.ipynb` 文件里按键 <key>H</key> 即可进入快捷键界面，如下图所示，
-![kuaijie1](/img/in-post/2024-04-05/kuaijie1.JPG)
 
-![kuaijie2](/img/in-post/2024-04-05/kuaijie2.JPG)
+![kuaijie1](/img/in-post/2024-04-05/kuaijie1_light.PNG){: .light}
+![kuaijie1](/img/in-post/2024-04-05/kuaijie1_dark.PNG){: .dark}
+
+![kuaijie2](/img/in-post/2024-04-05/kuaijie2_light.PNG){: .light}
+![kuaijie2](/img/in-post/2024-04-05/kuaijie2_dark.PNG){: .dark}
+
+### 更换主题
+在终端中运行 `pip install --upgrade jupyterthemes` 即可，通过命令 `jt-l` 可以查看主题列表：
+1. chesterish
+2. grade3
+3. gruvboxd
+4. gruvboxl
+5. monokai
+6. oceans16
+7. onedork
+8. solarizedd
+9. solarizedl
+
+通过以下命令模板可以更换主题：
+``` shell
+jt -t <theme-name> -f <font-name> -fs <font-size> -ofs <code-font-size> -cellw <cell-width> -T
+jt -t onedork -f bitstream -fs 11 -nfs 11 -tfs 12 -ofs 11 -lineh 200 -cellw 75% -T
+```
+如果想恢复原主题，使用 `jt -r` 即可。更多命令可以在 [jupyter-theme](https://github.com/dunovank/jupyter-themes) 中查看。
+
+我设置的 Jupyter 主题效果见下图。
+
+![jupyter-theme](/img/in-post/2024-04-05/jupyter_theme.PNG)
+
+> 若产生**报错**：'jt' 不是内部或外部命令,也不是可运行的程序。
+>
+> 解决办法：找到 `jt.exe` 所在的文件夹即可，可以在 windows 终端运行`dir /s /b jupyter-theme.exe` 查找，它一般在 `C:\Users\Username\AppData\Roaming\Python\Python311\Scripts` 中，把这个路径添加到系统环境变量就可以了。
+{: .prompt-info}
+
+将 `.ipynb` 导出成 `html` 文件时，注意修改导出时的明暗主题。可以通过命令行执行（需转换到对应 `.ipynb` 文件所在的文件夹）
+
+```shell
+jupyter nbconvert filename.ipynb --to html --HTMLExporter.theme=dark
+jupyter nbconvert filename.ipynb --to html --HTMLExporter.theme=light
+```
 
 ### Colorbox
 在 Jupyter Notebook 的单元格里（markdown格式）使用以下代码可以生成 colorbox，

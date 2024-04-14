@@ -268,7 +268,7 @@ where $\alpha$ is an index used to distinguish different spin component. $$\hat{
 
 $$
 \begin{equation}
-[\hat{\psi}_{\alpha}(\vb{x}),\hat{\psi}_{\beta}^{\dagger}(\vb{x}')]_{\mp} = \delta_{\alpha\beta} \delta(\vb{x}-\vb{x}'), \quad [\hat{\psi}_{\alpha}(\vb{x}),\hat{\psi}_{\beta}(\vb{x}')]_{\mp}.
+[\hat{\psi}_{\alpha}(\vb{x}),\hat{\psi}_{\beta}^{\dagger}(\vb{x}')]_{\mp} = \delta_{\alpha\beta} \delta(\vb{x}-\vb{x}'), \quad [\hat{\psi}_{\alpha}(\vb{x}),\hat{\psi}_{\beta}(\vb{x}')]_{\mp} = [\hat{\psi}_{\alpha}^\dagger(\vb{x}),\hat{\psi}_{\beta}^\dagger(\vb{x}')]_{\mp} = 0.
 \end{equation}
 $$
 
@@ -278,7 +278,7 @@ The Hamiltonian operator can be rewritten in terms of these field operators as f
 
 $$
 \begin{equation}
-\hat{H} =\sum_{\alpha \beta} \int \dd[3]x \hat{\psi}_{\alpha}^{\dagger} (\vb{x}) \hat{T}(\vb{x}) \hat{\psi}_{\beta}(\vb{x}) + \frac{1}{2}\sum_{\alpha\alpha' \beta \beta'} \int\dd[3]x\int\dd[3]x' \hat{\psi}_{\alpha}^{\dagger}(\vb{x})\hat{\psi}^{\dagger}_{\alpha'}(\vb{x}') V(\vb{x},\vb{x}') \hat{\psi}_{\beta}(\vb{x}')\hat{\psi}_{\beta'}(\vb{x}).
+\hat{H} =\sum_{\alpha \beta} \int \dd[3]x \hat{\psi}_{\alpha}^{\dagger} (\vb{x}) \hat{T}(\vb{x}) \hat{\psi}_{\beta}(\vb{x}) + \frac{1}{2}\sum_{\alpha\alpha' \beta \beta'} \int\dd[3]x\int\dd[3]x' \hat{\psi}_{\alpha}^{\dagger}(\vb{x})\hat{\psi}^{\dagger}_{\alpha'}(\vb{x}') V_{\alpha\alpha',\beta\beta'}(\vb{x},\vb{x}') \hat{\psi}_{\beta}(\vb{x}')\hat{\psi}_{\beta'}(\vb{x}).
 \end{equation}
 $$
 
