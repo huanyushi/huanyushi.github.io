@@ -51,14 +51,6 @@ google_site_verification: # fill in to your verification string
 # The end of `jekyll-seo-tag` settings
 
 
-# 
-friends:
-  [
-    { title: "Quantum Observers", href: "https://quantumobserveriastu.github.io" },
-    { title: "Zhiqi Huang", href: "http://zhiqihuang.top" },
-    { title: "白舟尘", href: "https://sirohune.site"},
-  ]
-
 google_analytics:
   id: G-F61F79XQDG # fill in your Google Analytics ID
 

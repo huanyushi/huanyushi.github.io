@@ -1,0 +1,10 @@
+<!-- 友链设置，在 sidebar.html 中插入 -->
+<div class="friends">
+    <hr style="color:white;border: 1px solid ">
+    <p><i class="fas fa-user-friends"></i><span>FRIENDS</span></p>
+    <ul>
+      {% for friend in site.data.friends %}
+      <li><a href="{{friend.href}}">{{friend.title}}</a></li>
+      {% endfor %}
+    </ul>
+</div>

@@ -3,6 +3,7 @@
 icon: fas fa-info-circle
 order: 4
 ---
+
 ## English
 > To each individual the world will take on a different connotation of meaning-the important lies in the desire to search for an answer.
 >

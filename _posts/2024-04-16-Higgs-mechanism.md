@@ -1,5 +1,5 @@
 ---
-title:      "In Memory of Higgs: What is the Higgs Mechanism?"
+title:      "In Memory of Peter Higgs: What is the Higgs Mechanism?"
 date:       2024-04-16
 categories: [Quantum Field Theory]
 tag: [quantum field theory]
