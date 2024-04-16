@@ -3,7 +3,7 @@ title:      "中山大学物理与天文学院本科实验报告模板"
 date:       2023-04-10
 categories: [LaTeX]
 tag: [LaTeX]
-image: /img/in-post/2023-04-10/preface.PNG
+image: /in-post/2023-04-10/preface.PNG
 ---
 > "The laws of physics is the canvas God laid down on which to paint his masterpiece" <br>
 > --- Dan Brown.
@@ -18,7 +18,7 @@ image: /img/in-post/2023-04-10/preface.PNG
 * [GitHub](https://github.com/huanyushi/SYSU-SPA-Labreport-Template) 
 * [知乎](https://zhuanlan.zhihu.com/p/620722147)
 
-Demo 请见 [PDF](/pdf/SYSU-SPA-LabReport-Template.pdf) ，源码可在 [release](https://github.com/huanyushi/SYSU-SPA-Labreport-Template/releases) 上下载。 
+Demo 请见 [PDF](/assets/pdf/SYSU-SPA-LabReport-Template.pdf) ，源码可在 [release](https://github.com/huanyushi/SYSU-SPA-Labreport-Template/releases) 上下载。 
 
 ![GitHub license](https://img.shields.io/github/license/huanyushi/SYSU-SPA-labreport-Template.svg){: .normal} ![Github Version](https://img.shields.io/github/release/huanyushi/SYSU-SPA-labreport-Template.svg){: .normal}
 
@@ -67,7 +67,7 @@ stepnumber=1,
 rulesepcolor=\color{gray!30!white}
 }
 ```
-![code](/img/in-post/2023-04-10/readme1.jpg)
+![code](/in-post/2023-04-10/readme1.jpg)
 3. 本模板定义了两种形式的 `box` ，可参考 `tcolorbox` 宏包的手册进行修改，
 ```latex
 \usepackage{tcolorbox}
@@ -97,9 +97,9 @@ rulesepcolor=\color{gray!30!white}
   #1
 }
 ```
-![colorbox](/img/in-post/2023-04-10/readme2.jpg)
+![colorbox](/in-post/2023-04-10/readme2.jpg)
 4. TikZ 作为一个知名的绘图宏包（其文档说明高达1000多页，超乎常人想象），在此补充了一些 TikZ 实例
-![](/img/in-post/2023-04-10/readme3.JPG)
+![](/in-post/2023-04-10/readme3.JPG)
 
 ## 声明
 * 本模板仅供学习交流所用，_非学院官方模板_。

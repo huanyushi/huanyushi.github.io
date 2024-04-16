@@ -3,12 +3,12 @@ title:      "&sect;2 Python: Number, String and Bool"
 date:       2024-04-07
 categories: [Python]
 tag: [Python]
-image: /img/in-post/2024-04-05/python.jpg
+image: /in-post/2024-04-05/python.jpg
 math: true
 ---
 > <i class="fas fa-hand-point-down"></i> 在此下载本文对应的 Jupyter Notebook 和 PDF 文件 
-> - **[sec2_number_string_bool.ipynb](/python/sec2_number_string_bool.ipynb)**
-> - **[sec2_number_string_bool.html](/python/sec2_number_string_bool.html)**
+> - **[sec2_number_string_bool.ipynb](/assets/python/sec2_number_string_bool.ipynb)**
+> - **[sec2_number_string_bool.html](/assets/python/sec2_number_string_bool.html)**
 {: .prompt-info}
 
 ## Python 用作简单的计算器

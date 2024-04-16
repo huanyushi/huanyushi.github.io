@@ -4,7 +4,7 @@ date:       2022-04-19
 categories: [Mathematics, Integration]
 tag: [special function, integration]
 toc: false
-image: /img/in-post/2022-04-19/preface.PNG
+image: /in-post/2022-04-19/preface.PNG
 ---
 >To each individual the world will take on a different connotation of meaning-the important lies in the desire to search for an answer.
 >
@@ -20,7 +20,7 @@ Writing answers is actually a way to output knowledge.
 
 This is one of the chapters of my personal notes, which captures my answers on some question-and-answer sites. 
 
-And this post was first posted on [Zhihu](https://zhuanlan.zhihu.com/p/501422450), you can see the summary in [**PDF**](/pdf/Zhihu-Summary.pdf).
+And this post was first posted on [Zhihu](https://zhuanlan.zhihu.com/p/501422450), you can see the summary in [**PDF**](/assets/pdf/Zhihu-Summary.pdf).
 
 
 

@@ -12,7 +12,7 @@ math: true
 
 有两种方法可供选择。第一种就是直接访问 Chirpy 的 github 项目页面，从它的源码里扒出来样式文件及代码。第二种则利用 git，通过命令 `bundle info --path jekyll-theme-chirpy` 获取封装的样式文件地址，如下图所示
 
-![theme file](/img/in-post/2024-03-30/theme-file.PNG){: .shadow width="700" }
+![theme file](/in-post/2024-03-30/theme-file.PNG){: .shadow width="700" }
 
 在里面找到相应的样式文件后，把它放入自己 blog 对应的文件里，就可以进行个性化定制了。
 

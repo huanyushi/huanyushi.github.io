@@ -4,7 +4,7 @@ date:       2023-05-03
 categories: [Mathematics, Integration]
 tag: [integration]
 math: true
-image: /img/in-post/Contour/semicircle-1.JPG
+image: /in-post/Contour/semicircle-1.JPG
 ---
 ## Question:
 Try to solve the following integral:
@@ -30,7 +30,7 @@ $$
 
 So we can define $f(z) = \dfrac{1}{\ln(1-iz)}\dfrac{1}{1+z^2}$ and use the following contour,
 
-![contour](/img/in-post/Contour/semicircle-1.JPG){: width="500"}
+![contour](/in-post/Contour/semicircle-1.JPG){: width="500"}
 
 The branch point is $z=-i$, so $f(z)$ is single-valued and analytic in the upper half-plane. There is only one simple pole $z=i$ within the contour, and its corresponding residue is
 

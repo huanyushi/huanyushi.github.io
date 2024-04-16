@@ -54,7 +54,7 @@ google_site_verification: # fill in to your verification string
 # 
 friends:
   [
-    { title: "Quantum observers", href: "https://quantumobserveriastu.github.io" },
+    { title: "Quantum Observers", href: "https://quantumobserveriastu.github.io" },
     { title: "Zhiqi Huang", href: "http://zhiqihuang.top" },
     { title: "白舟尘", href: "https://sirohune.site"},
   ]
@@ -83,14 +83,14 @@ theme_mode: # [light | dark]
 # will be added to all image (site avatar & posts' images) paths starting with '/'
 #
 # e.g. 'https://cdn.com'
-img_cdn: "https://cdn.jsdelivr.net/gh/huanyushi/Blog-Image-Bed@main"
+img_cdn: "https://cdn.jsdelivr.net/gh/huanyushi/huanyushi.github.io@main/assets/img/"
 
 # the avatar on sidebar, support local or CORS resources
-avatar: "https://cdn.jsdelivr.net/gh/huanyushi/Blog-Image-Bed@main/avatar.jpg"
+avatar: "https://cdn.jsdelivr.net/gh/huanyushi/huanyushi.github.io@main/assets/img/avatar.jpg"
 
 # The URL of the site-wide social preview image used in SEO `og:image` meta tag.
 # It can be overridden by a customized `page.image` in front matter.
-social_preview_image: "https://cdn.jsdelivr.net/gh/huanyushi/Blog-Image-Bed@main/avatar.jpg" # string, local or CORS resources
+social_preview_image: "https://cdn.jsdelivr.net/gh/huanyushi/huanyushi.github.io@main/assets/img/avatar.jpg" # string, local or CORS resources
 
 # boolean type, the global switch for TOC in posts.
 toc: true

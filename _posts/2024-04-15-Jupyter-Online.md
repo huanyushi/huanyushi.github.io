@@ -3,7 +3,7 @@ title:      "Jupyter Online"
 date:       2024-04-15
 categories: [Python]
 tag: [Python]
-image: /img/in-post/2024-04-05/python.jpg
+image: /in-post/2024-04-05/python.jpg
 ---
 
 以下可以在线运行 Python

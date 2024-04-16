@@ -3,11 +3,11 @@ title:      "&sect;4 Python: Function"
 date:       2024-04-15
 categories: [Python]
 tag: [Python]
-image: /img/in-post/2024-04-05/python.jpg
+image: /in-post/2024-04-05/python.jpg
 ---
 > <i class="fas fa-hand-point-down"></i> 在此下载本文对应的 Jupyter Notebook 和 PDF 文件 
-> - **[sec4_function.ipynb](/python/sec4_function.ipynb)**
-> - **[sec4_function.html](/python/sec4_function.html)**
+> - **[sec4_function.ipynb](/assets/python/sec4_function.ipynb)**
+> - **[sec4_function.html](/assets/python/sec4_function.html)**
 {: .prompt-info}
 
 ## 函数

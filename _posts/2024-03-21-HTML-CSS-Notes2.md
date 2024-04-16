@@ -3,7 +3,7 @@ title:      "HTML and CSS study notes: CSS introduction"
 date:       2024-03-21
 categories: [HTML and CSS]
 tag: [HTML, CSS]
-image: /img/in-post/2024-03-21/preface.jpg
+image: /in-post/2024-03-21/preface.jpg
 ---
 
 ## 认识 CSS
@@ -17,7 +17,7 @@ image: /img/in-post/2024-03-21/preface.jpg
 
 ### CSS 语法
 CSS 规则由两个主要部分构成：选择器 (selector)，以及一条或多条声明，见下图：
-![selector](/img/in-post/2024-03-21/selector.gif){: width= 500}
+![selector](/in-post/2024-03-21/selector.gif){: width= 500}
 
 - 选择器指向我们需要设置样式的 HTML 元素
 - 声明块包含一条或多条声明，它们彼此之间用分号间隔

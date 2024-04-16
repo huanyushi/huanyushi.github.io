@@ -3,12 +3,12 @@ title:      "&sect;3 Python: Control Flow Statement"
 date:       2024-04-13
 categories: [Python]
 tag: [Python]
-image: /img/in-post/2024-04-05/python.jpg
+image: /in-post/2024-04-05/python.jpg
 math: true
 ---
 > <i class="fas fa-hand-point-down"></i> 在此下载本文对应的 Jupyter Notebook 和 PDF 文件 
-> - **[sec3_control_flow_statement.ipynb](/python/sec3_control_flow_statement.ipynb)**
-> - **[sec3_control_flow_statement.html](/python/sec3_control_flow_statement.html)**
+> - **[sec3_control_flow_statement.ipynb](/assets/python/sec3_control_flow_statement.ipynb)**
+> - **[sec3_control_flow_statement.html](/assets/python/sec3_control_flow_statement.html)**
 {: .prompt-info}
 
 编程真正的力量不仅在于运行（或“执行”）一条接一条的指令，它还可以决定跳过指令，重复指令，或从几条指令中选择一条运行。“控制流”语句可以决定在什么条件下执行哪些 Python 语句。
@@ -61,7 +61,7 @@ elif x >= -1:
 else:
     y = 5 * x + 3
 print('f(%.2f) = %.2f' % (x, y)) # f(3.20) = 4.60
-# 这里的 %.2f 是我们前面提到的格式化输出，指保留两位小数字的浮点数输出。
+# 这里的 %.2f 是我们前面提到的格式化输出，指保留两位小数的浮点数输出。
 ```
 ```python
 age = int(input("请输入你家狗狗的年龄: ")) # 3
@@ -261,7 +261,7 @@ print('Access granted.')
 ### for 循环语句
 当条件为 True 时，while 循环会继续循环直到条件为 False。但如果我们想让一个代码块执行固定次数，我们可以通过 for 循环语句和 `range()` 函数来实现。
 
-for 循环可以便利任何可迭代对象，如一个列表或者一个字符串。它的一般格式如下（else 可以不加）：
+for 循环可以遍历任何可迭代对象，如一个列表或者一个字符串。它的一般格式如下（else 可以不加）：
 ```python
 for <variable> in <sequence>:
     <statements>
