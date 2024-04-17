@@ -3,9 +3,11 @@ title:      "中山大学物理与天文学院本科实验报告模板"
 date:       2023-04-10
 categories: [LaTeX]
 tag: [LaTeX]
-image: /in-post/2023-04-10/preface.PNG
+image: 
+  path: /in-post/2023-04-10/preface.PNG
+  lqip: /in-post/2023-04-10/lqip-file
 ---
-> "The laws of physics is the canvas God laid down on which to paint his masterpiece" <br>
+> "The laws of physics is the canvas God laid down on which to paint his masterpiece"
 > --- Dan Brown.
 
 ## 写在前面
@@ -67,7 +69,7 @@ stepnumber=1,
 rulesepcolor=\color{gray!30!white}
 }
 ```
-![code](/in-post/2023-04-10/readme1.jpg)
+![code](/in-post/2023-04-10/readme1.jpg){: lqip="/in-post/2023-04-10/lqip-file"}
 3. 本模板定义了两种形式的 `box` ，可参考 `tcolorbox` 宏包的手册进行修改，
 ```latex
 \usepackage{tcolorbox}
@@ -97,9 +99,9 @@ rulesepcolor=\color{gray!30!white}
   #1
 }
 ```
-![colorbox](/in-post/2023-04-10/readme2.jpg)
+![colorbox](/in-post/2023-04-10/readme2.jpg){: lqip="/in-post/2023-04-10/lqip-file"}
 4. TikZ 作为一个知名的绘图宏包（其文档说明高达1000多页，超乎常人想象），在此补充了一些 TikZ 实例
-![](/in-post/2023-04-10/readme3.JPG)
+![TikZ example](/in-post/2023-04-10/readme3.JPG){: lqip="/in-post/2023-04-10/lqip-file"}
 
 ## 声明
 * 本模板仅供学习交流所用，_非学院官方模板_。

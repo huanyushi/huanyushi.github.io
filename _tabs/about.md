@@ -26,7 +26,7 @@ Welcome to my Blog! It's generated from a static web page built using Jekyll on 
 
 🌐 **Online Presence:**
 
-* [Github](https://github.com/huanyushi)
+* [GitHub](https://github.com/huanyushi)
 * [Zhihu](https://www.zhihu.com/people/za-ran-zhu-fu-liu-xing) (A Chinese Q&A website)
 * [Stack Exchange](https://stackexchange.com/users/24950721/huanyu-shi)
 
@@ -39,7 +39,6 @@ Welcome to my Blog! It's generated from a static web page built using Jekyll on 
 
 ## 中文
 > 天地有正气，杂然赋流形。
-> 
 > --- 文天祥
 
 你好，我是 Huanyu Shi，一位物理学一年级博士牲。
@@ -58,7 +57,7 @@ Welcome to my Blog! It's generated from a static web page built using Jekyll on 
 
 🌐 **互联网影分身：**
 
-* [Github](https://github.com/huanyushi)
+* [GitHub](https://github.com/huanyushi)
 * [知乎](https://www.zhihu.com/people/za-ran-zhu-fu-liu-xing)
 * [Stack Exchange](https://stackexchange.com/users/24950721/huanyu-shi)
 

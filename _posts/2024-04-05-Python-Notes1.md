@@ -3,14 +3,16 @@ title:      "&sect;1 Python: Introduction and Study Resources"
 date:       2024-04-05
 categories: [Python]
 tag: [Python]
-image: /in-post/2024-04-05/python.jpg
+image: 
+    path: /in-post/2024-04-05/python.jpg
+    lqip: /in-post/2024-04-05/lqip-file
 ---
 ## Python 简介
 Python 是一种高级的解释型、动态类型和面向对象的计算机编程语言，Python 的设计哲学，强调代码的可读性和简洁的语法，尤其是使用空格缩进来划分代码块。相比于 C 语言或 Java，Python 让开发者能够用更少的代码表达想法。对于编程初学者来说，学习 Python 是十分推荐的。
 
 目前世界上有数百种编程语言，但实际真正流行的编程语言只有十几种。查看最近的 TIBOE 排行榜（反应不同编程语言的流行程度）可以发现 Python 在近几年使用量与日俱增，且目前位列第一。
 
-![TIBOE](/in-post/2024-04-05/TIBOE.PNG){: .shadow style="border-radius: 10px;"}
+![TIBOE](/in-post/2024-04-05/TIBOE.PNG){: .shadow lqip="/in-post/2024-04-05/TIBOE.PNG" style="border-radius: 10px;"}
 
 当然这也并不意味着其他编程语言一无是处，Python 毫无缺点。事实上，作为一门高级语言，它最大的缺点就是运行速度较慢。考虑到 Python 是一门解释型语言，在开发过程中它省去了编译的环节，没能将代码编译成底层的二进制代码，所以 Python 程序相比类似于 C 语言的完全编译的语言程序要慢很多。但实际上，Python 里一些程序是通过发送到其内部已经编译好的 C 语言代码处理的，在绝大部分领域运行的速度也足够快。且日常使用中，很少需要编写处理海量数据的大型代码，类似于 0.001s 和 1s 的编译时间差实际上基本没什么影响。
 
@@ -79,8 +81,8 @@ python application.py install
 ```
 最后启动 Jupyter notebook 便可以看到插件了。
 
-![extensions](/in-post/2024-04-05/extensions_light.PNG){: .light .rounded-10 .shadow }
-![extensions](/in-post/2024-04-05/extensions_dark.PNG){: .dark .rounded-10 .shadow }
+![extensions](/in-post/2024-04-05/extensions_light.PNG){: lqip="/in-post/2024-04-05/lqip-file" .light .rounded-10 .shadow }
+![extensions](/in-post/2024-04-05/extensions_dark.PNG){: lqip="/in-post/2024-04-05/lqip-file" .dark .rounded-10 .shadow }
 
 注意如果安装失败，需要卸载再重新安装，通过
 ```shell
@@ -108,11 +110,11 @@ pip install notebook==6.4.6
 ### 常用快捷键
 在 `.ipynb` 文件里按键 <key>H</key> 即可进入快捷键界面，如下图所示，
 
-![kuaijie1](/in-post/2024-04-05/kuaijie1_light.PNG){: .light}
-![kuaijie1](/in-post/2024-04-05/kuaijie1_dark.PNG){: .dark}
+![kuaijie1](/in-post/2024-04-05/kuaijie1_light.PNG){: lqip="/in-post/2024-04-05/lqip-file" .light}
+![kuaijie1](/in-post/2024-04-05/kuaijie1_dark.PNG){: lqip="/in-post/2024-04-05/lqip-file" .dark}
 
-![kuaijie2](/in-post/2024-04-05/kuaijie2_light.PNG){: .light}
-![kuaijie2](/in-post/2024-04-05/kuaijie2_dark.PNG){: .dark}
+![kuaijie2](/in-post/2024-04-05/kuaijie2_light.PNG){: lqip="/in-post/2024-04-05/lqip-file" .light}
+![kuaijie2](/in-post/2024-04-05/kuaijie2_dark.PNG){: lqip="/in-post/2024-04-05/lqip-file" .dark}
 
 ### 更换主题
 在终端中运行 `pip install --upgrade jupyterthemes` 即可，通过命令 `jt-l` 可以查看主题列表：
@@ -135,7 +137,7 @@ jt -t onedork -f bitstream -fs 11 -nfs 11 -tfs 12 -ofs 11 -lineh 200 -cellw 75% 
 
 我设置的 Jupyter 主题效果见下图。
 
-![jupyter-theme](/in-post/2024-04-05/jupyter_theme.PNG)
+![jupyter-theme](/in-post/2024-04-05/jupyter_theme.PNG){: lqip="/in-post/2024-04-05/lqip-file"}
 
 > 若产生**报错**：'jt' 不是内部或外部命令,也不是可运行的程序。
 >
@@ -163,8 +165,8 @@ jupyter nbconvert filename.ipynb --to html --HTMLExporter.theme=light
 ```
 也可以直接加入各种 emoji 表情包，如 😂😆📑🌐🔍🎓 ，具体效果如下图所示：
 
-![colorbox](/in-post/2024-04-05/colorbox_light.PNG){: .light  .shadow}
-![colorbox](/in-post/2024-04-05/colorbox_dark.PNG){: .dark  .shadow}
+![colorbox](/in-post/2024-04-05/colorbox_light.PNG){: lqip="/in-post/2024-04-05/lqip-file" .light  .shadow}
+![colorbox](/in-post/2024-04-05/colorbox_dark.PNG){: lqip="/in-post/2024-04-05/lqip-file" .dark  .shadow}
 
 将一切准备工作做好后，就可以安心写代码了。
 

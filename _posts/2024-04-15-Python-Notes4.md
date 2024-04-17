@@ -3,7 +3,9 @@ title:      "&sect;4 Python: Function"
 date:       2024-04-15
 categories: [Python]
 tag: [Python]
-image: /in-post/2024-04-05/python.jpg
+image:
+    path: /in-post/2024-04-05/python.jpg
+    lqip: /in-post/2024-04-05/lqip-file
 ---
 > <i class="fas fa-hand-point-down"></i> 在此下载本文对应的 Jupyter Notebook 和 PDF 文件 
 > - **[sec4_function.ipynb](/assets/python/sec4_function.ipynb)**
