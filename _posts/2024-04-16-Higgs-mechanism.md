@@ -4,14 +4,14 @@ date:       2024-04-16
 categories: [Quantum Field Theory]
 tag: [quantum field theory]
 image: 
-    path: /in-post/2024-04-16/Higgs.jpg
-    lqip: /in-post/2024-04-16/lqip-file
+    path: /assets/img/in-post/2024-04-16/Higgs.jpg
+    lqip: /assets/img/in-post/2024-04-16/lqip-file
     alt: Peter Higgs
 ---
 
 University of Edinburgh News, April 8th, local time: Peter Higgs, the British theoretical physicist and recipient of the 2013 Nobel Prize in Physics, passed away peacefully at his home due to illness at the age of 94.
 
-![Nobel Prize](/in-post/2024-04-16/Nobel prize.jpg){: lqip="/in-post/2024-04-16/lqip-file" width="600" .shadow}
+![Nobel Prize](/assets/img/in-post/2024-04-16/Nobel prize.jpg){: lqip="/assets/img/in-post/2024-04-16/lqip-file" width="600" .shadow}
 _2013 Nobel prize in physics_
 
 Higgs is most widely known for his contribution in 1964, proposing the Higgs mechanism, which predicted the existence of the Higgs boson and revealed the origin of mass for all fundamental particles, including the W boson.

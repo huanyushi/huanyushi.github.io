@@ -274,14 +274,6 @@ $$
 
 where the upper (lower) sign refers to bosons (fermions).
 
-The Hamiltonian operator can be rewritten in terms of these field operators as follows:
-
-$$
-\begin{equation}
-\hat{H} =\sum_{\alpha \beta} \int \dd[3]x \hat{\psi}_{\alpha}^{\dagger} (\vb{x}) \hat{T}(\vb{x}) \hat{\psi}_{\beta}(\vb{x}) + \frac{1}{2}\sum_{\alpha\alpha' \beta \beta'} \int\dd[3]x\int\dd[3]x' \hat{\psi}_{\alpha}^{\dagger}(\vb{x})\hat{\psi}^{\dagger}_{\alpha'}(\vb{x}') V_{\alpha\alpha',\beta\beta'}(\vb{x},\vb{x}') \hat{\psi}_{\beta}(\vb{x}')\hat{\psi}_{\beta'}(\vb{x}).
-\end{equation}
-$$
-
 In the next section, we will discuss the second quantization representation of some observables (one- and two- particle operators).
 
 ## Reference

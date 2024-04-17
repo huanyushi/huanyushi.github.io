@@ -5,8 +5,8 @@ categories: [Mathematics, Integration]
 tag: [integration]
 math: true
 image: 
-    path: /in-post/Contour/semicircle-1.png
-    lqip: /in-post/Contour/lqip-file
+    path: /assets/img/in-post/Contour/semicircle-1.png
+    lqip: /assets/img/in-post/Contour/lqip-file
 ---
 ## Question:
 Try to solve the following integral:
@@ -32,7 +32,7 @@ $$
 
 So we can define $f(z) = \dfrac{1}{\ln(1-iz)}\dfrac{1}{1+z^2}$ and use the following contour,
 
-![contour](/in-post/Contour/semicircle-1.png){: width="500"}
+![contour](/assets/img/in-post/Contour/semicircle-1.png){: width="500"}
 
 The branch point is $z=-i$, so $f(z)$ is single-valued and analytic in the upper half-plane. There is only one simple pole $z=i$ within the contour, and its corresponding residue is
 

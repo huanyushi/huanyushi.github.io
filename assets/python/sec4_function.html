@@ -7495,7 +7495,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="4.-%E5%87%BD%E6%95%B0">4. 函数<a class="anchor-link" href="#4.-%E5%87%BD%E6%95%B0">¶</a></h2><p>在之前，我们已经遇到了许多 Python 提供的内建函数，比如 <code>print()</code>, <code>input()</code>, <code>len()</code> 等。我们也可以编写自己的函数，实现自己想要的特定功能。“函数”就像一个程序内的小程序，利用好函数可以提高应用的模块性，和代码的重复利用率。</p>
+<h2 id="4.-%E5%87%BD%E6%95%B0">4. 函数<a class="anchor-link" href="#4.-%E5%87%BD%E6%95%B0">¶</a></h2><p>在之前，我们已经遇到了许多 Python 提供的内建函数，比如 <code>print()</code>, <code>input()</code>, <code>len()</code> 等。我们也可以编写自己的函数，实现自己想要的特定功能。函数就像一个程序内的小程序，利用好函数可以提高应用的模块性，和代码的重复利用率。</p>
 </div>
 </div>
 </div>
@@ -7526,7 +7526,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 一个简单的函数，用来打印 Hello world!</span>
@@ -7562,7 +7562,7 @@ Hello world again!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 给 hello 函数增加参数</span>
@@ -7595,7 +7595,7 @@ Hello Bob
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 比较两个数，并返回较大的数：</span>
@@ -7632,8 +7632,6 @@ Hello Bob
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>定义一个啥都不做的空函数，可以用 pass 语句。</p>
-<p>既然 pass 语句啥都不干，那它有什么用？实际上 pass 可以用来作为占位符。比如现在还没想好怎么写函数的代码，就可以先放一个 pass，让代码能跑起来。</p>
-<p>当然 pass 也可以用在其他语句里，比如 if 语句，for 循环等。</p>
 </div>
 </div>
 </div>
@@ -7642,7 +7640,7 @@ Hello Bob
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">nop</span><span class="p">():</span>
@@ -7659,7 +7657,19 @@ Hello Bob
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="4.2-%E5%8F%82%E6%95%B0">4.2 参数<a class="anchor-link" href="#4.2-%E5%8F%82%E6%95%B0">¶</a></h3><p>定义函数的时候，我们把参数的名字和位置确定下来，函数的接口定义就完成了。对于函数的调用者来说，只需要知道如何传递正确的参数，以及函数将返回什么样的值就够了，函数内部的复杂逻辑被封装起来，调用者无需了解。（实际上这也体现了调包的便捷性）</p>
+<p>既然 pass 语句啥都不干，那它有什么用？实际上 pass 可以用来作为占位符。比如现在还没想好怎么写函数的代码，就可以先放一个 pass，让代码能跑起来。</p>
+<p>当然 pass 也可以用在其他语句里，比如 if 语句，for 循环等。</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="4.2-%E5%8F%82%E6%95%B0">4.2 参数<a class="anchor-link" href="#4.2-%E5%8F%82%E6%95%B0">¶</a></h3><p>定义函数的时候，我们把参数的名字和位置确定下来，函数的接口定义就完成了。对于函数的调用者来说，只需要知道如何传递正确的参数，以及函数将返回什么样的值就够了，函数内部的复杂逻辑被封装起来，调用者无需了解内部代码是如何编写的。（实际上这也体现了调包的便捷性）</p>
 <p>Python 的函数定义非常简单，但灵活度却非常大。除了正常定义的必选参数外，还可以使用默认参数、可变参数和关键字参数，使得函数定义出来的接口，不但能处理复杂的参数，还可以简化调用者的代码。</p>
 <p>在 Python 中，调用函数时可以使用的正式参数类型有：</p>
 <ul>
@@ -7687,7 +7697,7 @@ Hello Bob
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">my_print</span><span class="p">(</span><span class="nb">str</span><span class="p">):</span>
@@ -7736,7 +7746,7 @@ Cell <span class="ansi-green-intense-fg ansi-bold">In[8], line 4</span>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">'Hello'</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s1">''</span><span class="p">)</span> <span class="c1"># 使用 end 参数，在打印结束后打印空字符串</span>
@@ -7775,7 +7785,7 @@ Cell <span class="ansi-green-intense-fg ansi-bold">In[8], line 4</span>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [15]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">'cats'</span><span class="p">,</span><span class="s1">'dogs'</span><span class="p">,</span><span class="s1">'mice'</span><span class="p">)</span>
@@ -7816,7 +7826,7 @@ cats,dogs,mice
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">info_print</span><span class="p">(</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span> <span class="p">):</span>
@@ -7866,7 +7876,7 @@ cats,dogs,mice
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [19]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">info_print</span><span class="p">(</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span> <span class="o">=</span> <span class="mi">30</span> <span class="p">):</span>
@@ -7917,7 +7927,7 @@ cats,dogs,mice
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [30]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 打印任何传入的参数</span>
@@ -7958,7 +7968,7 @@ cats,dogs,mice
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [53]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 计算多个数的求和</span>
@@ -8010,7 +8020,7 @@ cats,dogs,mice
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [31]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">info_print</span><span class="p">(</span> <span class="n">arg1</span><span class="p">,</span> <span class="o">**</span><span class="n">vardict</span> <span class="p">):</span>
@@ -8047,7 +8057,7 @@ cats,dogs,mice
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h4 id="4.2.5-%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92">4.2.5 参数传递<a class="anchor-link" href="#4.2.5-%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92">¶</a></h4><p>在 Python 中，类型属于对象，对象有不同类型的区分，但变量是没有类型的。比如 <code>[1,2,3]</code> 是 List 类型，<code>"ABC"</code> 是 String 类型，但对于一个变量来说是没有类型的，它仅仅是对一个对象的引用（就像 C 语言的指针一样）。</p>
-<p>在 Python 中，字符串 (strings)、元组 (tuples) 和数 (numbers) 都是不可更改的对象，而列表 (list) 和字典 (dictionary) 则是可以修改的对象。</p>
+<p>在 Python 中，字符串（string）、元组（tuple）和数（number）都是不可更改的对象，而列表（list）和字典（dictionary）则是可以修改的对象。</p>
 <p>Python 函数的参数传递分为可变和不可变两个类型：</p>
 <ul>
 <li><strong>不可变类型：</strong> 如 <code>function_name(a)</code>， 传递的只是 <code>a</code> 的值，没有影响 <code>a</code> 对象本身。如果在函数内部修改 <code>a</code> 的值，则是新生成一个 <code>a</code> 的对象；</li>
@@ -8062,7 +8072,7 @@ cats,dogs,mice
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [33]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 传递不可变对象的例子</span>
@@ -8114,7 +8124,7 @@ cats,dogs,mice
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [35]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 传递可变对象的例子</span>
@@ -8154,7 +8164,7 @@ cats,dogs,mice
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<div class="alert alert-block alert-danger"> <b>警告:</b> 设置参数时，一定要注意必需参数在前，默认参数在后，否则 Python 的解释器会报错。 </div>
+<div class="alert alert-block alert-danger"> <b>警告:</b> 函数的参数请尽量不要使用可变数据类型，否则可能会产生难以理解的 BUG。 </div>
 <p>具体请看以下的例子</p>
 </div>
 </div>
@@ -8164,7 +8174,7 @@ cats,dogs,mice
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [42]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">add_end</span><span class="p">(</span><span class="n">L</span><span class="o">=</span><span class="p">[]):</span>
@@ -8181,7 +8191,7 @@ cats,dogs,mice
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [41]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">add_end</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span> <span class="c1"># 正常调用</span>
@@ -8195,7 +8205,7 @@ cats,dogs,mice
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[41]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>[1, 2, 3, 'END']</pre>
 </div>
@@ -8207,7 +8217,7 @@ cats,dogs,mice
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [51]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">add_end</span><span class="p">()</span> <span class="c1"># 反复调用，会一直在空列表后添加 `END`</span>
@@ -8221,7 +8231,7 @@ cats,dogs,mice
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[51]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>['END', 'END', 'END', 'END', 'END', 'END']</pre>
 </div>
@@ -8237,7 +8247,7 @@ cats,dogs,mice
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>为什么会出现这种情况？</p>
 <p>原因是 Python 函数在定义的时候，默认参数 <code>L</code> 的值就被计算出来了，是 <code>[]</code> ，即默认参数 <code>L</code> 指向对象 <code>[]</code>。每次调用该函数，如果改变了 <code>L</code> 的内容，则下次调用时，默认参数的内容就变了，不再是定义函数时使用的 <code>[]</code>。</p>
-<p>即第一次运行 <code>add_end()</code>，<code>L = ['END']</code> 这就改变了 <code>L</code> 的内容，第二次运行的结果就会变成 <code>L = ['END','END']</code>.</p>
+<p>即第一次运行 <code>add_end()</code> 后，<code>L = ['END']</code> 就改变了原先 <code>L=[]</code> 的内容，第二次运行的结果就会变成 <code>L = ['END','END']</code>。</p>
 <p>为什么要设计字符串、数字、<code>None</code> 这样的不变对象呢？因为不变对象一旦创建，对象内部的数据就不能修改，这样就减少了由于修改数据导致的错误。此外，由于对象不变，在多任务环境下同时读取对象就不会出现奇怪的 BUG.</p>
 <p>要修改上面的例子，我们可以使用 <code>None</code> 这个不变对象来实现，如下</p>
 </div>
@@ -8248,7 +8258,7 @@ cats,dogs,mice
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [54]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">add_end</span><span class="p">(</span><span class="n">L</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -8266,7 +8276,7 @@ cats,dogs,mice
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [58]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">add_end</span><span class="p">()</span> <span class="c1"># 不管运行多少次，结果都不变。</span>
@@ -8280,7 +8290,7 @@ cats,dogs,mice
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[58]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>['END']</pre>
 </div>
@@ -8295,10 +8305,10 @@ cats,dogs,mice
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="4.3-%E5%B1%80%E9%83%A8%E5%92%8C%E5%85%A8%E5%B1%80%E4%BD%9C%E7%94%A8%E5%9F%9F">4.3 局部和全局作用域<a class="anchor-link" href="#4.3-%E5%B1%80%E9%83%A8%E5%92%8C%E5%85%A8%E5%B1%80%E4%BD%9C%E7%94%A8%E5%9F%9F">¶</a></h3><ul>
-<li>在被调用函数内赋值的变元和变量，处于该函数的“局部作用域”。处于局部作用域的变量，成为“局部变量”。</li>
-<li>在所有函数之外的变量，属于“全局作用域”。处于全局作用域的变量，称为“全局变量”。</li>
+<li>在被调用函数内赋值的变元和变量，处于该函数的局部作用域。处于局部作用域的变量，称为局部变量。</li>
+<li>在所有函数之外的变量，属于全局作用域。处于全局作用域的变量，称为全局变量。</li>
 </ul>
-<p>变量只可能是局部或者全局二者之一。可以将“作用域”看成是变量的容器，当作用域被销毁时，所有保存在该作用域内的变量的值就被丢弃了。作用域很重要，理由如下：</p>
+<p>变量只可能是局部或者全局二者之一。可以将作用域看成是变量的容器，当作用域被销毁时，所有保存在该作用域内的变量的值就被丢弃了。作用域很重要，理由如下：</p>
 <ul>
 <li>全局作用域中的代码不能使用任何局部变量；</li>
 <li>但是，局部作用域可以访问全局变量；</li>
@@ -8326,7 +8336,7 @@ cats,dogs,mice
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [76]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">spam</span><span class="p">():</span>
@@ -8377,7 +8387,7 @@ Cell <span class="ansi-green-intense-fg ansi-bold">In[76], line 5</span>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [82]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">spam</span><span class="p">():</span>
@@ -8427,7 +8437,7 @@ Cell <span class="ansi-green-intense-fg ansi-bold">In[76], line 5</span>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [81]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">spam</span><span class="p">():</span>
@@ -8464,7 +8474,7 @@ Cell <span class="ansi-green-intense-fg ansi-bold">In[76], line 5</span>
 <div class="alert alert-block alert-success">
 局部变量和全局变量名称可以相同
 </div>
-<p>要想生活简单，就要避免局部变量和全局变量或者其他局部变量同名。但在技术上，在 Python 中让局部变量和全局变量同名是完全合法的。请见以下实例：</p>
+<p>要想生活简单，就要避免局部变量和全局变量或者其他局部变量同名。但在技术上，在 Python 中让局部变量和全局变量同名是完全合法的，但这只会徒增烦恼。请见以下实例：</p>
 </div>
 </div>
 </div>
@@ -8473,7 +8483,7 @@ Cell <span class="ansi-green-intense-fg ansi-bold">In[76], line 5</span>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">spam</span><span class="p">():</span>
@@ -8545,7 +8555,7 @@ global
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">spam</span><span class="p">():</span>
@@ -8594,7 +8604,7 @@ global
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">spam</span><span class="p">():</span>
@@ -8675,7 +8685,7 @@ Cell <span class="ansi-green-intense-fg ansi-bold">In[7], line 2</span>, in <spa
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [68]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">#  没有参数</span>
@@ -8704,7 +8714,7 @@ Cell <span class="ansi-green-intense-fg ansi-bold">In[7], line 2</span>, in <spa
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [67]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 将参数 + 10</span>
@@ -8734,7 +8744,7 @@ Cell <span class="ansi-green-intense-fg ansi-bold">In[7], line 2</span>, in <spa
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [63]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 将两个参数相加</span>
@@ -8777,7 +8787,7 @@ Cell <span class="ansi-green-intense-fg ansi-bold">In[7], line 2</span>, in <spa
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [70]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">myfunc</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
@@ -8824,7 +8834,7 @@ Cell <span class="ansi-green-intense-fg ansi-bold">In[7], line 2</span>, in <spa
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [71]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 阶乘，n! = n * (n-1) * ... *1</span>
@@ -8842,7 +8852,7 @@ Cell <span class="ansi-green-intense-fg ansi-bold">In[7], line 2</span>, in <spa
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [74]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">fact</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span> <span class="c1"># 1! = 1</span>
@@ -8883,7 +8893,7 @@ Cell <span class="ansi-green-intense-fg ansi-bold">In[7], line 2</span>, in <spa
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">spam</span><span class="p">(</span><span class="n">divideBy</span><span class="p">):</span>
@@ -8947,7 +8957,7 @@ Cell <span class="ansi-green-intense-fg ansi-bold">In[8], line 2</span>, in <spa
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">spam</span><span class="p">(</span><span class="n">divideBy</span><span class="p">):</span>

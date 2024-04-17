@@ -5,8 +5,8 @@ categories: [LaTeX]
 tag: [integration, LaTeX]
 toc: false
 image: 
-    path: /in-post/2023-03-23/preface.PNG
-    lqip: /in-post/2023-03-23/lqip-file
+    path: /assets/img/in-post/2023-03-23/preface.PNG
+    lqip: /assets/img/in-post/2024-03-23/lqip-file
 ---
 TikZ作为LaTeX著名的绘图宏包，拥有十分强大的功能，基本上你能想到可以精确描述的矢量图，它都能帮你画出来，关于它的学习指导在网络上有很多资源，在此就不一一列举。
 

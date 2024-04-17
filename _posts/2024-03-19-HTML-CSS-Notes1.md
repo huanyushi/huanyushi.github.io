@@ -4,8 +4,8 @@ date:       2024-03-19
 categories: [HTML and CSS]
 tag: [HTML]
 image: 
-    path: /in-post/2024-03-21/html.jpg
-    lqip: /in-post/2024-03-21/lqip-file
+    path: /assets/img/in-post/2024-03-21/html.jpg
+    lqip: /assets/img/in-post/2024-03-21/lqip-file
 ---
 ## 认识 HTML
 **超文本标记语言**（HyperText Markup Language，简称：**HTML**）是一种用于创建网页的标准标记语言。利用其编写的文件放在 Web 服务器上，任何浏览器就能通过互联网得到相应的 Web 页面。

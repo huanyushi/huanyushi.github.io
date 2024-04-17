@@ -4,27 +4,27 @@ date:       2024-04-13
 categories: [Python]
 tag: [Python]
 image: 
-    path: /in-post/2024-04-05/python.jpg
-    lqip: /in-post/2024-04-05/lqip-file
+    path: /assets/img/in-post/2024-04-05/python.jpg
+    lqip: /assets/img/in-post/2024-04-05/lqip-file
 math: true
 ---
-> <i class="fas fa-hand-point-down"></i> 在此下载本文对应的 Jupyter Notebook 和 PDF 文件 
+> <i class="fas fa-hand-point-down"></i> 在此下载本文对应的 Jupyter Notebook 和 html 文件 
 > - **[sec3_control_flow_statement.ipynb](/assets/python/sec3_control_flow_statement.ipynb)**
 > - **[sec3_control_flow_statement.html](/assets/python/sec3_control_flow_statement.html)**
 {: .prompt-info}
 
-编程真正的力量不仅在于运行（或“执行”）一条接一条的指令，它还可以决定跳过指令，重复指令，或从几条指令中选择一条运行。“控制流”语句可以决定在什么条件下执行哪些 Python 语句。
+编程真正的力量不仅在于运行（或执行）一条接一条的指令，它还可以决定跳过指令，重复指令，或从几条指令中选择一条运行。控制流语句可以决定在什么条件下执行哪些 Python 语句。
 
-控制流语句的开始部分通常是“条件”，接下来是一个代码块，称为“子句”。
-- “条件”总是求值为一个布尔值，`True` 或 `False`。控制流语句根据条件是 True 还是 False，来决定做什么。
+控制流语句的开始部分通常是条件，接下来是一个代码块，称为子句。
+- 条件总是求值为一个布尔值，`True` 或 `False`。控制流语句根据条件是 True 还是 False，来决定做什么。
 - 代码块给出具体要执行的 Python 语句（注意代码块要缩进）。
 
 ### if 语句
 最常见的控制流语句是 if 语句。 if 语句的子句将在语句的条件为 True 时执行，如果条件为 False，子句将跳过。
 
-if 子句后面有时候也可以跟着 else 语句。只有 if 语句的条件为 False 时，else 子句才会被执行。
+if 子句后面有时候也跟着 else 语句。只有当 if 语句的条件为 False 时，else 子句才会被执行。
 
-但有时候我们会希望将情况分为更多种可能，而不是简单的“非黑即白”，这时候我们可以使用 elif 语句，也就是“否则如果”。elif 总是跟在 if 或另一条 elif 语句后面，它提供了另一个条件，仅在前面的条件为 False 时才检查该条件。
+但有时候我们会希望将情况分为更多种可能，而不是简单的“非黑即白”，这时候我们可以使用 elif 语句，也就是“否则如果”。elif 总是跟在 if 或另一条 elif 语句后面，它提供了另一个条件，仅在前面的条件均为 False 时才检查该条件。
 
 总的来说，if 语句的一般形式如下（请别忘了后面的冒号 `:`）：
 ```python
@@ -261,7 +261,7 @@ while True:
 print('Access granted.')
 ```
 ### for 循环语句
-当条件为 True 时，while 循环会继续循环直到条件为 False。但如果我们想让一个代码块执行固定次数，我们可以通过 for 循环语句和 `range()` 函数来实现。
+当条件为 True 时，while 循环会继续循环直到条件为 False，这并不方便直接控制循环次数。但如果我们想让一个代码块执行固定次数，我们可以通过 for 循环语句和 `range()` 函数来实现。
 
 for 循环可以遍历任何可迭代对象，如一个列表或者一个字符串。它的一般格式如下（else 可以不加）：
 ```python
@@ -283,6 +283,7 @@ for i in range(3,11,2):
 ```
 
 ```python
+# 对列表循环
 names = ['Michael', 'Bob', 'Tracy']
 for name in names:
     print("Hello, %s"% name)
@@ -291,6 +292,7 @@ for name in names:
 # Hello, Tracy
 ```
 ```python
+# 对字符串循环
 string = 'ABCDEFGHIJKLMNOPQRSTUVWXXYZ'
 for letter in string:
     print(letter)

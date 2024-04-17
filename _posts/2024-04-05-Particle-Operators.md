@@ -33,60 +33,60 @@ $$
 \end{equation}
 $$
 
-This can be proven using the method we discussed earlier. Let us choose $\qty{\ket{\tilde{\alpha}}}$ to be the single-particle basis of eigenstates of $\hat{f}$, i.e. $\hat{f}\ket{\tilde{\alpha}} = f_{\tilde{\alpha}} \ket{\tilde{\alpha}}$, where $f_{\tilde{\alpha}}$ is the eigenvalue of $\hat{f}$ associated with the eigenstate $\ket{\tilde{\alpha}}$. Then we claim that the second-quantized representation of $\hat{F}^{(1)}$ can be written as 
-
-$$
-\hat{F}^{(1)} = \sum_{\tilde{\alpha}}f_{\tilde{\alpha}} \hat{n}_{\tilde{\alpha}} = \sum_{\tilde{\alpha}} f_{\tilde{\alpha}} \hat{a}_{\tilde{\alpha}}^{\dagger} \hat{a}_{\tilde{\alpha}}.
-$$
-
-We can calculate the matrix elements of $\hat{F}^{(1)}$ in both first and second quantization to prove this. Consider $\mel{\Phi'}{\hat{F}^{(1)}}{\Phi}$ where $\ket{\Phi}$ and $\ket{\Phi'}$ are two arbitrary basis states. In second quantization, this is
-
-$$
-\begin{align*}
-\mel{\Phi'}{\hat{F}^{(1)}}{\Phi} &= \mel{n_1'n_2'\cdots n_\infty'}{\sum_{\tilde{\alpha}}f_{\tilde{\alpha}}\hat{n}_{\tilde{\alpha}}}{n_1n_2\cdots n_{\infty}}\\[.2cm]
-&=\sum_{\tilde{\alpha}}f_{\tilde{\alpha}}\braket{n_{1}'n_2'\cdots n_{\infty}'}{n_1n_2\cdots n_{\infty}}=\delta_{\Phi \Phi'} \sum_{\tilde{\alpha}}f_{\tilde{\alpha}}n_{\tilde{\alpha}}.
-\end{align*}
-$$
-
-In first quantization, this is
-
-$$
-\begin{align*}
-    \mel{\Phi'}{\hat{F}^{(1)}}{\Phi} &= \int \dd[3]{x_1}\cdots \dd[3]{x_N} \Phi'^{*}(\vb{x}_1\cdots\vb{x}_N)\qty(\sum_{i=1}^{N} \hat{f}) \Phi(\vb{x}_1\cdots \vb{x}_N)\\[.2cm]
-    &=\sum_{\tilde{\alpha}}f_{\tilde{\alpha}} n_{\tilde{\alpha}}\int \int \dd[3]{x_1}\cdots \dd[3]{x_N} \Phi'^{*}(\vb{x}_1\cdots\vb{x}_N)\Phi(\vb{x}_1\cdots \vb{x}_N)=\delta_{\Phi\Phi'}\sum_{\tilde{\alpha}} f_{\tilde{\alpha}}n_{\tilde{\alpha}},
-\end{align*}
-$$
-
-which is consistent with the result in second quantization. For other basis $\qty{\ket{\alpha}}$, we can find that
-
-$$
-\hat{a}_{\alpha}^{\dagger}\ket{0} = \ket{\alpha} = \sum_{\tilde{\alpha}}\ket{\tilde{\alpha}}\braket{\tilde{\alpha}}{\alpha} = \sum_{\tilde{\alpha}}\braket{\tilde{\alpha}}{\alpha}\hat{a}_{\tilde{\alpha}}^\dagger\ket{0}.
-$$
-
-So
-
-$$
-\begin{align*}
-    \hat{a}_{\alpha}^{\dagger} = \sum_{\tilde{\alpha}} \braket{\tilde{\alpha}}{\alpha} a_{\tilde{\alpha}}^{\dagger},\quad \hat{a}_{\alpha} = \sum_{\tilde{\alpha}}\braket{\alpha}{\tilde{\alpha}}a_{\tilde{\alpha}}.
-\end{align*}
-$$
-
-Then the single-particle operator $\hat{F}^{(1)}$ in other basis $\qty{\ket{\alpha}}$ can be written as
-
-$$
-\begin{align*}
-    \hat{F}^{(1)} &= \sum_{\tilde{\alpha}} f_{\tilde{\alpha}}\hat{a}_{\tilde{\alpha}}^{\dagger}\hat{a}_{\tilde{\alpha}} = \sum_{\tilde{\alpha}} \qty(\sum_{\alpha}\braket{\alpha}{\tilde{\alpha}} \hat{a}_{\alpha})\qty(\sum_{\beta}\braket{\tilde{\alpha}}{\beta}\hat{a}_{\beta})\\[.2cm]
-    &=\sum_{\alpha,\beta} \bra{\alpha} \qty(\sum_{\tilde{\alpha}}\ket{\tilde{\alpha}}f_{\alpha}\bra{\tilde{\alpha}}) \ket{\beta} \hat{a}_{\alpha}^\dagger\hat{a}_{\beta} = \sum_{\alpha,\beta}\mel{\alpha}{\hat{f}}{\beta} \hat{a}_{\alpha}^\dagger\hat{a}_{\beta}.
-\end{align*}
-$$
-
-So, in other bases, it can also be written in a diagonal form. The matrix element $\mel{\alpha}{\hat{f}}{\beta}$ can be written as
-
-$$
-\mel{\alpha}{\hat{f}}{\beta} = \int\dd[3]{x}\dd[3]{x'} \braket{\alpha}{\vb{x}} \mel{\vb{x}}{\hat{f}}{\vb{x}'}\braket{\vb{x}'}{\beta} = \int\dd[3]{x} \braket{\alpha}{\vb{x}}\hat{f} \braket{\vb{x}}{\beta} = \int \dd[3]{x} \psi_{\alpha}^*(\vb{x})\hat{f} \psi_{\beta}(\vb{x}).
-$$
-
-By substituting the expression for the field operators, we can finally prove $\eqref{equ:single-particle operator}$. 
+> This can be proven using the method we discussed earlier. Let us choose $\qty{\ket{\tilde{\alpha}}}$ to be the single-particle basis of eigenstates of $\hat{f}$, i.e. $\hat{f}\ket{\tilde{\alpha}} = f_{\tilde{\alpha}} \ket{\tilde{\alpha}}$, where $f_{\tilde{\alpha}}$ is the eigenvalue of $\hat{f}$ associated with the eigenstate $\ket{\tilde{\alpha}}$. Then we claim that the second-quantized representation of $\hat{F}^{(1)}$ can be written as 
+>
+> $$
+> \hat{F}^{(1)} = \sum_{\tilde{\alpha}}f_{\tilde{\alpha}} \hat{n}_{\tilde{\alpha}} = \sum_{\tilde{\alpha}} f_{\tilde{\alpha}} \hat{a}_{\tilde{\alpha}}^{\dagger} \hat{a}_{\tilde{\alpha}}.
+> $$
+>
+> We can calculate the matrix elements of $\hat{F}^{(1)}$ in both first and second quantization to prove this. Consider $\mel{\Phi'}{\hat{F}^{(1)}}{\Phi}$ where $\ket{\Phi}$ and $\ket{\Phi'}$ are two arbitrary basis states. In second quantization, this is
+>
+> $$
+> \begin{align*}
+> \mel{\Phi'}{\hat{F}^{(1)}}{\Phi} &= \mel{n_1'n_2'\cdots n_\infty'}{\sum_{\tilde{\alpha}}f_{\tilde{\alpha}}\hat{n}_{\tilde{\alpha}}}{n_1n_2\cdots n_{\infty}}\\[.2cm]
+> &=\sum_{\tilde{\alpha}}f_{\tilde{\alpha}}\braket{n_{1}'n_2'\cdots n_{\infty}'}{n_1n_2\cdots n_{\infty}}=\delta_{\Phi \Phi'} \sum_{\tilde{\alpha}}f_{\tilde{\alpha}}n_{\tilde{\alpha}}.
+> \end{align*}
+> $$
+>
+> In first quantization, this is
+> 
+> $$
+> \begin{align*}
+>   \mel{\Phi'}{\hat{F}^{(1)}}{\Phi} &= \int \dd[3]{x_1}\cdots \dd[3]{x_N} \Phi'^{*}(\vb{x}_1\cdots\vb{x}_N)\qty(\sum_{i=1}^{N} \hat{f}) \Phi(\vb{x}_1\cdots \vb{x}_N)\\[.2cm]
+>    &=\sum_{\tilde{\alpha}}f_{\tilde{\alpha}} n_{\tilde{\alpha}}\int \int \dd[3]{x_1}\cdots \dd[3]{x_N} \Phi'^{*}(\vb{x}_1\cdots\vb{x}_N)\Phi(\vb{x}_1\cdots \vb{x}_N)=\delta_{\Phi\Phi'}\sum_{\tilde{\alpha}} f_{\tilde{\alpha}}n_{\tilde{\alpha}},
+>\end{align*}
+>$$
+>
+> which is consistent with the result in second quantization. For other basis $\qty{\ket{\alpha}}$, we can find that
+>
+> $$
+> \hat{a}_{\alpha}^{\dagger}\ket{0} = \ket{\alpha} = \sum_{\tilde{\alpha}}\ket{\tilde{\alpha}}\braket{\tilde{\alpha}}{\alpha} = \sum_{\tilde{\alpha}}\braket{\tilde{\alpha}}{\alpha}\hat{a}_{\tilde{\alpha}}^\dagger\ket{0}.
+> $$
+> 
+> So
+> 
+> $$
+> \begin{align*}
+>     \hat{a}_{\alpha}^{\dagger} = \sum_{\tilde{\alpha}} \braket{\tilde{\alpha}}{\alpha} a_{\tilde{\alpha}}^{\dagger},\quad \hat{a}_{\alpha} = \sum_{\tilde{\alpha}}\braket{\alpha}{\tilde{\alpha}}a_{\tilde{\alpha}}.
+> \end{align*}
+> $$
+>
+> Then the single-particle operator $\hat{F}^{(1)}$ in other basis $\qty{\ket{\alpha}}$ can be written as
+>
+> $$
+> \begin{align*}
+>    \hat{F}^{(1)} &= \sum_{\tilde{\alpha}} f_{\tilde{\alpha}}\hat{a}_{\tilde{\alpha}}^{\dagger}\hat{a}_{\tilde{\alpha}} = \sum_{\tilde{\alpha}} \qty(\sum_{\alpha}\braket{\alpha}{\tilde{\alpha}} \hat{a}_{\alpha})\qty(\sum_{\beta}\braket{\tilde{\alpha}}{\beta}\hat{a}_{\beta})\\[.2cm]
+>    &=\sum_{\alpha,\beta} \bra{\alpha} \qty(\sum_{\tilde{\alpha}}\ket{\tilde{\alpha}}f_{\alpha}\bra{\tilde{\alpha}}) \ket{\beta} \hat{a}_{\alpha}^\dagger\hat{a}_{\beta} = \sum_{\alpha,\beta}\mel{\alpha}{\hat{f}}{\beta} \hat{a}_{\alpha}^\dagger\hat{a}_{\beta}.
+> \end{align*}
+> $$
+>
+> So, in other bases, it can also be written in a diagonal form. The matrix element $\mel{\alpha}{\hat{f}}{\beta}$ can be written as
+>
+> $$
+> \mel{\alpha}{\hat{f}}{\beta} = \int\dd[3]{x}\dd[3]{x'} \braket{\alpha}{\vb{x}} \mel{\vb{x}}{\hat{f}}{\vb{x}'}\braket{\vb{x}'}{\beta} = \int\dd[3]{x} \braket{\alpha}{\vb{x}}\hat{f} \braket{\vb{x}}{\beta} = \int \dd[3]{x} \psi_{\alpha}^*(\vb{x})\hat{f} \psi_{\beta}(\vb{x}).
+> $$
+>
+> By substituting the expression for the field operators, we can finally prove $\eqref{equ:single-particle operator}$. 
 
 Next, we will discuss the second quantization form of some single-particle operators.
 
@@ -452,3 +452,9 @@ $$
 [\hat{\psi}_{I\alpha}(\vb{x},t),\hat{\psi}_{I\beta}(\vb{x}',t)]_{\mp} = [\hat{\psi}_{I\alpha}^\dagger(\vb{x},t),\hat{\psi}_{I\beta}^{\dagger}(\vb{x}',t)]_{\mp}=0.
 \end{gather}
 $$
+
+## Reference
+- [1] Fetter, A. L., Walecka, J. D., *Quantum Theory of Many-Particle Systems*. Courier Corporation. (2002)
+- [2] Mahan, G. D., *Many-Particle Physics*. Springer Science+Business Media, LLC. (2000).
+- [3] Altland, A., Simons, B. D., *Condensed Matter Field Theory*. Cambridge University Press. (2010)
+- [4] 金彪. 量子多体理论. 2024年春

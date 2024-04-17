@@ -12,7 +12,7 @@ math: true
 
 有两种方法可供选择。第一种就是直接访问 Chirpy 的 github 项目页面，从它的源码里扒出来样式文件及代码。第二种则利用 git，通过命令 `bundle info --path jekyll-theme-chirpy` 获取封装的样式文件地址，如下图所示
 
-![theme file](/in-post/2024-03-30/theme-file.PNG){: .shadow width="700" lqip="/in-post/2024-03-30/lqip-file"}
+![theme file](/assets/img/in-post/2024-03-30/theme-file.PNG){: .shadow width="700" lqip="/assets/img/in-post/2024-03-30/lqip-file"}
 
 在里面找到相应的样式文件后，把它放入自己 blog 对应的文件里，就可以进行个性化定制了。
 
@@ -57,7 +57,7 @@ MathJax = {
 在 `assets/css/jekyll-theme-chirpy.scss` 文件中，增加对侧边栏样式设置的 CSS 代码，其中 `background-image` 便是用来添加背景图片的基本命令，只需后面添加图片的 url 即可，如下：
 ```css
 #sidebar {
-    background-image: url(https://cdn.jsdelivr.net/gh/huanyushi/Blog-Image-Bed@main/img/background.jpg); /* <- change background image */
+    background-image: url(https://cdn.jsdelivr.net/gh/huanyushi/Blog-Image-Bed@main/assets/img/background.jpg); /* <- change background image */
     background-size: cover; /* <- customize the image size */
     background-repeat: no-repeat; /* <- no-repeat */
     background-position: top; /* <- image position */
@@ -82,23 +82,34 @@ MathJax = {
 ```
 
 ### 侧边栏增加友链
-在隐藏的 gem 包里找到 `_includes/side.html` 文件，在其中添加以下几行代码即可：
+在隐藏的 gem 包里找到 `_includes/side.html` 文件，在其中添加以下代码（当有友链时，则插入 `friends.html` 文件）：
+
 <!-- {% raw %} -->
 ```html
-<!-- Friends link -->
+  <!-- Friends link -->
+  {% if site.data.friends %}
+      {% include friends.html %}
+  {% endif %}
+```
+<!-- {% endraw %}) -->
+
+新建一个 `_includes/friends.html` 文件，将友链设置放入其中（这样模板更新时可以尽可能减少对模板代码的修改）：
+
+<!-- {% raw %} -->
+```html
+<!-- 友链设置，在 sidebar.html 中插入 -->
 <div class="friends">
-{% if site.friends %}
     <hr style="color:white;border: 1px solid ">
     <p><i class="fas fa-user-friends"></i><span>FRIENDS</span></p>
     <ul>
-    {% for friend in site.friends %}
-    <li><a href="{{friend.href}}">{{friend.title}}</a></li>
-    {% endfor %}
+      {% for friend in site.data.friends %}
+      <li><a href="{{friend.href}}">{{friend.title}}</a></li>
+      {% endfor %}
     </ul>
-{% endif %}
 </div>
 ```
 <!-- {% endraw %}) -->
+
 而相关的样式设置添加到了 `assets/css/jekyll-theme-chirpy.scss` 中，如下：
 ```css
 /* 侧边栏友链样式设置 */
@@ -134,14 +145,15 @@ MathJax = {
 }
 
 ```
-已成功封装，只需要在 `_config.yml` 里添加以下设置即可（可以一直往后叠加）：
+
+已成功封装，只需要在 `_data/friends.yml` 里添加以下设置即可（可以一直往后叠加）：
 ```yml
-friends:
-  [
-    { title: "title1", href: "link1" },
-    { title: "title2", href: "link2" },
-    { title: "title3", href: "link3"},
-  ]
+- title: "Title1"
+  href: "https://example.com"
+- title: "Title2"
+  href: "https://example.com"
+- title: "Title3"
+  href: "https://example.com"
 ```
 
 > **注意**

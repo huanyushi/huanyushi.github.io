@@ -5,8 +5,8 @@ categories: [Mathematics, Integration]
 tag: [special function, integration]
 toc: false
 image: 
-    path: /in-post/2022-04-19/preface.PNG
-    lqip: /in-post/2022-04-19/lqip-file
+    path: /assets/img/in-post/2022-04-19/preface.PNG
+    lqip: /assets/img/in-post/2022-04-19/lqip-file
 ---
 >To each individual the world will take on a different connotation of meaning-the important lies in the desire to search for an answer.
 >
