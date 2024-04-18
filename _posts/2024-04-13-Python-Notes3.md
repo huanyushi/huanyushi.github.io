@@ -5,7 +5,7 @@ categories: [Python]
 tag: [Python]
 image: 
     path: /assets/img/in-post/2024-04-05/python.jpg
-    lqip: /assets/img/in-post/2024-04-05/lqip-file
+    lqip: data:image/jpg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQgJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAAIABADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDQsPDL3GCRXSWfhWKIAsKKK+fxmZ4jmcb6GtDC0rXsf//Z
 math: true
 ---
 > <i class="fas fa-hand-point-down"></i> 在此下载本文对应的 Jupyter Notebook 和 html 文件 
@@ -409,3 +409,12 @@ mycompany
 有些大佬已经把自己的代码打包好了，我们可以安装他们写好的代码拿来自己用。那么如何安装第三方模块呢？这需要我们通过包管理工具 pip 完成，具体使用教程可以去网络上查询。
 
 这里要提一点，我们经常需要用到很多第三方库，比如科学计算和绘图必备的 `numpy`, `matplotlib`, `scipy`，用 pip 一个个安装比较麻烦。对于小白来说，直接下载 [Anaconda](https://anaconda.org/) 是非常推荐的，它已经内置了许多非常有用的第三方库。通过设置环境变量，可以将环境变量的内容自动添加到模块搜索路径中。
+
+## References
+- [1] [Python 官方手册（中文）](https://docs.python.org/zh-cn/3/)
+- [2] [Python 官方手册（英文）](https://docs.python.org/3/)
+- [3] [Python 3 教程 - 菜鸟教程](https://www.runoob.com/python3/python3-tutorial.html)
+- [4] [廖雪峰的 Python 教程](https://www.liaoxuefeng.com/wiki/1016959663602400)
+- [5] [Python - 100天从新手到大师](https://github.com/jackfrued/Python-100-Days/tree/master)
+- [6] Eric Matthes.《Python编程 - 从入门到实践（第二版）》（袁国忠译）. 人民邮电出版社
+- [7] Al Sweigart.《Python编程 - 快速上手 -- 让繁琐工作自动化》（王海鹏译）. 人民邮电出版社

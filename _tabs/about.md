@@ -21,7 +21,7 @@ Welcome to my Blog! It's generated from a static web page built using Jekyll on 
 
 * Physics Doctoral Student / Mathematics Enthusiasts / Integration lover 
 * Painting / Stiff Pen Calligraphy
-* C / Fortran / Python / Matlab / Mathematica
+* C / Fortran / Python / MATLAB / Mathematica
 * 2019-2020 / 2020-2021 / National scholarship
 
 🌐 **Online Presence:**
@@ -52,7 +52,7 @@ Welcome to my Blog! It's generated from a static web page built using Jekyll on 
 🔍 **关键词：**
 * 物理学博士牲 / 数学爱好者 / 积佬
 * 绘画 / 硬笔书法
-* C / Fortran / Python / Matlab / Mathematica
+* C / Fortran / Python / MATLAB / Mathematica
 * 2019-2020 / 2020-2021 / 国家奖学金
 
 🌐 **互联网影分身：**

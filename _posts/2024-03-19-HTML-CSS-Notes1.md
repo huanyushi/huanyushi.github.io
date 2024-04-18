@@ -5,7 +5,7 @@ categories: [HTML and CSS]
 tag: [HTML]
 image: 
     path: /assets/img/in-post/2024-03-21/html.jpg
-    lqip: /assets/img/in-post/2024-03-21/lqip-file
+    lqip: data:image/jpg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQgJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAAIABADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDbhk2NyaWaTe3Boor4u/7s+95VzXP/2Q==
 ---
 ## 认识 HTML
 **超文本标记语言**（HyperText Markup Language，简称：**HTML**）是一种用于创建网页的标准标记语言。利用其编写的文件放在 Web 服务器上，任何浏览器就能通过互联网得到相应的 Web 页面。
@@ -286,7 +286,7 @@ We hope they succeed.</p>
 2. [Unicode 15.1 Character Code Charts](https://www.unicode.org/charts/)
 
 
-## Reference
+## References
 
 - [1] Elisabeth Robson, Eric Freeman. Head First HTML 与 CSS (第二版). 徐阳, 丁晓峰等译. 2013
 - [2] [HTML Tutorial, W3Schools](https://www.w3schools.com/html/default.asp)

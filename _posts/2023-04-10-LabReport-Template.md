@@ -5,7 +5,7 @@ categories: [LaTeX]
 tag: [LaTeX]
 image: 
   path: /assets/img/in-post/2023-04-10/preface.PNG
-  lqip: /assets/img/in-post/2023-04-10/lqip-file
+  lqip: data:image/jpg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQgJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAAIABADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD3RJmaTHarQbNFFNiR/9k=
 ---
 > "The laws of physics is the canvas God laid down on which to paint his masterpiece"
 > --- Dan Brown.
@@ -69,8 +69,8 @@ stepnumber=1,
 rulesepcolor=\color{gray!30!white}
 }
 ```
-![code](/assets/img/in-post/2023-04-10/readme1.jpg){: lqip="/assets/img/in-post/2023-04-10/lqip-file"}
-3. 本模板定义了两种形式的 `box` ，可参考 `tcolorbox` 宏包的手册进行修改，
+![code](/assets/img/in-post/2023-04-10/readme1.jpg)
+1. 本模板定义了两种形式的 `box` ，可参考 `tcolorbox` 宏包的手册进行修改，
 ```latex
 \usepackage{tcolorbox}
 \tcbuselibrary{skins,breakable}
@@ -99,9 +99,9 @@ rulesepcolor=\color{gray!30!white}
   #1
 }
 ```
-![colorbox](/assets/img/in-post/2023-04-10/readme2.jpg){: lqip="/assets/img/in-post/2023-04-10/lqip-file"}
-4. TikZ 作为一个知名的绘图宏包（其文档说明高达1000多页，超乎常人想象），在此补充了一些 TikZ 实例
-![TikZ example](/assets/img/in-post/2023-04-10/readme3.JPG){: lqip="/assets/img/in-post/2023-04-10/lqip-file"}
+![colorbox](/assets/img/in-post/2023-04-10/readme2.jpg)
+1. TikZ 作为一个知名的绘图宏包（其文档说明高达1000多页，超乎常人想象），在此补充了一些 TikZ 实例
+![TikZ example](/assets/img/in-post/2023-04-10/readme3.JPG)
 
 ## 声明
 * 本模板仅供学习交流所用，_非学院官方模板_。

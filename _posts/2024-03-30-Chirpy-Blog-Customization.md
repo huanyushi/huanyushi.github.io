@@ -4,6 +4,7 @@ date:       2024-03-30
 categories: [HTML and CSS]
 tag: [HTML, CSS]
 math: true
+img_path : /assets/img/in-post/2024-03-30/
 ---
 ## 简介
 在去年利用 jekyll 在 github 部署静态博客网站，效果甚合我意。
@@ -12,7 +13,8 @@ math: true
 
 有两种方法可供选择。第一种就是直接访问 Chirpy 的 github 项目页面，从它的源码里扒出来样式文件及代码。第二种则利用 git，通过命令 `bundle info --path jekyll-theme-chirpy` 获取封装的样式文件地址，如下图所示
 
-![theme file](/assets/img/in-post/2024-03-30/theme-file.PNG){: .shadow width="700" lqip="/assets/img/in-post/2024-03-30/lqip-file"}
+![theme file](theme-file.PNG){: .shadow width="700"}
+_封装的样式文件地址_
 
 在里面找到相应的样式文件后，把它放入自己 blog 对应的文件里，就可以进行个性化定制了。
 
@@ -177,6 +179,82 @@ MathJax = {
   </p>
 ```
 另外更多详细的站点统计信息（如用户量、用户地区、用户访问了哪些页面等内容）可以使用 [Google Analytics](https://analytics.google.com/analytics/web/#/provision) 来获取，在 `_config.yml` 中加入 ID 即可。
+
+## 低质量图像占位符（LQIP）
+LQIP (Low Quality Image Placeholder) 指的是低质量图像占位符，这是一种网页性能优化技术，在加载高质量图像之前，先加载一个轻量级、低分辨率的模糊图像来提供一种预览。这种预览图像可以帮助减少页面加载时间和带宽消耗，提高访问者的视觉体验。
+
+![LQIP](lqip.png)
+_低质量图像占位符_
+
+作者在模板里添加了此功能，在每个文档的前言区设置 lqip 即可。我写了一个 Python 代码可以方便地将图像压缩模糊并保存，且转换成 base64 编码。这是根据我的文件路径来写的，有需要可以自行调整。
+```python
+from PIL import Image, ImageFilter
+import base64
+import pyperclip 
+
+def image_lqip(image_path,output_image_path,length=16,width=8,radius=2):
+    """
+    生成 LQIP（Low-Quality Image Placeholder）并保存到文件中，并返回base64编码的字符串。
+    
+    参数：
+    - image_path：原始图像文件路径
+    - output_image_path：输出 LQIP 文件路径
+    - length：调整后图像的长度，默认为 16
+    - width：调整后图像的宽度，默认为 8
+    - radius：高斯模糊的半径，默认为 2
+    
+    返回值：
+    - base64 编码的字符串
+    """
+    im = Image.open(image_path)
+    im = im.resize((length,width))
+    im = im.convert('RGB')
+    im2 = im.filter(ImageFilter.GaussianBlur(radius)) # 采用高斯模糊
+    im2.save(output_image_path)
+
+    # 转成 base64 编码
+    with open(output_image_path, "rb") as image_file:
+        encoded_string = base64.b64encode(image_file.read())
+        base64_string = encoded_string.decode('utf-8')
+    
+    return base64_string
+
+image_start = "../huanyushi.github.io"
+image_end = input()
+image_path = image_start + image_end 
+
+base64_image = image_lqip(image_path, "test.jpg")
+
+pyperclip.copy('data:image/jpg;base64,'+ base64_image) # 将 print 结果导入粘贴里
+print(base64_image)
+print(image_end) # 顺带输出一下导入的是什么文件
+```
+
+如果想要将 base64 编码的字符串转换成图片，也可以用以下 Python 程序进行转换。
+
+```python
+import base64
+
+def save_base64_image(base64_string, output_path):
+    """
+    将base64编码的字符串保存为图像文件。
+    
+    参数：
+    - base64_string：base64编码的字符串
+    - output_path：输出图像文件路径
+    """
+
+    # 解码base64编码的字符串
+    decoded_data = base64.b64decode(base64_string)
+    
+    # 将解码后的数据保存为图像文件
+    with open(output_path, 'wb') as image_file:
+        image_file.write(decoded_data)
+
+# 这是模板作者里用的图片，当作例子来展示了。
+base64_string = "/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQgJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAAIABADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwB1s4jcEmpLtg7ZU0UV9jb3rnwt/csf/9k="
+save_base64_image(base64_string, "decoded_image.webp")
+```
 
 ## 其他问题
 ### git push 失败: couldn't connet to server
