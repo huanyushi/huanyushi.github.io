@@ -16,9 +16,8 @@ _2013 Nobel prize in physics_
 
 Higgs is most widely known for his contribution in 1964, proposing the Higgs mechanism, which predicted the existence of the Higgs boson and revealed the origin of mass for all fundamental particles, including the W boson.
 
-> Peter Higgs was a remarkable individual – a truly gifted scientist whose vision and imagination have enriched our knowledge of the world that surrounds us. His pioneering work has motivated thousands of scientists, and his legacy will continue to inspire many more for generations to come.
-> 
-> --Professor Sir Peter Mathieson,
+> Peter Higgs was a remarkable individual – a truly gifted scientist whose vision and imagination have enriched our knowledge of the world that surrounds us. His pioneering work has motivated thousands of scientists, and his legacy will continue to inspire many more for generations to come.  
+> --- Professor Sir Peter Mathieson,  
 > Principal and Vice Chancellor of the University of Edinburgh
 
 ## What is the Higgs mechanism

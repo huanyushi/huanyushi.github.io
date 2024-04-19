@@ -4,9 +4,10 @@ date:       2024-03-30
 categories: [HTML and CSS]
 tag: [HTML, CSS]
 math: true
+pin: true
 img_path : /assets/img/in-post/2024-03-30/
 ---
-## 简介
+## 1. 简介
 在去年利用 jekyll 在 github 部署静态博客网站，效果甚合我意。
 
 但原先利用的模板是 [Huxpro](https://github.com/Huxpro/huxpro.github.io)，最近花了一点时间把模板改成了 [Chirpy](https://github.com/cotes2020/jekyll-theme-chirpy/)。以前 Jekyll 把主题样式和博客内容混杂在一起，不利于编辑，但在 3.2.0 版本后，Jekyll 引入了 `gem-based theme`，把网站的样式封装成了一个 gem 包，实现了主题样式和博客内容的分离（这有点类似于 HTML 和 CSS）。Chirpy 模板正是一个 `gem-based theme`，所以利用 Chirpy Starter 生成的 blog，它只包含了内容文件，要想实现对 Chirpy 模板的个性化处理，就必须找到它的样式文件。
@@ -20,9 +21,9 @@ _封装的样式文件地址_
 
 注意生成博客时，放入自己 `.github.io` 文件夹的样式文件会覆盖原先 gem 包里的同名文件，而未修改的样式文件则照样从 gem 包里读取，所以未修改的样式文件没必要导入，这样也方便后续跟随模板作者进行更新。本篇文章就是记录一些我个人对 Chirpy 进行的部分修改（一些小的修改就不写了）。
 
-## 修改 MathJax 配置
+## 2. 修改 MathJax 配置
 MathJax 自从进入 3.x 时代后，渲染数学公式的速度几乎比肩 KaTeX，再考虑到 MathJax 支持丰富的拓展包，功能相比 KaTeX 更为强大，所以优先考虑 MathJax。模板作者对 MathJax 的设置在 `_includes/js-selector.html` 文件中，在隐藏的 gem 包里找到相应代码，即可进行修改。
-### MathJax 添加拓展包
+### 2.1. MathJax 添加拓展包
 添加了一些拓展包，如 `physics`，代码修改如下（更多内容可以从 MathJax 官网文档里找到说明）：
 ```html
 <script>
@@ -51,13 +52,13 @@ MathJax = {
 ```
 {: file="_includes/js-selector.html"}
 
-### 增加主页 preview 公式预览
+### 2.2. 增加主页 preview 公式预览
 在 Blog 主页，对每篇文章的预览部分会直接显示数学代码，要想能够在主页也预览公式，可以参考 [issue-1140](https://github.com/cotes2020/jekyll-theme-chirpy/issues/1140)。
 > 暂时没有这个打算，这个功能似乎相对鸡肋。以后有需要再开吧。
 {: .prompt-info}
 
-## 修改侧边栏样式
-### 侧边栏增加背景图片
+## 3. 修改侧边栏样式
+### 3.1. 侧边栏增加背景图片
 在 `assets/css/jekyll-theme-chirpy.scss` 文件中，增加对侧边栏样式设置的 CSS 代码，其中 `background-image` 便是用来添加背景图片的基本命令，只需后面添加图片的 url 即可，如下：
 ```scss
 #sidebar {
@@ -88,7 +89,7 @@ MathJax = {
 ```
 {: file="assets/css/jekyll-theme-chirpy.scss"}
 
-### 侧边栏增加友链
+### 3.2. 侧边栏增加友链
 在隐藏的 gem 包里找到 `_includes/side.html` 文件，在其中添加以下代码（当有友链时，则插入 `friends.html` 文件）：
 
 <!-- {% raw %} -->
@@ -172,12 +173,12 @@ MathJax = {
 {: .prompt-warning}
 
 
-## 增加评论区
+## 4. 增加评论区
 评论区使用 giscus，模板作者已经将相关选项封装好了，在 `_config.yml` 文件中填上个人信息即可。
 
 教程请见 [giscus](https://giscus.app/) 项目，关于它的高级功能设置请见 [Advanced usage](https://github.com/giscus/giscus/blob/main/ADVANCED-USAGE.md)。
 
-## 增加站点统计
+## 5. 增加站点统计
 模板作者贴心的在页脚使用了 flex 格式，直接在隐藏的 gem 包里找到 `_inlcude/footer.html` 文件，复制后在中间插入[不蒜子](https://busuanzi.ibruce.info/)即可成功在页脚显示站点统计，`uv` 和 `pv` 就是访问量的两种统计算法，具体解释请见[教程](https://ibruce.info/2015/04/04/busuanzi/)。
 ```html
   <p>
@@ -188,7 +189,252 @@ MathJax = {
 ```
 另外更多详细的站点统计信息（如用户量、用户地区、用户访问了哪些页面等内容）可以使用 [Google Analytics](https://analytics.google.com/analytics/web/#/provision) 来获取，在 `_config.yml` 中加入 ID 即可。
 
-## LQIP 的 Python 实现
+## 6. 增加背景动画
+参考 [@NichtsHsu](https://nihil.cc/) 的博客设计，增加了背景动画功能。在 `_layouts/default.html` （这个文件在 gem 包里）中加入
+
+<!-- {% raw %} -->
+```html
+{% if site.backgroud_animation %}
+  {% include animated-background.html %}
+{% endif %}
+```
+{: file="_layouts/default.html"}
+<!-- {% endraw %}) -->
+
+动画文件在 `_includes/animated-background.html` 中，其实就是添加了一堆 `animation-circle` 对象，影响的是生成动画的元素个数。
+```html
+<div id="animation">
+    <div class="animation-circle"></div>
+    <div class="animation-circle"></div>
+    <div class="animation-circle"></div>
+    <div class="animation-circle"></div>
+    <div class="animation-circle"></div>
+    <div class="animation-circle"></div>
+    <div class="animation-circle"></div>
+    <div class="animation-circle"></div>
+    <div class="animation-circle"></div>
+    <div class="animation-circle"></div>
+    <div class="animation-circle"></div>
+    <div class="animation-circle"></div>
+    <div class="animation-circle"></div>
+    <div class="animation-circle"></div>
+    <div class="animation-circle"></div>
+    <div class="animation-circle"></div>
+    <div class="animation-circle"></div>
+    <div class="animation-circle"></div>
+    <div class="animation-circle"></div>
+    <div class="animation-circle"></div>
+    <div class="animation-circle"></div>
+    <div class="animation-circle"></div>
+    <div class="animation-circle"></div>
+    <div class="animation-circle"></div>
+    <div class="animation-circle"></div>
+    <div class="animation-circle"></div>
+    <div class="animation-circle"></div>
+    <div class="animation-circle"></div>
+    <div class="animation-circle"></div>
+    <div class="animation-circle"></div>
+    <div class="animation-circle"></div>
+    <div class="animation-circle"></div>
+    <div class="animation-circle"></div>
+    <div class="animation-circle"></div>
+    <div class="animation-circle"></div>
+    <div class="animation-circle"></div>
+    <div class="animation-circle"></div>
+    <div class="animation-circle"></div>
+    <div class="animation-circle"></div>
+    <div class="animation-circle"></div>
+    <div class="animation-circle"></div>
+    <div class="animation-circle"></div>
+    <div class="animation-circle"></div>
+    <div class="animation-circle"></div>
+    <div class="animation-circle"></div>
+    <div class="animation-circle"></div>
+    <div class="animation-circle"></div>
+    <div class="animation-circle"></div>
+    <div class="animation-circle"></div>
+    <div class="animation-circle"></div>
+  </div>
+```
+{: file="_includes/animated-background.html"}
+
+而样式设计在 `assets/css/jekyll-theme-chirpy.scss` 中，
+```scss
+/* 生成动画 */
+@keyframes infirot {
+    from {
+      -webkit-transform: rotate(0deg);
+    }
+  
+    to {
+      -webkit-transform: rotate(360deg);
+    }
+  }
+  
+  .icon-loading1 {
+    display: inline-block;
+    animation: infirot 1s linear infinite;
+    -webkit-animation: infirot 1s linear infinite;
+  }
+  
+  @function random_range($min, $max) {
+    $rand: random();
+    $random_range: $min + floor($rand * (($max - $min) + 1));
+    @return $random_range;
+  }
+  
+  #animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+  
+    @keyframes animate {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+      }
+      100% {
+        transform: translateY(-1200px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+      }
+    }
+  
+    @media all and (min-width: 1200px) {
+      .animation-circle {
+        position: absolute;
+        left: var(--circle-left);
+        bottom: -300px;
+        display: block;
+        background: var(--circle-background);
+        width: var(--circle-side-length);
+        height: var(--circle-side-length);
+        animation: animate 25s linear infinite;
+        animation-duration: var(--circle-time);
+        animation-delay: var(--circle-delay);
+        pointer-events: none;
+  
+        @for $i from 0 through 50 {
+          &:nth-child(#{$i}) {
+            --circle-left: #{random_range(0%, 100%)};
+            --circle-background: rgba(#{random_range(0, 255)}, #{random_range(0, 255)}, #{random_range(0, 255)}, 0.06); // 最后一个数为透明度
+            --circle-side-length: #{random_range(20px, 200px)};
+            --circle-time: #{random_range(10s, 45s)};
+            --circle-delay: #{random_range(0s, 25s)};
+          }
+        }
+      }
+    }
+  
+    @media all and (max-width: 1199px) {
+      .animation-circle {
+        display: none;
+      }
+    }
+  }
+```
+{: file="assets/css/jekyll-theme-chirpy.scss"}
+
+在 `_config.yml` 中设置 `backgroud_animation: true` 即可产生动画效果。
+
+这部分代码就是用来创建一个动画效果，它主要包含以下几个部分：
+
+1. `@keyframes infirot` 定义了一个名为 `infirot` 的关键帧动画，使元素旋转从 0 度到 360 度。
+2. `.icon-loading1` 应用了 `infirot` 动画，并设置为无限循环。
+3. `@function random_range($min, $max)` 定义了一个函数，用来生成一个指定范围内的随机数。
+4. `#animation` 是一个具有固定位置的容器，用于包含动画效果。它包含了另一个关键帧动画 `animate`，定义了元素在页面上的运动轨迹和透明度变化。这个动画使元素沿着垂直方向向上移动并旋转，逐渐消失，同时边框半径也发生变化。
+5. `#animation` 中包含了两个媒体查询，根据视口宽度的不同应用不同的样式。在大于等于 1200px 的情况下，会生成一系列彩色圆形动画效果，每个圆形的位置、颜色、大小、持续时间和延迟时间都是随机生成的。在小于 1200px 的情况下，圆形动画被隐藏起来，不显示。所以移动端看不到动画效果，但是 PC 端是可以的。
+
+## 7. Details 元素的样式设计
+HTML 中的 `<details>` 元素可以创建一个组件，仅当被切换为展开状态时，才会显示里面的内容，效果如下：
+
+<details markdown="1">
+<summary> 详细信息 </summary>
+床前明月光，疑是地上霜。举头望明月，低头思故乡。
+
+$$
+x^2 + y^2 =z^2, \quad x_{1,2} = \frac{-b\pm\sqrt{b^2-4ac}}{2a}
+$$
+
+</details>
+
+在 Markdown 文件输入以下代码即可实现，其中 `markdown = "1"` 是为了在 HTML 元素内也可以使用 Markdown 语法，另外在其中加入 open 可以设置它为默认展开的形式（否则为默认关闭）：
+```markdown
+<details markdown="1">
+<summary> 详细信息 </summary>
+床前明月光，疑是地上霜。举头望明月，低头思故乡。
+
+$$
+x^2 + y^2 =z^2, \quad x_{1,2} = \frac{-b\pm\sqrt{b^2-4ac}}{2a}
+$$
+
+</details>
+```
+
+样式的设计添加到了 `assets/css/jekyll-theme-chirpy.scss` 中，加入以下代码即可：
+```scss
+/* details 样式设计 */ 
+//  备选（绿色）：深色 #28690d 浅色 #c0d0b9
+//  备选（蓝色）：深色 #3f6f7f 浅色 #99bac5
+/* 定义颜色变量 */
+:root {
+    --light-border-color: #99bac5;
+    --dark-border-color: #3f6f7f;
+}
+details{
+    border-radius: 5px;
+    border-left: solid 5px;
+    box-shadow: var(--language-border-color) 0 0 0 1px; /* 借用了代码框的边框颜色变量 */
+    margin-bottom: 1rem;
+    padding: 0.2rem 1rem;
+}
+details summary {
+    list-style-type: none; /* 隐藏默认的箭头 */
+    font-weight: bold; /* summary 加粗 */
+}
+details summary::before {
+    content: '🙈'; /* 也可以用其他符号或自定义图标，比如 Unicode 字符 */
+}
+details[open] summary::before {
+    content: '🐵'; /* 展开状态下 */
+}
+
+html {
+  /* 检测用户系统处于亮色模式 */
+  @media (prefers-color-scheme: light) {
+    &:not([data-mode]),
+    &[data-mode='light'] {
+      details{ border-left-color: var(--light-border-color);}
+    }
+  /* 用户手动调节网页至暗色模式 */
+    &[data-mode='dark']  {
+      details{border-left-color: var(--dark-border-color);}
+    }
+  }
+  
+  /* 检测用户系统处于暗色模式 */
+  @media (prefers-color-scheme: dark) {
+    &:not([data-mode]),
+    &[data-mode='dark'] {
+      details{border-left-color: var(--dark-border-color);}
+    }
+  /* 用户手动调节网页至亮色模式 */
+    &[data-mode='light'] details{
+      details{border-left-color: var(--light-border-color);}
+    }
+  }
+}
+```
+{: file="_data/authors.yml" }
+
+
+
+## 8. LQIP 的 Python 实现
 LQIP (Low Quality Image Placeholder) 指的是低质量图像占位符，这是一种网页性能优化技术，在加载高质量图像之前，先加载一个轻量级、低分辨率的模糊图像来提供一种预览。这种预览图像可以帮助减少页面加载时间和带宽消耗，提高访问者的视觉体验。
 
 ![LQIP](lqip.png)
@@ -264,7 +510,7 @@ base64_string = "/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBk
 save_base64_image(base64_string, "decoded_image.webp")
 ```
 
-## 反色图片的 Python 实现
+## 9. 反色图片的 Python 实现
 Blog 支持暗色模式，同时文中的图片也可以相应转换至暗色模式，对于部分图片可以直接通过反色的方式将亮色转换至暗色（但不是所有，比如人像反色放在博客里真的很恶心），我写了一个 Python 程序可以将图片转换至暗色模式，有需要可以自取。同样地，文件路径也是根据我自己实际情况来设置的，需要做相应修改：
 
 ```python
@@ -306,104 +552,36 @@ _反色图片与原图片对比_
 
 
 
-## Details 元素的样式设计
-HTML 中的 `<details>` 元素可以创建一个组件，仅当被切换为展开状态时，才会显示里面的内容，效果如下：
 
-<details markdown="1">
-<summary> 详细信息 </summary>
-床前明月光，疑是地上霜。举头望明月，低头思故乡。
 
-$$
-x^2 + y^2 =z^2, \quad x_{1,2} = \frac{-b\pm\sqrt{b^2-4ac}}{2a}
-$$
-
-</details>
-
-在 Markdown 文件输入以下代码即可实现，其中 `markdown = "1"` 是为了在 HTML 元素内也可以使用 Markdown 语法，另外在其中加入 open 可以设置它为默认展开的形式（否则为默认关闭）：
-```markdown
-<details markdown="1">
-<summary> 详细信息 </summary>
-床前明月光，疑是地上霜。举头望明月，低头思故乡。
-
-$$
-x^2 + y^2 =z^2, \quad x_{1,2} = \frac{-b\pm\sqrt{b^2-4ac}}{2a}
-$$
-
-</details>
-```
-
-样式的设计添加到了 `assets/css/jekyll-theme-chirpy.scss` 中，加入以下代码即可：
-```scss
-/* details 样式设计 */ 
-//  备选（绿色）：深色 #28690d 浅色 #c0d0b9
-//  备选（蓝色）：深色 #102a37 浅色 #99bac5
-
-/* 定义颜色变量 */
-:root {
-    --light-border-color: #99bac5;
-    --dark-border-color: #c0d0b9;
-}
-details{
-    border-radius: 5px;
-    border-left: solid 5px var(--light-border-color);
-    box-shadow: var(--language-border-color) 0 0 0 1px; /* 借用了代码框的边框颜色变量 */
-    margin-bottom: 1rem;
-    padding: 0.2rem 1rem;
-}
-details summary {
-    list-style-type: none; /* 隐藏默认的箭头 */
-    font-weight: bold; /* summary 加粗 */
-}
-details summary::before {
-    content: '🙈'; /* 也可以用其他符号或自定义图标，比如 Unicode 字符 */
-}
-details[open] summary::before {
-    content: '🐵'; /* 展开状态下 */
-}
-
-html {
-    /* 用户手动调整网页至暗色模式 */ 
-    &[data-mode='dark'] details {
-      border-left-color: var(--dark-border-color);
-    }
-  
-    /* 检测用户系统处于暗色模式 */ 
-    @media (prefers-color-scheme: dark) {
-      details {
-        border-left-color: var(--dark-border-color);
-      }
-    }
-}
-```
-{: file="_data/authors.yml" }
-
-## 其他问题
-### git push 失败: couldn't connet to server
+## 10. 其他问题
+### 10.1. git push 失败: couldn't connet to server
 将本地文件 push 到 github 远程仓库里，经常出现 `couldn't connet to server` 的报错，经过查询没有明显有效的办法。以下是**可能有效**的措施（目前来看第三种最有效）：
 
 1. 关掉梯子 (VPN) 再 push 一下试试；
-2. 在 `git` 中运行以下代码来取消代理。
+2. 在命令行中运行以下代码来取消代理。
 ```bash
 git config --global --unset http.proxy 
 git config --global --unset https.proxy 
 ```
-1. 打开梯子的情况下。对右下角网络点击右键，打开`网络和 Internet 设置`，点击代理，查看地址和端口号，如 `127.0.0.1:7890`。在命令行 (cmd) 中输入 
+1. 打开梯子的情况下。对右下角网络点击右键，打开`网络和 Internet 设置`，点击代理，查看地址和端口号，如 `127.0.0.1:7890`。在命令行中输入 
 ```shell 
 git config --global http.proxy http://127.0.0.1:7890
 ```
 
 可通过 `git config --global -l` 查看是否设置成功。之后再进行 push 即可。
 
-### jekyll serve 预览速度较慢
-方法很多，比如减少文件夹数量、压缩图片大小等。还可以通过设置增量构建的方法（即只重新建构发生更改的文件，而不是每次重新构建整个站点），
-可以在 `_config.yml` 中添加 `incremental: true`，之后每次 jekyll 都将重新构建发生更改的文件。当然更合适的方法是使用 `bundle exec jekyll s --incremental` 或者 `bundle exec jekyll s --I` 来构建博客，这样手动可调。
+### 10.2. jekyll serve 预览速度较慢
+方法很多，比如减少文件夹数量、压缩图片大小等。，以下罗列一些我摸索出来的方法：
 
-另外压缩图片也是加速博客构建和浏览的一种方式。
+1. 对博客设置增量构建（即只重新建构发生更改的文件，而不是每次重新构建整个站点），
+可以在 `_config.yml` 中添加 `incremental: true`，之后每次 jekyll 都将重新构建发生更改的文件。当然更合适的方法是使用 `bundle exec jekyll s --incremental` 或者 `bundle exec jekyll s --I` 来构建博客，这样手动可调更灵活。
+2. 压缩图片大小，这也是加速博客构建和浏览的一种方式。
 
-> 提供一个免费在线图片压缩网站：[TinyPNG](https://tinypng.com/)，虽然说是有损压缩，但视觉上几乎没有影响，且图片压缩甚至能达到 70%（减小图片大小也是加速网页加载的一种方法）。
+> 提供一个免费在线图片压缩网站：[TinyPNG](https://tinypng.com/)，虽然说是有损压缩，但视觉上几乎没有影响，且图片压缩甚至能达到 70%。
 {: .prompt-info}
 
-### 在 blog 中插入文件
+### 10.3. 在 blog 中插入文件
 使用 `<iframe>` 元素即可，如
 ```html
 <iframe src="file path" width="100%" height='800'></iframe>
@@ -413,7 +591,7 @@ git config --global http.proxy http://127.0.0.1:7890
 > **警告：**这个功能在谷歌浏览器上可以正常使用，但是其他浏览器不一定支持，且加 overflow 在移动端也不能产生滚动条，慎用！
 {: .prompt-danger}
 
-### 在 blog 中插入 Python
+### 10.4. 在 blog 中在线运行 Python
 在 post 里加入以下代码，可以在线运行 Python （虽然感觉有点鸡肋，但还是记录在这里）
 
 ```html

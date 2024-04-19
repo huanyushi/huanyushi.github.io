@@ -45,7 +45,7 @@ social:
     # - https://www.linkedin.com/in/username
     - https://www.zhihu.com/people/za-ran-zhu-fu-liu-xing
 
-google_site_verification: google-site-verification=J-aXydM02O-L4PE2xTK9NQfmeeKUMfGGts3GkUnJ7
+google_site_verification: google-site-verification=J-aXydM02O-L4PE2xTK9NQfmeeKUMfGGts3GkUnJ7rc
 # fill in to your verification string
 
 # ↑ --------------------------
@@ -131,6 +131,7 @@ paginate: 10
 # The base URL of your site
 baseurl: ""
 
+backgroud_animation: true
 # ------------ The following options are not recommended to be modified ------------------
 
 kramdown:

@@ -4,6 +4,11 @@
 @import 'main';
 /* append your custom style below */
 
+/* 首页预览 post 标题字体加粗 */
+// #post-list .card-title {
+//   font-weight: bold;
+// }
+
 /* 侧边栏背景图片添加 */
 #sidebar {
     background-image: url(https://cdn.jsdelivr.net/gh/huanyushi/huanyushi.github.io@main/assets/img/background.jpg); /* <- change background image */
@@ -62,15 +67,15 @@
 
 /* details 样式设计 */ 
 //  备选（绿色）：深色 #28690d 浅色 #c0d0b9
-//  备选（蓝色）：深色 #102a37 浅色 #99bac5
+//  备选（蓝色）：深色 #3f6f7f 浅色 #99bac5
 /* 定义颜色变量 */
 :root {
     --light-border-color: #99bac5;
-    --dark-border-color: #c0d0b9;
+    --dark-border-color: #3f6f7f;
 }
 details{
     border-radius: 5px;
-    border-left: solid 5px var(--light-border-color);
+    border-left: solid 5px;
     box-shadow: var(--language-border-color) 0 0 0 1px; /* 借用了代码框的边框颜色变量 */
     margin-bottom: 1rem;
     padding: 0.2rem 1rem;
@@ -87,15 +92,110 @@ details[open] summary::before {
 }
 
 html {
-    /* 用户手动调整网页至暗色模式 */ 
-    &[data-mode='dark'] details {
-      border-left-color: var(--dark-border-color);
+  /* 检测用户系统处于亮色模式 */
+  @media (prefers-color-scheme: light) {
+    &:not([data-mode]),
+    &[data-mode='light'] {
+      details{ border-left-color: var(--light-border-color);}
+    }
+  /* 用户手动调节网页至暗色模式 */
+    &[data-mode='dark']  {
+      details{border-left-color: var(--dark-border-color);}
+    }
+  }
+  
+  /* 检测用户系统处于暗色模式 */
+  @media (prefers-color-scheme: dark) {
+    &:not([data-mode]),
+    &[data-mode='dark'] {
+      details{border-left-color: var(--dark-border-color);}
+    }
+  /* 用户手动调节网页至亮色模式 */
+    &[data-mode='light'] details{
+      details{border-left-color: var(--light-border-color);}
+    }
+  }
+}
+
+
+
+
+
+
+/* 生成动画 */
+@keyframes infirot {
+    from {
+      -webkit-transform: rotate(0deg);
     }
   
-    /* 检测用户系统处于暗色模式 */ 
-    @media (prefers-color-scheme: dark) {
-      details {
-        border-left-color: var(--dark-border-color);
+    to {
+      -webkit-transform: rotate(360deg);
+    }
+  }
+  
+  .icon-loading1 {
+    display: inline-block;
+    animation: infirot 1s linear infinite;
+    -webkit-animation: infirot 1s linear infinite;
+  }
+  
+  @function random_range($min, $max) {
+    $rand: random();
+    $random_range: $min + floor($rand * (($max - $min) + 1));
+    @return $random_range;
+  }
+  
+  #animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+  
+    @keyframes animate {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+      }
+      100% {
+        transform: translateY(-1200px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
       }
     }
-}
+  
+    @media all and (min-width: 1200px) {
+      .animation-circle {
+        position: absolute;
+        left: var(--circle-left);
+        bottom: -300px;
+        display: block;
+        background: var(--circle-background);
+        width: var(--circle-side-length);
+        height: var(--circle-side-length);
+        animation: animate 25s linear infinite;
+        animation-duration: var(--circle-time);
+        animation-delay: var(--circle-delay);
+        pointer-events: none;
+  
+        @for $i from 0 through 50 {
+          &:nth-child(#{$i}) {
+            --circle-left: #{random_range(0%, 100%)};
+            --circle-background: rgba(#{random_range(0, 255)}, #{random_range(0, 255)}, #{random_range(0, 255)}, 0.06); // 最后一个数为透明度
+            --circle-side-length: #{random_range(20px, 200px)};
+            --circle-time: #{random_range(10s, 45s)};
+            --circle-delay: #{random_range(0s, 25s)};
+          }
+        }
+      }
+    }
+  
+    @media all and (max-width: 1199px) {
+      .animation-circle {
+        display: none;
+      }
+    }
+  }

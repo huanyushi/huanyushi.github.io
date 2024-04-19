@@ -5,8 +5,7 @@ order: 4
 ---
 
 ## English
-> To each individual the world will take on a different connotation of meaning-the important lies in the desire to search for an answer.
->
+> To each individual the world will take on a different connotation of meaning-the important lies in the desire to search for an answer.  
 > --- T.S. Eliot
 
 Hey there, I'm Huanyu Shi, a first-year PhD student in physics.
@@ -38,7 +37,7 @@ Welcome to my Blog! It's generated from a static web page built using Jekyll on 
 ---
 
 ## 中文
-> 天地有正气，杂然赋流形。
+> 天地有正气，杂然赋流形。  
 > --- 文天祥
 
 你好，我是 Huanyu Shi，一位物理学一年级博士牲。
