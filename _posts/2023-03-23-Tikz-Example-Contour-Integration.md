@@ -16,7 +16,7 @@ TikZ作为LaTeX著名的绘图宏包，拥有十分强大的功能，基本上�
 
 本文内容首发于[知乎](https://zhuanlan.zhihu.com/p/616112259)。
 
-> <i class="fas fa-hand-point-down"></i> TikZ 实例总结请见此 PDF 文件：
+> &#x1F447; TikZ 实例总结请见此 PDF 文件：
 > - **[TikZ-Example-Contour-Integration.pdf](/assets/pdf/TikZ-Example-Contour-Integration.pdf)**
 {: .prompt-info}
 

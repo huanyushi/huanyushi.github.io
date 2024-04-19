@@ -45,7 +45,8 @@ social:
     # - https://www.linkedin.com/in/username
     - https://www.zhihu.com/people/za-ran-zhu-fu-liu-xing
 
-google_site_verification: # fill in to your verification string
+google_site_verification: google-site-verification=J-aXydM02O-L4PE2xTK9NQfmeeKUMfGGts3GkUnJ7
+# fill in to your verification string
 
 # ↑ --------------------------
 # The end of `jekyll-seo-tag` settings

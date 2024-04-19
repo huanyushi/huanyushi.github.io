@@ -24,7 +24,7 @@ This is one of the chapters of my personal notes, which captures my answers on s
 
 And this post was first posted on [Zhihu](https://zhuanlan.zhihu.com/p/501422450).
 
-> <i class="fas fa-hand-point-down"></i> Download the PDF file here.
+> &#x1F447; Download the PDF file here.
 > - **[Mathematical-Answers.pdf](/assets/pdf/Mathematical-Answers.pdf)**
 {: .prompt-info}
 

@@ -33,7 +33,8 @@ $$
 \end{equation}
 $$
 
-<blockquote>
+<details>
+<summary> Proof can be found here </summary>
 
 This can be proven using the method we discussed earlier. Let us choose $\qty{\ket{\tilde{\alpha}}}$ to be the single-particle basis of eigenstates of $\hat{f}$, i.e. $\hat{f}\ket{\tilde{\alpha}} = f_{\tilde{\alpha}} \ket{\tilde{\alpha}}$, where $f_{\tilde{\alpha}}$ is the eigenvalue of $\hat{f}$ associated with the eigenstate $\ket{\tilde{\alpha}}$. Then we claim that the second-quantized representation of $\hat{F}^{(1)}$ can be written as 
 
@@ -89,7 +90,7 @@ $$
 
 By substituting the expression for the field operators, we can finally prove $\eqref{equ:single-particle operator}$. 
 
-</blockquote>
+</details>
 
 Next, we will discuss the second quantization form of some single-particle operators.
 
