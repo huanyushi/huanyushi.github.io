@@ -20,7 +20,7 @@ _封装的样式文件地址_
 
 注意生成博客时，放入自己 `.github.io` 文件夹的样式文件会覆盖原先 gem 包里的同名文件，而未修改的样式文件则照样从 gem 包里读取，所以未修改的样式文件没必要导入，这样也方便后续跟随模板作者进行更新。本篇文章就是记录一些我个人对 Chirpy 进行的部分修改（一些小的修改就不写了）。
 
-## MathJax 的修改
+## 修改 MathJax 配置
 MathJax 自从进入 3.x 时代后，渲染数学公式的速度几乎比肩 KaTeX，再考虑到 MathJax 支持丰富的拓展包，功能相比 KaTeX 更为强大，所以优先考虑 MathJax。模板作者对 MathJax 的设置在 `_includes/js-selector.html` 文件中，在隐藏的 gem 包里找到相应代码，即可进行修改。
 ### MathJax 添加拓展包
 添加了一些拓展包，如 `physics`，代码修改如下（更多内容可以从 MathJax 官网文档里找到说明）：
@@ -49,15 +49,17 @@ MathJax = {
 };
 </script>
 ```
+{: file="_includes/js-selector.html"}
+
 ### 增加主页 preview 公式预览
 在 Blog 主页，对每篇文章的预览部分会直接显示数学代码，要想能够在主页也预览公式，可以参考 [issue-1140](https://github.com/cotes2020/jekyll-theme-chirpy/issues/1140)。
 > 暂时没有这个打算，这个功能似乎相对鸡肋。以后有需要再开吧。
 {: .prompt-info}
 
-## 侧边栏的修改
+## 修改侧边栏样式
 ### 侧边栏增加背景图片
 在 `assets/css/jekyll-theme-chirpy.scss` 文件中，增加对侧边栏样式设置的 CSS 代码，其中 `background-image` 便是用来添加背景图片的基本命令，只需后面添加图片的 url 即可，如下：
-```css
+```scss
 #sidebar {
     background-image: url(https://cdn.jsdelivr.net/gh/huanyushi/Blog-Image-Bed@main/assets/img/background.jpg); /* <- change background image */
     background-size: cover; /* <- customize the image size */
@@ -65,6 +67,8 @@ MathJax = {
     background-position: top; /* <- image position */
 }
 ```
+{: file="assets/css/jekyll-theme-chirpy.scss"}
+
 同样也要注意修改相应文字的颜色，我这里选的是深色背景，所以对应文字都是白色，
 ```css
 #sidebar .site-title a {
@@ -82,6 +86,7 @@ MathJax = {
     color: var(--sidebar-btn-color);
 }
 ```
+{: file="assets/css/jekyll-theme-chirpy.scss"}
 
 ### 侧边栏增加友链
 在隐藏的 gem 包里找到 `_includes/side.html` 文件，在其中添加以下代码（当有友链时，则插入 `friends.html` 文件）：
@@ -93,6 +98,7 @@ MathJax = {
       {% include friends.html %}
   {% endif %}
 ```
+{: file="_includes/side.html"}
 <!-- {% endraw %}) -->
 
 新建一个 `_includes/friends.html` 文件，将友链设置放入其中（这样模板更新时可以尽可能减少对模板代码的修改）：
@@ -110,6 +116,7 @@ MathJax = {
     </ul>
 </div>
 ```
+{: file="_includes/friends.html"}
 <!-- {% endraw %}) -->
 
 而相关的样式设置添加到了 `assets/css/jekyll-theme-chirpy.scss` 中，如下：
@@ -145,8 +152,8 @@ MathJax = {
     margin-bottom: 0.4rem;
     opacity: 0.9;
 }
-
 ```
+{: file="assets/css/jekyll-theme-chirpy.scss"}
 
 已成功封装，只需要在 `_data/friends.yml` 里添加以下设置即可（可以一直往后叠加）：
 ```yml
@@ -157,6 +164,7 @@ MathJax = {
 - title: "Title3"
   href: "https://example.com"
 ```
+{: file="_data/friends.yml"}
 
 > **注意**
 > 1. 友链不能加太多，容易挤占底部社交平台的空间，让它跑到屏幕外面去了（不过这也和系统分辨率有关系）。如果友链太多建议在侧边栏新开一个选项卡，也就是在 `_tabs` 文件夹下新建一个 `.md` 文件。
@@ -164,7 +172,7 @@ MathJax = {
 {: .prompt-warning}
 
 
-## 评论区添加
+## 增加评论区
 评论区使用 giscus，模板作者已经将相关选项封装好了，在 `_config.yml` 文件中填上个人信息即可。
 
 教程请见 [giscus](https://giscus.app/) 项目，关于它的高级功能设置请见 [Advanced usage](https://github.com/giscus/giscus/blob/main/ADVANCED-USAGE.md)。
@@ -180,7 +188,7 @@ MathJax = {
 ```
 另外更多详细的站点统计信息（如用户量、用户地区、用户访问了哪些页面等内容）可以使用 [Google Analytics](https://analytics.google.com/analytics/web/#/provision) 来获取，在 `_config.yml` 中加入 ID 即可。
 
-## 低质量图像占位符（LQIP）
+## LQIP 的 Python 实现
 LQIP (Low Quality Image Placeholder) 指的是低质量图像占位符，这是一种网页性能优化技术，在加载高质量图像之前，先加载一个轻量级、低分辨率的模糊图像来提供一种预览。这种预览图像可以帮助减少页面加载时间和带宽消耗，提高访问者的视觉体验。
 
 ![LQIP](lqip.png)
@@ -256,9 +264,122 @@ base64_string = "/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBk
 save_base64_image(base64_string, "decoded_image.webp")
 ```
 
+## 反色图片的 Python 实现
+Blog 支持暗色模式，同时文中的图片也可以相应转换至暗色模式，对于部分图片可以直接通过反色的方式将亮色转换至暗色（但不是所有，比如人像反色放在博客里真的很恶心），我写了一个 Python 程序可以将图片转换至暗色模式，有需要可以自取。同样地，文件路径也是根据我自己实际情况来设置的，需要做相应修改：
+
+```python
+from PIL import Image, ImageChops
+import matplotlib.pyplot as plt  
+
+def invert_color(fname):
+    im = Image.open(fname)
+    if im.mode == "P":
+        im = im.convert('RGB')
+    im_inverted = ImageChops.invert(im)
+    # im.close()
+    return im, im_inverted
+
+# 这部分是调整至图片文件路径
+path_start = "../huanyushi.github.io/assets/img/in-post/"
+path_end = '2023-03-23/preface.PNG'
+image_path = path_start + path_end
+
+image_origin, image_inverted = invert_color(image_path)
+
+# 绘图对比，不想绘图可以直接去掉
+plt.subplot(121) 
+plt.title('original') 
+plt.axis('off')
+plt.imshow(origin, cmap='gray', vmin=0, vmax=255)  
+plt.subplot(122) 
+plt.title('inverse') 
+plt.imshow(image_output, cmap='gray', vmin=0, vmax=255) 
+plt.axis('off')
+plt.show()
+
+# 保存图片
+image_output.save(image_start + image_end.replace('.', '-dark.')) # 如：test.PNG 生成的反色图片保存为 test-dark.PNG 
+```
+![inverse comparison](inverse.png){:.light}
+![inverse comparison](inverse-dark.png){:.dark}
+_反色图片与原图片对比_
+
+
+
+## Details 元素的样式设计
+HTML 中的 `<details>` 元素可以创建一个组件，仅当被切换为展开状态时，才会显示里面的内容，效果如下：
+
+<details markdown="1">
+<summary> 详细信息 </summary>
+床前明月光，疑是地上霜。举头望明月，低头思故乡。
+
+$$
+x^2 + y^2 =z^2, \quad x_{1,2} = \frac{-b\pm\sqrt{b^2-4ac}}{2a}
+$$
+
+</details>
+
+在 Markdown 文件输入以下代码即可实现，其中 `markdown = "1"` 是为了在 HTML 元素内也可以使用 Markdown 语法，另外在其中加入 open 可以设置它为默认展开的形式（否则为默认关闭）：
+```markdown
+<details markdown="1">
+<summary> 详细信息 </summary>
+床前明月光，疑是地上霜。举头望明月，低头思故乡。
+
+$$
+x^2 + y^2 =z^2, \quad x_{1,2} = \frac{-b\pm\sqrt{b^2-4ac}}{2a}
+$$
+
+</details>
+```
+
+样式的设计添加到了 `assets/css/jekyll-theme-chirpy.scss` 中，加入以下代码即可：
+```scss
+/* details 样式设计 */ 
+//  备选（绿色）：深色 #28690d 浅色 #c0d0b9
+//  备选（蓝色）：深色 #102a37 浅色 #99bac5
+
+/* 定义颜色变量 */
+:root {
+    --light-border-color: #99bac5;
+    --dark-border-color: #c0d0b9;
+}
+details{
+    border-radius: 5px;
+    border-left: solid 5px var(--light-border-color);
+    box-shadow: var(--language-border-color) 0 0 0 1px; /* 借用了代码框的边框颜色变量 */
+    margin-bottom: 1rem;
+    padding: 0.2rem 1rem;
+}
+details summary {
+    list-style-type: none; /* 隐藏默认的箭头 */
+    font-weight: bold; /* summary 加粗 */
+}
+details summary::before {
+    content: '🙈'; /* 也可以用其他符号或自定义图标，比如 Unicode 字符 */
+}
+details[open] summary::before {
+    content: '🐵'; /* 展开状态下 */
+}
+
+html {
+    /* 用户手动调整网页至暗色模式 */ 
+    &[data-mode='dark'] details {
+      border-left-color: var(--dark-border-color);
+    }
+  
+    /* 检测用户系统处于暗色模式 */ 
+    @media (prefers-color-scheme: dark) {
+      details {
+        border-left-color: var(--dark-border-color);
+      }
+    }
+}
+```
+{: file="_data/authors.yml" }
+
 ## 其他问题
 ### git push 失败: couldn't connet to server
-将本地文件 push 到 github 远程仓库里，经常出现 `couldn't connet to server` 的报错，经过查询没有明显有效的办法。以下是**可能有效**的措施：
+将本地文件 push 到 github 远程仓库里，经常出现 `couldn't connet to server` 的报错，经过查询没有明显有效的办法。以下是**可能有效**的措施（目前来看第三种最有效）：
 
 1. 关掉梯子 (VPN) 再 push 一下试试；
 2. 在 `git` 中运行以下代码来取消代理。
@@ -266,7 +387,7 @@ save_base64_image(base64_string, "decoded_image.webp")
 git config --global --unset http.proxy 
 git config --global --unset https.proxy 
 ```
-3. 打开梯子的情况下。对右下角网络点击右键，打开`网络和 Internet 设置`，点击代理，查看地址和端口号，如 `127.0.0.1:7890`。在命令行 (cmd) 中输入 
+1. 打开梯子的情况下。对右下角网络点击右键，打开`网络和 Internet 设置`，点击代理，查看地址和端口号，如 `127.0.0.1:7890`。在命令行 (cmd) 中输入 
 ```shell 
 git config --global http.proxy http://127.0.0.1:7890
 ```
@@ -275,13 +396,12 @@ git config --global http.proxy http://127.0.0.1:7890
 
 ### jekyll serve 预览速度较慢
 方法很多，比如减少文件夹数量、压缩图片大小等。还可以通过设置增量构建的方法（即只重新建构发生更改的文件，而不是每次重新构建整个站点），
-可以在 `_config.yml` 中添加
+可以在 `_config.yml` 中添加 `incremental: true`，之后每次 jekyll 都将重新构建发生更改的文件。当然更合适的方法是使用 `bundle exec jekyll s --incremental` 或者 `bundle exec jekyll s --I` 来构建博客，这样手动可调。
 
-```yml
-incremental: true
-```
+另外压缩图片也是加速博客构建和浏览的一种方式。
 
-之后每次 jekyll 都将重新构建发生更改的文件。另外也可以使用 `bundle exec jekyll s --incremental` 构建可以达到同样效果（这样可以不用在 `_config.yml` 中设置了）。
+> 提供一个免费在线图片压缩网站：[TinyPNG](https://tinypng.com/)，虽然说是有损压缩，但视觉上几乎没有影响，且图片压缩甚至能达到 70%（减小图片大小也是加速网页加载的一种方法）。
+{: .prompt-info}
 
 ### 在 blog 中插入文件
 使用 `<iframe>` 元素即可，如
@@ -292,3 +412,14 @@ incremental: true
 
 > **警告：**这个功能在谷歌浏览器上可以正常使用，但是其他浏览器不一定支持，且加 overflow 在移动端也不能产生滚动条，慎用！
 {: .prompt-danger}
+
+### 在 blog 中插入 Python
+在 post 里加入以下代码，可以在线运行 Python （虽然感觉有点鸡肋，但还是记录在这里）
+
+```html
+<iframe
+  src="https://jupyterlite.github.io/demo/repl/index.html?kernel=python&toolbar=1"
+  width="100%"
+  height="500px">
+</iframe>
+```

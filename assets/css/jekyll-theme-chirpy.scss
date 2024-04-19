@@ -59,3 +59,43 @@
     margin-bottom: 0.4rem;
     opacity: 0.9;
 }
+
+/* details 样式设计 */ 
+//  备选（绿色）：深色 #28690d 浅色 #c0d0b9
+//  备选（蓝色）：深色 #102a37 浅色 #99bac5
+/* 定义颜色变量 */
+:root {
+    --light-border-color: #99bac5;
+    --dark-border-color: #c0d0b9;
+}
+details{
+    border-radius: 5px;
+    border-left: solid 5px var(--light-border-color);
+    box-shadow: var(--language-border-color) 0 0 0 1px; /* 借用了代码框的边框颜色变量 */
+    margin-bottom: 1rem;
+    padding: 0.2rem 1rem;
+}
+details summary {
+    list-style-type: none; /* 隐藏默认的箭头 */
+    font-weight: bold; /* summary 加粗 */
+}
+details summary::before {
+    content: '🙈'; /* 也可以用其他符号或自定义图标，比如 Unicode 字符 */
+}
+details[open] summary::before {
+    content: '🐵'; /* 展开状态下 */
+}
+
+html {
+    /* 用户手动调整网页至暗色模式 */ 
+    &[data-mode='dark'] details {
+      border-left-color: var(--dark-border-color);
+    }
+  
+    /* 检测用户系统处于暗色模式 */ 
+    @media (prefers-color-scheme: dark) {
+      details {
+        border-left-color: var(--dark-border-color);
+      }
+    }
+}

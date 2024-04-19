@@ -112,11 +112,11 @@ pip install notebook==6.4.6
 ### 常用快捷键
 在 `.ipynb` 文件里按键 <key>H</key> 即可进入快捷键界面，如下图所示，
 
-![kuaijie1](kuaijie1-light.PNG){ .light}
-![kuaijie1](kuaijie1-dark.PNG){: .dark}
+![kuaijie1](kuaijie1-light.PNG){: .light}
+![kuaijie1](kuaijie1-dark.png){: .dark}
 
 ![kuaijie2](kuaijie2-light.PNG){: .light}
-![kuaijie2](kuaijie2-dark.PNG){: .dark}
+![kuaijie2](kuaijie2-dark.png){: .dark}
 
 ### 更换主题
 在终端中运行 `pip install --upgrade jupyterthemes` 即可，通过命令 `jt-l` 可以查看主题列表：
