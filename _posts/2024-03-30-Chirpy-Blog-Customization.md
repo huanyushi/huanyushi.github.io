@@ -90,7 +90,7 @@ MathJax = {
 {: file="assets/css/jekyll-theme-chirpy.scss"}
 
 ### 3.2. 侧边栏增加友链
-在隐藏的 gem 包里找到 `_includes/side.html` 文件，在其中添加以下代码（当有友链时，则插入 `friends.html` 文件）：
+在隐藏的 gem 包里找到 `_includes/sidebar.html` 文件，在其中添加以下代码（当有友链时，则插入 `friends.html` 文件）：
 
 <!-- {% raw %} -->
 ```html
@@ -99,7 +99,7 @@ MathJax = {
       {% include friends.html %}
   {% endif %}
 ```
-{: file="_includes/side.html"}
+{: file="_includes/sidebar.html"}
 <!-- {% endraw %}) -->
 
 新建一个 `_includes/friends.html` 文件，将友链设置放入其中（这样模板更新时可以尽可能减少对模板代码的修改）：
@@ -179,18 +179,31 @@ MathJax = {
 教程请见 [giscus](https://giscus.app/) 项目，关于它的高级功能设置请见 [Advanced usage](https://github.com/giscus/giscus/blob/main/ADVANCED-USAGE.md)。
 
 ## 5. 增加站点统计
-模板作者贴心的在页脚使用了 flex 格式，直接在隐藏的 gem 包里找到 `_inlcude/footer.html` 文件，复制后在中间插入[不蒜子](https://busuanzi.ibruce.info/)即可成功在页脚显示站点统计，`uv` 和 `pv` 就是访问量的两种统计算法，具体解释请见[教程](https://ibruce.info/2015/04/04/busuanzi/)。
+模板作者贴心的在页脚使用了 flex 格式，直接找到 `_includes/footer.html` 文件（这个文件在 gem 包里），复制后在中间插入[不蒜子](https://busuanzi.ibruce.info/)即可成功在页脚显示站点统计，`uv` 和 `pv` 就是访问量的两种统计算法，具体解释请见[教程](https://ibruce.info/2015/04/04/busuanzi/)。
+
+<!-- {% raw %} -->
 ```html
-  <p>
-    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <!-- 站点统计 -->
+  {% include footer-busuanzi.html %}
+```
+{: file="_includes/footer.html"}
+<!-- {% endraw %}) -->
+
+不蒜子的代码设置在 `_includes/footer-busuanzi.html` 中：
+```html
+<!-- 不蒜子站点统计，放在页脚处 (footer.html 中插入) -->
+<p>
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <i class="fa fa-user" aria-hidden="true"></i> <span id="busuanzi_value_site_uv"></span> |
     <i class="fa fa-eye" aria-hidden="true"></i> <span id="busuanzi_value_site_pv"></span>
-  </p>
+</p>
 ```
+{: file="_includes/footer.html"}
+
 另外更多详细的站点统计信息（如用户量、用户地区、用户访问了哪些页面等内容）可以使用 [Google Analytics](https://analytics.google.com/analytics/web/#/provision) 来获取，在 `_config.yml` 中加入 ID 即可。
 
 ## 6. 增加背景动画
-参考 [@NichtsHsu](https://nihil.cc/) 的博客设计，增加了背景动画功能。在 `_layouts/default.html` （这个文件在 gem 包里）中加入
+参考 [@NichtsHsu](https://nihil.cc/) 的博客设计，增加了背景动画功能。在 `_layouts/default.html` （这个文件也在 gem 包里）中加入
 
 <!-- {% raw %} -->
 ```html
@@ -430,7 +443,7 @@ html {
   }
 }
 ```
-{: file="_data/authors.yml" }
+{: file="assets/css/jekyll-theme-chirpy.scss" }
 
 
 

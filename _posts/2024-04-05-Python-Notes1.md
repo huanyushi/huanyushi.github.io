@@ -3,7 +3,7 @@ title:      "&sect;1 Python: Introduction and Study Resources"
 date:       2024-04-05
 categories: [Python]
 tag: [Python]
-img_path : /assets/img/in-post/2024-04-05/
+img_path : /assets/img/in-post/python-notes/
 image: 
     path: python.jpg
     lqip: data:image/jpg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQgJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAAIABADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDQsPDL3GCRXSWfhWKIAsKKK+fxmZ4jmcb6GtDC0rXsf//Z
@@ -40,8 +40,8 @@ Python 网站资源（注意只有官方手册是最新的）：
 - [Python - 100天从新手到大师](https://github.com/jackfrued/Python-100-Days/tree/master)
 
 Python 入门教程书籍（第二本更侧重办公自动化）：
-- Eric Matthes 著, 袁国忠译. *Python编程-从入门到实践*（第二版）. 人民邮电出版社
-- Al Sweigart 著, 王海鹏译. *Python编程-快速上手--让繁琐工作自动化*. 人民邮电出版社
+- Eric Matthes.《Python编程 - 从入门到实践（第二版）》（袁国忠译）. 人民邮电出版社
+- Al Sweigart.《Python编程 - 快速上手 -- 让繁琐工作自动化》（王海鹏译）. 人民邮电出版社
 
 ## Jupyter notebook
 Jupyter notebook 是一种基于网页的交互式计算环境，支持多种编程语言。最开始是用于 Python 语言编程的，但现在已经支持超过 40 种编程语言，比如 R, Julia 和 Scala 等。Jupyter 的名称实际上是由 3 种主要支持语言的首字母构成，JUlia, PYthon 和 R。

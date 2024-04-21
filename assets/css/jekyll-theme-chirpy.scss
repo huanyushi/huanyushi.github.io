@@ -76,7 +76,7 @@
 details{
     border-radius: 5px;
     border-left: solid 5px;
-    box-shadow: var(--language-border-color) 0 0 0 1px; /* 借用了代码框的边框颜色变量 */
+    box-shadow: var(--language-border-color) 1 1 5 1px; /* 借用了代码框的边框颜色变量 */
     margin-bottom: 1rem;
     padding: 0.2rem 1rem;
 }

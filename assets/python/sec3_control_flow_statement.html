@@ -7495,7 +7495,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="3.-%E6%8E%A7%E5%88%B6%E6%B5%81%E8%AF%AD%E5%8F%A5">3. 控制流语句<a class="anchor-link" href="#3.-%E6%8E%A7%E5%88%B6%E6%B5%81%E8%AF%AD%E5%8F%A5">¶</a></h2>
+<h1 id="3.-%E6%8E%A7%E5%88%B6%E6%B5%81%E8%AF%AD%E5%8F%A5">3. 控制流语句<a class="anchor-link" href="#3.-%E6%8E%A7%E5%88%B6%E6%B5%81%E8%AF%AD%E5%8F%A5">¶</a></h1>
 </div>
 </div>
 </div>
@@ -7540,7 +7540,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="3.1-if-%E8%AF%AD%E5%8F%A5">3.1 if 语句<a class="anchor-link" href="#3.1-if-%E8%AF%AD%E5%8F%A5">¶</a></h3><p>最常见的控制流语句是 if 语句。 if 语句的子句将在语句的条件为 True 时执行，如果条件为 False，子句将跳过。</p>
+<h2 id="3.1-if-%E8%AF%AD%E5%8F%A5">3.1 if 语句<a class="anchor-link" href="#3.1-if-%E8%AF%AD%E5%8F%A5">¶</a></h2><p>最常见的控制流语句是 if 语句。 if 语句的子句将在语句的条件为 True 时执行，如果条件为 False，子句将跳过。</p>
 <p>if 子句后面有时候也跟着 else 语句。只有当 if 语句的条件为 False 时，else 子句才会被执行。</p>
 <p>但有时候我们会希望将情况分为更多种可能，而不是简单的“非黑即白”，这时候我们可以使用 elif 语句，也就是“否则如果”。elif 总是跟在 if 或另一条 elif 语句后面，它提供了另一个条件，仅在前面的条件均为 False 时才检查该条件。</p>
 <p>总的来说，if 语句的一般形式如下（请别忘了后面的冒号 <code>:</code>）：</p>
@@ -7750,7 +7750,7 @@ $$
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="3.2-match-%E8%AF%AD%E5%8F%A5">3.2 match 语句<a class="anchor-link" href="#3.2-match-%E8%AF%AD%E5%8F%A5">¶</a></h3><p>Python 3.10 增加了 <code>match...case</code> 的条件判断，不需要在使用一连串的 <code>if-else</code> 判断了。match 语句接受一个表达式并把它的值与一个或多个 case 块给出的一系列模式进行比较。这表面上像 C, Java 或 JavaScript 等语言中的 switch 语句，但其实它更像 Rust 或 Haskell 中的模式匹配。</p>
+<h2 id="3.2-match-%E8%AF%AD%E5%8F%A5">3.2 match 语句<a class="anchor-link" href="#3.2-match-%E8%AF%AD%E5%8F%A5">¶</a></h2><p>Python 3.10 增加了 <code>match...case</code> 的条件判断，不需要在使用一连串的 <code>if-else</code> 判断了。match 语句接受一个表达式并把它的值与一个或多个 case 块给出的一系列模式进行比较。这表面上像 C, Java 或 JavaScript 等语言中的 switch 语句，但其实它更像 Rust 或 Haskell 中的模式匹配。</p>
 <p>match 语句的基本格式如下：</p>
 <div class="highlight"><pre><span></span><span class="k">match</span> <span class="n">subject</span><span class="p">:</span>
     <span class="k">case</span> <span class="o">&lt;</span><span class="n">pattern_1</span><span class="o">&gt;</span><span class="p">:</span>
@@ -7886,7 +7886,7 @@ $$
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="3.3-while-%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5">3.3 while 循环语句<a class="anchor-link" href="#3.3-while-%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5">¶</a></h3><p>利用 while 语句，可以让一个代码块一遍又一遍地执行。只要 while 语句的条件为 True， while 子句中的代码就会执行。</p>
+<h2 id="3.3-while-%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5">3.3 while 循环语句<a class="anchor-link" href="#3.3-while-%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5">¶</a></h2><p>利用 while 语句，可以让一个代码块一遍又一遍地执行。只要 while 语句的条件为 True， while 子句中的代码就会执行。</p>
 <p>while 语句的一般形式是：</p>
 <div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">condition</span><span class="p">:</span>
     <span class="n">statement</span><span class="o">...</span>
@@ -8110,7 +8110,7 @@ Access granted.
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="3.4-for-%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5">3.4 for 循环语句<a class="anchor-link" href="#3.4-for-%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5">¶</a></h3><p>当条件为 True 时，while 循环会继续循环直到条件为 False，这并不方便直接控制循环次数。但如果我们想让一个代码块执行固定次数，我们可以通过 for 循环语句和 <code>range()</code> 函数来实现。</p>
+<h2 id="3.4-for-%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5">3.4 for 循环语句<a class="anchor-link" href="#3.4-for-%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5">¶</a></h2><p>当条件为 True 时，while 循环会继续循环直到条件为 False，这并不方便直接控制循环次数。但如果我们想让一个代码块执行固定次数，我们可以通过 for 循环语句和 <code>range()</code> 函数来实现。</p>
 <p>for 循环可以遍历任何可迭代对象，如一个列表或者一个字符串。它的一般格式如下（else 可以不加）：</p>
 <div class="highlight"><pre><span></span><span class="k">for</span> <span class="o">&lt;</span><span class="n">variable</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">sequence</span><span class="o">&gt;</span><span class="p">:</span>
     <span class="o">&lt;</span><span class="n">statements</span><span class="o">&gt;</span>
@@ -8366,7 +8366,7 @@ Finally finished!
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="3.5-%E8%A1%A5%E5%85%85%EF%BC%9A%E6%A0%87%E5%87%86%E5%BA%93">3.5 补充：标准库<a class="anchor-link" href="#3.5-%E8%A1%A5%E5%85%85%EF%BC%9A%E6%A0%87%E5%87%86%E5%BA%93">¶</a></h3><p>在 Python 程序里可以调用一组基本的函数，它们被称为 “内建函数”（我更喜欢叫内置函数），包括我们此前见到的 <code>print()</code>, <code>input()</code>, <code>len()</code> 和 <code>range()</code> 函数。 Python 也包括一组模块，称为“标准库”。每个模块都是一个 Python 程序（或者说一个 <code>.py</code> 文件），它包含一组相关的函数，例如我们在第二节介绍的 math 模块有数学运算相关的函数，random 模块有随机数相关的函数。</p>
+<h2 id="3.5-%E8%A1%A5%E5%85%85%EF%BC%9A%E6%A0%87%E5%87%86%E5%BA%93">3.5 补充：标准库<a class="anchor-link" href="#3.5-%E8%A1%A5%E5%85%85%EF%BC%9A%E6%A0%87%E5%87%86%E5%BA%93">¶</a></h2><p>在 Python 程序里可以调用一组基本的函数，它们被称为 “内建函数”（我更喜欢叫内置函数），包括我们此前见到的 <code>print()</code>, <code>input()</code>, <code>len()</code> 和 <code>range()</code> 函数。 Python 也包括一组模块，称为“标准库”。每个模块都是一个 Python 程序（或者说一个 <code>.py</code> 文件），它包含一组相关的函数，例如我们在第二节介绍的 math 模块有数学运算相关的函数，random 模块有随机数相关的函数。</p>
 <p>在编写程序时利用其他大佬写好的模块，可以有效减轻我们的负担，以及提高代码的可维护性。（大佬写的代码和我们写的屎山自然不同）</p>
 <p>在使用这些模块中的函数前，我们必须用 <code>import</code> 语句导入该模块，如</p>
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">module</span> <span class="c1"># 导入模块的所有部分</span>
@@ -8533,6 +8533,25 @@ An exception has occurred, use %tb to see the full traceback.
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>有些大佬已经把自己的代码打包好了，我们可以安装他们写好的代码拿来自己用。那么如何安装第三方模块呢？这需要我们通过包管理工具 pip 完成，具体使用教程可以去网络上查询。</p>
 <p>这里要提一点，我们经常需要用到很多第三方库，比如科学计算和绘图必备的 <code>numpy</code>, <code>matplotlib</code>, <code>scipy</code>，用 pip 一个个安装比较麻烦。对于小白来说，直接下载 <a href="https://anaconda.org/">Anaconda</a> 是非常推荐的，它已经内置了许多非常有用的第三方库。通过设置环境变量，可以将环境变量的内容自动添加到模块搜索路径中。</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="3.6-References">3.6 References<a class="anchor-link" href="#3.6-References">¶</a></h2><ul>
+<li>[1] <a href="https://docs.python.org/zh-cn/3/">Python 官方手册（中文）</a></li>
+<li>[2] <a href="https://docs.python.org/3/">Python 官方手册（英文）</a></li>
+<li>[3] <a href="https://www.runoob.com/python3/python3-tutorial.html">Python 3 教程 - 菜鸟教程</a></li>
+<li>[4] <a href="https://www.liaoxuefeng.com/wiki/1016959663602400">廖雪峰的 Python 教程</a></li>
+<li>[5] <a href="https://github.com/jackfrued/Python-100-Days/tree/master">Python - 100天从新手到大师</a></li>
+<li>[6] Eric Matthes.《Python编程 - 从入门到实践（第二版）》（袁国忠译）. 人民邮电出版社</li>
+<li>[7] Al Sweigart.《Python编程 - 快速上手 -- 让繁琐工作自动化》（王海鹏译）. 人民邮电出版社</li>
+</ul>
 </div>
 </div>
 </div>

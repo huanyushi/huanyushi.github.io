@@ -7495,7 +7495,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="4.-%E5%87%BD%E6%95%B0">4. 函数<a class="anchor-link" href="#4.-%E5%87%BD%E6%95%B0">¶</a></h2><p>在之前，我们已经遇到了许多 Python 提供的内建函数，比如 <code>print()</code>, <code>input()</code>, <code>len()</code> 等。我们也可以编写自己的函数，实现自己想要的特定功能。函数就像一个程序内的小程序，利用好函数可以提高应用的模块性，和代码的重复利用率。</p>
+<h1 id="4.-%E5%87%BD%E6%95%B0">4. 函数<a class="anchor-link" href="#4.-%E5%87%BD%E6%95%B0">¶</a></h1><p>在之前，我们已经遇到了许多 Python 提供的内建函数，比如 <code>print()</code>, <code>input()</code>, <code>len()</code> 等。我们也可以编写自己的函数，实现自己想要的特定功能。函数就像一个程序内的小程序，利用好函数可以提高应用的模块性，和代码的重复利用率。</p>
 </div>
 </div>
 </div>
@@ -7506,7 +7506,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="4.1-%E5%87%BD%E6%95%B0%E7%9A%84%E5%AE%9A%E4%B9%89">4.1 函数的定义<a class="anchor-link" href="#4.1-%E5%87%BD%E6%95%B0%E7%9A%84%E5%AE%9A%E4%B9%89">¶</a></h3><p>在 Python 里我们定义函数需要使用 <code>def</code> 关键字，一般格式如下：</p>
+<h2 id="4.1-%E5%87%BD%E6%95%B0%E7%9A%84%E5%AE%9A%E4%B9%89">4.1 函数的定义<a class="anchor-link" href="#4.1-%E5%87%BD%E6%95%B0%E7%9A%84%E5%AE%9A%E4%B9%89">¶</a></h2><p>在 Python 里我们定义函数需要使用 <code>def</code> 关键字，一般格式如下：</p>
 <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">function_name</span> <span class="p">(</span><span class="n">argument1</span><span class="p">,</span> <span class="n">argument2</span><span class="p">,</span> <span class="o">...</span><span class="p">):</span>
     <span class="o">&lt;</span><span class="n">action</span><span class="o">&gt;</span>
 </pre></div>
@@ -7669,7 +7669,7 @@ Hello Bob
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="4.2-%E5%8F%82%E6%95%B0">4.2 参数<a class="anchor-link" href="#4.2-%E5%8F%82%E6%95%B0">¶</a></h3><p>定义函数的时候，我们把参数的名字和位置确定下来，函数的接口定义就完成了。对于函数的调用者来说，只需要知道如何传递正确的参数，以及函数将返回什么样的值就够了，函数内部的复杂逻辑被封装起来，调用者无需了解内部代码是如何编写的。（实际上这也体现了调包的便捷性）</p>
+<h2 id="4.2-%E5%8F%82%E6%95%B0">4.2 参数<a class="anchor-link" href="#4.2-%E5%8F%82%E6%95%B0">¶</a></h2><p>定义函数的时候，我们把参数的名字和位置确定下来，函数的接口定义就完成了。对于函数的调用者来说，只需要知道如何传递正确的参数，以及函数将返回什么样的值就够了，函数内部的复杂逻辑被封装起来，调用者无需了解内部代码是如何编写的。（实际上这也体现了调包的便捷性）</p>
 <p>Python 的函数定义非常简单，但灵活度却非常大。除了正常定义的必选参数外，还可以使用默认参数、可变参数和关键字参数，使得函数定义出来的接口，不但能处理复杂的参数，还可以简化调用者的代码。</p>
 <p>在 Python 中，调用函数时可以使用的正式参数类型有：</p>
 <ul>
@@ -7688,7 +7688,7 @@ Hello Bob
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="4.2.1-%E5%BF%85%E9%9C%80%E5%8F%82%E6%95%B0">4.2.1 必需参数<a class="anchor-link" href="#4.2.1-%E5%BF%85%E9%9C%80%E5%8F%82%E6%95%B0">¶</a></h4><p>必需参数必须以正确的顺序传入函数。调用时的数量必须和声明时的一样。例如，<code>random.randint(1,10)</code> 和 <code>random.randint(10,1)</code> 不同，前者返回 1 到 10 之间的一个随机整数，后者则会报错。这是因为 <code>random.randint()</code> 函数里，第一个参数是范围的下界，第二个参数是范围的上界。它们之间的位置不能交换。</p>
+<h3 id="4.2.1-%E5%BF%85%E9%9C%80%E5%8F%82%E6%95%B0">4.2.1 必需参数<a class="anchor-link" href="#4.2.1-%E5%BF%85%E9%9C%80%E5%8F%82%E6%95%B0">¶</a></h3><p>必需参数必须以正确的顺序传入函数。调用时的数量必须和声明时的一样。例如，<code>random.randint(1,10)</code> 和 <code>random.randint(10,1)</code> 不同，前者返回 1 到 10 之间的一个随机整数，后者则会报错。这是因为 <code>random.randint()</code> 函数里，第一个参数是范围的下界，第二个参数是范围的上界。它们之间的位置不能交换。</p>
 </div>
 </div>
 </div>
@@ -7736,7 +7736,7 @@ Cell <span class="ansi-green-intense-fg ansi-bold">In[8], line 4</span>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="4.2.2-%E5%85%B3%E9%94%AE%E5%AD%97%E5%8F%82%E6%95%B0">4.2.2 关键字参数<a class="anchor-link" href="#4.2.2-%E5%85%B3%E9%94%AE%E5%AD%97%E5%8F%82%E6%95%B0">¶</a></h4><p>关键字参数是由函数调用时在它们前面的关键字来识别的。关键字参数通常用于可选变元。使用关键字参数允许函数调用时参数的顺序与声明时不一致，因为 Python 解释器能够用参数名匹配参数值。</p>
+<h3 id="4.2.2-%E5%85%B3%E9%94%AE%E5%AD%97%E5%8F%82%E6%95%B0">4.2.2 关键字参数<a class="anchor-link" href="#4.2.2-%E5%85%B3%E9%94%AE%E5%AD%97%E5%8F%82%E6%95%B0">¶</a></h3><p>关键字参数是由函数调用时在它们前面的关键字来识别的。关键字参数通常用于可选变元。使用关键字参数允许函数调用时参数的顺序与声明时不一致，因为 Python 解释器能够用参数名匹配参数值。</p>
 <p>例如 <code>print()</code> 函数有可选的变元 <code>end</code> 和 <code>sep</code>，分别指定在参数末尾打印什么，以及在参数之间打印什么来隔开它们。</p>
 </div>
 </div>
@@ -7865,7 +7865,7 @@ cats,dogs,mice
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="4.2.3-%E9%BB%98%E8%AE%A4%E5%8F%82%E6%95%B0">4.2.3 默认参数<a class="anchor-link" href="#4.2.3-%E9%BB%98%E8%AE%A4%E5%8F%82%E6%95%B0">¶</a></h4><p>调用函数时，如果没有传递参数，则会使用默认参数。默认参数的使用，可以简化函数的调用。</p>
+<h3 id="4.2.3-%E9%BB%98%E8%AE%A4%E5%8F%82%E6%95%B0">4.2.3 默认参数<a class="anchor-link" href="#4.2.3-%E9%BB%98%E8%AE%A4%E5%8F%82%E6%95%B0">¶</a></h3><p>调用函数时，如果没有传递参数，则会使用默认参数。默认参数的使用，可以简化函数的调用。</p>
 <div class="alert alert-block alert-danger"> <b>警告:</b> 设置参数时，一定要注意必需参数在前，默认参数在后，否则 Python 的解释器会报错。 </div>
 <p>因为我们在调用函数时，没有默认值的参数（也就是必需参数）应该首先接收到对应的参数值。如果将默认参数放在必选参数之前，Python 无法判断我们提供的参数究竟是给谁的，所以会报错。</p>
 </div>
@@ -7912,7 +7912,7 @@ cats,dogs,mice
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="4.2.4-%E4%B8%8D%E5%AE%9A%E9%95%BF%E5%8F%82%E6%95%B0">4.2.4 不定长参数<a class="anchor-link" href="#4.2.4-%E4%B8%8D%E5%AE%9A%E9%95%BF%E5%8F%82%E6%95%B0">¶</a></h4><p>我们可能需要一个函数能处理比当初声明时更多的参数。这些参数叫做不定长参数，和前述参数不同，它在声明时不会命名。基本语法格式如下：</p>
+<h3 id="4.2.4-%E4%B8%8D%E5%AE%9A%E9%95%BF%E5%8F%82%E6%95%B0">4.2.4 不定长参数<a class="anchor-link" href="#4.2.4-%E4%B8%8D%E5%AE%9A%E9%95%BF%E5%8F%82%E6%95%B0">¶</a></h3><p>我们可能需要一个函数能处理比当初声明时更多的参数。这些参数叫做不定长参数，和前述参数不同，它在声明时不会命名。基本语法格式如下：</p>
 <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">functionname</span><span class="p">([</span><span class="n">formal_args</span><span class="p">,]</span> <span class="o">*</span><span class="n">var_args_tuple</span> <span class="p">):</span>
    <span class="s2">"函数_文档字符串"</span>
    <span class="n">function_suite</span>
@@ -8056,7 +8056,7 @@ cats,dogs,mice
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="4.2.5-%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92">4.2.5 参数传递<a class="anchor-link" href="#4.2.5-%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92">¶</a></h4><p>在 Python 中，类型属于对象，对象有不同类型的区分，但变量是没有类型的。比如 <code>[1,2,3]</code> 是 List 类型，<code>"ABC"</code> 是 String 类型，但对于一个变量来说是没有类型的，它仅仅是对一个对象的引用（就像 C 语言的指针一样）。</p>
+<h3 id="4.2.5-%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92">4.2.5 参数传递<a class="anchor-link" href="#4.2.5-%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92">¶</a></h3><p>在 Python 中，类型属于对象，对象有不同类型的区分，但变量是没有类型的。比如 <code>[1,2,3]</code> 是 List 类型，<code>"ABC"</code> 是 String 类型，但对于一个变量来说是没有类型的，它仅仅是对一个对象的引用（就像 C 语言的指针一样）。</p>
 <p>在 Python 中，字符串（string）、元组（tuple）和数（number）都是不可更改的对象，而列表（list）和字典（dictionary）则是可以修改的对象。</p>
 <p>Python 函数的参数传递分为可变和不可变两个类型：</p>
 <ul>
@@ -8304,7 +8304,7 @@ cats,dogs,mice
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="4.3-%E5%B1%80%E9%83%A8%E5%92%8C%E5%85%A8%E5%B1%80%E4%BD%9C%E7%94%A8%E5%9F%9F">4.3 局部和全局作用域<a class="anchor-link" href="#4.3-%E5%B1%80%E9%83%A8%E5%92%8C%E5%85%A8%E5%B1%80%E4%BD%9C%E7%94%A8%E5%9F%9F">¶</a></h3><ul>
+<h2 id="4.3-%E5%B1%80%E9%83%A8%E5%92%8C%E5%85%A8%E5%B1%80%E4%BD%9C%E7%94%A8%E5%9F%9F">4.3 局部和全局作用域<a class="anchor-link" href="#4.3-%E5%B1%80%E9%83%A8%E5%92%8C%E5%85%A8%E5%B1%80%E4%BD%9C%E7%94%A8%E5%9F%9F">¶</a></h2><ul>
 <li>在被调用函数内赋值的变元和变量，处于该函数的局部作用域。处于局部作用域的变量，称为局部变量。</li>
 <li>在所有函数之外的变量，属于全局作用域。处于全局作用域的变量，称为全局变量。</li>
 </ul>
@@ -8325,7 +8325,7 @@ cats,dogs,mice
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="4.3.1-%E5%B1%80%E9%83%A8%E5%92%8C%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E7%9A%84%E5%85%B3%E7%B3%BB">4.3.1 局部和全局变量的关系<a class="anchor-link" href="#4.3.1-%E5%B1%80%E9%83%A8%E5%92%8C%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E7%9A%84%E5%85%B3%E7%B3%BB">¶</a></h4><div class="alert alert-block alert-success"> 局部变量不能在全局作用域内使用
+<h3 id="4.3.1-%E5%B1%80%E9%83%A8%E5%92%8C%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E7%9A%84%E5%85%B3%E7%B3%BB">4.3.1 局部和全局变量的关系<a class="anchor-link" href="#4.3.1-%E5%B1%80%E9%83%A8%E5%92%8C%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E7%9A%84%E5%85%B3%E7%B3%BB">¶</a></h3><div class="alert alert-block alert-success"> 局部变量不能在全局作用域内使用
 </div>
 <p>下述程序在运行时会报错，这是因为 <code>eggs</code> 只属于函数 <code>spam()</code> 调用所创建的局部作用域。在程序执行从 <code>spam</code> 返回后，该局部作用域就会被销毁，不再有名为 <code>eggs</code> 的变量。</p>
 </div>
@@ -8545,7 +8545,7 @@ global
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="4.3.2-global-%E8%AF%AD%E5%8F%A5">4.3.2 global 语句<a class="anchor-link" href="#4.3.2-global-%E8%AF%AD%E5%8F%A5">¶</a></h4><p>如果需要在一个函数内修改全局变量就需要使用到 <code>global</code> 语句。</p>
+<h3 id="4.3.2-global-%E8%AF%AD%E5%8F%A5">4.3.2 global 语句<a class="anchor-link" href="#4.3.2-global-%E8%AF%AD%E5%8F%A5">¶</a></h3><p>如果需要在一个函数内修改全局变量就需要使用到 <code>global</code> 语句。</p>
 <p>如果在函数的顶部有 <code>global eggs</code> 这样的代码，它就告诉 Python，“在这个函数中，<code>eggs</code> 指的是全局变量，所以不要用这个名字创建一个局部变量。”</p>
 </div>
 </div>
@@ -8673,7 +8673,7 @@ Cell <span class="ansi-green-intense-fg ansi-bold">In[7], line 2</span>, in <spa
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="4.4-%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0">4.4 匿名函数<a class="anchor-link" href="#4.4-%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0">¶</a></h3><p>在 Python 中可以使用 <code>lambda</code> 来创建小巧的匿名函数。</p>
+<h2 id="4.4-%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0">4.4 匿名函数<a class="anchor-link" href="#4.4-%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0">¶</a></h2><p>在 Python 中可以使用 <code>lambda</code> 来创建小巧的匿名函数。</p>
 <p>所谓匿名，就是指我们不再使用 <code>def</code> 语句这样标准的形式来定义一个函数。<code>lambda</code> 只是一个表达式，函数体比 <code>def</code> 简单很多。它的基本语法格式如下：</p>
 <div class="highlight"><pre><span></span><span class="k">lambda</span> <span class="p">[</span><span class="n">arg1</span> <span class="p">[,</span><span class="n">arg2</span><span class="p">,</span><span class="o">....</span><span class="p">,</span><span class="n">arg3</span><span class="p">]]:</span><span class="n">expression</span>
 </pre></div>
@@ -8824,7 +8824,7 @@ Cell <span class="ansi-green-intense-fg ansi-bold">In[7], line 2</span>, in <spa
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="4.5-%E9%80%92%E5%BD%92%E5%87%BD%E6%95%B0">4.5 递归函数<a class="anchor-link" href="#4.5-%E9%80%92%E5%BD%92%E5%87%BD%E6%95%B0">¶</a></h3><p>在函数内部，可以调用其他函数。如果一个函数在内部调用自身本身，那这个函数就是一个递归函数。</p>
+<h2 id="4.5-%E9%80%92%E5%BD%92%E5%87%BD%E6%95%B0">4.5 递归函数<a class="anchor-link" href="#4.5-%E9%80%92%E5%BD%92%E5%87%BD%E6%95%B0">¶</a></h2><p>在函数内部，可以调用其他函数。如果一个函数在内部调用自身本身，那这个函数就是一个递归函数。</p>
 <p>递归函数的优点是定义简单，逻辑清晰。理论上，所有的递归函数都可以写成循环的方式，但循环的逻辑不如递归清晰。</p>
 </div>
 </div>
@@ -8883,7 +8883,7 @@ Cell <span class="ansi-green-intense-fg ansi-bold">In[7], line 2</span>, in <spa
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="4.6-%E8%A1%A5%E5%85%85%EF%BC%9A%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86">4.6 补充：异常处理<a class="anchor-link" href="#4.6-%E8%A1%A5%E5%85%85%EF%BC%9A%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86">¶</a></h3><p>在 Python 程序中遇到错误，或者“异常”，意味着整个程序崩溃。显然我们不希望这发生在我们写的代码中，我们更希望程序能检测错误，处理它们然后继续运行。</p>
+<h2 id="4.6-%E8%A1%A5%E5%85%85%EF%BC%9A%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86">4.6 补充：异常处理<a class="anchor-link" href="#4.6-%E8%A1%A5%E5%85%85%EF%BC%9A%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86">¶</a></h2><p>在 Python 程序中遇到错误，或者“异常”，意味着整个程序崩溃。显然我们不希望这发生在我们写的代码中，我们更希望程序能检测错误，处理它们然后继续运行。</p>
 <p>例如，考虑下面的程序，它会出现“除数为零”的错误：</p>
 </div>
 </div>
@@ -8989,6 +8989,25 @@ None
 42.0
 </pre>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="4.7-References">4.7 References<a class="anchor-link" href="#4.7-References">¶</a></h2><ul>
+<li>[1] <a href="https://docs.python.org/zh-cn/3/">Python 官方手册（中文）</a></li>
+<li>[2] <a href="https://docs.python.org/3/">Python 官方手册（英文）</a></li>
+<li>[3] <a href="https://www.runoob.com/python3/python3-tutorial.html">Python 3 教程 - 菜鸟教程</a></li>
+<li>[4] <a href="https://www.liaoxuefeng.com/wiki/1016959663602400">廖雪峰的 Python 教程</a></li>
+<li>[5] <a href="https://github.com/jackfrued/Python-100-Days/tree/master">Python - 100天从新手到大师</a></li>
+<li>[6] Eric Matthes.《Python编程 - 从入门到实践（第二版）》（袁国忠译）. 人民邮电出版社</li>
+<li>[7] Al Sweigart.《Python编程 - 快速上手 -- 让繁琐工作自动化》（王海鹏译）. 人民邮电出版社</li>
+</ul>
 </div>
 </div>
 </div>
