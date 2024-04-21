@@ -20,7 +20,7 @@ NumPy（Numerical Python） 是 Python 语言的一个扩展程序库，支持�
 - 整合 C/C++/Fortran 代码的工具
 - 线性代数、傅里叶变换、随机数生成等功能
 
-NumPy 通常与 SciPy（Scientific Python）和 Matplotlib（绘图库）一起使用， 这种组合广泛用于替代 MatLab，是一个强大的科学计算环境，有助于我们通过 Python 学习数据科学或者机器学习。
+NumPy 通常与 SciPy（Scientific Python）和 Matplotlib（绘图库）一起使用， 这种组合广泛用于替代 MATLAB，是一个强大的科学计算环境，有助于我们通过 Python 学习数据科学或者机器学习。
 
 > NumPy 包的**核心对象**是 ndarray 对象。它封装了 Python 原生的同数据类型的 n 维数组，为了保证其性能优良，其中有许多操作都是代码在本地进行编译后执行的。
 {: .prompt-info}

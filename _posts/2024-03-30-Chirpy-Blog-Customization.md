@@ -172,13 +172,67 @@ MathJax = {
 > 2. 我这里设置的是友链沉底，保持在底部社交平台上方。如果分辨率拉大，会发现它和上面侧边栏选项卡之间有很大间距。如果想调整友链位置紧跟选项卡之后，可以在 `_includes/sidebar.html` 中修改选项卡的样式，将 `<nav class="flex-column flex-grow-1 w-100 ps-0">` 中的 `flex-grow-1` 删除；并加入到友链样式中原先的 `<div class="friends">` 修改为 `<div class="friends flex-grow-1">`。同时 `assets/css/jekyll-theme-chirpy.scss` 中 `#sidebar .friends` 里的 `margin-bottom: 2rem` 修改为上间距 `margin-top: ? rem`, ? 的值可以自己选定。
 {: .prompt-warning}
 
+## 4. 修改 further reading 的文章顺序
+按我的理解这应该是模板的一个 bug，所以我把这部分更新写成一个 PR 提交给原作者了，请见 [refactor: make Further Reading display the latest posts.](https://github.com/cotes2020/jekyll-theme-chirpy/pull/1699)。
 
-## 4. 增加评论区
+先描述一下问题，假设我们有 5 个不同的文章，它们按发布时间从以前到最新依次为 `Post1`, `Post2`, `Post3`, `Post4` 和 `Post5`，即：
+
+```
+_posts
+├─ Post1.md
+├─ Post2.md
+├─ Post3.md
+├─ Post4.md
+└─ Post5.md
+```
+
+在打开每个文章时，底部会推荐跟它最匹配的 3 个文章（匹配分数的算法在 `_includes/related-posts.html` 中）。但现在的问题是，当这些文章的匹配分数相同时，无论我打开哪篇文章，底部的 Further Reading 永远只会推荐发布时间最早的 3 个文章而不是最新的。
+
+举个例子，当我打开 `Post4` 时，底部显示的是 `Post1`, `Post2`, `Post3`，而不是最新的 3 篇 `Post2`, `Post3`, `Post5`。同理，当我打开 `Post5` 时显示的也是 `Post1`, `Post2`, `Post3` 而不是 `Post2`, `Post3`, `Post4`。这就意味着，无论我后面写了多少篇文章，它永远只会显示最早的那 3 篇。
+
+在匹配分数一样的情况下，我们可能更希望推荐的是最近更新的 3 篇文章而不是最早的（当然，也可以设置随机数，匹配随机文章）。所以我做了以下更改，在 `_includes/related-posts.html` （这个文件也在 gem 包里）中，
+
+<!-- {% raw %} -->
+```diff
+-{% for i in (0..last_index) %}
+  {% assign post = match_posts[i] %}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++{% for j in (0..last_index) %}
++  {% assign i = last_index | minus: j %}
+   {% assign post = match_posts[i] %}
+```
+{: file='_includes/related-posts.html'}
+<!-- {% endraw %} -->
+
+<!-- {% raw %} -->
+```diff
+{% if score_list.size > 0 %}
+-  {% assign score_list = score_list | sort | reverse %}
+   {% for entry in score_list limit: TOTAL_SIZE %}
+     {% assign index = entry | split: SEPARATOR | last %}
+     {% assign index_list = index_list | push: index %}
+   {% endfor %}
+{% endif %}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+{% if score_list.size > 0 %}
++  {% assign score_list = score_list | sort_nature | reverse %}
+   {% for entry in score_list limit: TOTAL_SIZE %}
+     {% assign index = entry | split: SEPARATOR | last %}
+     {% assign index_list = index_list | push: index %}
+   {% endfor %}
+{% endif %}
+
++ {% assign index_list = index_list | reverse %}
+```
+{: file='_includes/related-posts.html'}
+<!-- {% endraw %} -->
+
+## 5. 增加评论区
 评论区使用 giscus，模板作者已经将相关选项封装好了，在 `_config.yml` 文件中填上个人信息即可。
 
 教程请见 [giscus](https://giscus.app/) 项目，关于它的高级功能设置请见 [Advanced usage](https://github.com/giscus/giscus/blob/main/ADVANCED-USAGE.md)。
 
-## 5. 增加站点统计
+## 6. 增加站点统计
 模板作者贴心的在页脚使用了 flex 格式，直接找到 `_includes/footer.html` 文件（这个文件在 gem 包里），复制后在中间插入[不蒜子](https://busuanzi.ibruce.info/)即可成功在页脚显示站点统计，`uv` 和 `pv` 就是访问量的两种统计算法，具体解释请见[教程](https://ibruce.info/2015/04/04/busuanzi/)。
 
 <!-- {% raw %} -->
@@ -202,7 +256,7 @@ MathJax = {
 
 另外更多详细的站点统计信息（如用户量、用户地区、用户访问了哪些页面等内容）可以使用 [Google Analytics](https://analytics.google.com/analytics/web/#/provision) 来获取，在 `_config.yml` 中加入 ID 即可。
 
-## 6. 增加背景动画
+## 7. 增加背景动画
 参考 [@NichtsHsu](https://nihil.cc/) 的博客设计，增加了背景动画功能。在 `_layouts/default.html` （这个文件也在 gem 包里）中加入
 
 <!-- {% raw %} -->
@@ -363,7 +417,7 @@ MathJax = {
 4. `#animation` 是一个具有固定位置的容器，用于包含动画效果。它包含了另一个关键帧动画 `animate`，定义了元素在页面上的运动轨迹和透明度变化。这个动画使元素沿着垂直方向向上移动并旋转，逐渐消失，同时边框半径也发生变化。
 5. `#animation` 中包含了两个媒体查询，根据视口宽度的不同应用不同的样式。在大于等于 1200px 的情况下，会生成一系列彩色圆形动画效果，每个圆形的位置、颜色、大小、持续时间和延迟时间都是随机生成的。在小于 1200px 的情况下，圆形动画被隐藏起来，不显示。所以移动端看不到动画效果，但是 PC 端是可以的。
 
-## 7. Details 元素的样式设计
+## 8. Details 元素的样式设计
 HTML 中的 `<details>` 元素可以创建一个组件，仅当被切换为展开状态时，才会显示里面的内容，效果如下：
 
 <details markdown="1">
@@ -447,7 +501,7 @@ html {
 
 
 
-## 8. LQIP 的 Python 实现
+## 9. LQIP 的 Python 实现
 LQIP (Low Quality Image Placeholder) 指的是低质量图像占位符，这是一种网页性能优化技术，在加载高质量图像之前，先加载一个轻量级、低分辨率的模糊图像来提供一种预览。这种预览图像可以帮助减少页面加载时间和带宽消耗，提高访问者的视觉体验。
 
 ![LQIP](lqip.png)
@@ -523,7 +577,7 @@ base64_string = "/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBk
 save_base64_image(base64_string, "decoded_image.webp")
 ```
 
-## 9. 反色图片的 Python 实现
+## 10. 反色图片的 Python 实现
 Blog 支持暗色模式，同时文中的图片也可以相应转换至暗色模式，对于部分图片可以直接通过反色的方式将亮色转换至暗色（但不是所有，比如人像反色放在博客里真的很恶心），我写了一个 Python 程序可以将图片转换至暗色模式，有需要可以自取。同样地，文件路径也是根据我自己实际情况来设置的，需要做相应修改：
 
 ```python
@@ -567,8 +621,8 @@ _反色图片与原图片对比_
 
 
 
-## 10. 其他问题
-### 10.1. git push 失败: couldn't connet to server
+## 11. 其他问题
+### 11.1. git push 失败: couldn't connet to server
 将本地文件 push 到 github 远程仓库里，经常出现 `couldn't connet to server` 的报错，经过查询没有明显有效的办法。以下是**可能有效**的措施（目前来看第三种最有效）：
 
 1. 关掉梯子 (VPN) 再 push 一下试试；
@@ -584,7 +638,7 @@ git config --global http.proxy http://127.0.0.1:7890
 
 可通过 `git config --global -l` 查看是否设置成功。之后再进行 push 即可。
 
-### 10.2. jekyll serve 预览速度较慢
+### 11.2. jekyll serve 预览速度较慢
 方法很多，比如减少文件夹数量、压缩图片大小等。，以下罗列一些我摸索出来的方法：
 
 1. 对博客设置增量构建（即只重新建构发生更改的文件，而不是每次重新构建整个站点），
@@ -594,7 +648,7 @@ git config --global http.proxy http://127.0.0.1:7890
 > 提供一个免费在线图片压缩网站：[TinyPNG](https://tinypng.com/)，虽然说是有损压缩，但视觉上几乎没有影响，且图片压缩甚至能达到 70%。
 {: .prompt-info}
 
-### 10.3. 在 blog 中插入文件
+### 11.3. 在 blog 中插入文件
 使用 `<iframe>` 元素即可，如
 ```html
 <iframe src="file path" width="100%" height='800'></iframe>
@@ -604,7 +658,7 @@ git config --global http.proxy http://127.0.0.1:7890
 > **警告：**这个功能在谷歌浏览器上可以正常使用，但是其他浏览器不一定支持，且加 overflow 在移动端也不能产生滚动条，慎用！
 {: .prompt-danger}
 
-### 10.4. 在 blog 中在线运行 Python
+### 11.4. 在 blog 中在线运行 Python
 在 post 里加入以下代码，可以在线运行 Python （虽然感觉有点鸡肋，但还是记录在这里）
 
 ```html
