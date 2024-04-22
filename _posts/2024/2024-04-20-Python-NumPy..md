@@ -35,13 +35,16 @@ NumPy 为啥这么快呢？这主要有以下几个原因：
 （列表的元素可以是任何对象，因此列表中所保存的是对象的指针；对于数值运算来说，这种结构显然比较浪费内存和 CPU 计算时间）
 
 像我们日常生活中遇到的许多问题，都可以用数组来表示，比如通常的 excel 表格：
-![numpy1.png](numpy1.png)
+![numpy1.png](numpy1.png){:.light}
+![numpy1.png](numpy1-dark.png){:.dark}
 
 或者一张照片的灰度图，每个像素的灰度都可以用一个数来表示，这就构成了一个2维数组：
 ![numpy2.png](numpy2.png)
+![numpy2.png](numpy2-dark.png){:.dark}
 
 如果是彩色图片，考虑 RGB 三色表示，它就是一个3维数组：
 ![numpy3.png](numpy3.png)
+![numpy3.png](numpy3-dark.png){:.dark}
 
 所以学好 NumPy（和线性代数）还是非常有必要滴！
 
@@ -1070,7 +1073,7 @@ NumPy 还有很多内容，这一节只是做了一个简短的介绍，更多�
 
 
 ## References
-- [1] [NumPy](https://numpy.org/)
-- [2] [A Visual Intro to NumPy and Data Representation - Jay Alammar](https://jalammar.github.io/visual-numpy/)
-- [3] [NumPy 教程 - 菜鸟教程](https://www.runoob.com/numpy/numpy-tutorial.html)
-- [4] [NumPy 中文网](https://www.numpy.org.cn/)
+1. [NumPy](https://numpy.org/)
+2. [Jay Alammar. A Visual Intro to NumPy and Data Representation ](https://jalammar.github.io/visual-numpy/)
+3. [NumPy 教程 - 菜鸟教程](https://www.runoob.com/numpy/numpy-tutorial.html)
+4. [NumPy 中文网](https://www.numpy.org.cn/)

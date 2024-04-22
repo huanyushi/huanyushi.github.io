@@ -288,6 +288,6 @@ We hope they succeed.</p>
 
 ## References
 
-- [1] Elisabeth Robson, Eric Freeman. Head First HTML 与 CSS (第二版). 徐阳, 丁晓峰等译. 2013
-- [2] [HTML Tutorial, W3Schools](https://www.w3schools.com/html/default.asp)
-- [3] [HTML 教程, 菜鸟教程](https://www.runoob.com/html/html-tutorial.html)
+1. Elisabeth Robson, Eric Freeman. Head First HTML 与 CSS (第二版). 徐阳, 丁晓峰等译. 2013
+2. [HTML Tutorial, W3Schools](https://www.w3schools.com/html/default.asp)
+3. [HTML 教程, 菜鸟教程](https://www.runoob.com/html/html-tutorial.html)

@@ -70,7 +70,7 @@ CSS 规则由两个主要部分构成：选择器 (selector)，以及一条或�
 
 ## References
 
-- [1] Elisabeth Robson, Eric Freeman. Head First HTML 与 CSS (第二版). 徐阳, 丁晓峰等译. 2013
-- [2] [CSS Tutorial, W3Schools](https://www.w3schools.com/css/default.asp)
-- [3] [CSS 教程, 菜鸟教程](https://www.runoob.com/css/css-tutorial.html)
-- [4] [w3schools](https://www.w3school.com.cn/css/css_shiyong.asp)
+1. Elisabeth Robson, Eric Freeman. Head First HTML 与 CSS (第二版). 徐阳, 丁晓峰等译. 2013
+2. [CSS Tutorial, W3Schools](https://www.w3schools.com/css/default.asp)
+3. [CSS 教程, 菜鸟教程](https://www.runoob.com/css/css-tutorial.html)
+4. [w3schools](https://www.w3school.com.cn/css/css_shiyong.asp)

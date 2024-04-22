@@ -11,7 +11,7 @@ What I have done:
 3. Add friend links in the sidebar.
 4. Make Further Reading display the latest posts (see this [PR](https://github.com/cotes2020/jekyll-theme-chirpy/pull/1699)).
 5. Add site statistics from 'buanzi'([不蒜子](https://busuanzi.ibruce.info/)) in the footer.
-6. Add background animation.
+6. Add background animation (refer to [@NichtsHsu](https://nihil.cc/)).
 7. Modified the style of the `<details>` element.
 8. Python implementation for LQIP (Low Quality Image Placeholders).
 9. Python implementation for Inverted image.

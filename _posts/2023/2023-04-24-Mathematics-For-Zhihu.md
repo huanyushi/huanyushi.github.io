@@ -1,6 +1,6 @@
 ---
 title:      "Summary of Mathematical Answers"
-date:       2022-04-19
+date:       2023-04-24
 categories: [Mathematics, Integration]
 tag: [special function, integration]
 toc: false

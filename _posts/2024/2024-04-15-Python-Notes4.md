@@ -581,10 +581,10 @@ print(spam(1))  # 42.0
 ```
 
 ## References
-- [1] [Python 官方手册（中文）](https://docs.python.org/zh-cn/3/)
-- [2] [Python 官方手册（英文）](https://docs.python.org/3/)
-- [3] [Python 3 教程 - 菜鸟教程](https://www.runoob.com/python3/python3-tutorial.html)
-- [4] [廖雪峰的 Python 教程](https://www.liaoxuefeng.com/wiki/1016959663602400)
-- [5] [Python - 100天从新手到大师](https://github.com/jackfrued/Python-100-Days/tree/master)
-- [6] Eric Matthes.《Python编程 - 从入门到实践（第二版）》（袁国忠译）. 人民邮电出版社
-- [7] Al Sweigart.《Python编程 - 快速上手 -- 让繁琐工作自动化》（王海鹏译）. 人民邮电出版社
+1. [Python 官方手册（中文）](https://docs.python.org/zh-cn/3/)
+2. [Python 官方手册（英文）](https://docs.python.org/3/)
+3. [Python 3 教程 - 菜鸟教程](https://www.runoob.com/python3/python3-tutorial.html)
+4. [廖雪峰的 Python 教程](https://www.liaoxuefeng.com/wiki/1016959663602400)
+5. [Python - 100天从新手到大师](https://github.com/jackfrued/Python-100-Days/tree/master)
+6. Matthes, E.《Python编程 - 从入门到实践》(袁国忠译). 人民邮电出版社 (Year).
+7. Sweigart, A.《Python编程 - 快速上手 -- 让繁琐工作自动化》(王海鹏译). 人民邮电出版社

@@ -277,7 +277,7 @@ where the upper (lower) sign refers to bosons (fermions).
 In the next section, we will discuss the second quantization representation of some observables (one- and two- particle operators).
 
 ## References
-- [1] Fetter, A. L., Walecka, J. D., *Quantum Theory of Many-Particle Systems*. Courier Corporation. (2002)
-- [2] Mahan, G. D., *Many-Particle Physics*. Springer Science+Business Media, LLC. (2000).
-- [3] Altland, A., Simons, B. D., *Condensed Matter Field Theory*. Cambridge University Press. (2010)
-- [4] 金彪. 量子多体理论. 2024年春
+1. Fetter, A. L., Walecka, J. D., *Quantum Theory of Many-Particle Systems*. Courier Corporation. (2002)
+2. Mahan, G. D., *Many-Particle Physics*. Springer Science+Business Media, LLC. (2000).
+3. Altland, A., Simons, B. D., *Condensed Matter Field Theory*. Cambridge University Press. (2010)
+4. 金彪. 量子多体理论. 2024年春

@@ -194,35 +194,17 @@ _posts
 
 <!-- {% raw %} -->
 ```diff
--{% for i in (0..last_index) %}
-  {% assign post = match_posts[i] %}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-+{% for j in (0..last_index) %}
-+  {% assign i = last_index | minus: j %}
-   {% assign post = match_posts[i] %}
-```
-{: file='_includes/related-posts.html'}
-<!-- {% endraw %} -->
+{% for category in page.categories %}
+  {% assign match_posts = match_posts | push: site.categories[category] | uniq %}
+{% endfor %}
 
-<!-- {% raw %} -->
-```diff
-{% if score_list.size > 0 %}
--  {% assign score_list = score_list | sort | reverse %}
-   {% for entry in score_list limit: TOTAL_SIZE %}
-     {% assign index = entry | split: SEPARATOR | last %}
-     {% assign index_list = index_list | push: index %}
-   {% endfor %}
-{% endif %}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-{% if score_list.size > 0 %}
-+  {% assign score_list = score_list | sort_nature | reverse %}
-   {% for entry in score_list limit: TOTAL_SIZE %}
-     {% assign index = entry | split: SEPARATOR | last %}
-     {% assign index_list = index_list | push: index %}
-   {% endfor %}
-{% endif %}
+{% for tag in page.tags %}
+  {% assign match_posts = match_posts | push: site.tags[tag] | uniq %}
+{% endfor %}
 
-+ {% assign index_list = index_list | reverse %}
++ {% assign match_posts = match_posts | reverse %}
+{% assign last_index = match_posts.size | minus: 1 %}
+{% assign score_list = '' | split: '' %}
 ```
 {: file='_includes/related-posts.html'}
 <!-- {% endraw %} -->

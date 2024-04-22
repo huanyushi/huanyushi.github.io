@@ -40,8 +40,8 @@ Python 网站资源（注意只有官方手册是最新的）：
 - [Python - 100天从新手到大师](https://github.com/jackfrued/Python-100-Days/tree/master)
 
 Python 入门教程书籍（第二本更侧重办公自动化）：
-- Eric Matthes.《Python编程 - 从入门到实践（第二版）》（袁国忠译）. 人民邮电出版社
-- Al Sweigart.《Python编程 - 快速上手 -- 让繁琐工作自动化》（王海鹏译）. 人民邮电出版社
+- Matthes, E.《Python编程 - 从入门到实践》(袁国忠译). 人民邮电出版社 (Year).
+- Sweigart, A.《Python编程 - 快速上手 -- 让繁琐工作自动化》(王海鹏译). 人民邮电出版社
 
 ## Jupyter notebook
 Jupyter notebook 是一种基于网页的交互式计算环境，支持多种编程语言。最开始是用于 Python 语言编程的，但现在已经支持超过 40 种编程语言，比如 R, Julia 和 Scala 等。Jupyter 的名称实际上是由 3 种主要支持语言的首字母构成，JUlia, PYthon 和 R。
