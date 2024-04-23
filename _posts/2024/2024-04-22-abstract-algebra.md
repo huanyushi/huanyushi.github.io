@@ -17,7 +17,7 @@ Definition of **binary operation**:
 
 Definition of **group**:
 1. A *group* is an order pair $(G,\star)$ where $G$ is a set and $\star$ is a binary operation on $G$ satisfying the following axioms:
-   1. $\star$ is *associative*, ie.e., $\forall a,b,c\in G$,$(a\star b)\star c = a\star (b\star c)$,
+   1. $\star$ is *associative*, i.e., $\forall a,b,c\in G$,$(a\star b)\star c = a\star (b\star c)$,
    2. Exist an *identity* $e\in G$, such that $\forall a\in G$, $a\star e =e \star a = a$,
    3. $\forall a \in G$, it has an *inverse* $a^{-1}$, such that $a\star a^{-1} = a^{-1}\star a =e$.
 2. The group $(G,\star)$ is called *abelian* (or *commutative*) if $\forall a,b\in G$, $a\star b = b\star a$. 

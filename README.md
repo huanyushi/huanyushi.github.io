@@ -8,7 +8,7 @@ Based on Chipy, I've made lots of customization, and I have blogged about these 
 What I have done:
 1. Modify the MathJax config file to load the physics package.
 2. Add a background image to the sidebar and modify the associated text styles.
-3. Add friend links in the sidebar.
+3. Add friend links in the sidebar (see this [discussion](https://github.com/cotes2020/jekyll-theme-chirpy/discussions/1677)).
 4. Make Further Reading display the latest posts (see this [PR](https://github.com/cotes2020/jekyll-theme-chirpy/pull/1699)).
 5. Add site statistics from 'buanzi'([不蒜子](https://busuanzi.ibruce.info/)) in the footer.
 6. Add background animation (refer to [@NichtsHsu](https://nihil.cc/)).

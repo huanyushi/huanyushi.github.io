@@ -33,38 +33,6 @@
     color: var(--sidebar-btn-color);
 }
 
-/* 侧边栏友链样式设置 */
-#sidebar .friends {
-    padding-left: 2.5rem;
-    padding-right: 1.25rem;
-    width: 100%;
-    margin-bottom: 1.5rem;
-}
-#sidebar .friends p {
-    color: rgb(255,255,255,0.95);
-    font-family: inherit;
-    font-weight:600;
-    font-size: 95%;
-}
-#sidebar .friends p i {
-    opacity: 0.8;
-    margin-right: 1.5rem;
-}
-#sidebar .friends p span {
-    letter-spacing: 0.2px;
-    opacity: 0.9;
-}
-#sidebar .friends ul {
-    color:white;
-    font-size:95%;
-    opacity: 0.95;
-    margin-bottom: 0rem;
-}
-#sidebar .friends ul li {
-    margin-bottom: 0.4rem;
-    opacity: 0.9;
-}
-
 /* details 样式设计 */ 
 //  备选（绿色）：深色 #28690d 浅色 #c0d0b9
 //  备选（蓝色）：深色 #3f6f7f 浅色 #99bac5
