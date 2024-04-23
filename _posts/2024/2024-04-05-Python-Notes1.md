@@ -50,20 +50,16 @@ Jupyter notebook 是一种基于网页的交互式计算环境，支持多种编
 
 从 Anaconda 里打开 Jupyter notebook 或者 Jupyter Lab 均可，两者没有本质区别。往后的几篇 Python 入门教程均围绕 Jupyter notebook 进行介绍。
 ### 修改默认打开路径
-Jupyter notebook 默认打开的是 C 盘 `Users/Username` 的文件夹，想要修改它的默认打开路径，可以打开它的配置文件进行修改，通常是放在 `C:\Users\Username\.jupyter\jupyter_notebook_config.py` 文件里，如果找不到也可以打开 Anaconda Prompt，输入 `jupyter notebook --generate-config` 找到配置文件，再输入 `y` 后 <kbd>Enter</kbd>。 
+Jupyter notebook 默认打开的是 C 盘 `Users/Username`{:.filepath} 的文件夹，想要修改它的默认打开路径，可以打开它的配置文件进行修改，通常是放在 `C:\Users\Username\.jupyter\jupyter_notebook_config.py`{:.filepath} 文件里，如果找不到也可以打开 Anaconda Prompt，输入 `jupyter notebook --generate-config` 找到配置文件，再输入 `y` 后 <kbd>Enter</kbd>。 
 
 对配置文件进行以下修改
-```python
+```diff
 ## The directory to use for notebooks and kernels.
 #  Default: ''
-# c.NotebookApp.notebook_dir = ''
-# 找到上面这一行代码，在它后面补充修改后的路径，注意它前面的注释符号 # 也要去掉。
-------------------------------------------
-## The directory to use for notebooks and kernels.
-#  Default: ''
-c.NotebookApp.notebook_dir = 'Your path' # e.g. 'E:\python'
+- # c.NotebookApp.notebook_dir = ''
++ c.NotebookApp.notebook_dir = 'Your path' # e.g. 'E:\python'
 ```
-再 <kbd>ctrl</kbd> + <kbd> s </kbd> 保存，通过 Anaconda Prompt 输入 `jupyter notebook` 打开后就发现是修改后的路径了。
+注意最开始的注释 `#` 要记得去掉，再 <kbd>ctrl</kbd> + <kbd> s </kbd> 保存，通过 Anaconda Prompt 输入 `jupyter notebook` 打开后就发现是修改后的路径了。
 
 但还要注意一点，通过快捷方式打开仍然是 C 盘的位置。找到 Jupyter Notebook 快捷方式文件，右键 -> 属性 -> 目标 -> 将其后面的 `"%USERPROFILE%"` 删除 -> 应用 -> 确定。这样便修改完成了。
 
@@ -143,7 +139,7 @@ jt -t onedork -f bitstream -fs 11 -nfs 11 -tfs 12 -ofs 11 -lineh 200 -cellw 75% 
 
 > 若产生**报错**：'jt' 不是内部或外部命令,也不是可运行的程序。
 >
-> 解决办法：找到 `jt.exe` 所在的文件夹即可，可以在 windows 终端运行`dir /s /b jupyter-theme.exe` 查找，它一般在 `C:\Users\Username\AppData\Roaming\Python\Python311\Scripts` 中，把这个路径添加到系统环境变量就可以了。
+> 解决办法：找到 `jt.exe` 所在的文件夹即可，可以在 windows 终端运行`dir /s /b jupyter-theme.exe` 查找，它一般在 `C:\Users\Username\AppData\Roaming\Python\Python311\Scripts`{: .filepath} 中，把这个路径添加到系统环境变量就可以了。
 {: .prompt-info}
 
 将 `.ipynb` 导出成 `html` 文件时，注意修改导出时的明暗主题。可以通过命令行执行（需转换到对应 `.ipynb` 文件所在的文件夹）

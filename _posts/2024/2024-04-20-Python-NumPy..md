@@ -7,7 +7,7 @@ img_path : /assets/img/in-post/python-notes/
 math: true
 image:
     path: numpy.png
-    lqip: numpy.png
+    lqip: https://cdn.jsdelivr.net/gh/huanyushi/huanyushi.github.io@main/assets/img/in-post/python-notes/numpy.png
 ---
 > &#x1F447; 在此下载本文对应的 Jupyter Notebook 和 html 文件 
 > - **[sec6_numpy_introduction.ipynb](/assets/python/sec6_numpy_introduction.ipynb)**

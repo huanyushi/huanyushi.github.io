@@ -1,5 +1,5 @@
 ---
 layout: archives
-icon: fa-solid fa-clock-rotate-left
+icon: fa-solid fa-timeline
 order: 3
 ---

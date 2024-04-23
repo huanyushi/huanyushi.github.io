@@ -22,7 +22,7 @@ _封装的样式文件地址_
 注意生成博客时，放入自己 `.github.io` 文件夹的样式文件会覆盖原先 gem 包里的同名文件，而未修改的样式文件则照样从 gem 包里读取，所以未修改的样式文件没必要导入，这样也方便后续跟随模板作者进行更新。本篇文章就是记录一些我个人对 Chirpy 进行的部分修改（一些小的修改就不写了）。
 
 ## 2. 修改 MathJax 配置
-MathJax 自从进入 3.x 时代后，渲染数学公式的速度几乎比肩 KaTeX，再考虑到 MathJax 支持丰富的拓展包，功能相比 KaTeX 更为强大，所以优先考虑 MathJax。模板作者对 MathJax 的设置在 `_includes/js-selector.html` 文件中，在隐藏的 gem 包里找到相应代码，即可进行修改。
+MathJax 自从进入 3.x 时代后，渲染数学公式的速度几乎比肩 KaTeX，再考虑到 MathJax 支持丰富的拓展包，功能相比 KaTeX 更为强大，所以优先考虑 MathJax。模板作者对 MathJax 的设置在 `_includes/js-selector.html`{: .filepath} 文件中，在隐藏的 gem 包里找到相应代码，即可进行修改。
 ### 2.1. MathJax 添加拓展包
 添加了一些拓展包，如 `physics`，代码修改如下（更多内容可以从 MathJax 官网文档里找到说明）：
 ```html
@@ -59,7 +59,7 @@ MathJax = {
 
 ## 3. 修改侧边栏样式
 ### 3.1. 侧边栏增加背景图片
-在 `assets/css/jekyll-theme-chirpy.scss` 文件中，增加对侧边栏样式设置的 CSS 代码，其中 `background-image` 便是用来添加背景图片的基本命令，只需后面添加图片的 url 即可，如下：
+在 `assets/css/jekyll-theme-chirpy.scss`{: .filepath} 文件中，增加对侧边栏样式设置的 CSS 代码，其中 `background-image` 便是用来添加背景图片的基本命令，只需后面添加图片的 url 即可，如下：
 ```scss
 #sidebar {
     background-image: url(https://cdn.jsdelivr.net/gh/huanyushi/Blog-Image-Bed@main/assets/img/background.jpg); /* <- change background image */
@@ -90,7 +90,7 @@ MathJax = {
 {: file="assets/css/jekyll-theme-chirpy.scss"}
 
 ### 3.2. 侧边栏增加友链
-在隐藏的 gem 包里找到 `_includes/sidebar.html` 文件，在其中添加以下代码（当有友链时，则插入 `friends.html` 文件）：
+在隐藏的 gem 包里找到 `_includes/sidebar.html`{: .filepath} 文件，在其中添加以下代码（当有友链时，则插入 `friends.html`{: .filepath} 文件）：
 
 <!-- {% raw %} -->
 ```html
@@ -102,7 +102,7 @@ MathJax = {
 {: file="_includes/sidebar.html"}
 <!-- {% endraw %}) -->
 
-新建一个 `_includes/friends.html` 文件，将友链设置放入其中（这样模板更新时可以尽可能减少对模板代码的修改）：
+新建一个 `_includes/friends.html`{: .filepath} 文件，将友链设置放入其中（这样模板更新时可以尽可能减少对模板代码的修改）：
 
 <!-- {% raw %} -->
 ```html
@@ -120,7 +120,7 @@ MathJax = {
 {: file="_includes/friends.html"}
 <!-- {% endraw %}) -->
 
-而相关的样式设置添加到了 `assets/css/jekyll-theme-chirpy.scss` 中，如下：
+而相关的样式设置添加到了 `assets/css/jekyll-theme-chirpy.scss`{: .filepath} 中，如下：
 ```css
 /* 侧边栏友链样式设置 */
 #sidebar .friends {
@@ -156,7 +156,7 @@ MathJax = {
 ```
 {: file="assets/css/jekyll-theme-chirpy.scss"}
 
-已成功封装，只需要在 `_data/friends.yml` 里添加以下设置即可（可以一直往后叠加）：
+已成功封装，只需要在 `_data/friends.yml`{: .filepath} 里添加以下设置即可（可以一直往后叠加）：
 ```yml
 - title: "Title1"
   href: "https://example.com"
@@ -176,8 +176,8 @@ MathJax = {
 </center>
 
 > **注意**
-> 1. 友链不能加太多，容易挤占底部社交平台的空间，让它跑到屏幕外面去了（不过这也和系统分辨率有关系）。如果友链太多建议在侧边栏新开一个选项卡，也就是在 `_tabs` 文件夹下新建一个 `.md` 文件。
-> 2. 我这里设置的是友链沉底，保持在底部社交平台上方。如果分辨率拉大，会发现它和上面侧边栏选项卡之间有很大间距。如果想调整友链位置紧跟选项卡之后，可以在 `_includes/sidebar.html` 中修改选项卡的样式，将 `<nav class="flex-column flex-grow-1 w-100 ps-0">` 中的 `flex-grow-1` 删除；并加入到友链样式中原先的 `<div class="friends">` 修改为 `<div class="friends flex-grow-1">`。同时 `assets/css/jekyll-theme-chirpy.scss` 中 `#sidebar .friends` 里的 `margin-bottom: 2rem` 修改为上间距 `margin-top: ? rem`, ? 的值可以自己选定。
+> 1. 友链不能加太多，容易挤占底部社交平台的空间，让它跑到屏幕外面去了（不过这也和系统分辨率有关系）。如果友链太多建议在侧边栏新开一个选项卡，也就是新建一个 `_tabs/friends.md`{: .filepath}。
+> 2. 我这里设置的是友链沉底，保持在底部社交平台上方。如果分辨率拉大，会发现它和上面侧边栏选项卡之间有很大间距。如果想调整友链位置紧跟选项卡之后，可以在 `_includes/sidebar.html`{: .filepath} 中修改选项卡的样式，将 `<nav class="flex-column flex-grow-1 w-100 ps-0">` 中的 `flex-grow-1` 删除；并加入到友链样式中原先的 `<div class="friends">` 修改为 `<div class="friends flex-grow-1">`。同时 `assets/css/jekyll-theme-chirpy.scss`{: .filepath} 中 `#sidebar .friends` 里的 `margin-bottom: 2rem` 修改为上间距 `margin-top: ? rem`, ? 的值可以自己选定。
 {: .prompt-warning}
 
 ## 4. 修改 further reading 的文章顺序
@@ -194,11 +194,11 @@ _posts
 └─ Post5.md
 ```
 
-在打开每个文章时，底部会推荐跟它最匹配的 3 个文章（匹配分数的算法在 `_includes/related-posts.html` 中）。但现在的问题是，当这些文章的匹配分数相同时，无论我打开哪篇文章，底部的 Further Reading 永远只会推荐发布时间最早的 3 个文章而不是最新的。
+在打开每个文章时，底部会推荐跟它最匹配的 3 个文章（匹配分数的算法在 `_includes/related-posts.html`{: .filepath} 中）。但现在的问题是，当这些文章的匹配分数相同时，无论我打开哪篇文章，底部的 Further Reading 永远只会推荐发布时间最早的 3 个文章而不是最新的。
 
 举个例子，当我打开 `Post4` 时，底部显示的是 `Post1`, `Post2`, `Post3`，而不是最新的 3 篇 `Post2`, `Post3`, `Post5`。同理，当我打开 `Post5` 时显示的也是 `Post1`, `Post2`, `Post3` 而不是 `Post2`, `Post3`, `Post4`。这就意味着，无论我后面写了多少篇文章，它永远只会显示最早的那 3 篇。
 
-在匹配分数一样的情况下，我们可能更希望推荐的是最近更新的 3 篇文章而不是最早的（当然，也可以设置随机数，匹配随机文章）。所以我做了以下更改，在 `_includes/related-posts.html` （这个文件也在 gem 包里）中，
+在匹配分数一样的情况下，我们可能更希望推荐的是最近更新的 3 篇文章而不是最早的（当然，也可以设置随机数，匹配随机文章）。所以我做了以下更改，在 `_includes/related-posts.html`{: .filepath} （这个文件也在 gem 包里）中，
 
 <!-- {% raw %} -->
 ```diff
@@ -218,12 +218,12 @@ _posts
 <!-- {% endraw %} -->
 
 ## 5. 增加评论区
-评论区使用 giscus，模板作者已经将相关选项封装好了，在 `_config.yml` 文件中填上个人信息即可。
+评论区使用 giscus，模板作者已经将相关选项封装好了，在 `_config.yml`{: .filepath} 文件中填上个人信息即可。
 
 教程请见 [giscus](https://giscus.app/) 项目，关于它的高级功能设置请见 [Advanced usage](https://github.com/giscus/giscus/blob/main/ADVANCED-USAGE.md)。
 
 ## 6. 增加站点统计
-模板作者贴心的在页脚使用了 flex 格式，直接找到 `_includes/footer.html` 文件（这个文件在 gem 包里），复制后在中间插入[不蒜子](https://busuanzi.ibruce.info/)即可成功在页脚显示站点统计，`uv` 和 `pv` 就是访问量的两种统计算法，具体解释请见[教程](https://ibruce.info/2015/04/04/busuanzi/)。
+模板作者贴心的在页脚使用了 flex 格式，直接找到 `_includes/footer.html`{: .filepath} 文件（这个文件在 gem 包里），复制后在中间插入[不蒜子](https://busuanzi.ibruce.info/)即可成功在页脚显示站点统计，`uv` 和 `pv` 就是访问量的两种统计算法，具体解释请见[教程](https://ibruce.info/2015/04/04/busuanzi/)。
 
 <!-- {% raw %} -->
 ```html
@@ -233,7 +233,7 @@ _posts
 {: file="_includes/footer.html"}
 <!-- {% endraw %}) -->
 
-不蒜子的代码设置在 `_includes/footer-busuanzi.html` 中：
+不蒜子的代码设置在 `_includes/footer-busuanzi.html`{: .filepath} 中：
 ```html
 <!-- 不蒜子站点统计，放在页脚处 (footer.html 中插入) -->
 <p>
@@ -247,7 +247,7 @@ _posts
 另外更多详细的站点统计信息（如用户量、用户地区、用户访问了哪些页面等内容）可以使用 [Google Analytics](https://analytics.google.com/analytics/web/#/provision) 来获取，在 `_config.yml` 中加入 ID 即可。
 
 ## 7. 增加背景动画
-参考 [@NichtsHsu](https://nihil.cc/) 的博客设计，增加了背景动画功能。在 `_layouts/default.html` （这个文件也在 gem 包里）中加入
+参考 [@NichtsHsu](https://nihil.cc/) 的博客设计，增加了背景动画功能。在 `_layouts/default.html`{: .filepath} （这个文件也在 gem 包里）中加入
 
 <!-- {% raw %} -->
 ```html
@@ -258,7 +258,7 @@ _posts
 {: file="_layouts/default.html"}
 <!-- {% endraw %}) -->
 
-动画文件在 `_includes/animated-background.html` 中，其实就是添加了一堆 `animation-circle` 对象，影响的是生成动画的元素个数。
+动画文件在 `_includes/animated-background.html`{: .filepath} 中，其实就是添加了一堆 `animation-circle` 对象，影响的是生成动画的元素个数。
 ```html
 <div id="animation">
     <div class="animation-circle"></div>
@@ -315,7 +315,7 @@ _posts
 ```
 {: file="_includes/animated-background.html"}
 
-而样式设计在 `assets/css/jekyll-theme-chirpy.scss` 中，
+而样式设计在 `assets/css/jekyll-theme-chirpy.scss`{: .filepath} 中，
 ```scss
 /* 生成动画 */
 @keyframes infirot {
@@ -397,7 +397,7 @@ _posts
 ```
 {: file="assets/css/jekyll-theme-chirpy.scss"}
 
-在 `_config.yml` 中设置 `backgroud_animation: true` 即可产生动画效果。
+在 `_config.yml`{: .filepath} 中设置 `backgroud_animation: true` 即可产生动画效果。
 
 这部分代码就是用来创建一个动画效果，它主要包含以下几个部分：
 
@@ -433,7 +433,7 @@ $$
 </details>
 ```
 
-样式的设计添加到了 `assets/css/jekyll-theme-chirpy.scss` 中，加入以下代码即可：
+样式的设计添加到了 `assets/css/jekyll-theme-chirpy.scss`{: .filepath} 中，加入以下代码即可：
 ```scss
 /* details 样式设计 */ 
 //  备选（绿色）：深色 #28690d 浅色 #c0d0b9
@@ -632,7 +632,7 @@ git config --global http.proxy http://127.0.0.1:7890
 方法很多，比如减少文件夹数量、压缩图片大小等。，以下罗列一些我摸索出来的方法：
 
 1. 对博客设置增量构建（即只重新建构发生更改的文件，而不是每次重新构建整个站点），
-可以在 `_config.yml` 中添加 `incremental: true`，之后每次 jekyll 都将重新构建发生更改的文件。当然更合适的方法是使用 `bundle exec jekyll s --incremental` 或者 `bundle exec jekyll s --I` 来构建博客，这样手动可调更灵活。
+可以在 `_config.yml`{: .filepath} 中添加 `incremental: true`，之后每次 jekyll 都将重新构建发生更改的文件。当然更合适的方法是使用 `bundle exec jekyll s --incremental` 或者 `bundle exec jekyll s --I` 来构建博客，这样手动可调更灵活。
 2. 压缩图片大小，这也是加速博客构建和浏览的一种方式。
 
 > 提供一个免费在线图片压缩网站：[TinyPNG](https://tinypng.com/)，虽然说是有损压缩，但视觉上几乎没有影响，且图片压缩甚至能达到 70%。
