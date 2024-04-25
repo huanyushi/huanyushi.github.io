@@ -1,13 +1,13 @@
 ---
 title:      "Abstract Algebra: A Brief Summary of Group Theory"
-date:       2024-04-23
+date:       2024-04-25
 categories: [Mathematics, Abstract Algebra]
 tag: [abstract algebra]
-img_path : /assets/img/in-post/abstract-algebra/
+img_path : /assets/img/in-post/2024/2024-04-25/
 math: true
 ---
 > **Warning:** This note is just a summary of my learning of abstract algebra, it is not suitable for beginners.
-{:. prompt-danger}
+{: .prompt-danger}
 
 ## Basic axioms
 
@@ -37,7 +37,7 @@ math: true
 <details markdown="1">
 <summary> Examples: </summary>
 - $\mathbb{Z}, \mathbb{Q}, \mathbb{R}$ and $\mathbb{C}$ are groups under $+$ with $e=0$ and $\forall a, a^{-1}=-a$
-- $\mathbb{Q}-\{0\},\mathbb{R}-\{0\}, \mathbb{C}-\{0\}$, $\mathbb{Q}^{+},\mathbb{R}^{+}$ are groups under $\times$ with $e=0$ and $\forall a, a^{-1}=\frac{1}{a}$.
+- $\mathbb{Q}-\qty{0},\mathbb{R}-\qty{0}, \mathbb{C}-\qty{0}$, $\mathbb{Q}^{+},\mathbb{R}^{+}$ are groups under $\times$ with $e=0$ and $\forall a, a^{-1}=\frac{1}{a}$.
 </details>
 
 > For simplicity, we usually say $G$ is a group, but that doesn't imply the set itself is a group, we still need to specify the binary operation $\star$. E.g., $(\mathbb{Z},+)$ is a group, but $(\mathbb{Z},\times)$ is not a group.
@@ -65,7 +65,7 @@ $$
 
 **Definition of the *order* of an element in group.**  For $G$ a group and $x\in G$, definite the order of $x$ to be the smallest positive integer $n$ such that $x^n=1$ and  denote this integer by $\vert x\vert$, $x$ is said to be of order $n$.
 
-> If no positive power of $x$ is the identity, the order of $x$ i defined to be infinity and $x$ is sid to be of infinite order. E.g., in the additive groups $\mathbb{Z},\mathbb{Q},\mathbb{R}$ or $\mathbb{C}$ every nonzero (i.e., nonidentity) element has infinite order.
+> If no positive power of $x$ is the identity, the order of $x$ is defined to be infinity and $x$ is said to be of infinite order. E.g., in the additive groups $\mathbb{Z},\mathbb{Q},\mathbb{R}$ or $\mathbb{C}$ every nonzero (i.e., nonidentity) element has infinite order.
 {: .prompt-info}
 
 **Definition of *group table***. Let $G = \{g_1,g_2,\dots,g_n\}$ be a finite group with $g_1= \mathbf{1}$. The *multiplication table* or *group table* of $G$ is the $n\times n$ matrix whose $i,j$ entry is the group element $g_ig_j$.
@@ -79,7 +79,7 @@ g_2 & g_2g_1 & g_2g_2 & \cdots & g_2g_i & \cdots & g_2 g_j & \cdots & g_2 g_n \\
 \vdots & \vdots & \vdots & \ddots & \vdots & \ddots & \vdots & \ddots & \cdots\\
 g_i & g_ig_1 & g_ig_2 & \cdots & g_ig_i & \cdots & g_i g_j& \cdots & g_ig_n \\
 \vdots & \vdots & \vdots & \ddots & \vdots & \ddots & \vdots & \ddots & \cdots\\
-g_j & g_jg_1& g_jg_2& \cdots & g_jg_i & \cdots & g_jg_j& \cdots & g_n\\
+g_j & g_jg_1& g_jg_2& \cdots & g_jg_i & \cdots & g_jg_j& \cdots & g_jg_n\\
 \vdots & \vdots & \vdots & \ddots & \vdots & \ddots & \vdots & \ddots & \cdots\\
 g_n & g_n g_1 & g_n g_2 & \cdots & g_n g_i & \cdots & g_n g_j & \cdots & g_n g_n
 \end{array}
@@ -87,7 +87,7 @@ $$
 
 
 ## Dihedral groups
-**Definition of *dihedral group of order $2n$***. For $n\in\mathbb{Z}^{+}, n\geq 3$, the *dihedral group* $D_n$ is defined to be the group consisting of the symmetry actions of a regular $n$-gon, where the operation is composition of actions.
+**Definition of *dihedral groups***. For $n\in\mathbb{Z}^{+}, n\geq 3$, the *dihedral group* $D_n$ is defined to be the group consisting of the symmetry actions of a regular $n$-gon, where the operation is composition of actions.
 
 > The group $D_n$ is a non-abelian group of order $2n$ ($n$ reflections and $n$ rotations totally).
 {:.prompt-info}
@@ -105,7 +105,8 @@ $$
 
 ## Matrix groups
 **Definition of *field***:
-1. A *field* is a set $F$ together with two binary operations $+$ and $\cdot$ on $F$ such that $(F,+)$ is an abelian group (call its identity $0$) and ($F - \{0\},\cdot$) is also an abelian group, and the following *distributive* law holds:
+1. A *field* is a set $F$ together with two binary operations $+$ and $\cdot$ on $F$ such that $(F,+)$ is an abelian group (call its identity $0$) and ($F - \qty{0},\cdot$) is also an abelian group, and the following *distributive* law holds:
+
 $$
 \begin{equation}
 a\cdot(b+c) = (a\cdot b) + (a\cdot c) , \quad \forall a,b,c \in F.
@@ -133,11 +134,13 @@ Note that $Q_8$ is a non-abelian group of order $8$.
 
 ## Homomorphisms and isomorphisms
 **Definition of *homomorphism***. Let $(G,\star)$ and $(H,\diamond)$ be groups. A map $\varphi:G\to H$ such that
+
 $$
 \begin{equation}
    \varphi(x\star y) = \varphi(x) \diamond \varphi(y) ,\quad \forall x,y,\in G
 \end{equation}
 $$
+
 is called a *homomorphism*
 
 **Definition of *isomorphism***. Let $(G,\star)$ and $(H,\diamond)$ be groups. A map $\varphi:G\to H$ is called an *isomorphism* and $G$ and $H$ are said to be *isomorphic* or of the same *isomorphism type*, written $G \cong H$, if

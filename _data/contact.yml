@@ -11,18 +11,18 @@
   url: 'https://www.zhihu.com/people/za-ran-zhu-fu-liu-xing'
 
 
-- type: stack-exchange
-  icon: 'fab fa-stack-exchange'
-  url:  'https://stackexchange.com/users/24950721/huanyu-shi'                  # Fill with your stackoverflow homepage
+# - type: stack-exchange
+#   icon: 'fab fa-stack-exchange'
+#   url:  'https://stackexchange.com/users/24950721/huanyu-shi'                  # Fill with your stackoverflow homepage
 
 - type: email
   icon: "fas fa-envelope"
   noblank: true # open link in current tab
 
 
-# - type: rss
-#   icon: "fas fa-rss"
-#   noblank: true
+- type: rss
+  icon: "fas fa-rss"
+  noblank: true
 # Uncomment and complete the url below to enable more contact options
 #
 # - type: mastodon

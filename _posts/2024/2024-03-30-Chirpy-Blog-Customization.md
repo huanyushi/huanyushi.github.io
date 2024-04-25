@@ -5,7 +5,7 @@ categories: [HTML and CSS]
 tag: [HTML, CSS]
 math: true
 pin: true
-img_path : /assets/img/in-post/2024-03-30/
+img_path : /assets/img/in-post/2024/2024-03-30/
 ---
 ## 1. 简介
 在去年利用 jekyll 在 github 部署静态博客网站，效果甚合我意。

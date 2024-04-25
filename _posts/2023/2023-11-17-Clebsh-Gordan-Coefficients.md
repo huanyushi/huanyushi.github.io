@@ -436,8 +436,8 @@ $$
 ## CG coefficients table
 Below are partial tables of CG coefficients. You can get the corresponding CG coefficients from the tables directly.
 
-![CG table](/assets/img/in-post/2023-11-17/CG-coefficients-table.png){: .light}
-![CG table](/assets/img/in-post/2023-11-17/CG-coefficients-table-dark.png){: .dark}
+![CG table](/assets/img/in-post/2023/2023-11-17/CG-coefficients-table.png){: .light}
+![CG table](/assets/img/in-post/2023/2023-11-17/CG-coefficients-table-dark.png){: .dark}
 
 However, using **Mathematica** makes it more convenient. You can simply use the command `ClebschGordan[{j1,m1},{j2,m2},{J,M}]` to obtain the corresponding CG coefficients. For example, calculate $C_{5040}^{10}$,
 
