@@ -12,7 +12,7 @@ What I have done:
 4. Make Further Reading display the latest posts (see this [PR](https://github.com/cotes2020/jekyll-theme-chirpy/pull/1699)).
 5. Add site statistics from 'buanzi'([不蒜子](https://busuanzi.ibruce.info/)) in the footer.
 6. Add background animation (refer to [@NichtsHsu](https://nihil.cc/)).
-7. Add 4 new colorboxes (see [here](https://huanyushi.github.io/posts/Chirpy-Blog-Customization/#7-增加背景动画)). 
+7. Add 4 new colorboxes (see [here](https://huanyushi.github.io/posts/Chirpy-Blog-Customization/#8-%E5%A2%9E%E5%8A%A0-4-%E4%B8%AA%E6%96%B0%E7%9A%84-colorbox)). 
 8. Modified the style of the `<details>` element.
 9. Python implementation for LQIP (Low Quality Image Placeholders) (see this [discussion](https://github.com/cotes2020/jekyll-theme-chirpy/discussions/1685)).
 10. Python implementation for Inverted image.

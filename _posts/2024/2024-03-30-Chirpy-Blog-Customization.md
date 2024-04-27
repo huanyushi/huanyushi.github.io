@@ -175,10 +175,11 @@ MathJax = {
 </figure>
 </center>
 
-> **注意**
-> 1. 友链不能加太多，容易挤占底部社交平台的空间，让它跑到屏幕外面去了（不过这也和系统分辨率有关系）。如果友链太多建议在侧边栏新开一个选项卡，也就是新建一个 `_tabs/friends.md`{: .filepath}。
-> 2. 我这里设置的是友链沉底，保持在底部社交平台上方。如果分辨率拉大，会发现它和上面侧边栏选项卡之间有很大间距。如果想调整友链位置紧跟选项卡之后，可以在 `_includes/sidebar.html`{: .filepath} 中修改选项卡的样式，将 `<nav class="flex-column flex-grow-1 w-100 ps-0">` 中的 `flex-grow-1` 删除；并加入到友链样式中原先的 `<div class="friends">` 修改为 `<div class="friends flex-grow-1">`。同时 `assets/css/jekyll-theme-chirpy.scss`{: .filepath} 中 `#sidebar .friends` 里的 `margin-bottom: 2rem` 修改为上间距 `margin-top: ? rem`, ? 的值可以自己选定。
-{: .prompt-warning}
+<div class="box-warning" markdown="1">
+<p class="title"> 注意： </p>
+1. 友链不能加太多，容易挤占底部社交平台的空间，让它跑到屏幕外面去了（不过这也和系统分辨率有关系）。如果友链太多建议在侧边栏新开一个选项卡，也就是新建一个 `_tabs/friends.md`{: .filepath}。
+2. 我这里设置的是友链沉底，保持在底部社交平台上方。如果分辨率拉大，会发现它和上面侧边栏选项卡之间有很大间距。如果想调整友链位置紧跟选项卡之后，可以在 `_includes/sidebar.html`{: .filepath} 中修改选项卡的样式，将 `<nav class="flex-column flex-grow-1 w-100 ps-0">` 中的 `flex-grow-1` 删除；并加入到友链样式中原先的 `<div class="friends">` 修改为 `<div class="friends flex-grow-1">`。同时 `assets/css/jekyll-theme-chirpy.scss`{: .filepath} 中 `#sidebar .friends` 里的 `margin-bottom: 2rem` 修改为上间距 `margin-top: ? rem`, ? 的值可以自己选定。
+</div>
 
 ## 4. 修改 further reading 的文章顺序
 按我的理解这应该是模板的一个 bug，所以我把这部分更新写成一个 PR 提交给原作者了，请见 [refactor: make Further Reading display the latest posts.](https://github.com/cotes2020/jekyll-theme-chirpy/pull/1699)。
@@ -441,8 +442,7 @@ To be or not to be. That is a question.
 
 <div class="box-danger" markdown="1">
 <p class="title"> Shakespeare </p>
-To be or not to be. That is a question.
-
+> To be or not to be. That is a question.  
 > --- Shakespeare
 
 $$x^2 + y^2 =z^2$$
@@ -470,19 +470,20 @@ To be or not to be. That is a question.
 想要实现此功能，只需要在 `assets/css/jekyll-theme-chirpy.scss`{: .filepath} 中加入以下代码即可：
 
 ```scss
-@mixin colorbox($border-color, $icon-color, $icon-content, $bg-color) {
+@mixin colorbox($border-color, $icon-color, $icon-content, $bg-color, $fa-style: 'solid') {
     border-left: .2rem solid $border-color;
     border-radius: 0.25rem;
     color: var(--text-color);
-    padding: 0.4rem 0.6rem .4rem 1.5rem;
+    padding: 0rem 0.6rem .8rem 1.5rem;
     box-shadow: var(--language-border-color) 1px 1px 3px 1px;
     position: relative;
     margin-bottom: 1.5rem;
+    markdown: 1;
   
     p.title::before {
       content: $icon-content;
       color: $icon-color;
-      font: var(--fa-font-solid);
+      font: var(--fa-font-#{$fa-style});
       text-align: center;
       width: 3rem;
       position: absolute;
@@ -496,7 +497,7 @@ To be or not to be. That is a question.
       background-color: $bg-color;
       color: $icon-color;
       padding: .4rem .6rem .4rem 3rem; 
-      margin: -.4rem -.6rem .4rem -1.5rem;
+      margin: 0rem -.6rem .8rem -1.5rem;
       font-weight: 600;
     }
 }
@@ -517,7 +518,8 @@ To be or not to be. That is a question.
     var(--prompt-tip-icon-color),
     var(--prompt-tip-icon-color),
     "\f0eb",
-    var(--prompt-tip-bg)
+    var(--prompt-tip-bg),
+    'regular'
 );
 }
 
@@ -771,9 +773,11 @@ git config --global http.proxy http://127.0.0.1:7890
 可以在 `_config.yml`{: .filepath} 中添加 `incremental: true`，之后每次 jekyll 都将重新构建发生更改的文件。当然更合适的方法是使用 `bundle exec jekyll s --incremental` 或者 `bundle exec jekyll s --I` 来构建博客，这样手动可调更灵活。
 2. 压缩图片大小，这也是加速博客构建和浏览的一种方式。
 
-> - [TinyPNG](https://tinypng.com/)：一个免费的在线图片压缩网站，虽然说是有损压缩，但视觉上几乎没有影响，且图片压缩甚至能达到 70%。
-> - [PageSpeed Insights](https://pagespeed.web.dev/)：谷歌推出的网站性能检测工具，输入网址后会提供一个报告和优化方案，顺带看看哪里拖慢了加载速度。
-{: .prompt-tip}
+<div class="box-tip" markdown="1">
+<p class="title"> 可能有用的资源： </p>
+- [TinyPNG](https://tinypng.com/)：一个免费的在线图片压缩网站，虽然说是有损压缩，但视觉上几乎没有影响，且图片压缩甚至能达到 70%。
+- [PageSpeed Insights](https://pagespeed.web.dev/)：谷歌推出的网站性能检测工具，输入网址后会提供一个报告和优化方案，顺带看看哪里拖慢了加载速度。
+</div>
 
 ### 12.3. 在 blog 中插入文件
 使用 `<iframe>` 元素即可，如
@@ -782,8 +786,10 @@ git config --global http.proxy http://127.0.0.1:7890
 ```
 利用这个技巧可以在 post 中插入 html, pdf 等文件进行预览。
 
-> **警告：**这个功能在谷歌浏览器上可以正常使用，但是其他浏览器不一定支持，且加 overflow 在移动端也不能产生滚动条，慎用！
-{: .prompt-danger}
+<div class="box-danger">
+<p class="title"> 警告：</p>
+这个功能在谷歌浏览器上可以正常使用，但是其他浏览器不一定支持，且加 overflow 在移动端也不能产生滚动条，慎用！
+</div>
 
 ### 12.4. 在 blog 中在线运行 Python
 在 post 里加入以下代码，可以在线运行 Python （虽然感觉有点鸡肋，但还是记录在这里）
@@ -794,4 +800,4 @@ git config --global http.proxy http://127.0.0.1:7890
   width="100%"
   height="500px">
 </iframe>
-``
+```
