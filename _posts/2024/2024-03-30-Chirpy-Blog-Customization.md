@@ -176,7 +176,7 @@ MathJax = {
 </center>
 
 <div class="box-warning" markdown="1">
-<p class="title"> 注意： </p>
+<p class="title"> 注意 </p>
 1. 友链不能加太多，容易挤占底部社交平台的空间，让它跑到屏幕外面去了（不过这也和系统分辨率有关系）。如果友链太多建议在侧边栏新开一个选项卡，也就是新建一个 `_tabs/friends.md`{: .filepath}。
 2. 我这里设置的是友链沉底，保持在底部社交平台上方。如果分辨率拉大，会发现它和上面侧边栏选项卡之间有很大间距。如果想调整友链位置紧跟选项卡之后，可以在 `_includes/sidebar.html`{: .filepath} 中修改选项卡的样式，将 `<nav class="flex-column flex-grow-1 w-100 ps-0">` 中的 `flex-grow-1` 删除；并加入到友链样式中原先的 `<div class="friends">` 修改为 `<div class="friends flex-grow-1">`。同时 `assets/css/jekyll-theme-chirpy.scss`{: .filepath} 中 `#sidebar .friends` 里的 `margin-bottom: 2rem` 修改为上间距 `margin-top: ? rem`, ? 的值可以自己选定。
 </div>
@@ -449,6 +449,7 @@ $$x^2 + y^2 =z^2$$
 
 </div>
 
+
 当然也可以不加标题，效果如下：
 
 <div class="box-info">
@@ -470,34 +471,35 @@ To be or not to be. That is a question.
 想要实现此功能，只需要在 `assets/css/jekyll-theme-chirpy.scss`{: .filepath} 中加入以下代码即可：
 
 ```scss
+/* colorbox 样式设计 */
+/* 定义了 box-info, box-tip, box-warning, box-danger 四种 colorbox */
 @mixin colorbox($border-color, $icon-color, $icon-content, $bg-color, $fa-style: 'solid') {
     border-left: .2rem solid $border-color;
     border-radius: 0.25rem;
     color: var(--text-color);
-    padding: 0rem 0.6rem .8rem 1.5rem;
-    box-shadow: var(--language-border-color) 1px 1px 3px 1px;
+    padding: .6rem .6rem .6rem 1.5rem;
+    box-shadow: var(--language-border-color) 1px 1px 2px 1px;
     position: relative;
-    margin-bottom: 1.5rem;
-    markdown: 1;
+    margin-bottom: 1rem;
   
-    p.title::before {
+    > p.title::before {
       content: $icon-content;
       color: $icon-color;
       font: var(--fa-font-#{$fa-style});
       text-align: center;
       width: 3rem;
       position: absolute;
-      left: .25rem;
+      left: .2rem;
       margin-top: .4rem;
       text-rendering: auto;
       -webkit-font-smoothing: antialiased;
     }
   
-    p.title {
+    > p.title {
       background-color: $bg-color;
       color: $icon-color;
       padding: .4rem .6rem .4rem 3rem; 
-      margin: 0rem -.6rem .8rem -1.5rem;
+      margin: -.6rem -.6rem .8rem -1.5rem;
       font-weight: 600;
     }
 }
@@ -574,55 +576,55 @@ $$
 样式的设计添加到了 `assets/css/jekyll-theme-chirpy.scss`{: .filepath} 中，加入以下代码即可：
 ```scss
 /* details 样式设计 */ 
-//  备选（绿色）：深色 #28690d 浅色 #c0d0b9
-//  备选（蓝色）：深色 #3f6f7f 浅色 #99bac5
-/* 定义颜色变量 */
-:root {
-    --light-border-color: #99bac5;
-    --dark-border-color: #3f6f7f;
-}
-details{
+details {
     border-radius: 5px;
-    border-left: solid 5px;
-    box-shadow: var(--language-border-color) 0 0 0 1px; /* 借用了代码框的边框颜色变量 */
+    border-left: 5px solid var(--prompt-info-icon-color);
+    box-shadow: var(--language-border-color) 1px 1px 2px 1px; /* 借用了代码框的边框颜色变量 */
     margin-bottom: 1rem;
-    padding: 0.2rem 1rem;
-}
-details summary {
-    list-style-type: none; /* 隐藏默认的箭头 */
-    font-weight: bold; /* summary 加粗 */
-}
-details summary::before {
-    content: '🙈'; /* 也可以用其他符号或自定义图标，比如 Unicode 字符 */
-}
-details[open] summary::before {
-    content: '🐵'; /* 展开状态下 */
+    padding: .6rem .6rem .6rem 1.5rem;
 }
 
-html {
-  /* 检测用户系统处于亮色模式 */
-  @media (prefers-color-scheme: light) {
-    &:not([data-mode]),
-    &[data-mode='light'] {
-      details{ border-left-color: var(--light-border-color);}
-    }
-  /* 用户手动调节网页至暗色模式 */
-    &[data-mode='dark']  {
-      details{border-left-color: var(--dark-border-color);}
-    }
-  }
-  
-  /* 检测用户系统处于暗色模式 */
-  @media (prefers-color-scheme: dark) {
-    &:not([data-mode]),
-    &[data-mode='dark'] {
-      details{border-left-color: var(--dark-border-color);}
-    }
-  /* 用户手动调节网页至亮色模式 */
-    &[data-mode='light'] details{
-      details{border-left-color: var(--light-border-color);}
-    }
-  }
+details > summary {
+    padding: .4rem .6rem .4rem 1.0rem; 
+    margin: -.6rem -.6rem -.6rem -1.5rem;
+    font-weight: 600;
+    background-color: var(--prompt-info-bg);
+    color: var(--prompt-info-icon-color);
+    list-style: none; /* 隐藏默认的箭头 */
+}
+
+details > summary::-webkit-details-marker {
+    display: none; /* 隐藏默认的箭头 */
+}
+details > summary::marker {
+    content: none; /* 隐藏默认的箭头 */
+}
+
+details > summary::before {
+    /* 关闭状态下 */
+    /* 也可以用其他符号或自定义图标，比如 Unicode 字符 */
+    // content: '🙈'; 
+    /* content:'\002B9A'; */
+    content: '😼';
+    margin-right: .3rem;
+    display: inline-block;
+}
+details[open] > summary::before {
+    /* 展开状态下 */
+    /* content: '🐵';*/  
+    /* content: '\002B9B'; */
+    content: '🙀';
+    animation: my-cat .3s ease-in-out; /*  点击会有动画效果 */
+    margin-right: .3rem;
+}
+
+details[open] > summary{
+    // transition: margin 200ms ease-out; /* 展开会有动画效果 */
+    margin-bottom: .4rem;
+}
+
+@keyframes my-cat {
+    50%  { transform: scale(1.3); } /* 动画效果代码 */
 }
 ```
 {: file="assets/css/jekyll-theme-chirpy.scss" }
@@ -774,7 +776,7 @@ git config --global http.proxy http://127.0.0.1:7890
 2. 压缩图片大小，这也是加速博客构建和浏览的一种方式。
 
 <div class="box-tip" markdown="1">
-<p class="title"> 可能有用的资源： </p>
+<p class="title"> 可能有用的资源 </p>
 - [TinyPNG](https://tinypng.com/)：一个免费的在线图片压缩网站，虽然说是有损压缩，但视觉上几乎没有影响，且图片压缩甚至能达到 70%。
 - [PageSpeed Insights](https://pagespeed.web.dev/)：谷歌推出的网站性能检测工具，输入网址后会提供一个报告和优化方案，顺带看看哪里拖慢了加载速度。
 </div>
@@ -787,7 +789,7 @@ git config --global http.proxy http://127.0.0.1:7890
 利用这个技巧可以在 post 中插入 html, pdf 等文件进行预览。
 
 <div class="box-danger">
-<p class="title"> 警告：</p>
+<p class="title"> 警告</p>
 这个功能在谷歌浏览器上可以正常使用，但是其他浏览器不一定支持，且加 overflow 在移动端也不能产生滚动条，慎用！
 </div>
 

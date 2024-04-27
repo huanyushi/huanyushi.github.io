@@ -33,60 +33,10 @@
     color: var(--sidebar-btn-color);
 }
 
-/* details 样式设计 */ 
-//  备选（绿色）：深色 #28690d 浅色 #c0d0b9
-//  备选（蓝色）：深色 #3f6f7f 浅色 #99bac5
-/* 定义颜色变量 */
-:root {
-    --light-border-color: #99bac5;
-    --dark-border-color: #3f6f7f;
-    --pst-color-info: #459db9;
-    --pst-color-shadow: #d8d8d8;
-}
-details{
-    border-radius: 5px;
-    border-left: solid 5px;
-    box-shadow: var(--language-border-color) 0 0 0 1px; /* 借用了代码框的边框颜色变量 */
-    margin-bottom: 1rem;
-    padding: 0.2rem 1rem;
-}
-details summary {
-    list-style-type: none; /* 隐藏默认的箭头 */
-    font-weight: bold; /* summary 加粗 */
-}
-details summary::before {
-    content: '🙈'; /* 也可以用其他符号或自定义图标，比如 Unicode 字符 */
-}
-details[open] summary::before {
-    content: '🐵'; /* 展开状态下 */
+blockquote[class^='prompt-']{
+    box-shadow: var(--language-border-color) 1px 1px 2px 1px; /* 借用了代码框的边框颜色变量 */
 }
 
-html {
-  /* 检测用户系统处于亮色模式 */
-  @media (prefers-color-scheme: light) {
-    &:not([data-mode]),
-    &[data-mode='light'] {
-      details{ border-left-color: var(--light-border-color);}
-    }
-  /* 用户手动调节网页至暗色模式 */
-    &[data-mode='dark']  {
-      details{border-left-color: var(--dark-border-color);}
-    }
-  }
-  
-  /* 检测用户系统处于暗色模式 */
-  @media (prefers-color-scheme: dark) {
-    &:not([data-mode]),
-    &[data-mode='dark'] {
-      details{border-left-color: var(--dark-border-color);}
-    }
-  /* 用户手动调节网页至亮色模式 */
-    &[data-mode='light'] details{
-      details{border-left-color: var(--light-border-color);}
-    }
-  }
-}
-
-
+@import "detail.scss";
 @import "animation.scss";
 @import "colorbox.scss"

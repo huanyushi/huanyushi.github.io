@@ -7,3 +7,9 @@ math: true
 ---
 > To be continued...
 {: .prompt-tip}
+
+
+<details>
+<summary> Proof can be seen here </summary>
+The proof is left as an exercise.
+</details>
