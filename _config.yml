@@ -131,7 +131,7 @@ paginate: 10
 # The base URL of your site
 baseurl: ""
 
-backgroud_animation: false
+backgroud_animation: true
 # ------------ The following options are not recommended to be modified ------------------
 
 kramdown:
