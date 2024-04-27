@@ -407,7 +407,143 @@ _posts
 4. `#animation` 是一个具有固定位置的容器，用于包含动画效果。它包含了另一个关键帧动画 `animate`，定义了元素在页面上的运动轨迹和透明度变化。这个动画使元素沿着垂直方向向上移动并旋转，逐渐消失，同时边框半径也发生变化。
 5. `#animation` 中包含了两个媒体查询，根据视口宽度的不同应用不同的样式。在大于等于 1200px 的情况下，会生成一系列彩色圆形动画效果，每个圆形的位置、颜色、大小、持续时间和延迟时间都是随机生成的。在小于 1200px 的情况下，圆形动画被隐藏起来，不显示。所以移动端看不到动画效果，但是 PC 端是可以的。
 
-## 8. Details 元素的样式设计
+## 8. 增加 4 个新的 colorbox
+模板作者已经设置了 4 个 prompt，效果如下：
+
+> To be or not to be. That is a question.
+{: .prompt-info}
+
+> To be or not to be. That is a question.
+{: .prompt-tip}
+
+> To be or not to be. That is a question.
+{: .prompt-warning}
+
+> To be or not to be. That is a question.
+{: .prompt-danger}
+
+在此基础上，我构建了 4 个新的 colorbox，效果如下：
+
+<div class="box-info">
+<p class="title"> Shakespeare </p>
+To be or not to be. That is a question.
+</div>
+
+<div class="box-tip">
+<p class="title"> Shakespeare </p>
+To be or not to be. That is a question.
+</div>
+
+<div class="box-warning">
+<p class="title"> Shakespeare </p>
+To be or not to be. That is a question.
+</div>
+
+<div class="box-danger" markdown="1">
+<p class="title"> Shakespeare </p>
+To be or not to be. That is a question.
+
+> --- Shakespeare
+
+$$x^2 + y^2 =z^2$$
+
+</div>
+
+当然也可以不加标题，效果如下：
+
+<div class="box-info">
+To be or not to be. That is a question.
+</div>
+
+<div class="box-tip">
+To be or not to be. That is a question.
+</div>
+
+<div class="box-warning">
+To be or not to be. That is a question.
+</div>
+
+<div class="box-danger">
+To be or not to be. That is a question.
+</div>
+
+想要实现此功能，只需要在 `assets/css/jekyll-theme-chirpy.scss`{: .filepath} 中加入以下代码即可：
+
+```scss
+@mixin colorbox($border-color, $icon-color, $icon-content, $bg-color) {
+    border-left: .2rem solid $border-color;
+    border-radius: 0.25rem;
+    color: var(--text-color);
+    padding: 0.4rem 0.6rem .4rem 1.5rem;
+    box-shadow: var(--language-border-color) 1px 1px 3px 1px;
+    position: relative;
+    margin-bottom: 1.5rem;
+  
+    p.title::before {
+      content: $icon-content;
+      color: $icon-color;
+      font: var(--fa-font-solid);
+      text-align: center;
+      width: 3rem;
+      position: absolute;
+      left: .25rem;
+      margin-top: .4rem;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+    }
+  
+    p.title {
+      background-color: $bg-color;
+      color: $icon-color;
+      padding: .4rem .6rem .4rem 3rem; 
+      margin: -.4rem -.6rem .4rem -1.5rem;
+      font-weight: 600;
+    }
+}
+  
+/* box-info 蓝色 */
+.box-info {
+@include colorbox(
+    var(--prompt-info-icon-color),
+    var(--prompt-info-icon-color),
+    "\f06a",
+    var(--prompt-info-bg)
+);
+}
+
+/* box-tip 绿色 */
+.box-tip {
+@include colorbox(
+    var(--prompt-tip-icon-color),
+    var(--prompt-tip-icon-color),
+    "\f0eb",
+    var(--prompt-tip-bg)
+);
+}
+
+/* box-warning 黄色 */
+.box-warning {
+@include colorbox(
+    var(--prompt-warning-icon-color),
+    var(--prompt-warning-icon-color),
+    "\f06a",
+    var(--prompt-warning-bg)
+);
+}
+
+/* box-danger 红色 */
+.box-danger {
+@include colorbox(
+    var(--prompt-danger-icon-color),
+    var(--prompt-danger-icon-color),
+    "\f071",
+    var(--prompt-danger-bg)
+);
+}
+```
+{: file="assets/css/jekyll-theme-chirpy.scss"}
+
+## 9. Details 元素的样式设计
 HTML 中的 `<details>` 元素可以创建一个组件，仅当被切换为展开状态时，才会显示里面的内容，效果如下：
 
 <details markdown="1">
@@ -491,7 +627,7 @@ html {
 
 
 
-## 9. LQIP 的 Python 实现
+## 10. LQIP 的 Python 实现
 LQIP (Low Quality Image Placeholder) 指的是低质量图像占位符，这是一种网页性能优化技术，在加载高质量图像之前，先加载一个轻量级、低分辨率的模糊图像来提供一种预览。这种预览图像可以帮助减少页面加载时间和带宽消耗，提高访问者的视觉体验。
 
 ![LQIP](lqip.png)
@@ -567,7 +703,7 @@ base64_string = "/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBk
 save_base64_image(base64_string, "decoded_image.webp")
 ```
 
-## 10. 反色图片的 Python 实现
+## 11. 反色图片的 Python 实现
 Blog 支持暗色模式，同时文中的图片也可以相应转换至暗色模式，对于部分图片可以直接通过反色的方式将亮色转换至暗色（但不是所有，比如人像反色放在博客里真的很恶心），我写了一个 Python 程序可以将图片转换至暗色模式，有需要可以自取。同样地，文件路径也是根据我自己实际情况来设置的，需要做相应修改：
 
 ```python
@@ -611,8 +747,8 @@ _反色图片与原图片对比_
 
 
 
-## 11. 其他问题
-### 11.1. git push 失败: couldn't connet to server
+## 12. 其他问题
+### 12.1. git push 失败: couldn't connet to server
 将本地文件 push 到 github 远程仓库里，经常出现 `couldn't connet to server` 的报错，经过查询没有明显有效的办法。以下是**可能有效**的措施（目前来看第三种最有效）：
 
 1. 关掉梯子 (VPN) 再 push 一下试试；
@@ -628,17 +764,18 @@ git config --global http.proxy http://127.0.0.1:7890
 
 可通过 `git config --global -l` 查看是否设置成功。之后再进行 push 即可。
 
-### 11.2. jekyll serve 预览速度较慢
-方法很多，比如减少文件夹数量、压缩图片大小等。，以下罗列一些我摸索出来的方法：
+### 12.2. jekyll serve 预览速度较慢
+方法很多，比如减少文件夹数量、压缩图片大小等。以下罗列一些我摸索出来的方法：
 
 1. 对博客设置增量构建（即只重新建构发生更改的文件，而不是每次重新构建整个站点），
 可以在 `_config.yml`{: .filepath} 中添加 `incremental: true`，之后每次 jekyll 都将重新构建发生更改的文件。当然更合适的方法是使用 `bundle exec jekyll s --incremental` 或者 `bundle exec jekyll s --I` 来构建博客，这样手动可调更灵活。
 2. 压缩图片大小，这也是加速博客构建和浏览的一种方式。
 
-> 提供一个免费在线图片压缩网站：[TinyPNG](https://tinypng.com/)，虽然说是有损压缩，但视觉上几乎没有影响，且图片压缩甚至能达到 70%。
-{: .prompt-info}
+> - [TinyPNG](https://tinypng.com/)：一个免费的在线图片压缩网站，虽然说是有损压缩，但视觉上几乎没有影响，且图片压缩甚至能达到 70%。
+> - [PageSpeed Insights](https://pagespeed.web.dev/)：谷歌推出的网站性能检测工具，输入网址后会提供一个报告和优化方案，顺带看看哪里拖慢了加载速度。
+{: .prompt-tip}
 
-### 11.3. 在 blog 中插入文件
+### 12.3. 在 blog 中插入文件
 使用 `<iframe>` 元素即可，如
 ```html
 <iframe src="file path" width="100%" height='800'></iframe>
@@ -648,7 +785,7 @@ git config --global http.proxy http://127.0.0.1:7890
 > **警告：**这个功能在谷歌浏览器上可以正常使用，但是其他浏览器不一定支持，且加 overflow 在移动端也不能产生滚动条，慎用！
 {: .prompt-danger}
 
-### 11.4. 在 blog 中在线运行 Python
+### 12.4. 在 blog 中在线运行 Python
 在 post 里加入以下代码，可以在线运行 Python （虽然感觉有点鸡肋，但还是记录在这里）
 
 ```html
@@ -657,4 +794,4 @@ git config --global http.proxy http://127.0.0.1:7890
   width="100%"
   height="500px">
 </iframe>
-```
+``

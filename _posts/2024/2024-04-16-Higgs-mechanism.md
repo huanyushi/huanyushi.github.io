@@ -1,7 +1,7 @@
 ---
 title:      "In Memory of Peter Higgs: What is the Higgs Mechanism?"
 date:       2024-04-16
-categories: [Quantum Field Theory]
+categories: [Physics Musings]
 tag: [quantum field theory]
 image: 
     path: /assets/img/in-post/2024/2024-04-16/Higgs.jpg

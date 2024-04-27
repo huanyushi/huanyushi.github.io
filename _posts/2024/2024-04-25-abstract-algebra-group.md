@@ -6,8 +6,6 @@ tag: [abstract algebra]
 img_path : /assets/img/in-post/2024/2024-04-25/
 math: true
 ---
-> **Warning:** This note is just a summary of my learning of abstract algebra, it is not suitable for beginners.
-{: .prompt-danger}
 
 ## Basic axioms
 
@@ -92,16 +90,24 @@ $$
 > The group $D_n$ is a non-abelian group of order $2n$ ($n$ reflections and $n$ rotations totally).
 {:.prompt-info}
 
-![D6 group](dihedral-group-d6.png){: width="700"}
+![D6 group](dihedral-group-d6.png){: width="600"}
 _The symmetry group of a regular hexagon consists of six rotations and six reflections. The six reflections consist of three reflections along the axes between vertices, and three reflections along the axes between edges. From [hexnet](https://hexnet.org/content/symmetry-group-regular-hexagon)_
 
 Let $r$ be the rotation clockwise about the origin through $2\pi/n$ radian, $s$ be the reflection about the line of symmetry through vertex $1$ and the origin. Then
 
 $$
 \begin{equation}
-D_{n} = \braket{r,s}{ r^n = s^2 = \mathbf{1}, rs = sr^{-1}}.
+D_{n} = \braket{r,s}{ r^n = s^2 = \mathbf{1}, rs = sr^{-1}},
 \end{equation}
 $$
+
+where $r$ and $s$ are a set of *generators* of $D_{n}$.
+
+## Symmetric groups
+
+**Definition of symmetric groups**: 
+1. For $\Omega \neq \emptyset$, $S_{\Omega}$ is defined to be the set of all bijections from $\Omega$ to itself (i.e., the set of all permutations of $\Omega$). The set of $S_{\Omega}$ is a group under function composition, and $S_{\Omega}$ is called the *symmetric group on the set* $\Omega$.
+2. In the special case when $\Omega = \qty{1,2,\dots,n}$, the symmetric group on $\Omega$ is denoted $S_n$, the *symmetric group of degree* $n$, and $\abs{S_n} = n!$.
 
 ## Matrix groups
 **Definition of *field***:
@@ -146,6 +152,8 @@ is called a *homomorphism*
 **Definition of *isomorphism***. Let $(G,\star)$ and $(H,\diamond)$ be groups. A map $\varphi:G\to H$ is called an *isomorphism* and $G$ and $H$ are said to be *isomorphic* or of the same *isomorphism type*, written $G \cong H$, if
 1. $\varPhi$ is a homomorphism (i.e., $\varphi(x,y) = \varphi(x)\varphi(y)$ where the group operations are not explicitly written), and
 2. $\varphi$ is a bijection.
+
+
 
 ## References
 1. Dummit, D. S., and Foote, R. M. Abstract Algebra, 3rd ed. John Wiley & Sons, Inc. (2004).

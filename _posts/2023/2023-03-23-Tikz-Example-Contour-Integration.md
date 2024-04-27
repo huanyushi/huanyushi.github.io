@@ -1,5 +1,5 @@
 ---
-title:      "Summary of Contour Integration"
+title:      "TikZ: Contour Examples in Complex Analysis"
 date:       2023-03-23
 categories: [LaTeX]
 tag: [integration, LaTeX]
@@ -8,7 +8,7 @@ image:
     path: /assets/img/in-post/2023/2023-03-23/preface.PNG
     lqip: data:image/jpg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQgJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAAIABADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD3gDD0ZbfRRQB//9k=
 ---
-TikZ作为LaTeX著名的绘图宏包，拥有十分强大的功能，基本上你能想到可以精确描述的矢量图，它都能帮你画出来，关于它的学习指导在网络上有很多资源，在此就不一一列举。
+TikZ 作为 LaTeX 著名的绘图宏包，拥有十分强大的功能，基本上你能想到可以精确描述的矢量图，它都能帮你画出来，关于它的学习指导在网络上有很多资源，在此就不一一列举。
 
 本文重点针对复分析里的围道积分（以围道为分类标准），在此我罗列了一些常用的围道，并给出相应的TikZ绘图结果，（也方便我以后在回答或其他文章里引用，就不用再重复造轮子了）。
 

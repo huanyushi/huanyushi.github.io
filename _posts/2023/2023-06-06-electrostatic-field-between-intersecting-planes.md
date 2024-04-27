@@ -12,7 +12,7 @@ Consider two infinite grounded metal planes with an angle $\alpha$ between them,
 ![problem](problem-dark.jpg){: .dark width="300"}
 _Figure 1: Diagram of the problem_
 
-As a classical problem in electrodynamics, I believe most people have encountered it. This problem is extraordinary easy when $\alpha = \pi/n, n\in \mathbb{Z}^{+}$. But what about $\alpha \neq \pi/n$? It's rare to see textbooks discussing this problem. Next, I'll approach it with *method of separation of variables* and expand upon it.
+As a classical problem in electrodynamics, I believe most people have encountered it. This problem is extraordinary easy when $\alpha = \pi/n, n\in \mathbb{Z}^{+}$. But what about $\alpha \neq \pi/n$? It's rare to see textbooks discussing this problem. Next, I'll solve it with *method of separation of variables* and expand upon it.
 
 > In fact, this post was completed when I was a sophomore in college (2021). I am just reposting it this time, please see [here](https://dxwl.bnu.edu.cn/CN/10.16854/j.cnki.1000-0712.220175). In addition, I also answered one of the key integrals on Zhihu, please see [here](https://www.zhihu.com/question/604942674/answer/3061799399).
 {: .prompt-info}
@@ -55,7 +55,9 @@ $$
 When $\alpha$ is arbitrary, the system no longer possesses a definite high degree symmetry, rendering the method of images ineffective. In such cases, solving the Poisson's equation directly becomes the most straightforward approach, 
 
 $$
+\begin{equation}
 \nabla^2\Phi= -\frac{\rho}{\epsilon_0} = - \frac{Q}{\epsilon_0} \delta(\vb{r}-\vb{r}_0).
+\end{equation}
 $$
 
 In cylindrical coordinates, this equation with Dirichlet boundary conditions (because the metal planes are grounded) can be expressed as:
@@ -64,7 +66,7 @@ $$
 \begin{equation}
     \begin{cases}
 \displaystyle{\frac{1}{r}\pdv{r}(r\pdv{\Phi}{r}) + \frac{1}{r^2} \pdv[2]{\Phi}{\phi} + \pdv[2]{\Phi}{z} = - \frac{Q}{\epsilon_0r_0}\ \delta(r-r_0)\delta(\phi-\phi_0)\delta(z)},\\[.2cm]
-\displaystyle{\eval{\Phi}_{\phi=0} = \eval{\Phi}_{\phi=\alpha}=0}
+\displaystyle{\eval{\Phi}_{\phi=0} = \eval{\Phi}_{\phi=\alpha}=0.}
 \end{cases}
 \end{equation}
 $$
@@ -110,7 +112,7 @@ $$
 The right hand side is a function of $z$, while the left hand side is a function of $r$. Obviously, both sides must equal the same constant too. Note the boundary condition $\eval{\Phi}_{z\to\pm\infty} = 0$, so the constant must be $\mu^2$. Therefore,
 
 $$
-- \frac{1}{Z} \dv[2]{Z}{z} = \mu^2 \quad \Longrightarrow  \quad Z = A\sin(\mu z) + B\cos(\mu z)
+- \frac{1}{Z} \dv[2]{Z}{z} = \mu^2 \quad \Longrightarrow  \quad Z = A\sin(\mu z) + B\cos(\mu z).
 $$
 
 Note that $\Phi(z=0)\neq 0$ and $\cos(\mu z)$ is an even function, so we can assume $\mu>0$, then
@@ -141,7 +143,7 @@ $$
 R(r) = A I_{m}(x) + B K_{m}(x) =A I_{m}(\mu r) + B K_{m}(\mu r),
 $$
 
-where $I_m(x)$ and $K_m(x)$ are the first and second kind modified Bessel functions respectively. They have the following properties:
+where $I_m(x)$ and $K_m(x)$ are the modified Bessel functions of the first and second kind respectively. They have the following properties:
 
 $$
 \begin{gather*}
@@ -156,7 +158,7 @@ $$
 \begin{equation}
 \textcolor{DodgerBlue}{
 R(r) = \begin{cases}
-            I_{m}(\mu r), \quad r\in(0,r_0)\\[.3cm]
+            I_{m}(\mu r), \quad r\in(0,r_0)\\[.2cm]
             K_{m}(\mu r),\quad r\in(r_0,\infty)
         \end{cases}}
 \label{equ:r eigen}
@@ -176,7 +178,7 @@ $$
 \end{equation*}
 $$
 
-So the general solution can be expressed as linear superposition these eigenfunctions,
+So the general solution can be expressed as linear superposition of these eigenfunctions,
 
 $$
 \begin{equation}
@@ -195,10 +197,10 @@ $$
 $$
 
 #### Calculate the coefficients
-Even though we get $\eqref{equ:general solution}$, it's not the final result we want. Because it still has undetermined coefficients $A_{k\mu},B_{k\mu}$. Note that we have two conditions that we haven't used yet, which would give us two equations.
+Even though we get $\eqref{equ:general solution}$, it's not the final result we want. Because it still has undetermined coefficients $A_{k\mu},B_{k\mu}$. Note that we have two conditions we haven't used yet,
 
 1. The electric potential should be continuous at $\vb{r} = \vb{r}_0$;
-2. The electric potential satisfies the original Poisson's equation, and the right side of the Poisson equation is the Dirac function.
+2. The electric potential satisfies the Poisson's equation, and the right side of the Poisson equation is the Dirac function.
 
 First let us consider continuity, we can get
 
@@ -259,15 +261,15 @@ Then, with the orthogonality of $\sin(k\pi\phi/\alpha)$, multiply both sides by 
 $$
 \begin{align*}
     \lim_{\delta\to 0}\int_{r_0-\delta}^{r_0+\delta} \frac{\alpha \pi a_{k\mu}}{2} \dv[2]{R}{r}\dd{r} &= -\frac{Q}{\epsilon_0r_0}\sin(\frac{k\pi\phi_0}{\alpha})\\
-    &=\frac{\alpha \pi }{2} \left(B_{k\mu}\dv{K_{k\pi/\alpha}(\mu r_0)}{r} - A_{k\mu} \dv{I_{k\pi/\alpha}(\mu r_0)}{r}\right)
+    &=\frac{\alpha \pi }{2} \left(B_{k\mu}\dv{K_{k\pi/\alpha}(\mu r_0)}{r} - A_{k\mu} \dv{I_{k\pi/\alpha}(\mu r_0)}{r}\right).
 \end{align*}
 $$
 
-So we can get the second relationship
+It turns out to be the second relationship
 
 $$
 \begin{equation}
-    \textcolor{ForestGreen}{A_{k\mu}I_{k\pi/\alpha}'(\mu r_0)- B_{k\mu}K_{k\pi/\alpha}'(\mu r_0) = \frac{2Q}{\mu\alpha\epsilon_0r_0\pi}\sin(\frac{k\pi\phi_0}{\alpha})}
+    \textcolor{ForestGreen}{A_{k\mu}I_{k\pi/\alpha}'(\mu r_0)- B_{k\mu}K_{k\pi/\alpha}'(\mu r_0) = \frac{2Q}{\mu\alpha\epsilon_0r_0\pi}\sin(\frac{k\pi\phi_0}{\alpha}).}
     \label{equ:AB2}
 \end{equation}
 $$
@@ -294,17 +296,17 @@ $$
 So
 
 $$
-K_{k\pi/\alpha}(\mu r_0)I_{k\pi/\alpha}'(\mu r_0)-K_{k\pi/\alpha}'(\mu r_0)I_{k\pi/\alpha}(\mu r_0) = \frac{1}{\mu r_0}.
+K_{k\pi/\alpha}(\mu r_0)I_{k\pi/\alpha}'(\mu r_0)-K_{k\pi/\alpha}'(\mu r_0)I_{k\pi/\alpha}(\mu r_0) = \frac{1}{\mu r_0},
 $$
 
-The finally results of $A_{k\mu},B_{k\mu}$ are
+where the prime means the derivative with resect to $\mu r_0$. The finally results of $A_{k\mu},B_{k\mu}$ are
 
 $$
 \begin{equation}
         \textcolor{crimson}{
     \begin{cases}
-    \displaystyle{A_{k\mu}  = \frac{2Q}{\alpha\epsilon_0\pi}\sin(\frac{k\pi\phi_0}{\alpha}) K_{k\pi/\alpha}(\mu r_0)} \\[.2cm]
-    \displaystyle{B_{k\mu}  = \frac{2Q}{\alpha\epsilon_0\pi}\sin(\frac{k\pi\phi_0}{\alpha}) I_{k\pi/\alpha}(\mu r_0)}
+    \displaystyle{A_{k\mu}  = \frac{2Q}{\alpha\epsilon_0\pi}\sin(\frac{k\pi\phi_0}{\alpha}) K_{k\pi/\alpha}(\mu r_0)}, \\[.2cm]
+    \displaystyle{B_{k\mu}  = \frac{2Q}{\alpha\epsilon_0\pi}\sin(\frac{k\pi\phi_0}{\alpha}) I_{k\pi/\alpha}(\mu r_0)}.
     \end{cases}
         }
     \label{equ:coefficient}
@@ -382,7 +384,7 @@ $$
 \end{gather}
 $$
 
-So $1/\abs{\vb{r}-\vb{r}_k}$ is also a solution of the original Poisson's equation, but it does not have the limits of two of the boundary conditions. Following our previous expansion method, we can get a similar result
+So $1/\abs{\vb{r}-\vb{r}_k}$ is also a solution of the original Poisson's equation, but it does not satisfy the two boundary conditions. Following our previous expansion method, we can get a similar result
 
 $$
 \begin{equation}
@@ -396,7 +398,7 @@ $$
 \end{equation}
 $$
 
-Take advantage of this result and $\vb{r}_k = r_0 \vb{e}_r + \phi_k \vb{e}_k$, we have
+Let $\vb{r}_k = r_0 \vb{e}_r + \phi_k \vb{e}_k$, we have
 
 $$
  \frac{1}{|\vb{r}-\vb{r_k}|} 
@@ -410,7 +412,7 @@ $$
     &{}\sqrt{2r_0r}\sum_{k=1}^{2n} \frac{(-1)^{k+1}}{\sqrt{r^2+r_0^2+z^2-2r_0r\cos(\phi-\phi_k)}}\\[.2cm]
     =&{}\frac{\sqrt{2}}{\pi} \sum_{k=1}^{2n}(-1)^{k+1}\qty{Q_{-\frac{1}{2}}\qty(\frac{r^2+r_0^2+z^2}{2r_0r})+2\sum_{m=1}^{\infty}\cos[m(\phi-\phi_k)]Q_{m-\frac{1}{2}}\qty(\frac{r^2+r_0^2+z^2}{2r_0r})}\\[.2cm]
     =&{} \frac{\sqrt{2}}{\pi} Q_{-\frac{1}{2}}\qty(\frac{r^2+r_0^2+z^2}{2r_0r})\sum_{k=1}^{2n}(-1)^{k+1} + \frac{2\sqrt{2}}{\pi} \sum_{k=1}^{2n}(-1)^{k+1}\sum_{m=1}^{\infty}\cos[m(\phi-\phi_k)]Q_{m-\frac{1}{2}}\qty(\frac{r^2+r_0^2+z^2}{2r_0r})\\[.2cm]
-    =&{}\frac{2\sqrt{2}}{\pi} \sum_{m=1}^{\infty} Q_{m-\frac{1}{2}}\qty(\frac{r^2+r_0^2+z^2}{2r_0r}) \textcolor{DodgerBlue}{\sum_{k=1}^{2n} (-1)^{k+1}\cos\qty[m\qty(\phi-\qty[\frac{k}{2}]\frac{2\pi}{n}+(-1)^{k}\phi_0)]}
+    =&{}\frac{2\sqrt{2}}{\pi} \sum_{m=1}^{\infty} Q_{m-\frac{1}{2}}\qty(\frac{r^2+r_0^2+z^2}{2r_0r}) \textcolor{DodgerBlue}{\sum_{k=1}^{2n} (-1)^{k+1}\cos\qty[m\qty(\phi-\qty[\frac{k}{2}]\frac{2\pi}{n}+(-1)^{k}\phi_0)]}.
 \end{align*}
 $$
 
@@ -490,7 +492,7 @@ It's just that all the image charges and source charges have the same sign at th
 
 $$
 \begin{equation}
-    \phi_{i} = \qty[\frac{i}{2}]\frac{2\pi}{n} + (-1)^{i+1}\phi_0. \quad (i=1,2,\dots,2n)
+    \phi_{i} = \qty[\frac{i}{2}]\frac{2\pi}{n} + (-1)^{i+1}\phi_0, \quad (i=1,2,\dots,2n).
 \end{equation}
 $$
 
@@ -498,13 +500,13 @@ and
 
 $$
 \begin{equation}
- \Phi(r,\phi,z) = \frac{Q}{4\pi\epsilon_0} \sum_{i=1}^{2n} \frac{1}{\sqrt{r^2+r_0^2+z^2-2rr_0\cos(\phi-\phi_i)}}
+ \Phi(r,\phi,z) = \frac{Q}{4\pi\epsilon_0} \sum_{i=1}^{2n} \frac{1}{\sqrt{r^2+r_0^2+z^2-2rr_0\cos(\phi-\phi_i)}}.
  \label{equ:2 solution1}
 \end{equation}
 $$
 
 ### General case: $\alpha$ can be any value
-In order to satisfy the Neumann boundary condition $\partial_n \Phi =0$ , it is only necessary to modify the eigenfunction in the $\phi$ direction . One thing that needs to be noted is the situation of $k=0$ cannot be given up, then
+In order to satisfy the Neumann boundary condition $\partial_n \Phi =0$ , it is only necessary to modify the eigenfunction in the $\phi$ direction . One thing that needs to be noted is the situation of $k=0$ cannot be thrown away, then
 
 $$
 \psi(\phi)=\cos(\frac{k\pi}{\alpha}\phi), \quad m=\frac{k\pi}{\alpha}\quad (k=0,1,2,\dots)
@@ -530,12 +532,12 @@ The coefficients can be solved using the same method as before:
 $$
 \begin{equation*}
     \begin{cases}
-        \displaystyle{A_{0\mu}= \frac{Q}{\alpha\epsilon_0\pi}K_0(\mu r_0)}\\[.5cm]
+        \displaystyle{A_{0\mu}= \frac{Q}{\alpha\epsilon_0\pi}K_0(\mu r_0)}\\[.2cm]
         \displaystyle{B_{0\mu}= \frac{Q}{\alpha\epsilon_0\pi}I_0(\mu r_0)}
-    \end{cases}
+    \end{cases},
     \quad
     \begin{cases}
-        \displaystyle{A_{k\mu}= \frac{2Q}{\alpha\epsilon_0\pi}\cos(\frac{k\pi\phi_0}{\alpha})K_{k\pi/\alpha}(\mu r_0)}\\[.5cm]
+        \displaystyle{A_{k\mu}= \frac{2Q}{\alpha\epsilon_0\pi}\cos(\frac{k\pi\phi_0}{\alpha})K_{k\pi/\alpha}(\mu r_0)}\\[.2cm]
         \displaystyle{A_{k\mu}= \frac{2Q}{\alpha\epsilon_0\pi}\cos(\frac{k\pi\phi_0}{\alpha})I_{k\pi/\alpha}(\mu r_0)}
     \end{cases}
     \ (k=1,2,\dots)
@@ -573,7 +575,7 @@ $$
 \end{align*}
 $$
 
-For the summation of k on the right side, it can be calculated directly
+For the summation of $k$ on the right side, it can be calculated directly
 
 $$
 \begin{equation*}
@@ -584,14 +586,14 @@ $$
 \end{equation*}
 $$
 
-So we can obtain
+So
 
 $$
 \begin{equation}
 \textcolor{ForestGreen}{
     \begin{split}
     &\sum_{k=1}^{2n} \frac{1}{\sqrt{ \xi-\cos(\phi-\phi_k)}}\\[.2cm]
-    ={}& \frac{4\sqrt{2}n}{\pi} \left\{\frac{1}{2}Q_{-\frac{1}{2}}(\xi) + \sum_{k=1}^{\infty} Q_{nk-\frac{1}{2}} \qty(\xi) \cos(nk\phi_0)\cos(nk\phi) \right\}
+    ={}& \frac{4\sqrt{2}n}{\pi} \left\{\frac{1}{2}Q_{-\frac{1}{2}}(\xi) + \sum_{k=1}^{\infty} Q_{nk-\frac{1}{2}} \qty(\xi) \cos(nk\phi_0)\cos(nk\phi) \right\}.
     \end{split}
 }
 \end{equation}
@@ -623,7 +625,7 @@ and the electric potential is
 
 $$
 \Phi(r,\phi,z) = \frac{Q}{4\pi\epsilon_0} \sum_{k=1}^{2n}
-                \left\{ \frac{(-1)^{k+1}}{\sqrt{r^2+r_0^2+z^2-2rr_0\cos(\phi-\phi_{2k-1})}} + \frac{(-1)^{k+1}}{\sqrt{r^2+r_0^2+z^2-2rr_0\cos(\phi-\phi_{2k})}}\right\} 
+                \left\{ \frac{(-1)^{k+1}}{\sqrt{r^2+r_0^2+z^2-2rr_0\cos(\phi-\phi_{2k-1})}} + \frac{(-1)^{k+1}}{\sqrt{r^2+r_0^2+z^2-2rr_0\cos(\phi-\phi_{2k})}}\right\} .
 $$
 
 ### General case: $\alpha$ can be any value
@@ -654,8 +656,8 @@ And the coefficients are
 $$
 \begin{equation}
     \begin{cases}
-    \displaystyle{A_{k\mu}  = \frac{2Q}{\alpha\epsilon_0\pi}\sin(\frac{(2k-1)\pi}{2\alpha}\phi_0) K_{\frac{(2k-1)\pi}{2\alpha}}(\mu r_0)} \\[.2cm]
-    \displaystyle{B_{k\mu}  = \frac{2Q}{\alpha\epsilon_0\pi}\sin(\frac{(2k-1)\pi}{2\alpha}\phi_0) I_{\frac{(2k-1)\pi}{2\alpha}}(\mu r_0)}
+    \displaystyle{A_{k\mu}  = \frac{2Q}{\alpha\epsilon_0\pi}\sin(\frac{(2k-1)\pi}{2\alpha}\phi_0) K_{\frac{(2k-1)\pi}{2\alpha}}(\mu r_0),} \\[.2cm]
+    \displaystyle{B_{k\mu}  = \frac{2Q}{\alpha\epsilon_0\pi}\sin(\frac{(2k-1)\pi}{2\alpha}\phi_0) I_{\frac{(2k-1)\pi}{2\alpha}}(\mu r_0).}
     \end{cases}
 \end{equation}
 $$
@@ -666,7 +668,7 @@ And the final result is
 $$
 \begin{equation}
     \textcolor{crimson}{
-        \Phi(r,\phi,z) =\frac{Q}{\alpha\epsilon_0\pi\sqrt{r_0r}}  \sum_{k=1}^{\infty}  Q_{\frac{(2k-1)\pi}{2\alpha}-\frac{1}{2}}\qty(\frac{r^2+r_0^2+z^2}{2r_0r})\sin(\frac{(2k-1)\pi\phi_0}{2\alpha})\sin(\frac{(2k-1)\pi\phi}{2\alpha})
+        \Phi(r,\phi,z) =\frac{Q}{\alpha\epsilon_0\pi\sqrt{r_0r}}  \sum_{k=1}^{\infty}  Q_{\frac{(2k-1)\pi}{2\alpha}-\frac{1}{2}}\qty(\frac{r^2+r_0^2+z^2}{2r_0r})\sin(\frac{(2k-1)\pi\phi_0}{2\alpha})\sin(\frac{(2k-1)\pi\phi}{2\alpha}).
     }
 \end{equation}
 $$
@@ -699,7 +701,7 @@ then
 $$
 \begin{align*}
     &\sum_{k=1}^{2n}\qty{ \frac{(-1)^{k+1}}{\sqrt{\xi-\cos(\phi-\phi_{2k-1})}} + \frac{(-1)^{k+1}}{\sqrt{\xi-\cos(\phi-\phi_{2k})}}}\\[.2cm]
-    ={}& - \frac{8\sqrt{2}n}{\pi}\sum_{p=1}^{\infty} Q_{(2p-1)n-\frac{1}{2}}(\xi) \cos((2p-1)n\phi_0-\frac{(2p-1)\pi}{2})\cos((2p-1)n\phi+\frac{(2p-1)\pi}{2})
+    ={}& - \frac{8\sqrt{2}n}{\pi}\sum_{p=1}^{\infty} Q_{(2p-1)n-\frac{1}{2}}(\xi) \cos((2p-1)n\phi_0-\frac{(2p-1)\pi}{2})\cos((2p-1)n\phi+\frac{(2p-1)\pi}{2}).
 \end{align*}
 $$
 
@@ -711,18 +713,18 @@ $$
     \begin{split}
      &\sum_{k=1}^{2n}\qty{ \frac{(-1)^{k+1}}{\sqrt{\xi-\cos(\phi-\phi_{2k-1})}} + \frac{(-1)^{k+1}}{\sqrt{\xi-\cos(\phi-\phi_{2k})}}}\\[.2cm]
      ={}&
-    \frac{8\sqrt{2}n}{\pi}\sum_{k=1}^{\infty} Q_{(2p-1)n-\frac{1}{2}}(\xi) \sin[(2p-1)n\phi_0]\sin[(2p-1)n\phi].
+    \frac{8\sqrt{2}n}{\pi}\sum_{k=1}^{\infty} Q_{(2p-1)n-\frac{1}{2}}(\xi) \sin[(2p-1)n\phi_0]\sin[(2p-1)n\phi],
     \end{split}
 }
 \end{equation}
 $$
 
-This is what we want to verify.
+which is what we want to verify.
 
 
 ## Appendix: Prove the integral formula
 
-We used equation 15 in our previous proof $\eqref{equ:integral}$, and now we give its proof. With Sonine-Gegenbauer formula
+We used $\eqref{equ:integral}$ in our previous calculation without proof, and now we prove it. With Sonine-Gegenbauer integral
 
 $$
 \int_{0}^{\pi}\frac{t^{\nu}J_{\nu}(t\sqrt{a^2+b^2-2ab\cos\theta})}{(a^2+b^2-2ab\cos\theta)^{\nu/2}}\sin^{2\nu}\theta\dd{\theta} = \frac{\pi\Gamma(2\nu)}{2^{\nu-1}\Gamma(\nu)}\frac{J_{\nu}(at)}{a^{\nu}}\frac{J_{\nu}(bt)}{b^{\nu}},
@@ -767,19 +769,19 @@ $$
 So
 
 $$
-\int_{0}^{\infty} J_{\nu}(at)J_{\nu}(bt)e^{-ct}\dd{t} = \frac{1}{\pi\sqrt{ab}}Q_{\nu-\frac{1}{2}}\qty(\frac{a^2+b^2+c^2}{2ab}).
+\int_{0}^{\infty} J_{\nu}(at)J_{\nu}(bt)\mathrm{e}^{-ct}\dd{t} = \frac{1}{\pi\sqrt{ab}}Q_{\nu-\frac{1}{2}}\qty(\frac{a^2+b^2+c^2}{2ab}).
 $$
 
 Following the derivation in this post, we can give the cylindrical coordinate expansion of Green's function in another form (like $\eqref{equ:green function expansion}$):
 
 $$
-\frac{1}{|\vb{x}-\vb{x}'|} =\frac{2}{\pi} \sum_{m=-\infty}^{\infty} \int_0^{\infty} \dd{k} e^{im(\phi-\phi')}\cos[k(z-z')]I_{m}(kr_<)K_{m}(k r_>).
+\frac{1}{|\vb{x}-\vb{x}'|} =\frac{2}{\pi} \sum_{m=-\infty}^{\infty} \int_0^{\infty} \dd{k} \mathrm{e}^{im(\phi-\phi')}\cos[k(z-z')]I_{m}(kr_<)K_{m}(k r_>).
 $$
 
 By choosing different constant forms when separating variables, we can get another expansion form of Green's function in cylindrical coordinates:
 
 $$
-    \frac{1}{|\vb{x}-\vb{x}'|} = \sum_{m=-\infty}^{\infty}\int_{0}^{\infty}\dd{k} e^{im(\phi-\phi')}J_m(kr)J_m(kr')e^{-k(z_>-z_<)}. 
+    \frac{1}{|\vb{x}-\vb{x}'|} = \sum_{m=-\infty}^{\infty}\int_{0}^{\infty}\dd{k} e^{im(\phi-\phi')}J_m(kr)J_m(kr')\mathrm{e}^{-k(z_>-z_<)}. 
 $$
 
 Since they are the same Green's function, the two expansion forms are equivalent. The only difference lies in the selection of constants when separating variables. Note that $e^{im(\phi-\phi')}$ is pairwise orthogonal when $m$ is different. By comparing their coefficients, we can easily get:

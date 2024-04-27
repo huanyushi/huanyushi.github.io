@@ -7,7 +7,7 @@ img_path : /assets/img/in-post/python-notes/
 math: true
 image:
     path: numpy.png
-    lqip: https://cdn.jsdelivr.net/gh/huanyushi/huanyushi.github.io@main/assets/img/in-post/python-notes/numpy.png
+    lqip: numpy.png
 ---
 > &#x1F447; 在此下载本文对应的 Jupyter Notebook 和 html 文件 
 > - **[sec6_numpy_introduction.ipynb](/assets/python/sec6_numpy_introduction.ipynb)**
@@ -39,11 +39,11 @@ NumPy 为啥这么快呢？这主要有以下几个原因：
 ![numpy1.png](numpy1-dark.png){:.dark}
 
 或者一张照片的灰度图，每个像素的灰度都可以用一个数来表示，这就构成了一个2维数组：
-![numpy2.png](numpy2.png)
+![numpy2.png](numpy2.png){: .light}
 ![numpy2.png](numpy2-dark.png){:.dark}
 
 如果是彩色图片，考虑 RGB 三色表示，它就是一个3维数组：
-![numpy3.png](numpy3.png)
+![numpy3.png](numpy3.png){:.light}
 ![numpy3.png](numpy3-dark.png){:.dark}
 
 所以学好 NumPy（和线性代数）还是非常有必要滴！

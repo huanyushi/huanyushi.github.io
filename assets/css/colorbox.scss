@@ -1,0 +1,195 @@
+@mixin colorbox($border-color, $icon-color, $icon-content, $bg-color) {
+    border-left: .2rem solid $border-color;
+    border-radius: 0.25rem;
+    color: var(--text-color);
+    padding: 0.4rem 0.6rem .4rem 1.5rem;
+    box-shadow: var(--language-border-color) 1px 1px 3px 1px;
+    position: relative;
+    margin-bottom: 1.5rem;
+  
+    p.title::before {
+      content: $icon-content;
+      color: $icon-color;
+      font: var(--fa-font-solid);
+      text-align: center;
+      width: 3rem;
+      position: absolute;
+      left: .25rem;
+      margin-top: .4rem;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+    }
+  
+    p.title {
+      background-color: $bg-color;
+      color: $icon-color;
+      padding: .4rem .6rem .4rem 3rem; 
+      margin: -.4rem -.6rem .4rem -1.5rem;
+      font-weight: 600;
+    }
+}
+  
+/* box-info 蓝色 */
+.box-info {
+@include colorbox(
+    var(--prompt-info-icon-color),
+    var(--prompt-info-icon-color),
+    "\f06a",
+    var(--prompt-info-bg)
+);
+}
+
+/* box-tip 绿色 */
+.box-tip {
+@include colorbox(
+    var(--prompt-tip-icon-color),
+    var(--prompt-tip-icon-color),
+    "\f0eb",
+    var(--prompt-tip-bg)
+);
+}
+
+/* box-warning 黄色 */
+.box-warning {
+@include colorbox(
+    var(--prompt-warning-icon-color),
+    var(--prompt-warning-icon-color),
+    "\f06a",
+    var(--prompt-warning-bg)
+);
+}
+
+/* box-danger 红色 */
+.box-danger {
+@include colorbox(
+    var(--prompt-danger-icon-color),
+    var(--prompt-danger-icon-color),
+    "\f071",
+    var(--prompt-danger-bg)
+);
+}
+
+
+// /* colorbox 创建（单独一个个创建） */
+// /* box-info 蓝色 */
+// .box-info {
+//     border-left: .2rem solid var(--prompt-info-icon-color);
+//     border-radius: 0.25rem;
+//     color: var(--text-color);
+//     padding: 0rem .6rem .4rem 1.5rem;
+//     box-shadow: var(--language-border-color) 2px 2px 3px 1px;
+//     position: relative;
+//     margin-bottom: 1.5rem;
+//   }
+// .box-info p.title::before {
+//     content: "\f06a";
+//     color: var(--prompt-info-icon-color);
+//     font: var(--fa-font-solid);
+//     text-align: center;
+//     width: 3rem;
+//     position: absolute;
+//     left: .25rem;
+//     margin-top: .4rem;
+//     text-rendering: auto;
+//     -webkit-font-smoothing: antialiased;
+// }
+// .box-info p.title {
+//     background-color: var(--prompt-info-bg);
+//     color: var(--prompt-info-icon-color);
+//     padding: .4rem .6rem .4rem 3rem;
+//     margin: -.4rem -.6rem .4rem -1.5rem; 
+//     font-weight: 600;
+// }
+
+
+// /* box-tip 绿色 */
+// .box-tip {
+//     border-left: .2rem solid var(--prompt-tip-icon-color);
+//     border-radius: 0.25rem;
+//     color: var(--text-color);
+//     padding: 0rem 0.6rem .4rem 1.5rem;
+//     box-shadow: var(--language-border-color) 2px 2px 3px 1px;
+//     position: relative;
+//     margin-bottom: 1.5rem;
+// }
+// .box-tip p.title::before {
+//     content: "\f0eb";
+//     color: var(--prompt-tip-icon-color);
+//     font: var(--fa-font-regular);
+//     text-align: center;
+//     width: 3rem;
+//     position: absolute;
+//     left: .25rem;
+//     margin-top: .4rem;
+//     text-rendering: auto;
+//     -webkit-font-smoothing: antialiased;
+// }
+// .box-tip p.title {
+//     background-color: var(--prompt-tip-bg);
+//     color: var(--prompt-tip-icon-color);
+//     padding: .4rem .6rem .4rem 3rem; 
+//     margin: -.4rem -.6rem .4rem -1.5rem; 
+//     font-weight: 600;
+// }
+
+
+// /* box-warning 黄色 */
+// .box-warning {
+//     border-left: .2rem solid var(--prompt-warning-icon-color);
+//     border-radius: 0.25rem;
+//     color: var(--text-color);
+//     padding: 0rem 0.6rem .4rem 1.5rem;
+//     box-shadow: var(--language-border-color) 2px 2px 3px 1px;
+//     position: relative;
+//     margin-bottom: 1.5rem;
+// }
+// .box-warning p.title::before {
+//     content: "\f06a";
+//     color: var(--prompt-warning-icon-color);
+//     font: var(--fa-font-solid);
+//     text-align: center;
+//     width: 3rem;
+//     position: absolute;
+//     left: .25rem;
+//     margin-top: .4rem;
+//     text-rendering: auto;
+//     -webkit-font-smoothing: antialiased;
+// }
+// .box-warning p.title {
+//     background-color: var(--prompt-warning-bg);
+//     color: var(--prompt-warning-icon-color);
+//     padding: .4rem .6rem .4rem 3rem; 
+//     margin: -.4rem -.6rem .4rem -1.5rem; 
+//     font-weight: 600;
+// }
+
+
+// /* box-danger 红色 */
+// .box-danger {
+//     border-left: .2rem solid var(--prompt-danger-icon-color);
+//     border-radius: 0.25rem;
+//     color: var(--text-color);
+//     padding: 0rem 0.6rem .4rem 1.5rem;
+//     box-shadow: var(--language-border-color) 2px 2px 3px 1px;
+//     position: relative;
+//     margin-bottom: 1.5rem;
+// }
+// .box-danger p.title::before {
+//     content: "\f071";
+//     color: var(--prompt-danger-icon-color);
+//     font: var(--fa-font-solid);
+//     text-align: center;
+//     width: 3rem;
+//     position: absolute;
+//     left: .25rem;
+//     margin-top: .4rem;
+//     text-rendering: auto;
+//     -webkit-font-smoothing: antialiased;
+// }
+// .box-danger p.title {
+//     background-color: var(--prompt-danger-bg);
+//     color: var(--prompt-danger-icon-color);
+//     padding: .4rem .6rem .4rem 3rem; 
+//     margin: -.4rem -.6rem .4rem -1.5rem;
+//     font-weight: 600;
+// }
