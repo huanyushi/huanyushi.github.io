@@ -33,7 +33,7 @@ $$
 \end{equation}
 $$
 
-<details>
+<details class="box-hidden">
 <summary> Proof can be found here </summary>
 
 This can be proven using the method we discussed earlier. Let us choose $\qty{\ket{\tilde{\alpha}}}$ to be the single-particle basis of eigenstates of $\hat{f}$, i.e. $\hat{f}\ket{\tilde{\alpha}} = f_{\tilde{\alpha}} \ket{\tilde{\alpha}}$, where $f_{\tilde{\alpha}}$ is the eigenvalue of $\hat{f}$ associated with the eigenstate $\ket{\tilde{\alpha}}$. Then we claim that the second-quantized representation of $\hat{F}^{(1)}$ can be written as 
@@ -327,6 +327,7 @@ $$
     &=\frac{1}{2V}\sum_{\vb{k}}\sum_{\vb{k}'}\sum_{\vb{q}\neq 0}\sum_{\alpha}\sum_{\beta}\qty(\frac{4\pi e^2}{q^2})\hat{C}_{\vb{k}+\vb{q},\alpha}^\dagger\hat{C}_{\vb{k}'-\vb{q},\beta}^\dagger\hat{C}_{\vb{k}'\beta}\hat{C}_{\vb{k}\alpha}.
 \end{align}
 $$
+
 ### Bloch representation
 Bloch's theorem tell us that solutions to the Schr&ouml;dinger equation in a periodic potential can be expressed as plane waves modulated by periodic functions. The **Bloch function** is defined as $\psi_{\vb{k}}^{B}(\vb{x}) = \mathrm{e}^{i\vb{k}\cdot\vb{x}}u_{\vb{k}}(\vb{x})$, where $$u_{\vb{k}}(\vb{x}) = u_{\vb{k}}(\vb{x}+\vb{R}_{l})$$, $$\vb{R}_{l}$$ is lattice vector. $$\qty{\psi_{\vb{k}}^{B}(\vb{x})}$$ is also a set of orthonormal and complete functions,
 
@@ -405,6 +406,7 @@ $$
 
 #### Example
 Total kinetic energy operator in Wannier representation is
+
 $$
 \begin{align}
 \hat{T} &= \sum_\alpha \int \dd[3]{x} \hat{\psi}^{\dagger}_{\alpha}(\vb{x}) \qty(-\frac{\nabla^2}{2m}) \hat{\psi}_{\alpha}(\vb{x})\notag\\[.2cm] 

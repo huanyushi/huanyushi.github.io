@@ -9,7 +9,7 @@
     position: relative;
     margin-bottom: 1rem;
   
-    > p.title::before {
+    > div.title::before {
       content: $icon-content;
       color: $icon-color;
       font: var(--fa-font-#{$fa-style});
@@ -22,7 +22,7 @@
       -webkit-font-smoothing: antialiased;
     }
   
-    > p.title {
+    > div.title {
       background-color: $bg-color;
       color: $icon-color;
       padding: .5rem .6rem .5rem 3rem; 

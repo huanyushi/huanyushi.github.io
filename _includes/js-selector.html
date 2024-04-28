@@ -89,7 +89,14 @@
         /* load package */
         packages: {'[+]': ['physics']},
         /* equation numbering */
-        tags: 'ams'
+        tags: 'ams',
+        macros: {
+        /* define macros, see: <https://docs.mathjax.org/en/latest/input/tex/macros.html> */
+          'e': '\\mathrm{e}',
+          'RR': '\\mathbb{R}',
+          'ZZ': '\\mathbb{Z}',
+          'QQ': '\\mathbb{Q}',
+        }
       },
       svg: { fontCache: 'global'},
       loader: {load: ['[tex]/physics']},

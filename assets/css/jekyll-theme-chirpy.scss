@@ -12,7 +12,12 @@
 /* 主页 post 列表加阴影 */
 #post-list .card {
     border-radius: 0.7rem;
-    box-shadow: var(--language-border-color) 0px 0px 3px 1px;
+    box-shadow: var(--language-border-color) 1px 1px 2px 1px;
+}
+
+// prompt 边框阴影
+blockquote[class^='prompt-']{
+    box-shadow: var(--language-border-color) 1px 1px 2px 1px; /* 借用了代码框的边框颜色变量 */
 }
 
 /* 侧边栏背景图片添加 */
@@ -39,10 +44,38 @@
     color: var(--sidebar-btn-color);
 }
 
-blockquote[class^='prompt-']{
-    box-shadow: var(--language-border-color) 1px 1px 2px 1px; /* 借用了代码框的边框颜色变量 */
-}
+// 让目录不产生折叠效果
+// .is-collapsed {
+//   max-height: none !important;
+// }
 
-@import "detail.scss";
-@import "animation.scss";
-@import "colorbox.scss"
+
+@import "animation.scss";    // 背景动画样式
+@import "colorbox.scss";     // colorbox 样式
+
+@import 'colors/colors-light.scss';
+@import 'colors/colors-dark.scss';
+
+html {
+    @media (prefers-color-scheme: light) {
+      &:not([data-mode]),
+      &[data-mode='light'] {
+        @include light-colors;
+      }
+  
+      &[data-mode='dark'] {
+        @include dark-colors;
+      }
+    }
+  
+    @media (prefers-color-scheme: dark) {
+      &:not([data-mode]),
+      &[data-mode='dark'] {
+        @include dark-colors;
+      }
+  
+      &[data-mode='light'] {
+        @include light-colors;
+      }
+    }
+  }

@@ -9,9 +9,22 @@ What I have done:
 - Modify the MathJax config file to load the physics package.
 - Add a background image to the sidebar and modify the associated text styles.
 - Add friend links in the sidebar (see this [discussion](https://github.com/cotes2020/jekyll-theme-chirpy/discussions/1677)).
+
+<table>
+<tr>
+  <td><img src="assets/img/in-post/2024/2024-03-30/friend1.png" alt="friend example1"></td>
+  <td><img src="assets/img/in-post/2024/2024-03-30/friend2.png" alt="friend example2"></td>
+  <td><img src="assets/img/in-post/2024/2024-03-30/friend3.png" alt="friend example3"></td>
+</tr>
+</table>
+
 - <del>Make Further Reading display the latest posts (see this [PR](https://github.com/cotes2020/jekyll-theme-chirpy/pull/1699)).</del> (This PR has been merged after Chirpy v6.5.5)
 - Add site statistics from 'buanzi'([不蒜子](https://busuanzi.ibruce.info/)) in the footer.
 - Add background animation (refer to [@NichtsHsu](https://nihil.cc/)).
+- Add GitHub contribution graph (via [gh-contrib-graph](https://github.com/lengthylyova/gh-contrib-graph)).
+
+<img src="assets/img/in-post/2024/2024-03-30/github-contrib.PNG" alt="GitHub contribution graph">
+
 - Add 4 new colorboxes (see this [discussion](https://github.com/cotes2020/jekyll-theme-chirpy/discussions/1707)).
 
 <table>
@@ -45,7 +58,7 @@ What I have done:
 - Python implementation for LQIP (Low Quality Image Placeholders) (see this [discussion](https://github.com/cotes2020/jekyll-theme-chirpy/discussions/1685)).
 - Python implementation for Inverted image.
 
-<img src="assets/img/readme/inverse.png" alt="inverse-python">
+<img src="assets/img/in-post/2024/2024-03-30/inverse.png" alt="inverse-python">
 
 ## Introduction
 Here, I share study notes and ideas related to my research journey. While updates may be irregular, feel free to drop by anytime to explore. Your visit is appreciated!

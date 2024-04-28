@@ -167,21 +167,21 @@ MathJax = {
 ```
 {: file="_data/friends.yml"}
 
-<center>
-<figure>
-<img src="friend1.png" width="200" alt="friend example1">
-<img src="friend2.png" width="200" alt="friend example2">
-<img src="friend3.png" width="200" alt="friend example3">
-</figure>
-</center>
+<table>
+<tr>
+  <td><img src="friend1.png" alt="friend example1"></td>
+  <td><img src="friend2.png" alt="friend example2"></td>
+  <td><img src="friend3.png" alt="friend example3"></td>
+</tr>
+</table>
 
 <div class="box-warning" markdown="1">
-<p class="title"> 注意 </p>
+<div class="title"> 注意 </div>
 1. 友链不能加太多，容易挤占底部社交平台的空间，让它跑到屏幕外面去了（不过这也和系统分辨率有关系）。如果友链太多建议在侧边栏新开一个选项卡，也就是新建一个 `_tabs/friends.md`{: .filepath}。
 2. 我这里设置的是友链沉底，保持在底部社交平台上方。如果分辨率拉大，会发现它和上面侧边栏选项卡之间有很大间距。如果想调整友链位置紧跟选项卡之后，可以在 `_includes/sidebar.html`{: .filepath} 中修改选项卡的样式，将 `<nav class="flex-column flex-grow-1 w-100 ps-0">` 中的 `flex-grow-1` 删除；并加入到友链样式中原先的 `<div class="friends">` 修改为 `<div class="friends flex-grow-1">`。同时 `assets/css/jekyll-theme-chirpy.scss`{: .filepath} 中 `#sidebar .friends` 里的 `margin-bottom: 2rem` 修改为上间距 `margin-top: ? rem`, ? 的值可以自己选定。
 </div>
 
-## 4. 修改 further reading 的文章顺序
+## 4. <del> 修改 further reading 的文章顺序</del>
 <del>按我的理解这应该是模板的一个 bug，所以我把这部分更新写成一个 PR 提交给原作者了，请见 [refactor: make Further Reading display the latest posts.](https://github.com/cotes2020/jekyll-theme-chirpy/pull/1699)。</del>
 
 > 这个 PR 已经被作者**合并**，在 Chirpy 6.5.5 版本（不包括 6.5.5）之后就不需要再做修改了，这一节内容可以忽略。
@@ -411,7 +411,57 @@ _posts
 4. `#animation` 是一个具有固定位置的容器，用于包含动画效果。它包含了另一个关键帧动画 `animate`，定义了元素在页面上的运动轨迹和透明度变化。这个动画使元素沿着垂直方向向上移动并旋转，逐渐消失，同时边框半径也发生变化。
 5. `#animation` 中包含了两个媒体查询，根据视口宽度的不同应用不同的样式。在大于等于 1200px 的情况下，会生成一系列彩色圆形动画效果，每个圆形的位置、颜色、大小、持续时间和延迟时间都是随机生成的。在小于 1200px 的情况下，圆形动画被隐藏起来，不显示。所以移动端看不到动画效果，但是 PC 端是可以的。
 
-## 8. 增加 4 个新的 colorbox
+## 8. 增加 GitHub 贡献图
+
+利用 GitHub 上的一个项目 [gh-contrib-graph](https://github.com/lengthylyova/gh-contrib-graph)，在 HTML 里加入以下代码：
+
+```html
+<!-- GOES INTO HEAD -->
+<link rel="stylesheet" href="http://lengthylyova.pythonanywhere.com/static/gh-contrib-graph/gh.css">
+
+<!-- GOES INTO BODY -->
+<div id="gh" data-login="YOUR_GITHUB_LOGIN"></div>
+
+<!-- GOES INTO THE END OF BODY -->
+<script src="http://lengthylyova.pythonanywhere.com/static/gh-contrib-graph/gh.js"></script>
+```
+
+将其中的 `YOUR_GITHUB_LOGIN` 改成 github 用户名即可。
+
+<div class="box-info" markdown="1">
+<div class="title"> 建议 </div>
+我个人建议在 `assets/css/jekyll-theme-chirpy.scss`{: .filepath} 导入外部 CSS 样式文件，即（下面是我自己设置的样式代码）
+
+```scss
+@import url('http://lengthylyova.pythonanywhere.com/static/gh-contrib-graph/gh.css');
+
+.ghCalendarHeader {
+  margin-bottom: 1rem;
+  color:var(--text-color);
+}
+.ghThumbNail {
+  display: none;
+}
+#gh a {
+  text-decoration: none;
+  color: var(--link-color);
+}
+.ghCalendarCard {
+  border: var(--language-border-color) 1px solid;
+  border-radius: .5rem;
+}
+```
+{: file="assets/css/jekyll-theme-chirpy.scss"}
+
+然后在需要加入的地方插入剩下两行代码即可（`.md`支持 HTML 语言），效果如下图所示：
+
+![github-contrib](github-contrib.png)
+_GitHub 贡献图_
+
+> 我嫌加载太慢就没加进去了，这玩意儿放在 `about.md`{:.filepath} 是个不错的选择。
+</div>
+
+## 9. 增加 4 个新的 colorbox
 模板作者已经设置了 4 个 prompt，效果如下：
 
 > To be or not to be. That is a question.
@@ -429,22 +479,22 @@ _posts
 在此基础上，我构建了 4 个新的 colorbox，效果如下：
 
 <div class="box-info" markdown="1">
-<p class="title"> Shakespeare </p>
+<div class="title"> Shakespeare </div>
 To be or not to be. That is a question.
 </div>
 
 <div class="box-tip" markdown="1">
-<p class="title"> Shakespeare </p>
+<div class="title"> Shakespeare </div>
 To be or not to be. That is a question.
 </div>
 
 <div class="box-warning" markdown="1">
-<p class="title"> Shakespeare </p>
+<div class="title"> Shakespeare </div>
 To be or not to be. That is a question.
 </div>
 
 <div class="box-danger" markdown="1">
-<p class="title"> Shakespeare </p>
+<div class="title"> Shakespeare </div>
 > To be or not to be. That is a question.  
 > --- Shakespeare
 
@@ -485,7 +535,7 @@ To be or not to be. That is a question.
     position: relative;
     margin-bottom: 1rem;
   
-    > p.title::before {
+    > div.title::before {
       content: $icon-content;
       color: $icon-color;
       font: var(--fa-font-#{$fa-style});
@@ -498,7 +548,7 @@ To be or not to be. That is a question.
       -webkit-font-smoothing: antialiased;
     }
   
-    > p.title {
+    > div.title {
       background-color: $bg-color;
       color: $icon-color;
       padding: .5rem .6rem .5rem 3rem; 
@@ -554,10 +604,10 @@ To be or not to be. That is a question.
 ```
 {: file="assets/css/jekyll-theme-chirpy.scss"}
 
-## 9. Details 元素的样式设计
-HTML 中的 `<details>` 元素可以创建一个组件，仅当被切换为展开状态时，才会显示里面的内容，效果如下：
+## 10. Details 元素的样式设计
+HTML 中的 `<details class="box-hidden">` 元素可以创建一个组件，仅当被切换为展开状态时，才会显示里面的内容，效果如下：
 
-<details markdown="1">
+<details class="box-hidden" markdown="1">
 <summary> 详细信息 </summary>
 床前明月光，疑是地上霜。举头望明月，低头思故乡。
 
@@ -569,7 +619,7 @@ $$
 
 在 Markdown 文件输入以下代码即可实现，其中 `markdown = "1"` 是为了在 HTML 元素内也可以使用 Markdown 语法，另外在其中加入 open 可以设置它为默认展开的形式（否则为默认关闭）：
 ```markdown
-<details markdown="1">
+<details class="box-hidden" markdown="1">
 <summary> 详细信息 </summary>
 床前明月光，疑是地上霜。举头望明月，低头思故乡。
 
@@ -580,69 +630,83 @@ $$
 </details>
 ```
 
-样式的设计添加到了 `assets/css/jekyll-theme-chirpy.scss`{: .filepath} 中，加入以下代码即可：
+样式的设计添加到了 `assets/css/jekyll-theme-chirpy.scss`{: .filepath} 中，加入以下代码即可（注意我的样式在下面的基础上做了更改）：
 ```scss
-/* details 样式设计 */ 
-details {
-    border-radius: .25rem;
-    border-left: .2rem solid var(--prompt-tip-icon-color);
-    box-shadow: var(--language-border-color) 1px 1px 2px 1px; /* 借用了代码框的边框颜色变量 */
-    margin-bottom: 1rem;
-    padding: .6rem 1rem .6rem 1.5rem;
-}
+    // details 样式设计
+   details {
+       border-radius: .25rem;
+       border-left: .2rem solid var(--prompt-tip-icon-color);
+       box-shadow: var(--language-border-color) 1px 1px 2px 1px; /* 借用了代码框的边框颜色变量 */
+       margin-bottom: 1rem;
+       padding: .6rem 1rem .6rem 1.5rem;
+   }
 
-details > summary {
-    padding: .5rem 1.0rem .5rem 1.0rem; 
-    margin: -.6rem -1rem -.6rem -1.5rem;
-    font-weight: 600;
-    background-color: var(--prompt-tip-bg);
-    color: var(--prompt-tip-icon-color);
-    list-style: none; /* 隐藏默认的箭头 */
-}
+    details > summary {
+        padding: .5rem 1.0rem .5rem 1.0rem; 
+        margin: -.6rem -1rem -.6rem -1.5rem;
+        font-weight: 600;
+        background-color: var(--prompt-tip-bg);
+        color: var(--prompt-tip-icon-color);
+        text-decoration: underline;
+        position: relative;
+        list-style: none; /* 隐藏默认的箭头 */
+        transition: background-color 0.3s ease; /* 添加颜色过渡效果 */
+    }
 
-details > summary::-webkit-details-marker {
-    display: none; /* 隐藏默认的箭头 */
-}
-details > summary::marker {
-    content: none; /* 隐藏默认的箭头 */
-}
+    details > summary::-webkit-details-marker {
+        display: none; /* 隐藏默认的箭头 */
+    }
+    details > summary::marker {
+        content: none; /* 隐藏默认的箭头 */
+    }
 
-details > summary::before {
-    /* 关闭状态下 */
-    /* 也可以用其他符号或自定义图标，比如 Unicode 字符 */
-    // content: '🙈'; 
-    /* content:'\002B9A'; */
-    content: '😼';
-    margin-right: .3rem;
-    display: inline-block;
-}
-details[open] > summary::before {
-    /* 展开状态下 */
-    /* content: '🐵';*/  
-    /* content: '\002B9B'; */
-    content: '🙀';
-    animation: my-cat .3s ease-in-out; /*  点击会有动画效果 */
-    margin-right: .3rem;
-}
+    details > summary::before {
+        /* 关闭状态下 */
+        /* 也可以用其他符号或自定义图标，比如 Unicode 字符 */
+        // content: '🙈'; 
+        /* content:'\002B9A'; */
+        content: '😼';
+        margin-right: .3rem;
+        display: inline-block;
+    }
+    details[open] > summary::before {
+        /* 展开状态下 */
+        /* content: '🐵';*/  
+        /* content: '\002B9B'; */
+        content: '🙀';
+        animation: my-cat .2s ease-in-out; /*  点击会有动画效果 */
+        margin-right: .3rem;
+    }
 
-details[open] > summary{
-    // transition: margin 200ms ease-out; /* 展开会有动画效果 */
-    margin-bottom: .6rem;
-}
+    details > summary::after {
+        content: '▶\FE0E'; /* \FE0E 是强制前一个字符以文本形式出现，否则 ios 上变成 emoji 表情 */
+        display: inline-block;
+        transition: transform 0.2s ease; /* 添加旋转动画 */
+        position: absolute;
+        right: 1rem; /* 调整箭头在最右边的位置 */
+    }
+    details[open] > summary::after {
+        transform: rotate(90deg);
+    }
 
-@keyframes my-cat {
-    50%  { transform: scale(1.3); } /* 动画效果代码 */
-}
+    details[open] > summary{
+        // transition: margin 200ms ease-out; /* 展开会有动画效果 */
+        margin-bottom: .6rem;
+    }
+
+    @keyframes my-cat {
+        50%  { transform: scale(1.3); } /* 动画效果代码 */
+    }
 ```
 {: file="assets/css/jekyll-theme-chirpy.scss" }
 
 
 
-## 10. LQIP 的 Python 实现
+## 11. LQIP 的 Python 实现
 LQIP (Low Quality Image Placeholder) 指的是低质量图像占位符，这是一种网页性能优化技术，在加载高质量图像之前，先加载一个轻量级、低分辨率的模糊图像来提供一种预览。这种预览图像可以帮助减少页面加载时间和带宽消耗，提高访问者的视觉体验。
 
 ![LQIP](lqip.png)
-_低质量图像占位符_
+_低质量图像占位符，from [daun](https://processwire.com/modules/image-placeholders/)._
 
 作者在模板里添加了此功能，在每个文档的前言区设置 lqip 即可。我写了一个 Python 代码可以方便地将图像压缩模糊并保存，且转换成 base64 编码。这是根据我的文件路径来写的，有需要可以自行调整。
 ```python
@@ -714,7 +778,7 @@ base64_string = "/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBk
 save_base64_image(base64_string, "decoded_image.webp")
 ```
 
-## 11. 反色图片的 Python 实现
+## 12. 反色图片的 Python 实现
 Blog 支持暗色模式，同时文中的图片也可以相应转换至暗色模式，对于部分图片可以直接通过反色的方式将亮色转换至暗色（但不是所有，比如人像反色放在博客里真的很恶心），我写了一个 Python 程序可以将图片转换至暗色模式，有需要可以自取。同样地，文件路径也是根据我自己实际情况来设置的，需要做相应修改：
 
 ```python
@@ -758,8 +822,8 @@ _反色图片与原图片对比_
 
 
 
-## 12. 其他问题
-### 12.1. git push 失败: couldn't connet to server
+## 13. 其他问题
+### 13.1. git push 失败: couldn't connet to server
 将本地文件 push 到 github 远程仓库里，经常出现 `couldn't connet to server` 的报错，经过查询没有明显有效的办法。以下是**可能有效**的措施（目前来看第三种最有效）：
 
 1. 关掉梯子 (VPN) 再 push 一下试试；
@@ -775,20 +839,14 @@ git config --global http.proxy http://127.0.0.1:7890
 
 可通过 `git config --global -l` 查看是否设置成功。之后再进行 push 即可。
 
-### 12.2. jekyll serve 预览速度较慢
+### 13.2. jekyll serve 预览速度较慢
 方法很多，比如减少文件夹数量、压缩图片大小等。以下罗列一些我摸索出来的方法：
 
 1. 对博客设置增量构建（即只重新建构发生更改的文件，而不是每次重新构建整个站点），
 可以在 `_config.yml`{: .filepath} 中添加 `incremental: true`，之后每次 jekyll 都将重新构建发生更改的文件。当然更合适的方法是使用 `bundle exec jekyll s --incremental` 或者 `bundle exec jekyll s --I` 来构建博客，这样手动可调更灵活。
 2. 压缩图片大小，这也是加速博客构建和浏览的一种方式。
 
-<div class="box-tip" markdown="1">
-<p class="title"> 可能有用的资源 </p>
-- [TinyPNG](https://tinypng.com/)：一个免费的在线图片压缩网站，虽然说是有损压缩，但视觉上几乎没有影响，且图片压缩甚至能达到 70%。
-- [PageSpeed Insights](https://pagespeed.web.dev/)：谷歌推出的网站性能检测工具，输入网址后会提供一个报告和优化方案，顺带看看哪里拖慢了加载速度。
-</div>
-
-### 12.3. 在 blog 中插入文件
+### 13.3. 在 blog 中插入文件
 使用 `<iframe>` 元素即可，如
 ```html
 <iframe src="file path" width="100%" height='800'></iframe>
@@ -796,11 +854,11 @@ git config --global http.proxy http://127.0.0.1:7890
 利用这个技巧可以在 post 中插入 html, pdf 等文件进行预览。
 
 <div class="box-danger" markdown="1">
-<p class="title"> 警告</p>
+<div class="title"> 警告</div>
 这个功能在谷歌浏览器上可以正常使用，但是其他浏览器不一定支持，且加 overflow 在移动端也不能产生滚动条，慎用！
 </div>
 
-### 12.4. 在 blog 中在线运行 Python
+### 13.4. 在 blog 中在线运行 Python
 在 post 里加入以下代码，可以在线运行 Python （虽然感觉有点鸡肋，但还是记录在这里）
 
 ```html
@@ -810,3 +868,12 @@ git config --global http.proxy http://127.0.0.1:7890
   height="500px">
 </iframe>
 ```
+
+### 13.5. 可能有用的资源
+
+<div class="box-tip" markdown="1">
+<div class="title"> 可能有用的资源 </div>
+- [TinyPNG](https://tinypng.com/)：一个免费的在线图片压缩网站，虽然说是有损压缩，但视觉上几乎没有影响，且图片压缩甚至能达到 70%。
+- [PageSpeed Insights](https://pagespeed.web.dev/)：谷歌推出的网站性能检测工具，输入网址后会提供一个报告和优化方案，顺带看看哪里拖慢了加载速度。
+- [Coolors](https://coolors.co/), [Color Hunt](https://www.colorhunt.co/)：在线调色网站，可以用来提供推荐配色。
+</div>

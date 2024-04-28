@@ -18,10 +18,10 @@ Welcome to my Blog! It's generated from a static web page built using Jekyll on 
 
 🔍 **Keywords:**
 
-* Physics Doctoral Student / Mathematics Enthusiasts / Integration lover 
+* Physics Doctoral Student / Mathematics Enthusiasts / Integration Lover 
 * Painting / Stiff Pen Calligraphy
 * C / Fortran / Python / MATLAB / Mathematica
-* 2019-2020 / 2020-2021 / National scholarship
+* 2019-2020 / 2020-2021 / National Scholarship
 
 🌐 **Online Presence:**
 

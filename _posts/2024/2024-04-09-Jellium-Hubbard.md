@@ -9,7 +9,7 @@ math: true
 {: .prompt-tip}
 
 
-<details>
+<details class="box-hidden">
 <summary> Proof can be seen here </summary>
 The proof is left as an exercise.
 </details>
