@@ -182,7 +182,10 @@ MathJax = {
 </div>
 
 ## 4. 修改 further reading 的文章顺序
-按我的理解这应该是模板的一个 bug，所以我把这部分更新写成一个 PR 提交给原作者了，请见 [refactor: make Further Reading display the latest posts.](https://github.com/cotes2020/jekyll-theme-chirpy/pull/1699)。
+<del>按我的理解这应该是模板的一个 bug，所以我把这部分更新写成一个 PR 提交给原作者了，请见 [refactor: make Further Reading display the latest posts.](https://github.com/cotes2020/jekyll-theme-chirpy/pull/1699)。</del>
+
+> 这个 PR 已经被作者**合并**，在 Chirpy 6.5.5 版本（不包括 6.5.5）之后就不需要再做修改了，这一节内容可以忽略。
+{: .prompt-danger}
 
 先描述一下问题，假设我们有 5 个不同的文章，它们按发布时间从以前到最新依次为 `Post1`, `Post2`, `Post3`, `Post4` 和 `Post5`，即：
 
@@ -425,17 +428,17 @@ _posts
 
 在此基础上，我构建了 4 个新的 colorbox，效果如下：
 
-<div class="box-info">
+<div class="box-info" markdown="1">
 <p class="title"> Shakespeare </p>
 To be or not to be. That is a question.
 </div>
 
-<div class="box-tip">
+<div class="box-tip" markdown="1">
 <p class="title"> Shakespeare </p>
 To be or not to be. That is a question.
 </div>
 
-<div class="box-warning">
+<div class="box-warning" markdown="1">
 <p class="title"> Shakespeare </p>
 To be or not to be. That is a question.
 </div>
@@ -452,19 +455,19 @@ $$x^2 + y^2 =z^2$$
 
 当然也可以不加标题，效果如下：
 
-<div class="box-info">
+<div class="box-info" markdown="1">
 To be or not to be. That is a question.
 </div>
 
-<div class="box-tip">
+<div class="box-tip" markdown="1">
 To be or not to be. That is a question.
 </div>
 
-<div class="box-warning">
+<div class="box-warning" markdown="1">
 To be or not to be. That is a question.
 </div>
 
-<div class="box-danger">
+<div class="box-danger" markdown="1">
 To be or not to be. That is a question.
 </div>
 
@@ -477,7 +480,7 @@ To be or not to be. That is a question.
     border-left: .2rem solid $border-color;
     border-radius: 0.25rem;
     color: var(--text-color);
-    padding: .6rem .6rem .6rem 1.5rem;
+    padding: .6rem 1rem .6rem 1.5rem;
     box-shadow: var(--language-border-color) 1px 1px 2px 1px;
     position: relative;
     margin-bottom: 1rem;
@@ -498,9 +501,13 @@ To be or not to be. That is a question.
     > p.title {
       background-color: $bg-color;
       color: $icon-color;
-      padding: .4rem .6rem .4rem 3rem; 
-      margin: -.6rem -.6rem .8rem -1.5rem;
+      padding: .5rem .6rem .5rem 3rem; 
+      margin: -.6rem -1rem .6rem -1.5rem;
       font-weight: 600;
+    }
+    
+    > p:last-child{
+        margin-bottom: 0;
     }
 }
   
@@ -577,19 +584,19 @@ $$
 ```scss
 /* details 样式设计 */ 
 details {
-    border-radius: 5px;
-    border-left: 5px solid var(--prompt-info-icon-color);
+    border-radius: .25rem;
+    border-left: .2rem solid var(--prompt-tip-icon-color);
     box-shadow: var(--language-border-color) 1px 1px 2px 1px; /* 借用了代码框的边框颜色变量 */
     margin-bottom: 1rem;
-    padding: .6rem .6rem .6rem 1.5rem;
+    padding: .6rem 1rem .6rem 1.5rem;
 }
 
 details > summary {
-    padding: .4rem .6rem .4rem 1.0rem; 
-    margin: -.6rem -.6rem -.6rem -1.5rem;
+    padding: .5rem 1.0rem .5rem 1.0rem; 
+    margin: -.6rem -1rem -.6rem -1.5rem;
     font-weight: 600;
-    background-color: var(--prompt-info-bg);
-    color: var(--prompt-info-icon-color);
+    background-color: var(--prompt-tip-bg);
+    color: var(--prompt-tip-icon-color);
     list-style: none; /* 隐藏默认的箭头 */
 }
 
@@ -620,7 +627,7 @@ details[open] > summary::before {
 
 details[open] > summary{
     // transition: margin 200ms ease-out; /* 展开会有动画效果 */
-    margin-bottom: .4rem;
+    margin-bottom: .6rem;
 }
 
 @keyframes my-cat {
@@ -788,7 +795,7 @@ git config --global http.proxy http://127.0.0.1:7890
 ```
 利用这个技巧可以在 post 中插入 html, pdf 等文件进行预览。
 
-<div class="box-danger">
+<div class="box-danger" markdown="1">
 <p class="title"> 警告</p>
 这个功能在谷歌浏览器上可以正常使用，但是其他浏览器不一定支持，且加 overflow 在移动端也不能产生滚动条，慎用！
 </div>

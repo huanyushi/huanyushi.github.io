@@ -1,18 +1,18 @@
 /* details 样式设计 */ 
 details {
-    border-radius: 5px;
-    border-left: 5px solid var(--prompt-info-icon-color);
+    border-radius: .25rem;
+    border-left: .2rem solid var(--prompt-tip-icon-color);
     box-shadow: var(--language-border-color) 1px 1px 2px 1px; /* 借用了代码框的边框颜色变量 */
     margin-bottom: 1rem;
-    padding: .6rem .6rem .6rem 1.5rem;
+    padding: .6rem 1rem .6rem 1.5rem;
 }
 
 details > summary {
-    padding: .4rem .6rem .4rem 1.0rem; 
-    margin: -.6rem -.6rem -.6rem -1.5rem;
+    padding: .5rem 1.0rem .5rem 1.0rem; 
+    margin: -.6rem -1rem -.6rem -1.5rem;
     font-weight: 600;
-    background-color: var(--prompt-info-bg);
-    color: var(--prompt-info-icon-color);
+    background-color: var(--prompt-tip-bg);
+    color: var(--prompt-tip-icon-color);
     list-style: none; /* 隐藏默认的箭头 */
 }
 
@@ -43,7 +43,7 @@ details[open] > summary::before {
 
 details[open] > summary{
     // transition: margin 200ms ease-out; /* 展开会有动画效果 */
-    margin-bottom: .4rem;
+    margin-bottom: .6rem;
 }
 
 @keyframes my-cat {

@@ -9,10 +9,10 @@ What I have done:
 - Modify the MathJax config file to load the physics package.
 - Add a background image to the sidebar and modify the associated text styles.
 - Add friend links in the sidebar (see this [discussion](https://github.com/cotes2020/jekyll-theme-chirpy/discussions/1677)).
-- Make Further Reading display the latest posts (see this [PR](https://github.com/cotes2020/jekyll-theme-chirpy/pull/1699)).
+- <del>Make Further Reading display the latest posts (see this [PR](https://github.com/cotes2020/jekyll-theme-chirpy/pull/1699)).</del> (This PR has been merged after Chirpy v6.5.5)
 - Add site statistics from 'buanzi'([不蒜子](https://busuanzi.ibruce.info/)) in the footer.
 - Add background animation (refer to [@NichtsHsu](https://nihil.cc/)).
-- Add 4 new colorboxes (see [here](https://huanyushi.github.io/posts/Chirpy-Blog-Customization/#8-%E5%A2%9E%E5%8A%A0-4-%E4%B8%AA%E6%96%B0%E7%9A%84-colorbox)).
+- Add 4 new colorboxes (see this [discussion](https://github.com/cotes2020/jekyll-theme-chirpy/discussions/1707)).
 
 <table>
 <tr>

@@ -4,7 +4,7 @@
     border-left: .2rem solid $border-color;
     border-radius: 0.25rem;
     color: var(--text-color);
-    padding: .6rem .6rem .6rem 1.5rem;
+    padding: .6rem 1rem .6rem 1.5rem;
     box-shadow: var(--language-border-color) 1px 1px 2px 1px;
     position: relative;
     margin-bottom: 1rem;
@@ -25,9 +25,13 @@
     > p.title {
       background-color: $bg-color;
       color: $icon-color;
-      padding: .4rem .6rem .4rem 3rem; 
-      margin: -.6rem -.6rem .8rem -1.5rem;
+      padding: .5rem .6rem .5rem 3rem; 
+      margin: -.6rem -1rem .6rem -1.5rem;
       font-weight: 600;
+    }
+    
+    > p:last-child{
+        margin-bottom: 0;
     }
 }
   

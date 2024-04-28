@@ -9,6 +9,12 @@
 //   font-weight: bold;
 // }
 
+/* 主页 post 列表加阴影 */
+#post-list .card {
+    border-radius: 0.7rem;
+    box-shadow: var(--language-border-color) 0px 0px 3px 1px;
+}
+
 /* 侧边栏背景图片添加 */
 #sidebar {
     background-image: url(https://cdn.jsdelivr.net/gh/huanyushi/huanyushi.github.io@main/assets/img/background.jpg); /* <- change background image */
