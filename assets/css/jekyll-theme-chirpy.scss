@@ -10,14 +10,24 @@
 // }
 
 /* 主页 post 列表加阴影 */
-#post-list .card {
-    border-radius: 0.7rem;
-    box-shadow: var(--language-border-color) 1px 1px 2px 1px;
-}
+// #post-list .card {
+//     border-radius: 0.7rem;
+//     box-shadow: var(--language-border-color) 1px 1px 2px 1px;
+// }
 
 // prompt 边框阴影
 blockquote[class^='prompt-']{
     box-shadow: var(--language-border-color) 1px 1px 2px 1px; /* 借用了代码框的边框颜色变量 */
+}
+
+// 代码框左上角颜色
+div[class^=language-] .code-header::before{
+  background-color: #fc625d;
+  box-shadow: 1.25rem 0 0 #fdbc40, 2.5rem 0 0 #35cd4b;
+}
+
+.MathJax .MathJax_SVG_Display {
+  margin-bottom: 1cm; /* 1em 的行间距 */
 }
 
 /* 侧边栏背景图片添加 */

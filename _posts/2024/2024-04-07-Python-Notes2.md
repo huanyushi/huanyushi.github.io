@@ -13,7 +13,7 @@ math: true
 > - **[sec2_number_string_bool.html](/assets/python/sec2_number_string_bool.html)**
 {: .prompt-info}
 
-## Python 用作简单的计算器
+## 1. Python 用作简单的计算器
 Python 可以用来做数学计算器，以下是一些最简单的运算操作：
 - `+`, `-`, `*`, `/` 分别代表加、减、乘、除；
 - `**`, `//`, `%` 分别代表乘方、整除（即商取整数）、取模（即求余数）。
@@ -43,7 +43,7 @@ x **= y   # 代表 x = x^y
 print(x)  # 8
 ```
 
-## 基本数据类型
+## 2. 基本数据类型
 Python 中的变量不需要声明。每个变量在使用前都必须赋值，变量赋值以后该变量才会被创建。我们所说的“类型”就是变量所指的内存中对象的类型。
 
 Python3 中**常见**的数据类型有：
@@ -57,7 +57,7 @@ Python3 中**常见**的数据类型有：
 
 这些数据类型我们都会逐个介绍，本节先介绍**数字**，**字符串**，**布尔类型**三种最常见的简单数据类型。
 
-### Number 数字
+### 2.1. Number 数字
 Python3 支持以下几种数字类型：
 - int，整数类型
 - float，浮点数类型（就是带有小数点的数）
@@ -109,7 +109,7 @@ print(1.23e8,'\n',0.67e-5,'\t',123)
 # 123000000.0 
 #  6.7e-06 	 123
 ```
-### String 字符串
+### 2.2. String 字符串
 Python 也可以有文本值，称为字符串，用单引号和双引号括起来均可，对于一些特殊字符需要用反斜杠 `\` 来转义。
 
 多个字符串可以通过 `+` 进行连接，也可以对一个字符串通过 `*` 进行复制。
@@ -200,7 +200,7 @@ print(a[0:3] +'d' +a[4:]) # ABCdEFGHIJKLMNOPQRSTUVWXYZ
 len(a)  # 26
 ```
 
-### Bool 布尔类型
+### 2.3. Bool 布尔类型
 布尔类型即 `True` 和 `False` （注意大小写），在前面介绍数字类型时我们涉及到了一点点。
 
 布尔类型可以用来控制程序流程，比如判断某个条件是否成立，或者在某个条件满足时执行某段代码。在 Python 中可以直接用 `True` 和 `False` 来表示布尔值，也可以通过比较操作符计算出来。
@@ -215,7 +215,7 @@ print(True and False)  # False
 print(True or False)   # True
 print(not 2>3)         # True
 ```
-### 数据类型转换
+### 2.4. 数据类型转换
 数据类型转换分为隐式和显式两种形式，前者自动完成，后者需要使用类型函数进行转换。
 
 比如一个整数和一个浮点数相加时，会自动将整数类型转换为浮点数类型再进行相加，这是隐式的。
@@ -237,10 +237,10 @@ print(type(int(1.0)),   # <class 'int'>
       type(float('3')), # <class 'float'>
       type(str(2)))     # <class 'str'>
 ```
-## 变量与赋值
+## 3. 变量与赋值
 变量的概念和小学初中学习过得代数的方程变量是一致的，只是在计算机程序中，变量不仅可以是数字，还可以是任意数据类型。
 
-### 变量
+### 3.1. 变量
 变量命名需要遵守以下 3 条规则：
 1. 只能是一个词；
 2. 只能包含字母、数字和下划线；
@@ -250,7 +250,7 @@ print(type(int(1.0)),   # <class 'int'>
 
 这里额外强调一点，在你的程序代码里使用描述性语言对变量进行命名，会提高代码的可读性，尽量不要使用 `a`, `b` 等比较空洞、无实际指向的命名（除非它们无关紧要）。比如我需要统计一个箱子里红色球、黑色球的个数，我可以将它们命名为 `red_ball`, `black_ball`。
 
-### 赋值语句
+### 3.2. 赋值语句
 赋值语句就是将值保存在变量中。赋值语句的语法通常是`variable_name = value`，Python 中也支持同时对多个变量进行赋值。
 ```python
 # 注意体会以下几个例子
@@ -278,8 +278,8 @@ print(keyword.kwlist)
 # ['False', 'None', 'True', 'and', 'as', 'assert', 'async', 'await', 'break', 'class', 'continue', 'def', 'del', 'elif', 'else', 'except', 
 # 'finally', 'for', 'from', 'global', 'if', 'import', 'in', 'is', 'lambda', 'nonlocal', 'not', 'or', 'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']
 ```
-## 本节相关的常用内置函数
-### 格式化输出
+## 4. 本节相关的常用内置函数
+### 4.1. 格式化输出
 
 Python 支持格式化输出，利用占位符 `%` 来表示不同格式化类型，常见的有：
 - `%s`, 格式化字符串
@@ -349,7 +349,7 @@ print(f'{math.pi:*<10.4f}')
 # -----3.142
 # 3.1416****
 ```
-### 数字相关函数
+### 4.2. 数字相关函数
 这里介绍一些常用的内置的函数，比如数学运算并不止加、减、乘、除、乘方、求模等操作，还有一些数学函数等内置函数。注意别忘了导入 `math` 模块。
 
 具体地有：
@@ -389,7 +389,7 @@ math.sin(math.pi/6), math.cos(math.pi), math.tan(math.pi/2)
 # (0.49999999999999994, -1.0, 1.633123935319537e+16)
 ```
 
-### 字符串相关函数
+### 4.3. 字符串相关函数
 可以用 `in` 和 `not in` 来判断字符串中是否含有指定字符
 
 ```python
@@ -423,11 +423,11 @@ print (s2.join( seq ))  # runoob
 type(seq) # tuple
 ```
 
-## References
+## 5. References
 1. [Python 官方手册（中文）](https://docs.python.org/zh-cn/3/)
 2. [Python 官方手册（英文）](https://docs.python.org/3/)
 3. [Python 3 教程 - 菜鸟教程](https://www.runoob.com/python3/python3-tutorial.html)
 4. [廖雪峰的 Python 教程](https://www.liaoxuefeng.com/wiki/1016959663602400)
 5. [Python - 100天从新手到大师](https://github.com/jackfrued/Python-100-Days/tree/master)
-6. Matthes, E.《Python编程 - 从入门到实践》(袁国忠译). 人民邮电出版社 (Year).
+6. Matthes, E.《Python编程 - 从入门到实践》(袁国忠译). 人民邮电出版社.
 7. Sweigart, A.《Python编程 - 快速上手 -- 让繁琐工作自动化》(王海鹏译). 人民邮电出版社

@@ -5,16 +5,16 @@ categories: [Condensed Matter Physics, Quantum Many-Particle Theory]
 tag: [condensed matter physics, many-particle physics]
 math: true
 ---
-In the previous post, we obtained the expression for the field operators,
+In the previous post, we have obtained the expression for the field operators,
 
 $$
-\hat{\psi}_{\alpha}(\vb{x}) \equiv \sum_{k} \psi_{k}(\vb{x}) \hat{a}_{k\alpha},\quad \hat{\psi}^{\dagger}_{\alpha}(\vb{x}) \equiv \sum_{k} \psi_{k}^\dagger(\vb{x}) \hat{a}_{k\alpha}^\dagger,
+\hat{\psi}_{\alpha}(\vb{x}) := \sum_{k} \psi_{k}(\vb{x}) \hat{a}_{k\alpha},\quad \hat{\psi}^{\dagger}_{\alpha}(\vb{x}) := \sum_{k} \psi_{k}^\dagger(\vb{x}) \hat{a}_{k\alpha}^\dagger,
 $$
 
 where $k$ denotes different quantum numbers. This can help us calculate observables in second quantization form. In this post, we will learn how "first-quantized" operators (operators expressed in terms of particle coordinates $\vb{x}_i$, momentum $\hat{\vb{p}}_i$ and spin $\hat{s}_i$) can be translated into their second-quantized versions.
 
 There are two common types of operators, **single-particle operators** and **two-particle operators**. Note that the expressions for operators in second-quantized form can be derived from the requirement that they yield the same result as the first quantized-form in a state with a given particle number.
-## Single particle operators
+## 1. Single particle operators
 The operators which involve sum over only single particles are known as single particle operators
 
 $$
@@ -25,16 +25,18 @@ $$
 
 This is its expression in first quantization. In second quantization (or occupation number formalism), it can be expressed as
 
+<div class="box-danger" markdown="1">
+<div class="title"> Single particle operators in second quantization </div>
+
 $$
 \begin{equation}
-\textcolor{Green}{
-    \hat{F}^{(1)} = \sum_{\alpha}\sum_{\beta} \int \dd[3]{x} \hat{\psi}^{\dagger}_{\alpha}(\vb{x}) \mel{\alpha}{\hat{f}(\vb{x}_i,\hat{\vb{p}}_i,\hat{s}_i)}{\beta} \hat{\psi}_{\beta}(\vb{x}).}
+    \hat{F}^{(1)} = \sum_{\alpha}\sum_{\beta} \int \dd[3]{x} \hat{\psi}^{\dagger}_{\alpha}(\vb{x}) \mel{\alpha}{\hat{f}(\vb{x}_i,\hat{\vb{p}}_i,\hat{s}_i)}{\beta} \hat{\psi}_{\beta}(\vb{x}).
     \label{equ:single-particle operator}
 \end{equation}
 $$
 
-<details class="box-hidden">
-<summary> Proof can be found here </summary>
+<details class="nobg-hidden" markdown="1">
+<summary> Proof </summary>
 
 This can be proven using the method we discussed earlier. Let us choose $\qty{\ket{\tilde{\alpha}}}$ to be the single-particle basis of eigenstates of $\hat{f}$, i.e. $\hat{f}\ket{\tilde{\alpha}} = f_{\tilde{\alpha}} \ket{\tilde{\alpha}}$, where $f_{\tilde{\alpha}}$ is the eigenvalue of $\hat{f}$ associated with the eigenstate $\ket{\tilde{\alpha}}$. Then we claim that the second-quantized representation of $\hat{F}^{(1)}$ can be written as 
 
@@ -92,10 +94,15 @@ By substituting the expression for the field operators, we can finally prove $\e
 
 </details>
 
+</div>
+
+
+
+
 Next, we will discuss the second quantization form of some single-particle operators.
 
-### Total kinetic energy operator and total momentum operator
-#### Total kinetic energy operator
+### 1.1. Total kinetic energy operator and total momentum operator
+#### 1.1.1. Total kinetic energy operator
 The **total kinetic energy operator** in first quantization is $\displaystyle{\hat{T} = \sum_{i=1}^{N}-\frac{\hbar^2 \nabla_{i}^2}{2m}}$, and in second quantization, it is
 
 $$
@@ -105,7 +112,7 @@ $$
 \end{align}
 $$
 
-#### Total momentum operator
+#### 1.1.2. Total momentum operator
 Similarly, we can obtain the representation of the **total momentum operator**
 
 $$
@@ -114,8 +121,8 @@ $$
 \end{equation}
 $$
 
-### Density operator
-#### Local density operator
+### 1.2. Density operator
+#### 1.2.1. Local density operator
 **Local density operator** is defined as $\displaystyle{\hat{n}(\vb{y}) = \sum_{i=1}^{N}\delta(\vb{y}-\vb{x}_i)}$. In second quantization, it is
 
 $$
@@ -133,7 +140,7 @@ $$
 \end{equation}
 $$
 
-#### Spin density operator
+#### 1.2.2. Spin density operator
 Spin density operator is defined as $\displaystyle{\hat{S}(\vb{y})} = \sum_{i=1}^{N} \hat{s}_i \delta(\vb{y}-\vb{x}_i)$. In second quantization, it is
 
 $$
@@ -153,7 +160,7 @@ $$
 \end{equation}
 $$
 
-#### Electrical current density operator
+#### 1.2.3. Electrical current density operator
 Suppose that all identical particles have the same charge $e$. In classical case, we know that electrical current is $$\displaystyle{\vb{J} (\vb{y}) = e \sum_{i=1}^{N} \vb{v}_i\delta(\vb{y}-\vb{x}_i)}$$. If we switch to quantum case, we will find $$[\vb{v}_i,\delta(\vb{y}-\vb{x}_i)] \neq 0$$, therefore $$e \sum_{i} \vb{v}_i \delta(\vb{y} - \vb{x}_i)$$ is not a Hermitian operator, so we defined **electrical current density operator** as
 
 $$
@@ -174,22 +181,28 @@ $$
 \end{align}
 $$
 
-#### Free electrons in a magnetic field
-Suppose we have $N$ electrons (with a charge of $-e$) in a magnetic field. The system's Hamiltonian (neglecting their Coulomb interactions) is
+#### 1.2.4. Free electrons in a magnetic field
+Suppose we have $N$ electrons (each with a charge of $-e$) in a magnetic field. The system's Hamiltonian (neglecting their Coulomb interactions) is
 
 $$
-H = \sum_{i=1}^{N} \frac{1}{2m} \qty(\vb{p}_i + e \mathbf{A}(\vb{x}_i))^2 + \frac{g\mu_B}{\hbar} \sum_{i=1}^{N} \vb{S}_i\cdot \vb{B}(\vb{x}_i),
+H = \sum_{i=1}^{N} \frac{1}{2m} \qty(\vb{p}_i + \frac{e}{c} \mathbf{A}(\vb{x}_i))^2 + \frac{g\mu_B}{\hbar} \sum_{i=1}^{N} \vb{S}_i\cdot \vb{B}(\vb{x}_i),
 $$
 
 where $g$ is the Land&eacute; g-factor, $\mu_B$ is the Bohr magneton and $\vb{S}$ is the spin of the electron. Then its second-quantized form is
 
 $$
 \begin{equation}
-\hat{H} = \sum_{\alpha}\int\dd[3]{x} \hat{\psi}^\dagger_{\alpha}(\vb{x}) \frac{(-i\hbar \nabla + e \vb{A})^2}{2m}\hat{\psi}_{\alpha}(\vb{x}) + \frac{g\mu_B}{\hbar} \sum_{\alpha}\sum_{\beta} \int \dd[3]{x} \hat{\psi}^{\dagger}_{\alpha}(\vb{x})\mel{\alpha}{\vb{S}\cdot \vb{B}}{\beta} \hat{\psi}_{\beta}(\vb{x}).
+\begin{split}
+    \hat{H} &= \sum_{\alpha}\int\dd[3]{x} \hat{\psi}^\dagger_{\alpha}(\vb{x}) \frac{1}{2m}\qty(-i\hbar \nabla + \frac{e}{c} \vb{A})^2\hat{\psi}_{\alpha}(\vb{x}) \\[.2cm]
+    &\quad + \frac{g\mu_B}{\hbar} \sum_{\alpha}\sum_{\beta} \int \dd[3]{x} \hat{\psi}^{\dagger}_{\alpha}(\vb{x})\mel{\alpha}{\vb{S}\cdot \vb{B}}{\beta} \hat{\psi}_{\beta}(\vb{x}).
+\end{split}
 \end{equation}
 $$
 
-## Two particle operators
+> We are using Gaussian units.
+{: .prompt-tip}
+
+## 2. Two particle operators
 The operators which involve sum over two particles are known as two particle operators
 
 $$
@@ -198,16 +211,23 @@ $$
 \end{equation}
 $$
 
-For simplicity, we will omit the summation over indices $i$ and $j$ in the future, only keep $i\neq j$. In second quantization, it is
+For simplicity, we will omit the summation over indices $i$ and $j$ in the future, only keep $i\neq j$. 
+
+<div class="box-danger" markdown="1">
+<div class="title"> Two particle operators in second quantization </div>
+
+In second quantization, it is
 
 $$
 \begin{equation}
-\textcolor{green}{
-\hat{F}^{(2)} = \frac{1}{2}\sum_{\alpha}\sum_{\alpha'}\sum_\beta\sum_{\beta'} \int\dd[3]{x} \int\dd[3]{x'} \hat{\psi}^{\dagger}(\vb{x}) \hat{\psi}^{\dagger}_{\beta}(\vb{x}') \hat{f}_{\alpha\alpha',\beta\beta'}(\vb{x},\vb{x}')\hat{\psi}_{\beta'}(\vb{x}')\hat{\psi}_{\alpha'}(\vb{x}),}
+\hat{F}^{(2)} = \frac{1}{2}\sum_{\alpha}\sum_{\alpha'}\sum_\beta\sum_{\beta'} \int\dd[3]{x} \int\dd[3]{x'} \hat{\psi}^{\dagger}(\vb{x}) \hat{\psi}^{\dagger}_{\beta}(\vb{x}') \hat{f}_{\alpha\alpha',\beta\beta'}(\vb{x},\vb{x}')\hat{\psi}_{\beta'}(\vb{x}')\hat{\psi}_{\alpha'}(\vb{x}),
 \end{equation}
 $$
 
 where $\hat{f}_{\alpha\alpha',\beta\beta'}(\vb{x},\vb{x}') = \bra{\alpha}\otimes \bra{\beta}\hat{f}(\vb{x},\vb{x}';\hat{\vb{p}},\hat{\vb{p}}';\hat{s},\hat{s}')\ket{\alpha'}\otimes \ket{\beta'}$.
+
+</div>
+
 
 If the two particle operator is independent of spin, we can find
 
@@ -223,28 +243,29 @@ $$
 \hat{F}^{(2)} = \frac{1}{2}\sum_{\alpha}\sum_{\beta} \int\dd[3]x \int\dd[3]{x'} \hat{\psi}_{\alpha}^\dagger(\vb{x})\hat{\psi}_{\beta}^\dagger(\vb{x}')\hat{f}(\vb{x},\vb{x}') \hat{\psi}_{\beta}(\vb{x}')\hat{\psi}_{\alpha}(\vb{x}).
 $$
 
-> **Example: Jellium Model** (we will talk about it in detail later.)
-> 
-> The Hamiltonian is
-> 
-> $$   
-> \begin{align*}
-> \hat{H} &= \sum_{i=1}^{N} \qty(-\frac{\nabla_i^2}{2m})  + \frac{1}{2}\sum_{i\neq j} \hat{V}(\vb{x}_i,\vb{x}_j)  \\[.2cm]
-> &=\sum_{i=1}^{N}\qty(-\frac{\nabla_i^2}{2m}) + \frac{1}{2V}\sum_{i\neq j} \sum_{\vb{q}\neq 0} \frac{4\pi e^2}{q^2} \mathrm{e}^{i\vb{q}\cdot(\vb{x}_i - \vb{x}_j)}.
->\end{align*}
-> $$
->
-> The second-quantized form of the interaction is
-> 
-> $$
-> \hat{H}^{(2)} = \frac{1}{2}\sum_{\alpha}\sum_{\beta} \int\dd[3]{x}\int\dd[3]{x'} \hat{\psi}^\dagger_{\alpha}(\vb{x})\hat{\psi}_{\beta}^\dagger(\vb{x}') \qty[\frac{1}{V}\sum_{\vb{q}\neq 0} \frac{4\pi e^2}{q^2}\mathrm{e}^{i\vb{q}\cdot(\vb{x}-\vb{x}')}] \hat{\psi}_{\beta}(\vb{x}')\hat{\psi}_{\alpha}(\vb{x}).
-> $$
-{: .prompt-tip}
+<details class="box-hidden" markdown="1" open>
+<summary> Hamiltonian of the jellium model </summary>
+We will talk about the jellium model in detail later. The Hamiltonian is
 
-## Common representations
+$$   
+\begin{align*}
+\hat{H} &= \sum_{i=1}^{N} \qty(-\frac{\nabla_i^2}{2m})  + \frac{1}{2}\sum_{i\neq j} \hat{V}(\vb{x}_i,\vb{x}_j)  \\[.2cm]
+&=\sum_{i=1}^{N}\qty(-\frac{\nabla_i^2}{2m}) + \frac{1}{2V}\sum_{i\neq j} \sum_{\vb{q}\neq 0} \frac{4\pi e^2}{q^2} \mathrm{e}^{i\vb{q}\cdot(\vb{x}_i - \vb{x}_j)}.
+\end{align*}
+$$
+
+The second-quantized form of the interaction is
+
+$$
+\hat{H}^{(2)} = \frac{1}{2}\sum_{\alpha}\sum_{\beta} \int\dd[3]{x}\int\dd[3]{x'} \hat{\psi}^\dagger_{\alpha}(\vb{x})\hat{\psi}_{\beta}^\dagger(\vb{x}') \qty[\frac{1}{V}\sum_{\vb{q}\neq 0} \frac{4\pi e^2}{q^2}\mathrm{e}^{i\vb{q}\cdot(\vb{x}-\vb{x}')}] \hat{\psi}_{\beta}(\vb{x}')\hat{\psi}_{\alpha}(\vb{x}).
+$$
+
+</details>
+
+## 3. Common representations
 So far, we have provided the second-quantized form for one- and two-particle operators without giving specific forms. Next, we will introduce three commonly used representations in many-body theory.
 
-### Plane wave representation
+### 3.1. Plane wave representation
 Consider box normalization and periodic boundary condition, the plane wave solution of Schr&ouml;dinger equation is $\psi_{\vb{k}}(\vb{x}) = \frac{1}{\sqrt{V}}\mathrm{e}^{i\vb{k}\cdot\vb{x}}$, where $V$ is volume of the box and $\vb{k}$ is wave vector of particle.  $\qty{\psi_{\vb{k}}(\vb{x})}$ is a set of orthonormal and complete functions, which means
 
 $$
@@ -272,7 +293,8 @@ $$
 \end{equation}
 $$
 
-#### Example
+<div class="box-tip" markdown="1">
+<div class="title"> Examples </div>
 Total kinetic energy operator:
 
 $$
@@ -307,8 +329,6 @@ $$
 \end{gather}
 $$
 
-> **Example**: to be continued ...
-{: .prompt-tip}
 
 And electrical current density operator:
 
@@ -319,6 +339,10 @@ $$
 \end{gather}
 $$
 
+</div>
+
+<details class="box-hidden" markdown="1" open>
+<summary> Jellium model in plane wve presentation </summary>
 As an example for two particle operator, the interaction of the jellium model in plane wave representation is
 
 $$
@@ -328,7 +352,11 @@ $$
 \end{align}
 $$
 
-### Bloch representation
+</details>
+
+
+
+### 3.2. Bloch representation
 Bloch's theorem tell us that solutions to the Schr&ouml;dinger equation in a periodic potential can be expressed as plane waves modulated by periodic functions. The **Bloch function** is defined as $\psi_{\vb{k}}^{B}(\vb{x}) = \mathrm{e}^{i\vb{k}\cdot\vb{x}}u_{\vb{k}}(\vb{x})$, where $$u_{\vb{k}}(\vb{x}) = u_{\vb{k}}(\vb{x}+\vb{R}_{l})$$, $$\vb{R}_{l}$$ is lattice vector. $$\qty{\psi_{\vb{k}}^{B}(\vb{x})}$$ is also a set of orthonormal and complete functions,
 
 $$
@@ -356,7 +384,8 @@ $$
 \end{equation}
 $$
 
-#### Example
+<div class="box-tip" markdown="1">
+<div class="title"> Example: total kinetic energy operator </div>
 Total kinetic energy operator in Bloch representation is
 
 $$
@@ -366,8 +395,9 @@ $$
 $$
 
 where $\displaystyle{V_{\vb{k}\vb{k}'} = \int\dd[3]x \psi_{\vb{k}}^{B*}(\vb{x})\qty[-\frac{\nabla^2}{2m}]\psi_{\vb{k'}\sigma}^{B}(\vb{x})}$.
+</div>
 
-### Wannier representation
+### 3.3. Wannier representation
 We can expand Bloch function with lattice vector $\vb{R}_l$,
 
 $$
@@ -404,7 +434,8 @@ $$
 \end{equation}
 $$
 
-#### Example
+<div class="box-tip" markdown="1">
+<div class="title"> Example: total kinetic energy operator </div>
 Total kinetic energy operator in Wannier representation is
 
 $$
@@ -414,11 +445,13 @@ $$
 &= \sum_{\alpha}\sum_{l}\sum_{l'}T_{l'l}\hat{a}_{l'\alpha}^{\dagger}\hat{a}_{l\alpha}.
 \end{align}
 $$
+</div>
 
-## Pictures
+
+## 4. Pictures
 All our previous discussions have been in the Schr&ouml;dinger picture, but employing different pictures such as the Heisenberg picture and the interaction picture might yield remarkable results when dealing with other problems. Here, we briefly introduce the Heisenberg picture and the interaction picture.
 
-### Heisenberg picture
+### 4.1. Heisenberg picture
 In the case where $\hat{H}$ is independent of $t$, the time evolution operator is $\hat{U}(t,t_0) = \mathrm{e}^{-i\hat{H}(t-t_0)/\hbar}$. And the field operators in Heisenberg picture are
 
 $$
@@ -438,9 +471,23 @@ $$
 \end{gather}
 $$
 
-This can be demonstrated using the commutation (or anticommutation) relations in the Schrödinger picture.
+This can be demonstrated using the commutation (or anticommutation) relations in the Schrödinger picture. And a general operator in the Heisenberg picture is given by 
 
-### Interaction picture
+$$
+\begin{equation}
+    \hat{O}_{H}(t) = \e^{i\hat{H}(t-t_0)/\hbar} \hat{O}_{S}(t_0) \e^{-i\hat{H}(t-t_0)/\hbar},
+\end{equation}
+$$
+
+where $\hat{O}_{S}$ is the same operator in the Schr&ouml;dinger picture. It satisfies the Heisenberg equation
+
+$$
+\begin{equation}
+    i\hbar \pdv{t} \hat{O}_{H}(t) = [\hat{O}_{H}(t),\hat{H}].
+\end{equation}
+$$
+
+### 4.2. Interaction picture
 The Hamiltonian is $\hat{H} = \hat{H}_0 + \hat{V}$ where $\hat{V}$ is interaction operator. We can solve Schr&ouml;dinger equation exactly when $\hat{V} =0$. And $\hat{H}_0\ket{\phi^0} = E_g^0 \ket{\phi^0}$. Then the field operators in interaction picture  are
 
 $$
@@ -459,7 +506,24 @@ $$
 \end{gather}
 $$
 
-## References
+For a general operator $\hat{O}_{I}(t)$ in the interaction picture, it can be expressed as
+
+$$
+\begin{equation}
+    \hat{O}_I(t) = \e^{i\hat{H_0}(t-t_0)/\hbar} \hat{O}_{S}(t_0) \e^{-i\hat{H_0}(t-t_0)/\hbar},
+\end{equation}
+$$
+
+Its time evolution equation is
+
+$$
+\begin{equation}
+    i\hbar \pdv{t} \hat{O}_I(t) = [\hat{O}_I(t),\hat{H}_0]
+\end{equation}
+$$
+
+
+## 5. References
 1. Fetter, A. L., Walecka, J. D. *Quantum Theory of Many-Particle Systems*. Courier Corporation (2002).
 2. Mahan, G. D., *Many-Particle Physics*. Springer Science+Business Media, LLC. (2000).
 3. Altland, A., Simons, B. D., *Condensed Matter Field Theory*. Cambridge University Press. (2010)

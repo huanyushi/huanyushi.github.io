@@ -8,7 +8,7 @@ image:
     path: python.jpg
     lqip: data:image/jpg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQgJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAAIABADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDQsPDL3GCRXSWfhWKIAsKKK+fxmZ4jmcb6GtDC0rXsf//Z
 ---
-## Python 简介
+## 1. Python 简介
 Python 是一种高级的解释型、动态类型和面向对象的计算机编程语言，Python 的设计哲学，强调代码的可读性和简洁的语法，尤其是使用空格缩进来划分代码块。相比于 C 语言或 Java，Python 让开发者能够用更少的代码表达想法。对于编程初学者来说，学习 Python 是十分推荐的。
 
 目前世界上有数百种编程语言，但实际真正流行的编程语言只有十几种。查看最近的 TIBOE 排行榜（反应不同编程语言的流行程度）可以发现 Python 在近几年使用量与日俱增，且目前位列第一。
@@ -28,7 +28,7 @@ Python 本身的标准库就提供了非常完善的功能，当然也可以在�
 - **桌面应用程序：** 使用 Tkinter 或者 PyQt 库可以用来开发桌面应用程序。
 - and so on ...
 
-## Python 学习资源
+## 2. Python 学习资源
 
 关于 Python 的学习资源在网络上也有很多，这里罗列一些我觉得有用的。
 
@@ -40,16 +40,16 @@ Python 网站资源（注意只有官方手册是最新的）：
 - [Python - 100天从新手到大师](https://github.com/jackfrued/Python-100-Days/tree/master)
 
 Python 入门教程书籍（第二本更侧重办公自动化）：
-- Matthes, E.《Python编程 - 从入门到实践》(袁国忠译). 人民邮电出版社 (Year).
+- Matthes, E.《Python编程 - 从入门到实践》(袁国忠译). 人民邮电出版社.
 - Sweigart, A.《Python编程 - 快速上手 -- 让繁琐工作自动化》(王海鹏译). 人民邮电出版社
 
-## Jupyter notebook
+## 3. Jupyter notebook
 Jupyter notebook 是一种基于网页的交互式计算环境，支持多种编程语言。最开始是用于 Python 语言编程的，但现在已经支持超过 40 种编程语言，比如 R, Julia 和 Scala 等。Jupyter 的名称实际上是由 3 种主要支持语言的首字母构成，JUlia, PYthon 和 R。
 
 使用 Jupyter Notebook 可以创建和共享包含实时代码、可视化和解释型文本的文档，这种结合了代码和文本的方式，让它成为数据分析、机器学习、科学研究和教学等领域中非常受欢迎的工具。
 
 从 Anaconda 里打开 Jupyter notebook 或者 Jupyter Lab 均可，两者没有本质区别。往后的几篇 Python 入门教程均围绕 Jupyter notebook 进行介绍。
-### 修改默认打开路径
+### 3.1. 修改默认打开路径
 Jupyter notebook 默认打开的是 C 盘 `Users/Username`{:.filepath} 的文件夹，想要修改它的默认打开路径，可以打开它的配置文件进行修改，通常是放在 `C:\Users\Username\.jupyter\jupyter_notebook_config.py`{:.filepath} 文件里，如果找不到也可以打开 Anaconda Prompt，输入 `jupyter notebook --generate-config` 找到配置文件，再输入 `y` 后 <kbd>Enter</kbd>。 
 
 对配置文件进行以下修改
@@ -63,7 +63,7 @@ Jupyter notebook 默认打开的是 C 盘 `Users/Username`{:.filepath} 的文件
 
 但还要注意一点，通过快捷方式打开仍然是 C 盘的位置。找到 Jupyter Notebook 快捷方式文件，右键 -> 属性 -> 目标 -> 将其后面的 `"%USERPROFILE%"` 删除 -> 应用 -> 确定。这样便修改完成了。
 
-### 安装插件
+### 3.2. 安装插件
 参考[Jupyter notebook插件安装教程](https://blog.csdn.net/qq_22941289/article/details/134608546)，打开 Anaconda Prompt，依次输入运行以下代码即可
 ```shell
 pip install jupyter_nbextensions_configurator jupyter_contrib_nbextensions
@@ -105,7 +105,7 @@ pip uninstall notebook
 ```shell
 pip install notebook==6.4.6
 ```
-### 常用快捷键
+### 3.3. 常用快捷键
 在 `.ipynb` 文件里按键 <key>H</key> 即可进入快捷键界面，如下图所示，
 
 ![kuaijie1](kuaijie1-light.PNG){: .light}
@@ -114,7 +114,7 @@ pip install notebook==6.4.6
 ![kuaijie2](kuaijie2-light.PNG){: .light}
 ![kuaijie2](kuaijie2-dark.png){: .dark}
 
-### 更换主题
+### 3.4. 更换主题
 在终端中运行 `pip install --upgrade jupyterthemes` 即可，通过命令 `jt-l` 可以查看主题列表：
 1. chesterish
 2. grade3
@@ -149,7 +149,7 @@ jupyter nbconvert filename.ipynb --to html --HTMLExporter.theme=dark
 jupyter nbconvert filename.ipynb --to html --HTMLExporter.theme=light
 ```
 
-### Colorbox
+### 3.5. Colorbox
 在 Jupyter Notebook 的单元格里（markdown格式）使用以下代码可以生成 colorbox，
 
 ```html

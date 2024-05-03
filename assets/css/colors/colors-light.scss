@@ -71,6 +71,7 @@
         50%  { transform: scale(1.2); } /* 动画效果代码 */
     }
 
+
     // details class = "nobg-hidden"
     details.nobg-hidden {
         margin-bottom: 1rem;
@@ -96,5 +97,15 @@
     }
     details.nobg-hidden[open] > summary::before {
         transform: rotate(135deg);
+        -webkit-animation: rotateArrow 0.2s ease; /* 使用动画替代旋转 */
     }
+    
+    @-webkit-keyframes rotateArrow {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(135deg);
+        }
+      }
 }

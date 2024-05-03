@@ -75,6 +75,7 @@
   <script>
     /* see: <https://docs.mathjax.org/en/latest/options/input/tex.html#tex-options> */
     MathJax = {
+      loader: { load: ['[tex]/physics','ui/lazy',] },
       tex: {
         /* start/end delimiter pairs for in-line math */
         inlineMath: [
@@ -96,10 +97,13 @@
           'RR': '\\mathbb{R}',
           'ZZ': '\\mathbb{Z}',
           'QQ': '\\mathbb{Q}',
-        }
+        },
+      },
+      options: {
+        lazyMargin: '200px', /* 启用了惰性加载 */
       },
       svg: { fontCache: 'global'},
-      loader: {load: ['[tex]/physics']},
+
     };
   </script>
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>

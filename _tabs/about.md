@@ -14,13 +14,13 @@ Welcome to my Blog! It's generated from a static web page built using Jekyll on 
 
 🎓 **Education:**
 - 2019/09 - 2023/06: B. S. in Physics, School of Physics and Astronomy, Sun Yat-sen University, China.
-- 2023/09 - Present: PhD student in Condensed Matter Physics, Kavli Institute for Theoretical Sciences, University of Chinese Academy of Sciences, China.
+- 2023/09 - Present: PhD student in Physics, Kavli Institute for Theoretical Sciences, University of Chinese Academy of Sciences, China.
 
 🔍 **Keywords:**
 
 * Physics Doctoral Student / Mathematics Enthusiasts / Integration Lover 
 * Painting / Stiff Pen Calligraphy
-* C / Fortran / Python / MATLAB / Mathematica
+* C / Fortran / Python / MATLAB / Mathematica / LaTeX / HTML / CSS
 * Chinese / English / Japanese (learning) / French (newbie).
 * 2019-2020 / 2020-2021 / National Scholarship
 
@@ -47,12 +47,12 @@ Welcome to my Blog! It's generated from a static web page built using Jekyll on 
 
 🎓 **教育经历：**
 - 2019/09 - 2023/06： 物理学学士，物理与天文学院，中山大学。
-- 2023/09 - 现在： 凝聚态物理学博士生， 卡弗里理论科学研究所，中国科学院大学。
+- 2023/09 - 现在： 物理学博士生， 卡弗里理论科学研究所，中国科学院大学。
 
 🔍 **关键词：**
 * 物理学博士牲 / 数学爱好者 / 积佬
 * 绘画 / 硬笔书法
-* C / Fortran / Python / MATLAB / Mathematica
+* C / Fortran / Python / MATLAB / Mathematica / LaTeX / HTML / CSS
 * 中文 / 英语 / 日语（学习中） / 法语（学习中）
 * 2019-2020 / 2020-2021 / 国家奖学金
 
