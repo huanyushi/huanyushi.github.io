@@ -2,7 +2,7 @@
 title:      "Abstract Algebra: A Brief Summary of Group Theory"
 date:       2024-04-25
 categories: [Mathematics, Abstract Algebra]
-tag: [abstract algebra]
+tag: [abstract algebra, group theory]
 img_path : /assets/img/in-post/2024/2024-04-25/
 render_with_liquid: false
 math: true
@@ -782,7 +782,7 @@ $$
 </div>
 
 There are some corollaries of Lagrange's theorem:
-1. Suppose that $G$ is a finite group and $g\in G$. Then $\abs{g}\  \big\vert \abs{G}$.
+1. Suppose that $G$ is a finite group and $g\in G$. Then $\abs{g} \mid \abs{G}$.
 2. Let $\abs{G} = p$ with $p$ a prime number. Then $G$ is cyclic, i.e., $G\cong \ZZ_{p}$. And any $g\in G$ such that $g\neq e$ is a generator.
 3. Let $H$ and $K$ be subgroups of a finite group $G$ such that $K\subset H \subset G$. Then
 
@@ -1070,7 +1070,7 @@ $$
 This motivates a two-part program for classifying all *finite* groups up to isomorphism:
 
 <div class="box-danger" markdown="1">
-<div class="title"> The H&#omul;lder program </div>
+<div class="title"> The H&ouml;lder program </div>
 1. Classify all finite simple groups.
 2. Find all ways of "putting simple groups together" to form other groups.
 </div>
@@ -1151,7 +1151,7 @@ _Subgroup lattice of $A_4$._
 
 ## 6. Group actions
 
-### 6.1. Definition of group action
+### 6.1. Definition of group action and permutation representation
 <div class="box-info" markdown="1">
 <div class="title"> Definition: group action </div>
 A **group action** of a group $G$ on a set $A$ is a map: $G\times A \to A$ (written as $g\cdot a$, $\forall g\in G$ and $\forall a\in A$) satisfying the following properties:
@@ -1193,11 +1193,207 @@ Let $G$ be a group and $A\neq\emptyset$. Then, let $ga=a$, $\forall a\in G, a\in
 3. An action is **faithful** if its kernel is the identity.
 </div>
 
+<div class="box-warning" markdown="1">
+<div class="title"> Proposition </div>
+For any group $G$ and any nonempty set $A$ there is a bijection between the actions of $G$ on $A$ and the homomorphisms of $G$ into $S_{A}$.
+</div>
+
+Then the definition of a permutation representation may be rephrased.
+
+<div class="box-info" markdown="1">
+<div class="title"> Definition: permutation representation </div>
+If $G$ is a group, a **permutation representation** of $G$ is any homomorphism of $G$ into the symmetric group $S_{A}$ for some nonempty set $A$.
+
+We shall say a given action of $G$ on $A$ *affords* or *induces* the associated permutation representation of $G$.
+</div>
+
+<div class="box-warning" markdown="1">
+<div class="title"> Proposition </div>
+Let $G$ be a group acting on the nonemtpy set $A$. The relation of $A$ defined by
+
+$$
+\begin{equation}
+   a\sim b \quad \text{if and only if $a=g\cdot b$ for some $g\in G$}.
+\end{equation}
+$$
+
+is an equivalence relation. For each $a\in A$, the number of elements in the equivalence class containing $a$ is $\abs{G:G_{a}}$, the index of the stabilizer of $a$.
+</div>
+
+<div class="box-info" markdown="1">
+<div class="title"> Definition: orbit </div>
+Let $G$ be a group acting on the nonempty set $A$.
+1. The equivalence class $\qty{g\cdot a \ \vert \ g\in G}$ is called the **orbit** of $G$ containing $a$.
+2. The action of $G$ on $A$ is called **transitive** if there is only one orbit.
+</div>
+
+<details class="box-hidden" markdown="1">
+<summary> Examples: orbit </summary>
+- If $G$ acts trivially on $A$ then $G_a = G$ for all $a\in A$ an the orbits are all elements of $A$. This action is transitive if and only if $\abs{A} =1$.
+- The group $D_4$ acts transitively on the set of two pairs of opposite vertices. In this action the stabilizer of any point is $\langle s,r^2 \rangle$ (which is of index $2$).
+- Let $G$ be thepermutation group defined by 
+
+$$
+G = \qty{(1),(1\ 2\ 3),(1\ 3\ 2),(4\ 5),(1\ 2\ 3)( 4\ 5),(1\ 3\ 2)(4\ 5)}
+$$
+
+acting on the set $A=\qty{1,2,3,4,5}$. The orbits are $\qty{1,2,3}$ and $\qty{4,5}$.
+</details>
+
 ### 6.2. Cayley's theorem
+
+<div class="box-warning" markdown="1">
+<div class="title"> Theorem </div>
+Let $G$ be a group, let $H$ be a subgroup of $G$ and let $G$ act by left multiplication on the set $A$ of left cosets of $H$ in $G$. Let $\pi_{H}$ be the associated permutation representation afforded by this action. Then
+1. $G$ acts transitively on $A$;
+2. the stabilizer in $G$ of the point $e H \in A$ is the subgroup $H$;
+3. the kernel of the action (i.e., the kernel of $\pi_H$) is $\displaystyle{\bigcap_{x\in G} xHx^{-1}}$ , and $\mathrm{ker}\ \pi_{H}$ is the largest normal subgroup of $G$ contained in $H$.
+
+<details class="nobg-hidden" markdown="1">
+<summary> Proof </summary>
+For (1), let $aH$ and $bH$ be any two elements of $A$, and let $g=ba^{-1}$. Then $g\cdot aH = (ba^{-1})aH = bH$, and so th two arbitrary elements $aH$ and $bH$ of $A$ lie in the same orbit.
+
+For (2), the stabilzer of the point $e H$ is, bydefinition, $\qty{g\in G\ \vert \ g\cdot e H = eH}$, i.e., $\qty{g\in G \ \vert \ gH=H} = H$.
+
+For (3), by definition of $\pi_H$ we have
+
+$$
+\begin{align*}
+   \mathrm{ker}\ \pi_H & = \qty{g\in G \ \vert \ gxH=xH, \forall x\in G}\\[.2cm]
+   &=\qty{g\in G \ \vert \ (x^{-1}gx)H= H, \forall x\in G}\\[.2cm]
+   &=\qty{g\in G \ \vert \ x^{-1}gx \in H, \forall x\in G}\\[.2cm]
+   &=\qty{g\in G \ \vert \ g\in xHx^{-1}, \forall x\in G} = \bigcap_{x\in G} xHx^{-1}.
+\end{align*}
+$$
+
+which proves the first assertion of (3). Then note that $\mathrm{ker}\ \pi_H\trianglelefteq G$ and $\mathrm{ker}\ \pi_H \trianglelefteq H$. If now $N$ is any normal subgroup of $G$ contained in $H$ then we have $N=xNx^{-1} \leq xHx^{-1}$ for all $x\in G$ so that
+
+$$
+N \leq \bigcap_{x\in G}xHx^{-1} = \mathrm{ker}\ \pi_H.
+$$
+
+This shows that $\mathrm{ker}\ \pi_H$ is the largest normal subgroup of $G$ contained in $H$.
+<p style="text-align: right;"> &#x220E; </p>
+</details>
+</div>
+
+
+<div class="box-danger" markdown="1">
+<div class="title"> Theorem: Cayley's theorem </div>
+Every group is isomorphic to a subgroup of some symmetric group. If $G$ is a group of order $n$, then $G$ is isomorphic to a subgroup of $S_n$.
+</div>
+
+Cayley's Theorem is what we call a representation theorem. The aim of **representation theory** is to find an isomorphism of some group $G$ that we wish to study into a group that we know a great deal about, such as a group of permutations or matrices.
+
+It has the following corollary:
+
+1. If $G$ is a finite group of order $n$ and $p$ is the smallest prime dividing $\abs{G}$, then any subgroup of index $p$ is normal.
 
 ### 6.3. The calss equation
 
-### 6.4. Sylow theorems
+<div class="box-info" markdown="1">
+<div class="title"> Definition: conjugation </div>
+1. Two elements $a$ and $b$ of $G$ are said to be **conjugate in** $G$ if there is some $g\in G$ such that $b = gag^{-1}$. The orbits of $G$ acting on itself by conjugation are called the **conjugacy classes of ** $G$.
+2. Two subsets $S$ and $T$ are said to be **conjugate in** $G$ if there is some $g\in G$ such that $T= gSg^{-1}$.
+</div>
+
+<div class="box-warning" markdown="1">
+<div class="title"> Proposition </div>
+The number of conjugates of a subset $S$ in a group $G$ is the index of the normalizer of $S$, $\abs{G:N_{G}(S)}$. 
+
+In particular, the number of conjugates of an element $s$ of $G$ is the index of the centralizer of $s$, $\abs{G:C_{G}(s)}$.
+</div>
+
+<div class="box-danger" markdown="1">
+<div class="title"> Theorem: the calss equation </div>
+Let $G$ be a *finite* group and let $g_1,g_2,\dots,g_r$ be representatives of the distinct conjugacy classes of $G$ not contained in the center $Z(G)$ of $G$. Then
+
+$$
+\begin{equation}
+   \abs{G} = \abs{Z(G)} + \sum_i^{r} \abs{G: C_{G}(g_i)}.
+\end{equation}
+$$
+
+</div>
+
+From the calss equation, we can get two important consequences:
+1. If $p$ is a prime and $P$ is a group of prime power order $p^{\alpha}$ for some $\alpha \geq 1$, then $P$ has a nontrivial center: $Z(P)\neq \qty{e}$.
+2. If $\abs{P} = p^2$ for some prime $p$, then $P$ is abelian. More precisely, $P$ is isomorphic to either $\ZZ_{p^2}$ or $\ZZ_p\times \ZZ_p$.
+
+### 6.4. Automorphisms
+
+<div class="box-info" markdown="1">
+<div class="title"> Definition: automorphism </div>
+Let $G$ be a group. An isomorphism from $G$ onto itself is called an **automorphism** of $G$. The set of all automorphisms of $G$ is denoted by $\mathrm{Aut}(G)$.
+</div>
+
+$\mathrm{Aut}(G)$ is a group under composition of automorphisms, the **automorphism group** of $G$. And $\mathrm{Aut}(G)$ is a subgroup of $S_G$.
+
+<div class="box-warning" markdown="1">
+<div class="title"> Proposition </div>
+Let $H$ be a normal subgroup of the group $G$. Then $G$ acts by conjugation on $H$ as automorphisms of $H$. More specifically, the action of $G$ on $H$ by conjugation is defined for each $g\in G$ by
+
+$$
+\begin{equation}
+   h\mapsto ghg^{-1}, \quad \text{for each $h\in H$}.
+\end{equation}
+$$
+
+For each $g\in G$, conjugation by $g$ is an automorphism of $H$. The permutation representation afforded by this action is a homomorphism of $G$ into $\mathrm{Aut}(H)$ with kernel $C_{G}(H)$. In particular, $G/C_{G}(H)$ is isomorphic to a subgroup of $\mathrm{Aut}(H)$.
+</div>
+
+It has the following corollaries:
+1. If $K$ is any subgroup of the  group $G$ and $g\in G$, then $K \cong gKg^{-1}$.  Conjugate elements and conjugate subgroups have the same order.
+2. For any subgroup $H$ of a group $G$, the quotient group $N_{G}(H)/C_G(H)$ i isomorphic to a subgroup of $\mathrm{Aut}(H)$. In particular, $G/Z(G)$ is isomorphic to a subgroup of $\mathrm{Aut}(G)$.
+
+<div class="box-info" markdown="1">
+<div class="title"> Definition: inner automorphism </div>
+Let $G$ be a group and let $g\in G$. Conjugation by $g$ is called an **inner automorphism** of $G$ and the subgroup of $\mathrm{Aut}(G)$ consisting of all inner automorphisms is denoted by $\mathrm{Inn}(G)$. 
+</div>
+
+<div class="box-info" markdown="1">
+<div class="title"> Definition: characteristic subgroup </div>
+A subgroup $H$ of a group is called **characteristic** in $G$, denoted $H$ char $G$, if every automorphism of $G$ maps $H$ to itself, i.e., $\sigma(H)=H$ for all $\sigma \in \mathrm{Aut}(G)$.
+</div>
+
+For some specific groups, we have the following consequences:
+- The automorphism group of the cyclic group of order $n$ is isomorphic to $(\ZZ/n\ZZ)^{\times}$, an abelian group of order $\varphi(n)$ (where $\varphi$ is Euler's function).
+- The automorphism group of the cyclic group of order $p^{n}$ where $p$ is an odd prime  is cyclic of order $p^{n-1}(p-1)$.
+- For all $n\neq 6$ we have $\mathrm{Aut}(S_n) = \mathrm{Inn}(S_n)\cong S_n$.
+- $\mathrm{Aut}(D_4)\cong D_4$.
+- $\mathrm{Aut}(Q_8)\cong S_4$.
+- $\mathrm{Aut}(V_4)\cong GL_2(\mathbb{F}_2) \cong S_3$.
+
+### 6.5. Sylow's theorem
+<div class="box-info" markdown="1">
+<div class="title"> Definition: $p$-group </div>
+Let $G$ be a group and let $p$ be a prime.
+1. A group of order $p^{\alpha}$ for some $\alpha\geq 1$ is called a $p$**-group**. Subgroups of $G$ which are $p$-groups are called $p$**-subgroups**.
+2. If $G$ is a group of order $p^{\alpha}m$, where $p \nmid m$, then a subgroup of order $p^{\alpha}$ is called a **Sylow $p$-subgroup** of $G$.
+3. The set of Sylow $p$-subgroups of $G$ will be denoted by $\mathrm{Syl}_{p}(G)$ and the number of Sylow $p$-subgroups of $G$ will be denoted by $n_p(G)$ (or just $n_p$ when $G$ is clear from the context). 
+</div>
+
+<div class="box-danger" markdown="1">
+<div class="title"> Theorem: Sylow's theorem</div>
+Let $G$ be a group of order $p^{\alpha}m$, where $p$ is a prime number and $p\nmid m$.
+1. Sylow $p$-subgroups of $G$ exist, i.e., $\mathrm{Syl}_p(G)\neq \emptyset$
+2. If $P$ is a Sylow $p$-subgroup of $G$ and $Q$ is any $p$-subgroup of $G$, then there exists $g\in G$ such that $Q\leq g Pg^{-1}$, i.e., $Q$ is contained in some conjugate of $P$. In particular, any two Sylow $p$-subgroups of $G$ are conjugate in $G$.
+3. The number of Sylow $p$-subgroups of $G$ is of the form $1+kp$, i.e.,
+
+$$
+\begin{equation}
+   n_p \equiv  1 (\mathrm{mod} \ p).
+\end{equation}
+$$
+
+Further, $n_p$ is the index in $G$ of the normalizer $N_G(P)$ for any Sylow $p$-subgroup $P$, hence $n_p$ divides $m$.
+</div>
+
+From Sylow's theorem, we can obtain the following corollaries: Let $P$ be a Sylow $p$-subgroup of $G$. Then the following are quivalent:
+1. $P$ is the unique Sylow $p$-subgroup of $G$, i.e., $n_p=1$.
+2. $P$ is normal in $G$.
+3. $P$ is characteristic in $G$.
+4. All subgroups generated by elements of $p$-power order are $p$-groups, i.e., if $X$ is any subset of $G$ such that $\abs{x}$ is a power of $p$ for all $x\in X$, then $\expval{X}$ is a $p$-group.
 
 ## 7. References
 1. Dummit, D. S., and Foote, R. M. *Abstract Algebra*, 3rd ed. John Wiley & Sons, Inc. (2004).

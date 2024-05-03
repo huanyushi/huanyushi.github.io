@@ -455,7 +455,7 @@ _posts
 
 然后在需要加入的地方插入剩下两行代码即可（`.md`支持 HTML 语言），效果如下图所示：
 
-![github-contrib](github-contrib.png)
+![github-contrib](github-contrib.PNG)
 _GitHub 贡献图_
 
 > 我嫌加载太慢就没加进去了，这玩意儿放在 `about.md`{:.filepath} 是个不错的选择。
