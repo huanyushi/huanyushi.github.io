@@ -52,12 +52,14 @@
     }
 
     details.box-hidden > summary::after {
-        content: '▶\FE0E';
+        font-family: 'Font Awesome 6 Free';
+        content: "\f105"; /* Unicode for fa-angle-down */
         display: inline-block;
         transition: transform 0.2s ease; /* 添加旋转动画 */
         position: absolute;
         right: 1rem; /* 调整箭头在最右边的位置 */
     }
+    
     details.box-hidden[open] > summary::after {
         transform: rotate(90deg);
     }
@@ -89,7 +91,7 @@
         display: none; /* IOS 隐藏默认的箭头 */
     }
     details.nobg-hidden > summary::before {
-        content: '+\FE0E';
+        content: '+';
         scale: 1.3;
         display: inline-block;
         margin-right: .4rem;
@@ -97,15 +99,5 @@
     }
     details.nobg-hidden[open] > summary::before {
         transform: rotate(135deg);
-        -webkit-animation: rotateArrow 0.2s ease; /* 使用动画替代旋转 */
     }
-    
-    @-webkit-keyframes rotateArrow {
-        from {
-          transform: rotate(0deg);
-        }
-        to {
-          transform: rotate(135deg);
-        }
-      }
 }

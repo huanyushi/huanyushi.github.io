@@ -45,18 +45,36 @@ social:
     # - https://www.linkedin.com/in/username
     - https://www.zhihu.com/people/za-ran-zhu-fu-liu-xing
 
-google_site_verification: google-site-verification=J-aXydM02O-L4PE2xTK9NQfmeeKUMfGGts3GkUnJ7rc
-# fill in to your verification string
+# Site Verification Settings
+webmaster_verifications:
+  google: # fill in your Google verification code
+  bing: # fill in your Bing verification code
+  alexa: # fill in your Alexa verification code
+  yandex: # fill in your Yandex verification code
+  baidu: # fill in your Baidu verification code
+  facebook: # fill in your Facebook verification code
 
 # ↑ --------------------------
 # The end of `jekyll-seo-tag` settings
 
+# Web Analytics Settings
+analytics:
+  google:
+    id: G-F61F79XQDG
+  goatcounter:
+    id: # fill in your GoatCounter ID
+  umami:
+    id: # fill in your Umami ID
+    domain: # fill in your Umami domain
+  matomo:
+    id: # fill in your Matomo ID
+    domain: # fill in your Matomo domain
+  cloudflare:
+    id: # fill in your Cloudflare Web Analytics token
 
-google_analytics:
-  id: G-F61F79XQDG # fill in your Google Analytics ID
-
-goatcounter:
-  id: # fill in your Goatcounter ID
+# Pageviews settings
+pageviews:
+  provider: # now only supports 'goatcounter'
 
 # Prefer color scheme setting.
 #
@@ -104,6 +122,7 @@ comments:
     category: Announcements
     category_id: DIC_kwDOLnc4ks4CeX5Y
     mapping: # optional, default to 'pathname'
+    strict: # optional, default to '0'
     input_position: # optional, default to 'bottom'
     lang: # optional, default to the value of `site.lang`
     reactions_enabled: # optional, default to the value of `1`
@@ -196,7 +215,7 @@ exclude:
   - tools
   - README.md
   - LICENSE
-  - rollup.config.js
+  - "*.config.js"
   - package*.json
 
 jekyll-archives:

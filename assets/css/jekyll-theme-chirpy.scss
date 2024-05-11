@@ -1,7 +1,12 @@
 ---
 ---
 
-@import "main";
+@import 'main
+{%- if jekyll.environment == 'production' -%}
+  .bundle
+{%- endif -%}
+';
+
 /* append your custom style below */
 
 /* 首页预览 post 标题字体加粗 */
@@ -21,14 +26,11 @@ blockquote[class^='prompt-']{
 }
 
 // 代码框左上角颜色
-div[class^=language-] .code-header::before{
-  background-color: #fc625d;
-  box-shadow: 1.25rem 0 0 #fdbc40, 2.5rem 0 0 #35cd4b;
-}
+// div[class^=language-] .code-header::before{
+//   background-color: #fc625d;
+//   box-shadow: 1.25rem 0 0 #fdbc40, 2.5rem 0 0 #35cd4b;
+// }
 
-.MathJax .MathJax_SVG_Display {
-  margin-bottom: 1cm; /* 1em 的行间距 */
-}
 
 /* 侧边栏背景图片添加 */
 #sidebar {

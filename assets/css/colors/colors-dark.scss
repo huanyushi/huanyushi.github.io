@@ -61,7 +61,8 @@
     }
 
     details.box-hidden > summary::after {
-        content: '▶\FE0E';
+        font-family: 'Font Awesome 6 Free';
+        content: "\f105"; /* Unicode for fa-angle-down */
         display: inline-block;
         transition: transform 0.2s ease; /* 添加旋转动画 */
         position: absolute;
@@ -97,7 +98,7 @@
         display: none; /* IOS 隐藏默认的箭头 */
     }
     details.nobg-hidden > summary::before {
-        content: '+\FE0E';
+        content: '+';
         scale: 1.3;
         display: inline-block;
         margin-right: .4rem;

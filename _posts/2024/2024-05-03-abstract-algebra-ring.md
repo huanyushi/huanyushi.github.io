@@ -4,6 +4,7 @@ date:       2024-05-03
 categories: [Mathematics, Abstract Algebra]
 tag: [abstract algebra, ring theory]
 math: true
+description: My ring theory notes while studying abstract algebra. Ring theory explores various properties and structures within rings, such as subrings, ideals, homomorphisms, quotient rings, and the structure of polynomial rings.
 ---
 ## Introduction to rings
 <div class="box-info" markdown="1">
@@ -48,6 +49,9 @@ Chain of class inclusions:
 rngs $\supset$ rings $\supset$ commutative rings $\supset$ integral domains $\supset$ integrally closed domains $\supset$ GCD domains $\supset$ unique factorization domains $\supset$ principal ideal domains $\supset$ Euclidean domains $\supset$ fields $\supset$ algebraically closed fields
 
 ## Polynomial rings
+
+> to be continued ...
+{: .prompt-tip}
 
 ## References
 1. Dummit, D. S., and Foote, R. M. *Abstract Algebra*, 3rd ed. John Wiley & Sons, Inc. (2004).

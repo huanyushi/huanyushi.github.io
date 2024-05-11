@@ -295,50 +295,51 @@ $$
 
 <div class="box-tip" markdown="1">
 <div class="title"> Examples </div>
-Total kinetic energy operator:
 
-$$
-\begin{equation}
-\hat{T} = \sum_{\alpha} \int\dd[3]{x} \hat{\psi}_{\alpha}^\dagger(\vb{x}) \qty(-\frac{\hbar^2\nabla^2}{2m})\hat{\psi}_{\alpha}(\vb{x}) = \sum_{\vb{k}}\sum_{\alpha} \frac{\hbar^2 k^2}{2m} \hat{C}_{\vb{k}\alpha}^\dagger \hat{C}_{\vb{k}\alpha}. 
-\end{equation}
-$$
+- Total kinetic energy operator:
 
-Total momentum operator:
+    $$
+    \begin{equation}
+    \hat{T} = \sum_{\alpha} \int\dd[3]{x} \hat{\psi}_{\alpha}^\dagger(\vb{x}) \qty(-\frac{\hbar^2\nabla^2}{2m})\hat{\psi}_{\alpha}(\vb{x}) = \sum_{\vb{k}}\sum_{\alpha} \frac{\hbar^2 k^2}{2m} \hat{C}_{\vb{k}\alpha}^\dagger \hat{C}_{\vb{k}\alpha}. 
+    \end{equation}
+    $$
 
-$$
-\begin{equation}
-    \hat{P} = \sum_{\vb{k}}\sum_{\alpha} \hbar \vb{k} \hat{C}_{k\alpha}^\dagger \hat{C}_{k\alpha}.
-\end{equation}
-$$
+- Total momentum operator:
 
-For local density operator, we consider its Fourier transform and inverse Fourier transform,
+    $$
+    \begin{equation}
+        \hat{P} = \sum_{\vb{k}}\sum_{\alpha} \hbar \vb{k} \hat{C}_{k\alpha}^\dagger \hat{C}_{k\alpha}.
+    \end{equation}
+    $$
 
-$$
-\begin{gather}
-    \hat{n}(\vb{y}) = \frac{1}{V}\sum_\vb{q} \hat{n}(\vb{q}) \mathrm{e}^{i\vb{q}\cdot\vb{y}},\\[.2cm]
-    \hat{n}(\vb{q}) = \int\hat{n}(\vb{y})\mathrm{e}^{-i\vb{q}\cdot\vb{y}}\dd[3]{y} = \sum_{\vb{k}}\sum_{\alpha}\hat{C}_{\vb{k}\alpha}^{\dagger}\hat{C}_{\vb{k}+\vb{q},\alpha}.
-\end{gather}
-$$
+- For local density operator, we consider its Fourier transform and inverse Fourier transform,
 
-Similarly for spin density operator:
+    $$
+    \begin{gather}
+        \hat{n}(\vb{y}) = \frac{1}{V}\sum_\vb{q} \hat{n}(\vb{q}) \mathrm{e}^{i\vb{q}\cdot\vb{y}},\\[.2cm]
+        \hat{n}(\vb{q}) = \int\hat{n}(\vb{y})\mathrm{e}^{-i\vb{q}\cdot\vb{y}}\dd[3]{y} = \sum_{\vb{k}}\sum_{\alpha}\hat{C}_{\vb{k}\alpha}^{\dagger}\hat{C}_{\vb{k}+\vb{q},\alpha}.
+    \end{gather}
+    $$
 
-$$
-\begin{gather}
-    \hat{S}(\vb{y}) = \frac{1}{V}\sum_\vb{q} \hat{S}(\vb{q})\mathrm{e}^{i\vb{q}\cdot\vb{y}},\\[.2cm]
-    \hat{S}(\vb{q}) = \int \dd[3]{y} \hat{S}(\vb{y}) \mathrm{e}^{-i\vb{q}\cdot\vb{y}} = \sum_\vb{k}\sum_\alpha\sum_\beta \hat{C}_{\vb{k}\alpha}^\dagger \mel{\alpha}{\hat{s}}{\beta}\hat{C}_{\vb{k}+\vb{q},\beta}.
-\end{gather}
-$$
+- Similarly for spin density operator:
+
+  $$
+  \begin{gather}
+      \hat{S}(\vb{y}) = \frac{1}{V}\sum_\vb{q} \hat{S}(\vb{q})\mathrm{e}^{i\vb{q}\cdot\vb{y}},\\[.2cm]
+      \hat{S}(\vb{q}) = \int \dd[3]{y} \hat{S}(\vb{y}) \mathrm{e}^{-i\vb{q}\cdot\vb{y}} = \sum_\vb{k}\sum_\alpha\sum_\beta \hat{C}_{\vb{k}\alpha}^\dagger \mel{\alpha}{\hat{s}}{\beta}\hat{C}_{\vb{k}+\vb{q},\beta}.
+  \end{gather}
+  $$
 
 
-And electrical current density operator:
+- And electrical current density operator:
 
-$$
-\begin{gather}
-    \hat{J}(\vb{y}) = \frac{1}{V}\sum_\vb{q} \hat{J}(\vb{q}) \mathrm{e}^{i\vb{q}\cdot\vb{y}},\\[.2cm]
-    \hat{J}(\vb{q}) = \int\dd[3]{y} \hat{J}(\vb{y})\mathrm{e}^{-i\vb{q}\cdot\vb{y}} = -\frac{e}{m} \sum_{\vb{k}}\sum_{\alpha}\qty(\vb{k}+\frac{\vb{q}}{2}) \hat{C}_{\vb{k}\alpha}^\dagger \hat{C}_{\vb{k}+\vb{q},\alpha}.
-\end{gather}
-$$
-
+  $$
+  \begin{gather}
+      \hat{J}(\vb{y}) = \frac{1}{V}\sum_\vb{q} \hat{J}(\vb{q}) \mathrm{e}^{i\vb{q}\cdot\vb{y}},\\[.2cm]
+      \hat{J}(\vb{q}) = \int\dd[3]{y} \hat{J}(\vb{y})\mathrm{e}^{-i\vb{q}\cdot\vb{y}} = -\frac{e}{m} \sum_{\vb{k}}\sum_{\alpha}\qty(\vb{k}+\frac{\vb{q}}{2}) \hat{C}_{\vb{k}\alpha}^\dagger \hat{C}_{\vb{k}+\vb{q},\alpha}.
+  \end{gather}
+  $$
+ 
 </div>
 
 <details class="box-hidden" markdown="1" open>

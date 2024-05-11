@@ -5,12 +5,13 @@ categories: [HTML and CSS]
 tag: [HTML, CSS]
 math: true
 pin: true
-img_path : /assets/img/in-post/2024/2024-03-30/
+media_subpath : /assets/img/in-post/2024/2024-03-30/
+description: 基于 Jekyll-Theme-Chirpy v7.0.0 的个性化方案介绍：MathJax 配置、侧边栏样式、页脚站点统计、背景动画、自定义新的 prompt 和 details 元素样式、LQIP 和反色图片的 Python 实现等内容。
 ---
 ## 1. 简介
-在去年利用 jekyll 在 github 部署静态博客网站，效果甚合我意。
+去年我通过 jekyll 在 github 部署了静态博客网站，效果甚合我意。
 
-但原先利用的模板是 [Huxpro](https://github.com/Huxpro/huxpro.github.io)，最近花了一点时间把模板改成了 [Chirpy](https://github.com/cotes2020/jekyll-theme-chirpy/)。以前 Jekyll 把主题样式和博客内容混杂在一起，不利于编辑，但在 3.2.0 版本后，Jekyll 引入了 `gem-based theme`，把网站的样式封装成了一个 gem 包，实现了主题样式和博客内容的分离（这有点类似于 HTML 和 CSS）。Chirpy 模板正是一个 `gem-based theme`，所以利用 Chirpy Starter 生成的 blog，它只包含了内容文件，要想实现对 Chirpy 模板的个性化处理，就必须找到它的样式文件。
+但原先我使用的模板是 [Huxpro](https://github.com/Huxpro/huxpro.github.io)，最近花了一点时间把模板改成了 [Chirpy](https://github.com/cotes2020/jekyll-theme-chirpy/)。以前 Jekyll 把主题样式和博客内容混杂在一起，不利于编辑，但在 3.2.0 版本后，Jekyll 引入了 `gem-based theme`，把网站的样式封装成了一个 gem 包，实现了主题样式和博客内容的分离（这有点类似于 HTML 和 CSS）。Chirpy 模板正是一个 `gem-based theme`，所以利用 Chirpy Starter 生成的 blog，它只包含了内容文件，要想实现对 Chirpy 模板的个性化处理，就必须找到它的样式文件。
 
 有两种方法可供选择。第一种就是直接访问 Chirpy 的 github 项目页面，从它的源码里扒出来样式文件及代码。第二种则利用 git，通过命令 `bundle info --path jekyll-theme-chirpy` 获取封装的样式文件地址，如下图所示
 
@@ -19,38 +20,56 @@ _封装的样式文件地址_
 
 在里面找到相应的样式文件后，把它放入自己 blog 对应的文件里，就可以进行个性化定制了。
 
+> 该图片停留在 6.5.5 版本，但新的版本也是类似的便不再更新了。
+{: .prompt-info}
+
 注意生成博客时，放入自己 `.github.io` 文件夹的样式文件会覆盖原先 gem 包里的同名文件，而未修改的样式文件则照样从 gem 包里读取，所以未修改的样式文件没必要导入，这样也方便后续跟随模板作者进行更新。本篇文章就是记录一些我个人对 Chirpy 进行的部分修改（一些小的修改就不写了）。
 
 ## 2. 修改 MathJax 配置
-MathJax 自从进入 3.x 时代后，渲染数学公式的速度几乎比肩 KaTeX，再考虑到 MathJax 支持丰富的拓展包，功能相比 KaTeX 更为强大，所以优先考虑 MathJax。模板作者对 MathJax 的设置在 `_includes/js-selector.html`{: .filepath} 文件中，在隐藏的 gem 包里找到相应代码，即可进行修改。
+MathJax 自从进入 3.x 时代后，渲染数学公式的速度几乎比肩 KaTeX，再考虑到 MathJax 支持丰富的拓展包，功能相比 KaTeX 更为强大，所以优先考虑 MathJax。模板作者对 MathJax 的设置在 `assets/js/data/mathjax.js`{: .filepath} 文件中，在隐藏的 gem 包里找到相应代码，即可进行修改。
+
 ### 2.1. MathJax 添加拓展包
-添加了一些拓展包，如 `physics`，代码修改如下（更多内容可以从 MathJax 官网文档里找到说明）：
-```html
-<script>
-/* see: <https://docs.mathjax.org/en/latest/options/input/tex.html#tex-options> */
+添加了一些拓展包，如 `physics`，同时也自定义了一些宏（简化公式输入），启用了懒加载模式（可以加快网页加载）。代码修改如下（更多内容可以从 MathJax 官网文档里找到说明）：
+
+<!-- {% raw %} -->
+```javascript
+---
+layout: compress
+# WARNING: Don't use '//' to comment out code, use '{% comment %}' and '{% endcomment %}' instead.
+---
+
+{%- comment -%}
+  See: <https://docs.mathjax.org/en/latest/options/input/tex.html#tex-options>
+{%- endcomment -%}
+
 MathJax = {
-    tex: {
-    /* start/end delimiter pairs for in-line math */
+  loader: { load: ['[tex]/physics','ui/lazy',] },
+  tex: {
     inlineMath: [
-        ['$', '$'],
-        ['\\(', '\\)']
+      ['$', '$'],
+      ['\\(', '\\)']
     ],
-    /* start/end delimiter pairs for display math */
     displayMath: [
-        ['$$', '$$'],
-        ['\\[', '\\]']
+      ['$$', '$$'],
+      ['\\[', '\\]']
     ],
-    /* load package */
     packages: {'[+]': ['physics']},
-    /* equation numbering */
-    tags: 'ams'
+    tags: 'ams',
+    macros: {
+        'e': '\\mathrm{e}',
+        'RR': '\\mathbb{R}',
+        'ZZ': '\\mathbb{Z}',
+        'QQ': '\\mathbb{Q}',
+      },
+    options: {
+      lazyMargin: '200px',
     },
     svg: { fontCache: 'global'},
-    loader: {load: ['[tex]/physics']},
+  }
 };
-</script>
 ```
-{: file="_includes/js-selector.html"}
+{: file="assets/js/data/mathjax.js"}
+<!-- {% endraw %} -->
 
 ### 2.2. 增加主页 preview 公式预览
 在 Blog 主页，对每篇文章的预览部分会直接显示数学代码，要想能够在主页也预览公式，可以参考 [issue-1140](https://github.com/cotes2020/jekyll-theme-chirpy/issues/1140)。
@@ -184,7 +203,7 @@ MathJax = {
 ## 4. <del> 修改 further reading 的文章顺序</del>
 <del>按我的理解这应该是模板的一个 bug，所以我把这部分更新写成一个 PR 提交给原作者了，请见 [refactor: make Further Reading display the latest posts.](https://github.com/cotes2020/jekyll-theme-chirpy/pull/1699)。</del>
 
-> 这个 PR 已经被作者**合并**，在 Chirpy 6.5.5 版本（不包括 6.5.5）之后就不需要再做修改了，这一节内容可以忽略。
+> 这个 PR 已经被作者**合并**，在 Chirpy 7.0.0 版本及之后就不需要再做修改了，这一节内容请忽略。
 {: .prompt-danger}
 
 先描述一下问题，假设我们有 5 个不同的文章，它们按发布时间从以前到最新依次为 `Post1`, `Post2`, `Post3`, `Post4` 和 `Post5`，即：
@@ -231,8 +250,10 @@ _posts
 
 <!-- {% raw %} -->
 ```html
-  <!-- 站点统计 -->
+<!-- 站点统计 -->
+<p> 
   {% include footer-busuanzi.html %}
+</p>
 ```
 {: file="_includes/footer.html"}
 <!-- {% endraw %}) -->
@@ -240,11 +261,9 @@ _posts
 不蒜子的代码设置在 `_includes/footer-busuanzi.html`{: .filepath} 中：
 ```html
 <!-- 不蒜子站点统计，放在页脚处 (footer.html 中插入) -->
-<p>
-    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-    <i class="fa fa-user" aria-hidden="true"></i> <span id="busuanzi_value_site_uv"></span> |
-    <i class="fa fa-eye" aria-hidden="true"></i> <span id="busuanzi_value_site_pv"></span>
-</p>
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<i class="fa fa-user" aria-hidden="true"></i> <span id="busuanzi_value_site_uv"></span> |
+<i class="fa fa-eye" aria-hidden="true"></i> <span id="busuanzi_value_site_pv"></span>
 ```
 {: file="_includes/footer.html"}
 
@@ -262,7 +281,8 @@ _posts
 {: file="_layouts/default.html"}
 <!-- {% endraw %}) -->
 
-动画文件在 `_includes/animated-background.html`{: .filepath} 中，其实就是添加了一堆 `animation-circle` 对象，影响的是生成动画的元素个数。
+新建一个文件 `_includes/animated-background.html`{: .filepath} 用于设置动画，其实就是添加了一堆 `animation-circle` 对象，影响的是生成动画的元素个数。
+
 ```html
 <div id="animation">
     <div class="animation-circle"></div>
@@ -679,7 +699,8 @@ $$
     }
 
     details > summary::after {
-        content: '▶\FE0E'; /* \FE0E 是强制前一个字符以文本形式出现，否则 ios 上变成 emoji 表情 */
+        font-family: 'Font Awesome 6 Free';
+        content: "\f105"; /* Unicode for fa-angle-down */
         display: inline-block;
         transition: transform 0.2s ease; /* 添加旋转动画 */
         position: absolute;
@@ -709,6 +730,7 @@ LQIP (Low Quality Image Placeholder) 指的是低质量图像占位符，这是�
 _低质量图像占位符，from [daun](https://processwire.com/modules/image-placeholders/)._
 
 作者在模板里添加了此功能，在每个文档的前言区设置 lqip 即可。我写了一个 Python 代码可以方便地将图像压缩模糊并保存，且转换成 base64 编码。这是根据我的文件路径来写的，有需要可以自行调整。
+
 ```python
 from PIL import Image, ImageFilter
 import base64
@@ -779,7 +801,7 @@ save_base64_image(base64_string, "decoded_image.webp")
 ```
 
 ## 12. 反色图片的 Python 实现
-Blog 支持暗色模式，同时文中的图片也可以相应转换至暗色模式，对于部分图片可以直接通过反色的方式将亮色转换至暗色（但不是所有，比如人像反色放在博客里真的很恶心），我写了一个 Python 程序可以将图片转换至暗色模式，有需要可以自取。同样地，文件路径也是根据我自己实际情况来设置的，需要做相应修改：
+Blog 支持暗色模式，同时文中的图片也可以相应转换至暗色模式，对于部分图片可以直接通过反色的方式将亮色转换至暗色（但不是所有，注意反色不等于暗色！），我写了一个 Python 程序可以将图片转换至暗色模式，有需要可以自取。同样地，文件路径也是根据我自己实际情况来设置的，需要做相应修改：
 
 ```python
 from PIL import Image, ImageChops
@@ -817,9 +839,6 @@ image_output.save(image_start + image_end.replace('.', '-dark.')) # 如：test.P
 ![inverse comparison](inverse.png){:.light}
 ![inverse comparison](inverse-dark.png){:.dark}
 _反色图片与原图片对比_
-
-
-
 
 
 ## 13. 其他问题
