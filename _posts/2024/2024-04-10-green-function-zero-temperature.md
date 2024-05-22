@@ -16,7 +16,7 @@ The single-particle Green's function is defined as:
 
 $$
 \begin{equation}
-G_{\alpha\beta}(\vb{x},t;\vb{x}',t') = -i \bra{\psi_{H}^{0}} \hat{\mathsf{T}}\qty[\hat{\psi}_{H\alpha}(\vb{x},t)\hat{\psi}_{H\beta}^\dagger(\vb{x}',t')]\ket{\psi_H^{0}},
+G_{\alpha\beta}(\vb{x},t;\vb{x}',t') := -i \bra{\psi_{H}^{0}} \hat{\mathsf{T}}\qty[\hat{\psi}_{H\alpha}(\vb{x},t)\hat{\psi}_{H\beta}^\dagger(\vb{x}',t')]\ket{\psi_H^{0}},
 \end{equation}
 $$
 
@@ -65,7 +65,7 @@ where the upper (lower) sign refers to bosons (fermions).
    $$
 
 
-2. If the system is spatially uniform or isotropic (i.e. $[\hat{H},\hat{\mathbf{P}}] = 0$), then the Green's function depends only on the position difference,
+2. If the system is translational invariance (i.e. $[\hat{H},\hat{\mathbf{P}}] = 0$), then the Green's function depends only on the position difference,
 
    $$
    \begin{equation}
@@ -76,7 +76,8 @@ where the upper (lower) sign refers to bosons (fermions).
 
    <details class="nobg-hidden" markdown="1">
    <summary> Proof of 1. and 2. </summary>
-   Here we just prove the case of fermions. Expand the definition of the Green's function,
+
+   Here we just prove the case of *fermions*. Expand the definition of the Green's function,
 
    $$
    \begin{align*}
@@ -117,7 +118,7 @@ where the upper (lower) sign refers to bosons (fermions).
    \end{align*}
    $$
 
-   Its solution is
+   This relationship is true for both bosons and fermions. Its solution is
 
    $$
    \hat{\psi}_{\alpha}(\vb{x}) = \e^{-i\hat{\mathbf{P}}\cdot \mathbf{x}/\hbar}\hat{\psi}_{\alpha}(0) \e^{i\hat{\mathbf{P}}\cdot \mathbf{x}/\hbar},\quad \hat{\psi}_{\alpha}^\dagger(\vb{x}) = \e^{-i\hat{\mathbf{P}}\cdot \mathbf{x}/\hbar} \hat{\psi}^\dagger_{\alpha}(0) \e^{i\hat{\mathbf{P}}\cdot \mathbf{x}/\hbar}.
@@ -129,12 +130,12 @@ where the upper (lower) sign refers to bosons (fermions).
    \begin{align*}
    i G_{\alpha\beta}(\vb{x},t;\vb{x}',t') & = \theta(t-t') \ev{\e^{-i\hat{\mathbf{P}}\cdot\mathbf{x}/\hbar}\hat{\psi}_{\alpha}(0)\e^{i\hat{\mathbf{P}}\cdot\mathbf{x}/\hbar}\e^{-i\hat{H}(t-t')/\hbar}\e^{-i\hat{\mathbf{P}}\cdot\mathbf{x}'/\hbar}\hat{\psi}_{\beta}^\dagger(0)\e^{i\hat{\mathbf{P}}\cdot\mathbf{x}'/\hbar}}{\psi_H^0}\e^{i\omega_{g}(t-t')}\\[.2cm]
    &\quad - \theta(t'-t) \ev{\e^{-i\hat{\mathbf{P}}\cdot\mathbf{x}'/\hbar}\hat{\psi}_{\beta}^\dagger(0)\e^{i\hat{\mathbf{P}}\cdot\mathbf{x}'/\hbar} \e^{i\hat{H}(t-t')/\hbar} \e^{-i\hat{\mathbf{P}}\cdot\mathbf{x}/\hbar}\hat{\psi}_{\alpha}(0)\e^{i\hat{\mathbf{P}}\cdot\mathbf{x}/\hbar}}{\psi_H^0}\e^{-i\omega_{g}(t-t')}\\[.2cm]
-   &=\theta(t-t')\ev{\hat{\psi}_{\alpha}(0)\e^{i\mathbf{P}\cdot(\mathbf{x}-\mathbf{x}')/\hbar}\e^{-i\hat{H}(t-t')/\hbar}\hat{\psi}_{\beta}^\dagger(0)}{\psi_H^0}\e^{-i\mathbf{P}\cdot(\mathbf{x}-\mathbf{x}')/\hbar}\e^{i\omega_{g}(t-t')}\\[.2cm]
-   &\quad - \theta(t'-t)\ev{\hat{\psi}_{\beta}^\dagger(0)\e^{-i\mathbf{P}\cdot(\mathbf{x}-\mathbf{x}')/\hbar}\e^{i\hat{H}(t-t')/\hbar}\hat{\psi}_{\alpha}^(0)}{\psi_H^0}\e^{i\mathbf{P}\cdot(\mathbf{x}-\mathbf{x}')/\hbar}\e^{i\omega_{g}(t-t')},
+   &=\theta(t-t')\ev{\hat{\psi}_{\alpha}(0)\e^{i\hat{\mathbf{P}}\cdot(\mathbf{x}-\mathbf{x}')/\hbar}\e^{-i\hat{H}(t-t')/\hbar}\hat{\psi}_{\beta}^\dagger(0)}{\psi_H^0}\e^{-i\mathbf{P}\cdot(\mathbf{x}-\mathbf{x}')/\hbar}\e^{i\omega_{g}(t-t')}\\[.2cm]
+   &\quad - \theta(t'-t)\ev{\hat{\psi}_{\beta}^\dagger(0)\e^{-i\hat{\mathbf{P}}\cdot(\mathbf{x}-\mathbf{x}')/\hbar}\e^{i\hat{H}(t-t')/\hbar}\hat{\psi}_{\alpha}^(0)}{\psi_H^0}\e^{i\mathbf{P}\cdot(\mathbf{x}-\mathbf{x}')/\hbar}\e^{i\omega_{g}(t-t')},
    \end{align*}
    $$ 
 
-   where we have used $[\hat{H},\hat{\mathbf{P}}]=0$. So it also only depend on the position difference $\mathbf{x}-\mathbf{x}'$. Thus $G_{\alpha\beta}(\vb{x},t;\vb{x}',t') = G_{\alpha\beta}(\vb{x}-\vb{x}',t-t')$
+   where we have used $[\hat{H},\hat{\mathbf{P}}]=0$. So it also only depend on the position difference $\mathbf{x}-\mathbf{x}'$. Thus $G_{\alpha\beta}(\vb{x},t;\vb{x}',t') = G_{\alpha\beta}(\vb{x}-\vb{x}',t-t')$. The same is true for the bosons. 
 
    <p style="text-align: right;"> &#x220E; </p>
    </details>
@@ -717,8 +718,8 @@ $$
 
 If $t>t'$, we choose the lower-half $\omega$ plane. If $t<t'$, we choose the upper-half $\omega$ plane.
 
-![step function contour](contour-step-function.PNG){: .light width="500"}
-![step function contour](contour-step-function-dark.PNG){: .dark width="500"}
+![step function contour](contour-step-function.PNG){: .light width="550"}
+![step function contour](contour-step-function-dark.PNG){: .dark width="550"}
 _Contour for the step function._
 
 <details class="nobg-hidden" markdown="1">
@@ -747,8 +748,8 @@ _Contour for the step function._
     
 \fill (0,0.8) node[above right]{$i\eta$}  circle (2pt) ;
 \fill (0,-0.8) node[below right]{$-i\eta$}  circle (2pt) ;
-\node  at (140:\radius+1) {$t>t'$ contour};
-\node at (-40:\radius+1) {$t<t'$ contour};
+\node  at (140:\radius+1) {$t<t'$ contour};
+\node at (-40:\radius+1) {$t>t'$ contour};
 
 \draw[-Latex] (-\radius*1.5,0) -- (\radius*1.5,0) node[below]{$\mathrm{Re}(\omega)$};
 \draw[-Latex] (0,-\radius*1.2) -- (0,\radius*1.2)node[right]{$\mathrm{Im}(\omega)$} ;
