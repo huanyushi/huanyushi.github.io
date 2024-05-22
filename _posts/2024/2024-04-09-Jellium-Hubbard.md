@@ -16,7 +16,7 @@ $$
 \end{equation}
 $$
 
-where $\hat{H}_{e}$ and $\hat{H}_{\mathrm{ion}}$ are terms related only to electrons and ions respectively, $\hat{H}_{e-\mathrm{ion}}$ is the interaction between electrons and ions, i.e.,
+where $\hat{H}\_{e}$ and $\hat{H}\_{\mathrm{ion}}$ are terms related only to electrons and ions respectively, $\hat{H}\_{e-\mathrm{ion}}$ is the interaction between electrons and ions, i.e.,
 
 $$
 \begin{align}

@@ -65,7 +65,7 @@ where the upper (lower) sign refers to bosons (fermions).
    $$
 
 
-2. If the system is spatially uniform or isotropic (i.e. $[\hat{H},\hat{P}] = 0$), then the Green's function depends only on the position difference,
+2. If the system is spatially uniform or isotropic (i.e. $[\hat{H},\hat{\mathbf{P}}] = 0$), then the Green's function depends only on the position difference,
 
    $$
    \begin{equation}
@@ -73,6 +73,71 @@ where the upper (lower) sign refers to bosons (fermions).
    \end{equation}
    $$
 
+
+   <details class="nobg-hidden" markdown="1">
+   <summary> Proof of 1. and 2. </summary>
+   Here we just prove the case of fermions. Expand the definition of the Green's function,
+
+   $$
+   \begin{align*}
+       i G_{\alpha\beta}(\vb{x},t;\vb{x}',t')& = \ev{\hat{\mathsf{T}}\qty[\hat{\psi}_{H\alpha}(\vb{x},t)\hat{\psi}_{H\beta}^\dagger(\vb{x}',t')]}{\psi_{H}^0}\\[.2cm]
+       &=\ev{\hat{\mathsf{T}}\qty[\e^{i\hat{H}t/\hbar}\hat{\psi}_{\alpha}(\vb{x})\e^{-i\hat{H}t/\hbar}\e^{i\hat{H}t'/\hbar}\hat{\psi}_{\beta}^\dagger(\vb{x}')\e^{-i\hat{H}t'/\hbar}]}{\psi_H^0}\\[.2cm]
+       &=\theta(t-t') \ev{\e^{i\hat{H}t/\hbar}\hat{\psi}_{\alpha}(\vb{x})\e^{-i\hat{H}t/\hbar}\e^{i\hat{H}t'/\hbar}\hat{\psi}_{\beta}^\dagger(\vb{x}')\e^{-i\hat{H}t'/\hbar}}{\psi_H^0}\\[.2cm]
+       &\qquad -\theta(t'-t)\ev{\e^{i\hat{H}t'/\hbar}\hat{\psi}_{\beta}^\dagger(\vb{x}')\e^{-i\hat{H}t'/\hbar} \e^{i\hat{H}t/\hbar}\hat{\psi}_{\alpha}(\vb{x})\e^{-i\hat{H}t/\hbar}}{\psi_H^0}\\[.2cm]
+       &=\theta(t-t')\e^{i\omega_g t}\ev{\hat{\psi}_{\alpha}(\vb{x})\e^{-i\hat{H}t/\hbar}\e^{i\hat{H}t'/\hbar}\hat{\psi}_{\beta}^\dagger(\vb{x}')}{\psi_H^0}\e^{-i\omega_g t'}\\[.2cm]
+       &\qquad -\theta(t'-t) \e^{i\omega_g t'} \ev{\hat{\psi}_{\beta}^\dagger(\vb{x}')\e^{-i\hat{H}t'/\hbar} \e^{i\hat{H}t/\hbar}\hat{\psi}_{\alpha}(\vb{x})}{\psi_H^0} \e^{-i\omega_g t}\\[.2cm]
+       &=\theta(t-t') \ev{\hat{\psi}_{\alpha}(\vb{x})\e^{-i \hat{H}(t-t')/\hbar}\hat{\psi}_{\beta}^\dagger(\vb{x}')}{\psi_H^0}\e^{i\omega_g(t-t')}\\[.2cm]
+       &\qquad - \theta(t'-t) \ev{\hat{\psi}_{\beta}^\dagger(\vb{x}' \e^{i\hat{H}(t-t')/\hbar}\hat{\psi}_{\alpha}(\vb{x}))}{\psi_H^0}\e^{-i\omega_g(t-t')}. 
+   \end{align*}
+   $$
+
+   It is obviously to see that the Green's function only depend on the time difference $t-t'$. Since the total momentum operator commute with $\hat{H}$, they have common eigenstates
+
+   $$
+   \hat{H} \ket{E_g,\mathbf{P}} = E_g \ket{E_g,\mathbf{P}},\quad \hat{\mathbf{P}}\ket{ E_g, \mathbf{P}} = \mathbf{P}\ket{E_g,\mathbf{P}}.
+   $$
+
+   For ground state, we have
+
+   $$
+   \hat{H}\ket{\psi_H^0} = E_g \ket{\psi_H^0}, \quad \hat{\mathbf{P}} \ket{\psi_H^0} = 0.
+   $$
+
+   And we find
+
+   $$
+   \begin{align*}
+       [\hat{\psi}_{\alpha}(\vb{x}),\hat{\mathbf{P}}]&= \qty[\hat{\psi}_{\alpha}(\vb{x}),\sum_{\beta}\int \dd[3]{x'}\hat{\psi}_{\beta}^\dagger(\vb{x}')(-i\hbar \nabla)\hat{\psi}_{\beta}(\vb{x}')]\\[.2cm]
+       &=\sum_{\beta} \int\dd[3]{x'} \qty[\hat{\psi}_{\alpha}(\vb{x}), \hat{\psi}_{\beta}^\dagger(\vb{x}')(-i\hbar \nabla_{\vb{x}'})\hat{\psi}_{\beta}(\vb{x}')]\\[.2cm]
+       &=\sum_{\beta} \int\dd[3]{x'} \qty{\qty[\hat{\psi}_{\alpha}(\vb{x}),\hat{\psi}_{\beta}^\dagger(\vb{x}')]_+ (-i\hbar\nabla_{\vb{x}'})\hat{\psi}_{\beta}(\vb{x}')
+       - \hat{\psi}_{\beta}(\vb{x}') \qty[\hat{\psi}_{\alpha}(\vb{x}),-i\hbar\nabla_{\vb{x}'}\hat{\psi}_{\beta}(\vb{x}')]_+
+       }\\[.2cm]
+       &=\sum_{\beta} \int \dd[3]{x'} \qty[\delta(\vb{x}-\vb{x}') \delta_{\alpha\beta}(-i\hbar\nabla_{\vb{x}'})\hat{\psi}_{\beta}(\vb{x}') - \hat{\psi}_{\beta}^\dagger(\vb{x}')(-i\hbar \nabla_{\vb{x}'})\times 0]\\[.2cm]
+       &= -i\hbar \nabla\hat{\psi}_{\alpha}(\vb{x}).
+   \end{align*}
+   $$
+
+   Its solution is
+
+   $$
+   \hat{\psi}_{\alpha}(\vb{x}) = \e^{-i\hat{\mathbf{P}}\cdot \mathbf{x}/\hbar}\hat{\psi}_{\alpha}(0) \e^{i\hat{\mathbf{P}}\cdot \mathbf{x}/\hbar},\quad \hat{\psi}_{\alpha}^\dagger(\vb{x}) = \e^{-i\hat{\mathbf{P}}\cdot \mathbf{x}/\hbar} \hat{\psi}^\dagger_{\alpha}(0) \e^{i\hat{\mathbf{P}}\cdot \mathbf{x}/\hbar}.
+   $$
+
+   Then we can rewrite the Green's function as
+
+   $$
+   \begin{align*}
+   i G_{\alpha\beta}(\vb{x},t;\vb{x}',t') & = \theta(t-t') \ev{\e^{-i\hat{\mathbf{P}}\cdot\mathbf{x}/\hbar}\hat{\psi}_{\alpha}(0)\e^{i\hat{\mathbf{P}}\cdot\mathbf{x}/\hbar}\e^{-i\hat{H}(t-t')/\hbar}\e^{-i\hat{\mathbf{P}}\cdot\mathbf{x}'/\hbar}\hat{\psi}_{\beta}^\dagger(0)\e^{i\hat{\mathbf{P}}\cdot\mathbf{x}'/\hbar}}{\psi_H^0}\e^{i\omega_{g}(t-t')}\\[.2cm]
+   &\quad - \theta(t'-t) \ev{\e^{-i\hat{\mathbf{P}}\cdot\mathbf{x}'/\hbar}\hat{\psi}_{\beta}^\dagger(0)\e^{i\hat{\mathbf{P}}\cdot\mathbf{x}'/\hbar} \e^{i\hat{H}(t-t')/\hbar} \e^{-i\hat{\mathbf{P}}\cdot\mathbf{x}/\hbar}\hat{\psi}_{\alpha}(0)\e^{i\hat{\mathbf{P}}\cdot\mathbf{x}/\hbar}}{\psi_H^0}\e^{-i\omega_{g}(t-t')}\\[.2cm]
+   &=\theta(t-t')\ev{\hat{\psi}_{\alpha}(0)\e^{i\mathbf{P}\cdot(\mathbf{x}-\mathbf{x}')/\hbar}\e^{-i\hat{H}(t-t')/\hbar}\hat{\psi}_{\beta}^\dagger(0)}{\psi_H^0}\e^{-i\mathbf{P}\cdot(\mathbf{x}-\mathbf{x}')/\hbar}\e^{i\omega_{g}(t-t')}\\[.2cm]
+   &\quad - \theta(t'-t)\ev{\hat{\psi}_{\beta}^\dagger(0)\e^{-i\mathbf{P}\cdot(\mathbf{x}-\mathbf{x}')/\hbar}\e^{i\hat{H}(t-t')/\hbar}\hat{\psi}_{\alpha}^(0)}{\psi_H^0}\e^{i\mathbf{P}\cdot(\mathbf{x}-\mathbf{x}')/\hbar}\e^{i\omega_{g}(t-t')},
+   \end{align*}
+   $$ 
+
+   where we have used $[\hat{H},\hat{\mathbf{P}}]=0$. So it also only depend on the position difference $\mathbf{x}-\mathbf{x}'$. Thus $G_{\alpha\beta}(\vb{x},t;\vb{x}',t') = G_{\alpha\beta}(\vb{x}-\vb{x}',t-t')$
+
+   <p style="text-align: right;"> &#x220E; </p>
+   </details>
 
 3. If the Hamiltonian is independent of particle's spin, then
 
@@ -201,7 +266,7 @@ $$
 
     $$
     \begin{align}
-        \ev{\hat{P}}{\psi_H^0} = \pm i \sum_{\alpha} \int \dd[3]{x}  \lim_{\substack{\vb{x}'\to\vb{x}\\ t'\to t^+}} (-i\hbar\nabla)G_{\alpha\alpha}(\vb{x},t;\vb{x}',t').
+        \ev{\hat{\mathbf{P}}}{\psi_H^0} = \pm i \sum_{\alpha} \int \dd[3]{x}  \lim_{\substack{\vb{x}'\to\vb{x}\\ t'\to t^+}} (-i\hbar\nabla)G_{\alpha\alpha}(\vb{x},t;\vb{x}',t').
     \end{align}
     $$
 
@@ -209,7 +274,7 @@ $$
 
     $$
     \begin{align}
-        \ev{n(\vb{y})}{\psi_H^0} &= \sum_{\alpha} \ev{\hat{\psi}_{\alpha}^\dagger(\vb{y}) \hat{\psi}_{\alpha}(\vb{y})}{\psi_H^0}\notag\\[.2cm]
+        \ev{\hat{n}(\vb{y})}{\psi_H^0} &= \sum_{\alpha} \ev{\hat{\psi}_{\alpha}^\dagger(\vb{y}) \hat{\psi}_{\alpha}(\vb{y})}{\psi_H^0}\notag\\[.2cm]
         &= \sum_{\alpha} \ev{\hat{\psi}_{H\alpha}(\vb{y},t)\hat{\psi}_{H\alpha}(\vb{y},y)}{\psi_H^0}\notag\\[.2cm]
         &= \sum_{\alpha} \lim_{\substack{\vb{y}'\to\vb{y}\\ t'\to t^+}} \ev{\hat{\psi}_{H\alpha}^\dagger(\vb{y}',y')\hat{\psi}_{H\alpha}(\vb{y},t)}{\psi_H^0}\notag\\[.2cm]
         &=\pm i \sum_{\alpha}\lim_{\substack{\vb{y}'\to\vb{y}\\ t'\to t^+}} G_{\alpha\alpha}(\vb{y},t;\vb{y}',t').
@@ -220,7 +285,7 @@ $$
 
     $$
     \begin{align}
-        \ev{N}{\psi_H^0} &= \ev{\int\dd[3]y\ \hat{n}(\vb{y})}{\psi_H^0}\notag =\int \dd[3]{y} \ev{\hat{n}(\vb{y})}{\psi_H^0}\notag\\[.2cm]
+        \ev{\hat{N}}{\psi_H^0} &= \ev{\int\dd[3]y\ \hat{n}(\vb{y})}{\psi_H^0}\notag =\int \dd[3]{y} \ev{\hat{n}(\vb{y})}{\psi_H^0}\notag\\[.2cm]
         &=\pm i \sum_{\alpha} \int \dd[3]{y} \lim_{\substack{\vb{y}'\to\vb{y}\\ t'\to t^+}} G_{\alpha\alpha}(\vb{y},t;\vb{y}',t').
     \end{align}
     $$
@@ -630,7 +695,7 @@ $$
      G_{\alpha\beta}^0&= -i \frac{\delta_{\alpha\beta}}{V} \sum_{\mathbf{k}}\qty[\theta(t-t')\theta(\abs{\mathbf{k}}-k_F)-\theta(t'-t)\theta(k_F-\abs{\mathbf{k}})] \e^{i\mathbf{k}\cdot(\mathbf{x}-\mathbf{x}')} \e^{-i\omega_{\vb{k}} (t-t')}\\[.2cm]
      &= -i \delta_{\alpha\beta} \int \frac{\dd[3]{k}}{(2\pi)^3} \qty[\theta(t-t')\theta(\abs{\mathbf{k}}-k_F)-\theta(t'-t)\theta(k_F-\abs{\mathbf{k}})]\e^{i\mathbf{k}\cdot(\mathbf{x}-\mathbf{x}')} \e^{-i\omega_{\mathbf{k}}(t-t')}.
 \end{split}
-\label{Green's function}
+\label{Green function}
 \end{equation}
 $$
 
@@ -694,7 +759,7 @@ _Contour for the step function._
 
 </details>
 
-So the Green's function in $\eqref{Green's function}$ can be rewritten as
+So the Green's function in $\eqref{Green function}$ can be rewritten as
 
 $$
     G_{\alpha\beta}^0 (\vb{x},t;\vb{x}',t') = \int \frac{\dd[3]{k}\dd[\omega]}{(2\pi)^4} \e^{i\mathbf{k}\cdot\mathbf{\mathbf{x}-\mathbf{x}'}}\e^{-i\omega (t-t')} \times \delta_{\alpha\beta}\qty[\frac{\theta(|\mathbf{k}|-k_F)}{\omega-\omega_{\mathbf{k}} + i\eta} + \frac{\theta(k_F- |\mathbf{k}|)}{\omega-\omega_{\mathbf{k}}-i\eta}],
@@ -732,7 +797,7 @@ $$
     E_g & = - \frac{i}{2}\lim_{\eta\to 0^+}\sum_{\alpha}\sum_{\vb{k}}\int_{-\infty}^{\infty} \frac{\dd{\omega}}{2\pi} \qty(\hbar\omega + \frac{\hbar^2k^2}{2m}) G_{\alpha\alpha}(\vb{k},\omega)\e^{i\omega\eta}\\[.2cm]
     &= - \frac{i}{2} \lim_{\eta\to 0^+}\sum_{\alpha}\sum_{\vb{k}}\int_{-\infty}^{\infty} \frac{\dd{\omega}}{2\pi} \qty(\hbar\omega + \frac{\hbar^2k^2}{2m}) \qty[\frac{\theta(|\mathbf{k}|-k_F)}{\omega-\omega_{\mathbf{k}} + i\eta} + \frac{\theta(k_F- |\mathbf{k}|)}{\omega-\omega_{\mathbf{k}}-i\eta}] \e^{i\omega \eta}\\[.2cm]
     &=-\frac{i}{2}\sum_{\alpha}\sum_{\mathbf{k}}\lim_{\eta\to 0^+} \oint \frac{\dd{z}}{2\pi} \qty(\hbar z + \frac{\hbar k^2}{2m}) \qty[\frac{\theta(|\mathbf{k}|-k_F)}{z-\omega_{\mathbf{k}} + i\eta} + \frac{\theta(k_F- |\mathbf{k}|)}{z-\omega_{\mathbf{k}}-i\eta}] \e^{iz \eta}\\[.2cm]
-    & = -\frac{i}{2}\sum_{\alpha}\sum_{\mathbf{k}}\lim_{\eta\to 0^+} \frac{1}{2\pi} 2\pi i \qty(\epsilon_{\mathbf{k}}^0 + i\eta + \frac{\hbar^2 k^2}{2m}) \theta(k_F - \abs{\mathbf{k}}) \e^{i(\omega_{\mathbf{k}}+i\eta)\eta}\\[.2cm]
+    & = -\frac{i}{2}\sum_{\alpha}\sum_{\mathbf{k}}\lim_{\eta\to 0^+} \frac{1}{2\pi} 2\pi i \qty(\epsilon_{\mathbf{k}}^0 + i\hbar\eta + \frac{\hbar^2 k^2}{2m}) \theta(k_F - \abs{\mathbf{k}}) \e^{i(\omega_{\mathbf{k}}+i\eta)\eta}\\[.2cm]
     & = \sum_{\alpha}\sum_{\mathbf{k}} \epsilon_{\mathbf{k}}^ 0 \theta(k_F - \abs{\mathbf{k}}),
 \end{align*}
 $$

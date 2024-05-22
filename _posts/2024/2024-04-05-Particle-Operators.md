@@ -117,7 +117,7 @@ Similarly, we can obtain the representation of the **total momentum operator**
 
 $$
 \begin{equation}
-\hat{P}= \sum_{\alpha}\int\dd[3]{x} \hat{\psi}^{\dagger}_{\alpha}(\vb{x}) (-i\hbar \nabla) \hat{\psi}_{\alpha}(\vb{x}).
+\hat{\mathbf{P}}= \sum_{\alpha}\int\dd[3]{x} \hat{\psi}^{\dagger}_{\alpha}(\vb{x}) (-i\hbar \nabla) \hat{\psi}_{\alpha}(\vb{x}).
 \end{equation}
 $$
 
@@ -220,7 +220,7 @@ In second quantization, it is
 
 $$
 \begin{equation}
-\hat{F}^{(2)} = \frac{1}{2}\sum_{\alpha}\sum_{\alpha'}\sum_\beta\sum_{\beta'} \int\dd[3]{x} \int\dd[3]{x'} \hat{\psi}^{\dagger}_\alpha (\vb{x}) \hat{\psi}^{\dagger}_{\beta}(\vb{x}') \hat{f}_{\alpha\alpha',\beta\beta'}(\vb{x},\vb{x}')\hat{\psi}_{\beta'}(\vb{x}')\hat{\psi}_{\alpha'}(\vb{x}),
+\hat{F}^{(2)} = \frac{1}{2}\sum_{\alpha\alpha'\beta\beta'} \int\dd[3]{x} \int\dd[3]{x'} \hat{\psi}^{\dagger}_\alpha (\vb{x}) \hat{\psi}^{\dagger}_{\beta}(\vb{x}') \hat{f}_{\alpha\alpha',\beta\beta'}(\vb{x},\vb{x}')\hat{\psi}_{\beta'}(\vb{x}')\hat{\psi}_{\alpha'}(\vb{x}),
 \end{equation}
 $$
 

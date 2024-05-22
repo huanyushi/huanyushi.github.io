@@ -86,10 +86,14 @@
         margin-bottom: 1rem;
     }
     details.nobg-hidden > summary {
-        font-weight: 600;
-        color: var(--details-border-color);
-        text-decoration: underline;
+        color: var(--link-color);
         display: inline-block;
+        line-height: normal;
+        border-bottom: 1px solid var(--link-underline-color);
+    }
+    details.nobg-hidden > summary:hover {
+        color: #d2603a; /* 鼠标悬停时的颜色 */
+        border-bottom-color: #d2603a;
     }
     details.nobg-hidden > summary::marker {
         content: none; /* 隐藏默认的箭头 */
