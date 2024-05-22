@@ -26,9 +26,9 @@ MathJax = {
         'ZZ': '\\mathbb{Z}',
         'QQ': '\\mathbb{Q}',
       },
-    options: {
-      lazyMargin: '200px',
-    },
-    svg: { fontCache: 'global'},
-  }
+  },
+  options: {
+    lazyMargin: '200px',
+  },
+  svg: { fontCache: 'global'},
 };

@@ -89,15 +89,15 @@ pageviews:
 #
 theme_mode: # [light | dark]
 
-# The CDN endpoint for images.
+# The CDN endpoint for media resources.
 # Notice that once it is assigned, the CDN url
-# will be added to all image (site avatar & posts' images) paths starting with '/'
+# will be added to all media resources (site avatar, posts' images, audio and video files) paths starting with '/'
 #
 # e.g. 'https://cdn.com'
-img_cdn: "https://cdn.jsdelivr.net/gh/huanyushi/huanyushi.github.io@main"
+cdn: "https://cdn.jsdelivr.net/gh/huanyushi/huanyushi.github.io@main"
 
 # the avatar on sidebar, support local or CORS resources
-avatar: "https://cdn.jsdelivr.net/gh/huanyushi/huanyushi.github.io@main/assets/img/avatar.jpg"
+avatar: "assets/img/avatar.jpg"
 
 # The URL of the site-wide social preview image used in SEO `og:image` meta tag.
 # It can be overridden by a customized `page.image` in front matter.
@@ -107,8 +107,9 @@ social_preview_image: "https://cdn.jsdelivr.net/gh/huanyushi/huanyushi.github.io
 toc: true
 
 comments:
-  active: giscus # The global switch for posts comments, e.g., 'disqus'.  Keep it empty means disable
-  # The active options are as follows:
+  # Global switch for the post comment system. Keeping it empty means disabled.
+  provider: giscus # [disqus | utterances | giscus]
+  # The provider options are as follows:
   disqus:
     shortname: # fill with the Disqus shortname. › https://help.disqus.com/en/articles/1717111-what-s-a-shortname
   # utterances settings › https://utteranc.es/
