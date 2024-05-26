@@ -308,7 +308,7 @@ $$
 
     $$
     \begin{equation}
-        \hat{P} = \sum_{\vb{k}}\sum_{\alpha} \hbar \vb{k} \hat{C}_{k\alpha}^\dagger \hat{C}_{k\alpha}.
+        \hat{\mathbf{P}} = \sum_{\vb{k}}\sum_{\alpha} \hbar \vb{k} \hat{C}_{k\alpha}^\dagger \hat{C}_{k\alpha}.
     \end{equation}
     $$
 
@@ -335,8 +335,8 @@ $$
 
   $$
   \begin{gather}
-      \hat{J}(\vb{y}) = \frac{1}{V}\sum_\vb{q} \hat{J}(\vb{q}) \mathrm{e}^{i\vb{q}\cdot\vb{y}},\\[.2cm]
-      \hat{J}(\vb{q}) = \int\dd[3]{y} \hat{J}(\vb{y})\mathrm{e}^{-i\vb{q}\cdot\vb{y}} = -\frac{e}{m} \sum_{\vb{k}}\sum_{\alpha}\qty(\vb{k}+\frac{\vb{q}}{2}) \hat{C}_{\vb{k}\alpha}^\dagger \hat{C}_{\vb{k}+\vb{q},\alpha}.
+      \hat{\mathbf{J}}(\vb{y}) = \frac{1}{V}\sum_\vb{q} \hat{\mathbf{J}}(\vb{q}) \mathrm{e}^{i\vb{q}\cdot\vb{y}},\\[.2cm]
+      \hat{\mathbf{J}}(\vb{q}) = \int\dd[3]{y} \hat{\mathbf{J}}(\vb{y})\mathrm{e}^{-i\vb{q}\cdot\vb{y}} = -\frac{e}{m} \sum_{\vb{k}}\sum_{\alpha}\qty(\vb{k}+\frac{\vb{q}}{2}) \hat{C}_{\vb{k}\alpha}^\dagger \hat{C}_{\vb{k}+\vb{q},\alpha}.
   \end{gather}
   $$
  

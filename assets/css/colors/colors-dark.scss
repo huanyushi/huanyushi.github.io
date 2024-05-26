@@ -84,21 +84,18 @@
     // details class = "nobg-hidden"
     details.nobg-hidden {
         margin-bottom: 1rem;
-        padding-left: 1rem; /* 为了让border-left显得有些间距 */
-        border-left: 2px solid transparent; /* 默认透明的左边框 */
-    }
-    details.nobg-hidden[open] {
-        border-left-color: var(--blockquote-border-color); /* 展开时的边框颜色 */
+        padding-left: 1rem; 
+        border-left: 2px solid var(--blockquote-border-color); 
     }
     details.nobg-hidden > summary {
         color: var(--link-color);
         display: inline-block;
         line-height: normal;
-        border-bottom: 1px solid var(--link-underline-color);
+        // border-bottom: 1px solid var(--link-underline-color);
     }
     details.nobg-hidden > summary:hover {
         color: #d2603a; /* 鼠标悬停时的颜色 */
-        border-bottom-color: #d2603a;
+        border-bottom: 1px solid #d2603a;
     }
     details.nobg-hidden > summary::marker {
         content: none; /* 隐藏默认的箭头 */
@@ -112,12 +109,8 @@
         display: inline-block;
         margin-right: .4rem;
         transition: transform 0.2s ease; /* 添加旋转动画 */
-        -webkit-transition: -webkit-transform 0.2s ease; /* 兼容iOS */
-        transform-origin: center; /* 确保旋转中心正确 */
-        -webkit-transform-origin: center;
     }
     details.nobg-hidden[open] > summary::before {
         transform: rotate(135deg);
-        -webkit-transform: rotate(135deg); /* 兼容iOS */
     }
 }

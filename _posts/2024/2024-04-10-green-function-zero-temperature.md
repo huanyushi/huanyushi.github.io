@@ -8,7 +8,7 @@ math: true
 ---
 Hamiltonian  with interaction can not always be solved exactly, the first few orders of perturbation theory cannot provide an adequate description of an interacting many-particle system. So we must find other methods to obtain all orders in perturbation theory. Luckily, we can get a formal solution through **Green's functions**.
 
-## 1. Definition, symmetry and physical significance of single-particle Green's function
+## 1. Definition, symmetry and physical significance of the single-particle Green's function
 ### 1.1. Definition
 <div class="box-info" markdown="1">
 <div class="title"> Single-particle Green's function </div>
@@ -118,7 +118,7 @@ where the upper (lower) sign refers to bosons (fermions).
    \end{align*}
    $$
 
-   This relationship is true for both bosons and fermions. Its solution is
+   This relation is true for both bosons and fermions. Its solution is
 
    $$
    \hat{\psi}_{\alpha}(\vb{x}) = \e^{-i\hat{\mathbf{P}}\cdot \mathbf{x}/\hbar}\hat{\psi}_{\alpha}(0) \e^{i\hat{\mathbf{P}}\cdot \mathbf{x}/\hbar},\quad \hat{\psi}_{\alpha}^\dagger(\vb{x}) = \e^{-i\hat{\mathbf{P}}\cdot \mathbf{x}/\hbar} \hat{\psi}^\dagger_{\alpha}(0) \e^{i\hat{\mathbf{P}}\cdot \mathbf{x}/\hbar}.
@@ -546,7 +546,7 @@ $$
 \end{align}
 $$
 
-## 3. Single particle Green's function for free fermions
+## 3. The single particle Green's function for free fermions
 As an example of the above formalism, we will consider the single particle Green's function for a noninteracting homogeneous system of fermions. The Hamiltonian of the system is
 
 $$

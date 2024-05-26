@@ -74,7 +74,7 @@ $$
 \end{equation}
 $$ 
 
-At this point, the angular momentum operators $\hat{\mathbf{J}}_1$ and $\hat{\mathbf{J}}_2$ should be understood as $\hat{\mathbf{J}}_1\otimes \mathbb{1}$ and $\mathbb{1}\otimes \hat{\mathbf{J}}_2$ respectively. Then we can obtain the following commutation relationship
+At this point, the angular momentum operators $\hat{\mathbf{J}}_1$ and $\hat{\mathbf{J}}_2$ should be understood as $\hat{\mathbf{J}}_1\otimes \mathbb{1}$ and $\mathbb{1}\otimes \hat{\mathbf{J}}_2$ respectively. Then we can obtain the following commutation relation
 
 $$
 \begin{align}

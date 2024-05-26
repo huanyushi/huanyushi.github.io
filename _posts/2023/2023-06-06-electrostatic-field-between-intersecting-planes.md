@@ -222,7 +222,7 @@ $$
 \sum_{k=1}^{\infty} A_{k\mu} I_{k\pi/\alpha}(\mu r_0) \sin(\frac{k\pi}{\alpha}\phi) =     \sum_{k=1}^{\infty} B_{k\mu} K_{k\pi/\alpha}(\mu r_0) \sin(\frac{k\pi}{\alpha}\phi).
 $$
 
-Due to the orthogonality of $\sin(k\pi\phi/\alpha)$ in $\phi\in(0,\alpha)$, the corresponding coefficients must be equal, so we obtain the first relationship:
+Due to the orthogonality of $\sin(k\pi\phi/\alpha)$ in $\phi\in(0,\alpha)$, the corresponding coefficients must be equal, so we obtain the first relation:
 
 $$
 \begin{equation}
@@ -265,7 +265,7 @@ $$
 \end{align*}
 $$
 
-It turns out to be the second relationship
+It turns out to be the second relation
 
 $$
 \begin{equation}
