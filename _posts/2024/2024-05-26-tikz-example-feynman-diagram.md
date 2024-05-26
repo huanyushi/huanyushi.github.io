@@ -12,7 +12,7 @@ math: true
 ## 1. $e^{-}e^{+}\to \gamma\gamma$
 
 ![](electron-positron-annilation-photon.PNG){: .light}
-![](electron-positron-annilation-photon-dark.PNG){: .light}
+![](electron-positron-annilation-photon-dark.PNG){: .dark}
 _Electron–positron annihilation, $e^{-}e^{+}\to \gamma\gamma$_
 
 <details class="nobg-hidden" markdown="1">

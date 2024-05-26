@@ -5,12 +5,12 @@ categories: [Quantum Mechanics]
 tag: [quantum mechanics]
 math: true
 ---
-## Introduction
+## 1. Introduction
 The addition of angular momenta is a fundamental problem in modern physics. For instance, when dealing with systems composed of multiple particles, such as atoms with multiple electrons, the total angular momentum of system is crucial. Specifically, we often inquire about how to add the orbital angular momentum and intrinsic spin momentum of an electron.
 
 In this post, we will discuss the addition of two angular momenta for a quantum system and provide the general formula for the Clebsch-Gordan coefficients (CG coefficients). These coefficients are numbers that relate the total angular momentum eigenstates to the uncoupled tensor product basis.
 
-## Total angular momentum and state space
+## 2. Total angular momentum and state space
 Consider a system formed by the union of two subsystems. The two angular momentum operators $\hat{\mathbf{J}}_1$ and $\hat{\mathbf{J}}_2$ are in different subspaces $V(j_1)$ and $V(j_2)$ respectively. We assume that $\hat{\mathbf{J}}_1$ and $\hat{\mathbf{J}}_2$ are independent, both of them satisfies the usual commutation relations
 
 $$
@@ -161,7 +161,7 @@ $$
 $$
 
 Thus, $\braket{j_1,m_1,j_2,m_2}{ j_1,j_2,J,M} = \braket{j_1,j_2,J,M}{ j_1,m_1,j_2,m_2}$.
-## Orthogonality relations and recursion relations
+## 3. Orthogonality relations and recursion relations
 Because the uncoupled basis and coupled basis are both individually orthogonal and complete, we can directly obtain two orthogonal relations for the CG coefficients, which means
 
 $$
@@ -230,7 +230,7 @@ $$
 }
 $$
 
-## General expression for the Clebsch-Gordan coefficients
+## 4. General expression for the Clebsch-Gordan coefficients
 Using the previously obtained recursion relations and orthogonality relations, in this section, we will derive the general expression for CG coefficients. Note that we are adopting the convention mentioned earlier so that the CG coefficients are uniquely determined.
 
 From the recursion relation (I), let $M=J$, the left hand side of the equation becomes zero, so
@@ -419,7 +419,7 @@ $$
 
 The summation is extended over all integer $k$  for which the argument of every factorial is nonnegative.
 
-## Symmetry properties
+## 5. Symmetry properties
 Here, we list some symmetry properties of CG coefficients, which can be proven using either the recursion relations or the general expression for CG coefficients.
 
 $$
@@ -433,7 +433,7 @@ $$
 \end{align}
 $$
 
-## CG coefficients table
+## 6. CG coefficients table
 Below are partial tables of CG coefficients. You can get the corresponding CG coefficients from the tables directly.
 
 ![CG table](/assets/img/in-post/2023/2023-11-17/CG-coefficients-table.png){: .light}
@@ -446,7 +446,7 @@ In:= ClebschGordan[{5,0},{4,0},{1,0}]
 Out:= sqrt{5/33}
 ```
 
-## References
+## 7. References
 
 - [1] A. R. Edmonds. *Angular Momentum in Quantum Mechanics*. Princeton University Press. 1996
 - [2] J. J. Sakurai, Jim Napolitano. *Modern Quantum Mechanics*. Cambridge University Press. 2020

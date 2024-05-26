@@ -39,7 +39,7 @@ $$
 \end{equation}
 $$
 
-The $\hat{T}$ product here represents a generalization of the time ordering operator,
+The $\hat{T}$ product here represents a generalization of the time-ordering operator,
 
 $$
 \begin{equation}
@@ -546,7 +546,7 @@ $$
 \end{align}
 $$
 
-## 3. The single particle Green's function for free fermions
+## 3. Free fermions
 As an example of the above formalism, we will consider the single particle Green's function for a noninteracting homogeneous system of fermions. The Hamiltonian of the system is
 
 $$
@@ -678,7 +678,7 @@ Then we find
 
 $$
 \begin{align*}
-    iG_{\alpha\beta}^0 &=
+    iG_{\alpha\beta}^0(\vb{x},t;\vb{x}',t') &=
     \begin{aligned}[t]
         &\theta(t-t')\frac{\delta_{\alpha\beta}}{V} \sum_{\mathbf{k}}\e^{i\mathbf{k}\cdot(\mathbf{x}-\mathbf{x}')}\e^{-i\omega_{\mathbf{k}}(t-t')}\theta(\abs{\mathbf{k}}-k_F)\\[.2cm]
         -{} &{}\theta(t-t') \frac{\delta_{\alpha\beta}}{V} \sum_{\mathbf{k}}\e^{i\mathbf{k}\cdot(\mathbf{x}-\mathbf{x}')} \e^{-i\omega_\mathbf{k}(t-t')}\theta(k_F-\abs{\mathbf{k}}).
@@ -693,8 +693,8 @@ Thus we finally obtain the single particle Green's function for free fermions
 $$
 \begin{equation}
 \begin{split}
-     G_{\alpha\beta}^0&= -i \frac{\delta_{\alpha\beta}}{V} \sum_{\mathbf{k}}\qty[\theta(t-t')\theta(\abs{\mathbf{k}}-k_F)-\theta(t'-t)\theta(k_F-\abs{\mathbf{k}})] \e^{i\mathbf{k}\cdot(\mathbf{x}-\mathbf{x}')} \e^{-i\omega_{\vb{k}} (t-t')}\\[.2cm]
-     &= -i \delta_{\alpha\beta} \int \frac{\dd[3]{k}}{(2\pi)^3} \qty[\theta(t-t')\theta(\abs{\mathbf{k}}-k_F)-\theta(t'-t)\theta(k_F-\abs{\mathbf{k}})]\e^{i\mathbf{k}\cdot(\mathbf{x}-\mathbf{x}')} \e^{-i\omega_{\mathbf{k}}(t-t')}.
+     iG_{\alpha\beta}^0(\vb{x},t;\vb{x}',t')&=  \frac{\delta_{\alpha\beta}}{V} \sum_{\mathbf{k}}\qty[\theta(t-t')\theta(\abs{\mathbf{k}}-k_F)-\theta(t'-t)\theta(k_F-\abs{\mathbf{k}})] \e^{i\mathbf{k}\cdot(\mathbf{x}-\mathbf{x}')} \e^{-i\omega_{\vb{k}} (t-t')}\\[.2cm]
+     &= \delta_{\alpha\beta} \int \frac{\dd[3]{k}}{(2\pi)^3} \qty[\theta(t-t')\theta(\abs{\mathbf{k}}-k_F)-\theta(t'-t)\theta(k_F-\abs{\mathbf{k}})]\e^{i\mathbf{k}\cdot(\mathbf{x}-\mathbf{x}')} \e^{-i\omega_{\mathbf{k}}(t-t')}.
 \end{split}
 \label{Green function}
 \end{equation}
@@ -763,7 +763,7 @@ _Contour for the step function._
 So the Green's function in $\eqref{Green function}$ can be rewritten as
 
 $$
-    G_{\alpha\beta}^0 (\vb{x},t;\vb{x}',t') = \int \frac{\dd[3]{k}\dd[\omega]}{(2\pi)^4} \e^{i\mathbf{k}\cdot\mathbf{\mathbf{x}-\mathbf{x}'}}\e^{-i\omega (t-t')} \times \delta_{\alpha\beta}\qty[\frac{\theta(|\mathbf{k}|-k_F)}{\omega-\omega_{\mathbf{k}} + i\eta} + \frac{\theta(k_F- |\mathbf{k}|)}{\omega-\omega_{\mathbf{k}}-i\eta}],
+    G_{\alpha\beta}^0 (\vb{x},t;\vb{x}',t') = \int \frac{\dd[3]{k}\dd{\omega}}{(2\pi)^4} \e^{i\mathbf{k}\cdot(\mathbf{x}-\mathbf{x}')}\e^{-i\omega (t-t')} \times \delta_{\alpha\beta}\qty[\frac{\theta(|\mathbf{k}|-k_F)}{\omega-\omega_{\mathbf{k}} + i\eta} + \frac{\theta(k_F- |\mathbf{k}|)}{\omega-\omega_{\mathbf{k}}-i\eta}],
 $$
 
 which immediately yields

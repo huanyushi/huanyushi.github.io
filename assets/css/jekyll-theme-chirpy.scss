@@ -57,9 +57,9 @@ blockquote[class^='prompt-']{
 }
 
 // 让目录不产生折叠效果
-// .is-collapsed {
-//   max-height: none !important;
-// }
+.is-collapsed {
+  max-height: none !important;
+}
 
 
 @import "animation.scss";    // 背景动画样式

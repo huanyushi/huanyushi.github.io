@@ -1,5 +1,5 @@
 ---
-title:      "&sect;2.2 Analytic Properties of Single-Particle Green's functions (fermions)"
+title:      "&sect;2.2 The Lehmann Representation of Green's functions (fermions)"
 date:       2024-05-22
 categories: [Condensed Matter Physics, Quantum Many-Particle Theory]
 tag: [condensed matter physics, many-particle physics]
@@ -7,7 +7,7 @@ media_subpath : /assets/img/in-post/many-particle-physics/
 math: true
 ---
 
-In this post, we discuss more analytic properties of single-particle Green's functions. Moreover, we will derive the **Lehmann representation** of single particle Green's functions in detail. Although our final expressions are *formally* applicable to both bosons and fermions, the existence of Bose condensation at $T=0$ introduces additional complications, and we shall consider only fermions in next sections. 
+In this post, we discuss more analytic properties of single-particle Green's functions. Moreover, we will derive the **Lehmann representation** of single particle Green's functions (and **retarded** and **advanced** Green's function) in detail. Although our final expressions are *formally* applicable to both bosons and fermions, the existence of Bose condensation at $T=0$ introduces additional complications, and we shall consider only fermions in next posts. 
 
 ## 1. The Lehmann representation of single-particle Green's functions
 ### 1.1. The Lehmann representation
@@ -22,7 +22,7 @@ $$
 \end{equation}
 $$
 
-where $E_n(N)$ represents the $n$-th excited energy when the number of particles is $N$. We usually write $\ket{N,E\_n(N),\hat{\mathbf{P}}(N)}$ simply as $\ket{N,n,\hat{\mathbf{P}}}$.The ground state is defined as $\ket{N\_g,E\_g(N_g),\mathbf{P}\_g(N\_g)}$, its energy is $E\_{n=0}=E\_g$. 
+where $E_n(N)$ represents the $n$-th excited energy when the number of particles is $N$. We usually write $\ket{N,E\_n(N),\mathbf{P}(N)}$ simply as $\ket{N,n,\mathbf{P}}$. The ground state is defined as $\ket{N\_g,E\_g(N_g),\mathbf{P}\_g(N\_g)}$, its energy is $E\_{n=0}=E\_g$. 
 
 Now we assume that $\hat{H}$ is *time independent* and the system is *translational invariance* (i.e. $[\hat{H},\hat{\mathbf{P}}] =0 $). Then the Green's function can be rewritten as
 
@@ -189,7 +189,7 @@ where $A_{\alpha\beta}$ and $B_{\alpha\beta}$ are defined in $\eqref{weight func
 </div>
 
 
-### 1.2. The analytic properties
+### 1.2. Analytic properties
 
 Now we will discuss the analytic properties of the Green's function. The crucial observation is that *the function $G_{\alpha\beta}(\vb{k},\omega)$ is a meromorphic function of $\hbar\omega$, with simple poles at the exact excitation energies of the interacting system corresponding to a momentum $\hbar\vb{k}$*. For frequencies below $\mu/\hbar$, these singularities lie slightly above the real axis, and for frequencies above $\mu/\hbar$, these singularities lie slightly below the real axis.
 
@@ -281,7 +281,7 @@ $$
 
 </div>
 
-Note that $G^{R}(\vb{k},\omega)$ and $G^{A}(\vb{k},\omega)$ are again meromorphic functions of $\omega$. All the poles of $G^{R}(\vb{k},\omega)$ lie in the lower half plane, so that $G^{R}\_{\alpha\beta}(\vb{k},\omega)$ is analytic for $\mathrm{Im}\ \omega >0$; in contrast, all the poles of $G^{A}\_{\alpha\beta}(\vb{k},\omega)$ lie in the upper half plane, so that $G^{A}\_{\alpha\beta}(\vb{k},\omega)$ is analytic for $\mathrm{Im}\ \omega<0$.
+Note that $G^{R}\_{\alpha\beta}(\vb{k},\omega)$ and $G^{A}\_{\alpha\beta}(\vb{k},\omega)$ are again meromorphic functions of $\omega$. All the poles of $G^{R}\_{\alpha\beta}(\vb{k},\omega)$ lie in the lower half plane, so that $G^{R}\_{\alpha\beta}(\vb{k},\omega)$ is analytic for $\mathrm{Im}\ \omega >0$; in contrast, all the poles of $G^{A}\_{\alpha\beta}(\vb{k},\omega)$ lie in the upper half plane, so that $G^{A}\_{\alpha\beta}(\vb{k},\omega)$ is analytic for $\mathrm{Im}\ \omega<0$.
 
 ![singularity of retarded and advanced Green's function](singularity-green-function-RA.PNG){: .light}
 ![singularity of retarded and advanced Green's function](singularity-green-function-RA-dark.PNG){: .dark}
@@ -379,14 +379,14 @@ $$
   $$
 
 ## 3. Interaction independent of spin
-### 3.1. The spectral functions
+### 3.1. Spectral functions
 
-If the interaction is independent of particle' spin, then
+If the interaction is independent of particle's spin, then
 
 $$
 \begin{gather}
-G_{\alpha\beta} = G \delta_{\alpha\beta}\quad  G = \frac{1}{2s+1} \sum_{\alpha}G_{\alpha\alpha} = \frac{1}{2s+1}G_{\alpha\alpha},\\[.2cm]
-G_{\alpha\beta}^{R,A} = G^{R,A} \delta_{\alpha\beta}\quad  G^{R,A} = \frac{1}{2s+1} \sum_{\alpha}G^{R,A}_{\alpha\alpha} = \frac{1}{2s+1}G_{\alpha\alpha}^{R,A},
+G_{\alpha\beta} = G \delta_{\alpha\beta},\quad  G = \frac{1}{2s+1} \sum_{\alpha}G_{\alpha\alpha},\\[.2cm]
+G_{\alpha\beta}^{R,A} = G^{R,A} \delta_{\alpha\beta},\quad  G^{R,A} = \frac{1}{2s+1} \sum_{\alpha}G^{R,A}_{\alpha\alpha} ,
 \end{gather}
 $$
 
@@ -401,11 +401,10 @@ $$
          &\quad {}+ \frac{\abs{\mel{N_g-1,E_n(N_g-1),\vb{k}}{\hat{\psi}_{\alpha}(0)}{\psi_H^0}}^2}{\hbar \omega - \mu + \epsilon_{n,-\vb{k}}(N_g-1)-i\eta}
     \Bigg]
 \end{split}
-\label{}
 \end{equation}
 $$
 
-And we introduce two positive-definite weight functions $A(\vb{k},\omega)$ and $B(\vb{k},\omega)$ called the spectral functions:
+And we introduce two positive-definite weight functions $A(\vb{k},\omega)$ and $B(\vb{k},\omega)$ called the **spectral functions**:
 
 <div class="box-info" markdown="1">
 <div class="title"> Definition: spectral functions </div>
@@ -479,7 +478,7 @@ $$
 \end{align}
 $$
 
-Through it we can also get the relation $\eqref{relation 1}$, $\eqref{relation 2}$ and $\eqref{relation 3}$.
+Through it we can also get the relations $\eqref{relation 1}$, $\eqref{relation 2}$ and $\eqref{relation 3}$.
 
 
 ### 3.2. Dispersion relations
@@ -489,12 +488,12 @@ Through it we can also get the relation $\eqref{relation 1}$, $\eqref{relation 2
 
 $$
 \begin{align}
-    & \mathrm{Re}\ G(\vb{k},\omega) = \mathcal{P}\frac{1}{\pi}\int_{-\infty}^{\infty}\dd{\omega'} \frac{\mathrm{Im}\ G(\vb{k},\omega')}{\omega'-\omega}\mathrm{sign}(\omega'-\hbar^{-1}\mu)\\[.2cm]
-    & \mathrm{Im}\ G(\vb{k},\omega) = - \mathcal{P} \frac{1}{\pi}\mathrm{sign} (\omega-\hbar^{-1}\mu) \int_{-\infty}^{\infty}\dd{\omega'} \frac{\mathrm{Re}\ G(\vb{k},\omega')}{\omega'-\omega}\\[.2cm]
-    &\mathrm{Re}\ G^{R}(\vb{k},\omega) = \mathcal{P}\frac{1}{\pi} \int_{-\infty}^{\infty}\dd{\omega'} \frac{\mathrm{Im}\ G^{R}(\vb{k},\omega')}{\omega'-\omega}\\[.2cm]
-    &\mathrm{Im}\ G^{R}(\vb{k},\omega) = -\mathcal{P}\frac{1}{\pi} \int_{-\infty}^{\infty}\dd{\omega'} \frac{\mathrm{Im}\ G^{R}(\vb{k},\omega')}{\omega'-\omega}\\[.2cm]
-    &\mathrm{Re}\ G^{A}(\vb{k},\omega) = - \mathcal{P}\frac{1}{\pi} \int_{-\infty}^{\infty}\dd{\omega'} \frac{\mathrm{Im}\ G^{A}(\vb{k},\omega')}{\omega'-\omega}\\[.2cm]
-    &\mathrm{Im}\ G^{A}(\vb{k},\omega) = \mathcal{P}\frac{1}{\pi} \int_{-\infty}^{\infty}\dd{\omega'} \frac{\mathrm{Im}\ G^{A}(\vb{k},\omega')}{\omega'-\omega}\\[.2cm]
+    & \mathrm{Re}\ G(\vb{k},\omega) = \mathcal{P}\frac{1}{\pi}\int_{-\infty}^{\infty}\dd{\omega'} \frac{\mathrm{Im}\ G(\vb{k},\omega')}{\omega'-\omega}\mathrm{sign}(\omega'-\hbar^{-1}\mu),\\[.2cm]
+    & \mathrm{Im}\ G(\vb{k},\omega) = - \mathcal{P} \frac{1}{\pi}\mathrm{sign} (\omega-\hbar^{-1}\mu) \int_{-\infty}^{\infty}\dd{\omega'} \frac{\mathrm{Re}\ G(\vb{k},\omega')}{\omega'-\omega},\\[.2cm]
+    &\mathrm{Re}\ G^{R}(\vb{k},\omega) = \mathcal{P}\frac{1}{\pi} \int_{-\infty}^{\infty}\dd{\omega'} \frac{\mathrm{Im}\ G^{R}(\vb{k},\omega')}{\omega'-\omega},\\[.2cm]
+    &\mathrm{Im}\ G^{R}(\vb{k},\omega) = -\mathcal{P}\frac{1}{\pi} \int_{-\infty}^{\infty}\dd{\omega'} \frac{\mathrm{Im}\ G^{R}(\vb{k},\omega')}{\omega'-\omega},\\[.2cm]
+    &\mathrm{Re}\ G^{A}(\vb{k},\omega) = - \mathcal{P}\frac{1}{\pi} \int_{-\infty}^{\infty}\dd{\omega'} \frac{\mathrm{Im}\ G^{A}(\vb{k},\omega')}{\omega'-\omega},\\[.2cm]
+    &\mathrm{Im}\ G^{A}(\vb{k},\omega) = \mathcal{P}\frac{1}{\pi} \int_{-\infty}^{\infty}\dd{\omega'} \frac{\mathrm{Im}\ G^{A}(\vb{k},\omega')}{\omega'-\omega}.
 \end{align}
 $$
 
@@ -568,7 +567,7 @@ Thus,
 
 $$
 \begin{gather*}
-    I_{C_1} + I_{C_2} = \mathcal{P} \int_{-\infty}^{\infty}\frac{G^{R}(\vb{k},\omega')}{\omega'-\omega} \dd{\omega'} = -I_{C_\delta} = i\pi G^{R}(\vb{k},\omega) \\[.2cm]
+    I_{C_1} + I_{C_2} = \mathcal{P} \int_{-\infty}^{\infty}\frac{G^{R}(\vb{k},\omega')}{\omega'-\omega} \dd{\omega'} = -I_{C_\delta} = i\pi G^{R}(\vb{k},\omega), \\[.2cm]
    \Rightarrow \quad \mathcal{P}\int_{-\infty}^{\infty}\frac{\mathrm{Re}\ G^{R}(\vb{k},\omega') + i\ \mathrm{Im}\ G^{R}(\vb{k},\omega')}{\omega'-\omega}\dd{\omega'} = i \pi \qty[\mathrm{Re}\ G^{R}(\vb{k},\omega') + i\ \mathrm{Im}\ G^{R}(\vb{k},\omega') ].
 \end{gather*}
 $$
@@ -577,17 +576,17 @@ Comparing the real part and image part respectively, we can get desired results:
 
 $$
 \begin{align*}
-    &\mathrm{Re}\ G^{R}(\vb{k},\omega) = \mathcal{P}\frac{1}{\pi} \int_{-\infty}^{\infty}\dd{\omega'} \frac{\mathrm{Im}\ G^{R}(\vb{k},\omega')}{\omega'-\omega}\\[.2cm]
-    &\mathrm{Im}\ G^{R}(\vb{k},\omega) =-\mathcal{P}\frac{1}{\pi} \int_{-\infty}^{\infty}\dd{\omega'} \frac{\mathrm{Im}\ G^{R}(\vb{k},\omega')}{\omega'-\omega}
+    &\mathrm{Re}\ G^{R}(\vb{k},\omega) = \mathcal{P}\frac{1}{\pi} \int_{-\infty}^{\infty}\dd{\omega'} \frac{\mathrm{Im}\ G^{R}(\vb{k},\omega')}{\omega'-\omega},\\[.2cm]
+    &\mathrm{Im}\ G^{R}(\vb{k},\omega) =-\mathcal{P}\frac{1}{\pi} \int_{-\infty}^{\infty}\dd{\omega'} \frac{\mathrm{Im}\ G^{R}(\vb{k},\omega')}{\omega'-\omega}.
 \end{align*}
 $$
 
-The same method can be used to prove dispersion relations of $G^{A}$, but we need to choose the lower half $z$ plane since $G^A$ is analytic on the lower half $z$ plane. Thus
+The same method can be used to prove dispersion relations of $G^{A}$, but we need to choose the lower half $z$ plane since $G^A$ is analytic on the lower half $z$ plane. So
 
 $$
 \begin{align*}
-    &\mathrm{Re}\ G^{A}(\vb{k},\omega) = - \mathcal{P}\frac{1}{\pi} \int_{-\infty}^{\infty}\dd{\omega'} \frac{\mathrm{Im}\ G^{A}(\vb{k},\omega')}{\omega'-\omega}\\[.2cm]
-    &\mathrm{Im}\ G^{A}(\vb{k},\omega) = \mathcal{P}\frac{1}{\pi} \int_{-\infty}^{\infty}\dd{\omega'} \frac{\mathrm{Im}\ G^{A}(\vb{k},\omega')}{\omega'-\omega}\\
+    &\mathrm{Re}\ G^{A}(\vb{k},\omega) = - \mathcal{P}\frac{1}{\pi} \int_{-\infty}^{\infty}\dd{\omega'} \frac{\mathrm{Im}\ G^{A}(\vb{k},\omega')}{\omega'-\omega},\\[.2cm]
+    &\mathrm{Im}\ G^{A}(\vb{k},\omega) = \mathcal{P}\frac{1}{\pi} \int_{-\infty}^{\infty}\dd{\omega'} \frac{\mathrm{Im}\ G^{A}(\vb{k},\omega')}{\omega'-\omega}.
 \end{align*}
 $$
 
@@ -601,14 +600,14 @@ For single particle Green's function, we have
 
 $$
 \begin{align*}
-    \mathrm{Re}G(\vb{k},\omega)& = \mathrm{Re}\ G^{R}(\vb{k},\omega) =  \mathcal{P}\frac{1}{\pi} \int_{-\infty}^{\infty}\dd{\omega'} \frac{\mathrm{Im}\ G^{R}(\vb{k},\omega')}{\omega'-\omega}\\[.2cm]
+    \mathrm{Re}\ G(\vb{k},\omega)& = \mathrm{Re}\ G^{R}(\vb{k},\omega) =  \mathcal{P}\frac{1}{\pi} \int_{-\infty}^{\infty}\dd{\omega'} \frac{\mathrm{Im}\ G^{R}(\vb{k},\omega')}{\omega'-\omega}\\[.2cm]
     &= \mathcal{P}\frac{1}{\pi} \int_{-\infty}^{\hbar^{-1}\mu}\dd{\omega'} \frac{\mathrm{Im}\ G^{R}(\vb{k},\omega')}{\omega'-\omega} + 
      \mathcal{P}\frac{1}{\pi} \int_{\hbar^{-1}\mu}^{\infty}\dd{\omega'} \frac{\mathrm{Im}\ G^{R}(\vb{k},\omega')}{\omega'-\omega}\\[.2cm]
     &=-\mathcal{P}\frac{1}{\pi} \int_{-\infty}^{\hbar^{-1}\mu}\dd{\omega'} \frac{\mathrm{Im}\ G^{A}(\vb{k},\omega')}{\omega'-\omega} + 
      \mathcal{P}\frac{1}{\pi} \int_{\hbar^{-1}\mu}^{\infty}\dd{\omega'} \frac{\mathrm{Im}\ G^{R}(\vb{k},\omega')}{\omega'-\omega}\\[.2cm]
     &=\mathcal{P}\frac{1}{\pi} \int_{-\infty}^{\hbar^{-1}\mu}\dd{\omega'} \frac{\mathrm{sign}(\omega'-\hbar^{-1}\mu)\mathrm{Im}\ G(\vb{k},\omega')}{\omega'-\omega} + 
      \mathcal{P}\frac{1}{\pi} \int_{\hbar^{-1}\mu}^{\infty}\dd{\omega'} \frac{\mathrm{sign}(\omega'-\hbar^{-1}\mu)\mathrm{Im}\ G^{R}(\vb{k},\omega')}{\omega'-\omega}\\[.2cm]
-   &=\mathcal{P}\frac{1}{\pi}\int_{-\infty}^{\infty}\dd{\omega'} \frac{\mathrm{Im}\ G(\vb{k},\omega')}{\omega'-\hbar^{-1}\omega}\mathrm{sign}(\omega'-\mu).
+   &=\mathcal{P}\frac{1}{\pi}\int_{-\infty}^{\infty}\dd{\omega'} \frac{\mathrm{Im}\ G(\vb{k},\omega')}{\omega'-\omega}\mathrm{sign}(\omega'-\hbar^{-1}\mu).
 \end{align*}
 $$
 
@@ -617,10 +616,16 @@ A similar analysis for $\mathrm{Im}\ G(\vb{k},\omega)$ yields
 $$
 \begin{align*}
     \mathrm{Im}\ G(\vb{k},\omega) &=\theta(\omega - \hbar^{-1}\mu) \mathrm{Im}\ G^{R}(\vb{k},\omega) + \theta(\mu - \hbar^{-1}\omega) \mathrm{Im}\ G^{A}(\vb{k},\omega)\\[.2cm]
-    &=\theta(\omega-\hbar^{-1}\mu)\qty(-\mathcal{P}\frac{1}{\pi} \int_{-\infty}^{\infty}\frac{\mathrm{Re}\ G(\vb{k},\omega')}{\omega'-\omega}\dd{\omega'}) + \theta(\hbar^{-1}-\omega) \qty(\mathcal{P}\frac{1}{\pi}\int_{-\infty}^{\infty}\frac{\mathrm{Re}\ G(\vb{k},\omega')}{\omega'-\omega}\dd{\omega'})\\[.2cm]
+    &=\theta(\omega-\hbar^{-1}\mu)\qty(-\mathcal{P}\frac{1}{\pi} \int_{-\infty}^{\infty}\frac{\mathrm{Re}\ G(\vb{k},\omega')}{\omega'-\omega}\dd{\omega'}) + \theta(\hbar^{-1}\mu-\omega) \qty(\mathcal{P}\frac{1}{\pi}\int_{-\infty}^{\infty}\frac{\mathrm{Re}\ G(\vb{k},\omega')}{\omega'-\omega}\dd{\omega'})\\[.2cm]
     &=  - \mathcal{P} \frac{1}{\pi}\mathrm{sign} (\omega-\hbar^{-1}\mu) \int_{-\infty}^{\infty}\dd{\omega'} \frac{\mathrm{Re}\ G(\vb{k},\omega')}{\omega'-\omega}.
 \end{align*}
 $$
 
 <p style="text-align: right;"> &#x220E; </p>
 </details>
+
+## 4. References
+1. Fetter, A. L., Walecka, J. D., *Quantum Theory of Many-Particle Systems*. Courier Corporation. (2002)
+2. Mahan, G. D., *Many-Particle Physics*. Springer Science+Business Media, LLC. (2000).
+3. Altland, A., Simons, B. D., *Condensed Matter Field Theory*. Cambridge University Press. (2010)
+4. 金彪. 量子多体理论. 2024年春

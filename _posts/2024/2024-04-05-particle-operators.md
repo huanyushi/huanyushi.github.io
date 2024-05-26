@@ -224,7 +224,7 @@ $$
 \end{equation}
 $$
 
-where $\hat{f}_{\alpha\alpha',\beta\beta'}(\vb{x},\vb{x}') = \bra{\alpha}\otimes \bra{\beta}\hat{f}(\vb{x},\vb{x}';\hat{\vb{p}},\hat{\vb{p}}';\hat{s},\hat{s}')\ket{\alpha'}\otimes \ket{\beta'}$.
+where $\hat{f}_{\alpha\alpha',\beta\beta'}(\vb{x},\vb{x}') = \bra{\alpha}\otimes \bra{\beta}\hat{f}\ket{\alpha'}\otimes \ket{\beta'}$. Note that we have left out $\hat{\mathbf{p}}$ and $\hat{s}$ here.
 
 </div>
 
@@ -391,11 +391,11 @@ Total kinetic energy operator in Bloch representation is
 
 $$
 \begin{equation}
-    \hat{T} = \sum_{\sigma} \int\dd[3]{x} \hat{\psi}_{\sigma}(\vb{x}) \qty(-\frac{\nabla^2}{2m}) \hat{\psi}_{\sigma}(\vb{x}) = \sum_{\sigma}\sum_{\vb{k}}\sum_{\vb{k}'}\hat{b}_{\vb{k}\sigma}^\dagger\hat{b}_{\vb{k}'\sigma}V_{\vb{k}\vb{k}'},
+    \hat{T} = \sum_{\sigma} \int\dd[3]{x} \hat{\psi}_{\sigma}(\vb{x}) \qty(-\frac{\hbar^2\nabla^2}{2m}) \hat{\psi}_{\sigma}(\vb{x}) = \sum_{\sigma}\sum_{\vb{k}}\sum_{\vb{k}'}\hat{b}_{\vb{k}\sigma}^\dagger\hat{b}_{\vb{k}'\sigma}V_{\vb{k}\vb{k}'},
 \end{equation}
 $$
 
-where $\displaystyle{V_{\vb{k}\vb{k}'} = \int\dd[3]x \psi_{\vb{k}}^{B*}(\vb{x})\qty[-\frac{\nabla^2}{2m}]\psi_{\vb{k'}\sigma}^{B}(\vb{x})}$.
+where $\displaystyle{V_{\vb{k}\vb{k}'} = \int\dd[3]x \psi_{\vb{k}}^{B*}(\vb{x})\qty[-\frac{\hbar^2\nabla^2}{2m}]\psi_{\vb{k'}\sigma}^{B}(\vb{x})}$.
 </div>
 
 ### 3.3. Wannier representation
@@ -441,11 +441,12 @@ Total kinetic energy operator in Wannier representation is
 
 $$
 \begin{align}
-\hat{T} &= \sum_\alpha \int \dd[3]{x} \hat{\psi}^{\dagger}_{\alpha}(\vb{x}) \qty(-\frac{\nabla^2}{2m}) \hat{\psi}_{\alpha}(\vb{x})\notag\\[.2cm] 
-&= \sum_{\alpha}\sum_{\vb{R}_l}\sum_{\vb{R}_{l'}} \hat{a}_{l'\alpha}^{\dagger}\hat{a}_{l\alpha} \underbrace{\int\dd[3]{x} a^*(\vb{x}-\vb{R}_{l'})\qty(-\frac{\nabla^2}{2m}) a(\vb{x}-\vb{R}_l)}_{T_{l'l}} \\[.2cm]
+\hat{T} &= \sum_\alpha \int \dd[3]{x} \hat{\psi}^{\dagger}_{\alpha}(\vb{x}) \qty(-\frac{\hbar^2\nabla^2}{2m}) \hat{\psi}_{\alpha}(\vb{x})\notag\\[.2cm] 
+&= \sum_{\alpha}\sum_{\vb{R}_l}\sum_{\vb{R}_{l'}} \hat{a}_{l'\alpha}^{\dagger}\hat{a}_{l\alpha} \underbrace{\int\dd[3]{x} a^*(\vb{x}-\vb{R}_{l'})\qty(-\frac{\hbar^2\nabla^2}{2m}) a(\vb{x}-\vb{R}_l)}_{T_{l'l}} \\[.2cm]
 &= \sum_{\alpha}\sum_{l}\sum_{l'}T_{l'l}\hat{a}_{l'\alpha}^{\dagger}\hat{a}_{l\alpha}.
 \end{align}
 $$
+
 </div>
 
 
@@ -453,7 +454,7 @@ $$
 All our previous discussions have been in the Schr&ouml;dinger picture, but employing different pictures such as the Heisenberg picture and the interaction picture might yield remarkable results when dealing with other problems. Here, we briefly introduce the Heisenberg picture and the interaction picture.
 
 ### 4.1. Heisenberg picture
-In the case where $\hat{H}$ is independent of $t$, the time evolution operator is $\hat{U}(t,t_0) = \mathrm{e}^{-i\hat{H}(t-t_0)/\hbar}$. And the field operators in Heisenberg picture are
+In the case where $\hat{H}$ is independent of $t$, the time evolution operator is $\hat{U}(t,t_0) = \mathrm{e}^{-i\hat{H}(t-t_0)/\hbar}$. And the field operators in the Heisenberg picture are
 
 $$
 \begin{equation}
@@ -476,7 +477,7 @@ This can be demonstrated using the commutation (or anticommutation) relations in
 
 $$
 \begin{equation}
-    \hat{O}_{H}(t) = \e^{i\hat{H}(t-t_0)/\hbar} \hat{O}_{S}(t_0) \e^{-i\hat{H}(t-t_0)/\hbar},
+    \hat{O}_{H}(t) = \e^{i\hat{H}(t-t_0)/\hbar} \hat{O}_{S}(t_0) \e^{-i\hat{H}(t-t_0)/\hbar} = \hat{U}^{\dagger}(t,t_0)\hat{O}_{S}(t_0)\hat{U}(t,t_0),
 \end{equation}
 $$
 
@@ -488,8 +489,27 @@ $$
 \end{equation}
 $$
 
+Any state vectors in the Heisenberg picture do not depend on time,
+
+$$
+\begin{equation}
+    \ket{\psi_H(t)} = \hat{U}^{\dagger}(t,t_0)\ket{\psi_S(t)} = \hat{U}^\dagger(t,t_0)\hat{U}(t,t_0)\ket{\psi_S(t_0)} = \ket{\psi_S(t_0)} = \ket{\psi_H(t_0)}.
+\end{equation}
+$$
+
+> In general, the Hamiltonian $\hat{H}$ depend on time $t$, so the time evolution operator should be generalized as
+>
+> $$
+> \begin{equation}
+>    \hat{U}(t,t_0) = \hat{\mathsf{T}}\exp\qty[- \frac{i}{\hbar} \int_{t_0}^{t}\dd{t'}\hat{H}(t')],\quad (t>t_0)
+> \end{equation}
+> $$
+>
+> where $\hat{\mathsf{T}}$ is the time-ordering operator.
+{: .prompt-info}
+
 ### 4.2. Interaction picture
-The Hamiltonian is $\hat{H} = \hat{H}_0 + \hat{V}$ where $\hat{V}$ is interaction operator. We can solve Schr&ouml;dinger equation exactly when $\hat{V} =0$. And $\hat{H}_0\ket{\phi^0} = E_g^0 \ket{\phi^0}$. Then the field operators in interaction picture  are
+The Hamiltonian is $\hat{H} = \hat{H}_0 + \hat{V}$ where $\hat{V}$ is the interaction operator. We can solve Schr&ouml;dinger equation exactly when $\hat{V} =0$. And $\hat{H}_0\ket{\phi^0} = E_g^0 \ket{\phi^0}$. Then the field operators in the interaction picture  are
 
 $$
 \begin{equation}
@@ -519,10 +539,45 @@ Its time evolution equation is
 
 $$
 \begin{equation}
-    i\hbar \pdv{t} \hat{O}_I(t) = [\hat{O}_I(t),\hat{H}_0]
+    i\hbar \pdv{t} \hat{O}_I(t) = [\hat{O}_I(t),\hat{H}_0].
 \end{equation}
 $$
 
+And state vectors in the interaction picture are defined as
+
+$$
+\begin{equation}
+    \ket{\psi_I(t)} = \e^{i\hat{H_0}(t-t_0)/\hbar}\ket{\psi_{S}(t)} := \hat{S}(t,t_0)\ket{\psi_I(t_0)},
+\end{equation}
+$$
+
+where $\hat{S}(t,t_0)$ is the time evolution operator. And
+
+$$
+\begin{equation}
+    \hat{S}(t,t') = \e^{i\hat{H_0}(t-t_0)/\hbar} \hat{U}(t,t') \e^{-i\hat{H}_0(t-t_0/\hbar).} 
+\end{equation}
+$$
+
+> The time evolution operator in the interaction picture can be expressed as
+>
+> $$
+> \begin{equation}
+>     \hat{S}(t,t_0) = \hat{\mathsf{T}} \exp\qty[-\frac{i}{\hbar}\int_{t_0}^{t} \hat{V}_I(t')\dd{t'}], \quad (t>t_0)
+> \end{equation}
+> $$ 
+>
+> where $\hat{\mathsf{T}}$ is the time-ordering operator.
+{: .prompt-info}
+
+If we want to switch Heisenberg picture to the interaction picture, we have the following relations:
+
+$$
+\begin{gather}
+    \ket{\psi_H} = \hat{S}(t_0,t)\ket{\psi_I(t)},\\[.2cm]
+    \hat{O}_{H}(t) = \hat{S}^\dagger(t,t_0)\hat{O}_I(t)\hat{S}(t,t_0) = \hat{S}(t_0,t)\hat{O}_I(t)\hat{S}(t,t_0).
+\end{gather}
+$$
 
 ## 5. References
 1. Fetter, A. L., Walecka, J. D. *Quantum Theory of Many-Particle Systems*. Courier Corporation (2002).

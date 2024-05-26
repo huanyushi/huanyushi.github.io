@@ -17,8 +17,8 @@ As a classical problem in electrodynamics, I believe most people have encountere
 > In fact, this post was completed when I was a sophomore in college (2021). I am just reposting it this time, please see [here](https://dxwl.bnu.edu.cn/CN/10.16854/j.cnki.1000-0712.220175). In addition, I also answered one of the key integrals on Zhihu, please see [here](https://www.zhihu.com/question/604942674/answer/3061799399).
 {: .prompt-info}
 
-## Problem with Dirichlet boundary condition
-### Special case: $\alpha = \pi/n$
+## 1. Problem with Dirichlet boundary condition
+### 1.1. Special case: $\alpha = \pi/n$
 If $\alpha = \pi/n$, the system exhibits a high degree of symmetry, we can solve it using the *method of images*. Please see the following examples:
 
 ![problem](dirichlet.PNG){: .light}
@@ -51,7 +51,7 @@ $$
 \end{equation}
 $$
 
-### General case: $\alpha$ can be any value
+### 1.2. General case: $\alpha$ can be any value
 When $\alpha$ is arbitrary, the system no longer possesses a definite high degree symmetry, rendering the method of images ineffective. In such cases, solving the Poisson's equation directly becomes the most straightforward approach, 
 
 $$
@@ -74,7 +74,7 @@ $$
 Solving this problem is not easy, we can use the method of separation of variables. But we  still need to approach it step by step.
 
 
-#### Find the eigenfunctions
+#### 1.2.1. Find the eigenfunctions
 Suppose the solution $\Phi$ can be written as $\Phi = R(r)\psi(\phi)Z(z)$, if $\vb{r}\neq\vb{r}_0$, the Poisson's equation becomes Laplace's equation:
 
 $$
@@ -196,7 +196,7 @@ $$
 \end{equation}
 $$
 
-#### Calculate the coefficients
+#### 1.2.2. Calculate the coefficients
 Even though we get $\eqref{equ:general solution}$, it's not the final result we want. Because it still has undetermined coefficients $A_{k\mu},B_{k\mu}$. Note that we have two conditions we haven't used yet,
 
 1. The electric potential should be continuous at $\vb{r} = \vb{r}_0$;
@@ -299,7 +299,7 @@ $$
 K_{k\pi/\alpha}(\mu r_0)I_{k\pi/\alpha}'(\mu r_0)-K_{k\pi/\alpha}'(\mu r_0)I_{k\pi/\alpha}(\mu r_0) = \frac{1}{\mu r_0},
 $$
 
-where the prime means the derivative with resect to $\mu r_0$. The finally results of $A_{k\mu},B_{k\mu}$ are
+where the prime means the derivative with respect to $\mu r_0$. The finally results of $A_{k\mu},B_{k\mu}$ are
 
 $$
 \begin{equation}
@@ -313,7 +313,7 @@ $$
 \end{equation}
 $$
 
-#### Final result
+#### 1.2.3. Final result
 After obtaining the coefficients $A_{k\mu},B_{k\mu}$, integrating $\eqref{equ:general solution}$ and $\eqref{equ:coefficient}$, we can write the final solution of the original problem:
 
 $$
@@ -355,7 +355,7 @@ $$
 
 This is exactly the electric potential in angle domain.
 
-### Prove they are equivalent if $\alpha=\pi/n$
+### 1.3. Prove they are equivalent if $\alpha=\pi/n$
 
 What we can do is not only get the results $\eqref{equ:image solution}$ and $\eqref{equ:final solution}$, we can also mathematically prove that the two solutions are equivalent when $\alpha=\pi/n$, this requires us to prove
 
@@ -476,11 +476,11 @@ $$
 
 Obviously, the result of the above formula is exactly $\eqref{equ:proof-1}$. Thus, for any point where the point charge $Q$ is placed within the area sandwiched by the metal planes, we verify $\eqref{equ:proof-1}$ is indeed true.
 
-## Problem with Neumann boundary condition
+## 2. Problem with Neumann boundary condition
 
 We can do much more than that, we can go further and consider Neumann boundary conditions. Similarly, we will discuss in two cases.
 
-### Special case: $\alpha = \pi/n$
+### 2.1. Special case: $\alpha = \pi/n$
 
 This situation can also be solved using the method of images, for example
 
@@ -505,7 +505,7 @@ $$
 \end{equation}
 $$
 
-### General case: $\alpha$ can be any value
+### 2.2. General case: $\alpha$ can be any value
 In order to satisfy the Neumann boundary condition $\partial_n \Phi =0$ , it is only necessary to modify the eigenfunction in the $\phi$ direction . One thing that needs to be noted is the situation of $k=0$ cannot be thrown away, then
 
 $$
@@ -560,7 +560,7 @@ Q_{\frac{k\pi}{\alpha}-\frac{1}{2}}
 \end{equation}
 $$
 
-### Prove they are equivalent if $\alpha =\pi/n$
+### 2.3. Prove they are equivalent if $\alpha =\pi/n$
 
 Also use formula $\eqref{equ:green function expansion}$,
 
@@ -601,11 +601,11 @@ $$
 
 This is the result given after the two solutions $\eqref{equ:2 solution1}$ and $\eqref{equ:2 solution2}$ are equivalent.
 
-## Problem with mixed boundary condition
+## 3. Problem with mixed boundary condition
 
 The problem with mixed boundary condition can also be solved. See the following results.
 
-### Special case: $\alpha = \pi/2n$
+### 3.1. Special case: $\alpha = \pi/2n$
 
 Note that this is different from the previous two cases. When $\alpha = \pi/(2n-1)$, the method of images is no longer valid. So we just discuss the case when $\alpha = \pi/2n$, see following example
 
@@ -628,7 +628,7 @@ $$
                 \left\{ \frac{(-1)^{k+1}}{\sqrt{r^2+r_0^2+z^2-2rr_0\cos(\phi-\phi_{2k-1})}} + \frac{(-1)^{k+1}}{\sqrt{r^2+r_0^2+z^2-2rr_0\cos(\phi-\phi_{2k})}}\right\} .
 $$
 
-### General case: $\alpha$ can be any value
+### 3.2. General case: $\alpha$ can be any value
 
 Also modify the eigenfunction in the $\phi$ direction by using
 
@@ -673,7 +673,7 @@ $$
 \end{equation}
 $$
 
-### Prove they are equivalent if $\alpha=\pi/2n$
+### 3.3. Prove they are equivalent if $\alpha=\pi/2n$
  Also use formula $\eqref{equ:green function expansion}$, 
 
 $$
@@ -722,7 +722,7 @@ $$
 which is what we want to verify.
 
 
-## Appendix: Prove the integral formula
+## 4. Appendix: Prove the integral formula
 
 We used $\eqref{equ:integral}$ in our previous calculation without proof, and now we prove it. With Sonine-Gegenbauer integral
 
