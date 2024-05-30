@@ -531,7 +531,7 @@ We only proof the first equation.
 $$
 \begin{align*}
     \hat{\psi}_{I\alpha}^{\bullet}(x) \hat{\psi}^{\dagger\bullet}_{I\beta}(x') & = \qty[\hat{\psi}_{I\alpha}^{(1)}(x) + \hat{\psi}_{I\alpha}^{(2)\dagger}(x)]^\bullet\qty[\hat{\psi}_{I\beta}^{(1)\dagger}(x') + \hat{\psi}_{I\beta}^{(2)}(x')]^\bullet\\[.2cm]
-    & = \hat{\psi}_{I\alpha}^{(1)\bullet}(x)\hat{\psi}_{I\beta}^{(1)\dagger\bullet}(x') + \cancelto{0}{\hat{\psi}_{I\alpha}^{(1)\bullet}(x') \hat{\psi}_{I\beta}^{(2)\bullet}(x)} + \cancelto{0}{\hat{\psi}_{I\alpha}^{(2)\dagger\bullet}(x)\hat{\psi}_{I\beta}^{(1)\dagger\bullet}(x')} + \hat{\psi}_{I\alpha}^{(2)\dagger\bullet}(x)\hat{\psi}_{I\beta}^{(2)\bullet}(x')\\[.2cm]
+    & = \hat{\psi}_{I\alpha}^{(1)\bullet}(x)\hat{\psi}_{I\beta}^{(1)\dagger\bullet}(x') + \cancelto{0}{\hat{\psi}_{I\alpha}^{(1)\bullet}(x) \hat{\psi}_{I\beta}^{(2)\bullet}(x')} + \cancelto{0}{\hat{\psi}_{I\alpha}^{(2)\dagger\bullet}(x)\hat{\psi}_{I\beta}^{(1)\dagger\bullet}(x')} + \hat{\psi}_{I\alpha}^{(2)\dagger\bullet}(x)\hat{\psi}_{I\beta}^{(2)\bullet}(x')\\[.2cm]
     &= \theta(t - t') \frac{\delta_{\alpha\beta}}{V} \sum_{\vb{k}} \theta(\abs{\vb{k}}-k_F) \e^{i\vb{k}(\vb{x}-\vb{x}')-i\epsilon_{\vb{k}}^0(t_t')/\hbar} - \theta(t'-t) \frac{\delta_{\alpha\beta}}{V}\sum_{\vb{k}}\theta(k_F- \abs{k})\e^{i\vb{k}\cdot(\vb{x}-\vb{x}')- i\epsilon_{\vb{k}}^0(t-t')/\hbar}\\[.2cm]
     &=\frac{\delta_{\alpha\beta}}{V} \qty[\theta(t-t')\theta(\abs{\vb{k}}-k_F) - \theta(t'-t)\theta(k_F-\abs{\vb{k}})] \e^{i\vb{k}\cdot(\vb{x}-\vb{x}')- i\epsilon_{\vb{k}}^0(t-t')/\hbar}\\[.2cm]
     &=iG_{\alpha\beta}^0(\vb{x},t;\vb{x}',t').
