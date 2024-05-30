@@ -183,11 +183,11 @@ So Green's function is actually proportional to this probability amplitude $\bra
  
 ## 2. Relation to observables
 
-### 2.1. The ground state expectation value of a single particle operator
-The expectation value of any single particle operator in the ground state of the system can be expressed via Green's function. 
+### 2.1. The ground state expectation value of a single-particle operator
+The expectation value of any single-particle operator in the ground state of the system can be expressed via Green's function. 
 
 <div class="box-danger" markdown="1">
-<div class="title"> The ground state expectation value of a single particle operator </div>
+<div class="title"> The ground state expectation value of a single-particle operator </div>
 
 $$
 \begin{equation}
@@ -199,7 +199,7 @@ where the upper (lower) sign refers to bosons (fermions).
 
 <details class="details-inline" markdown="1">
 <summary>Proof </summary>
-Recall the previous section, we have obtained the expression of single particle operator in second quantization:
+Recall the previous section, we have obtained the expression of single-particle operator in second quantization:
 
 $$
 \begin{equation*}
@@ -343,7 +343,7 @@ $$
 $$
 
 
- We assume that $\hat{V}$ is a two particle operator which is independent of particles' spin. The ground state energy can be expressed as
+ We assume that $\hat{V}$ is a two-particle  operator which is independent of particles' spin. The ground state energy can be expressed as
 
 $$
 \begin{equation}
@@ -507,7 +507,7 @@ $$
 </details>
 </div>
 
-If the Hamiltonian does not depend on time, and the system is homogeneous, we can write the ground state energy in a simpler form. First, take the Fourier transform of the single particle Green's function
+If the Hamiltonian does not depend on time, and the system is homogeneous, we can write the ground state energy in a simpler form. First, take the Fourier transform of the single-particle Green's function
 
 $$
 \begin{equation}
@@ -547,7 +547,7 @@ $$
 $$
 
 ## 3. Free fermions
-As an example of the above formalism, we will consider the single particle Green's function for a noninteracting homogeneous system of fermions. The Hamiltonian of the system is
+As an example of the above formalism, we will consider the single-particle Green's function for a noninteracting homogeneous system of fermions. The Hamiltonian of the system is
 
 $$
 \begin{equation}
@@ -606,7 +606,7 @@ $$
 \end{equation}
 $$
 
-These are well-known results in previous study (solid state physics). Now we will use single particle Green's function to re-obtain above results to verify that our theory is correct. The single particle Green's function for fermions is defined as 
+These are well-known results in previous study (solid state physics). Now we will use single-particle Green's function to re-obtain above results to verify that our theory is correct. The single-particle Green's function for fermions is defined as 
 
 $$
 \begin{align*}
@@ -687,8 +687,8 @@ $$
 $$
 
 <div class="box-danger" markdown="1">
-<div class="title"> Single particle Green's function for free fermions </div>
-Thus we finally obtain the single particle Green's function for free fermions
+<div class="title"> Single-particle Green's function for free fermions </div>
+Thus we finally obtain the single-particle Green's function for free fermions
 
 $$
 \begin{equation}

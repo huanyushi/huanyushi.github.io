@@ -1,15 +1,15 @@
 ---
-title:      "&sect;2.3 Wick's Theorem"
+title:      "&sect;2.3 Wick's Theorem (Fermions)"
 date:       2024-05-27
 categories: [Condensed Matter Physics, Quantum Many-Particle Theory]
 tag: [condensed matter physics, many-particle physics]
 media_subpath : /assets/img/in-post/many-particle-physics/
 math: true
 ---
-Preceding posts defined the single particle Green's function and exhibited its relation to observable properties. However, we still do not know how to calculate $G$ for nontrivial physical system. As our general method of attack, we shall evaluate the Green's function with perturbation theory. This procedure is most easily carried out in the interaction picture, where the various terms can be enumerated with a theorem of Wick. We will derive **Wick's theorem** in this post which is very useful with Feynman diagram in **perturbation theory**.
+Preceding posts defined the single-particle Green's function and exhibited its relation to observable properties. However, we still do not know how to calculate $G$ for nontrivial physical system. As our general method of attack, we shall evaluate the Green's function with perturbation theory. This procedure is most easily carried out in the interaction picture, where the various terms can be enumerated with a theorem of Wick. We will derive **Wick's theorem** in this post which is very useful with Feynman diagram in **perturbation theory**.
 
 ## 1. Green's function in the interaction picture
-In previous post, we defined the single particle Green's function in Heisenberg picture, 
+In previous post, we defined the single-particle Green's function in Heisenberg picture, 
 
 $$
 i G_{\alpha\beta}(\vb{x},t;\vb{x}',t') :=  \bra{\psi_{H}^{0}} \hat{\mathsf{T}}\qty[\hat{\psi}_{H\alpha}(\vb{x},t)\hat{\psi}_{H\beta}^\dagger(\vb{x}',t')]\ket{\psi_H^{0}},
@@ -18,7 +18,7 @@ $$
 but it is not convenient for perturbation theory with Hamiltonian $\hat{H} = \hat{H}_0 + \hat{V}$. We must switch it to the interaction picture. 
 
 <div class="box-danger" markdown="1">
-<div class="title"> Single particle Green's function in the interaction picture </div>
+<div class="title"> Single-particle Green's function in the interaction picture </div>
 
 $$
 \begin{equation}
@@ -65,7 +65,7 @@ One more thing to note, $\ket{\psi_H^0}$ is the exact ground state which satisfi
 
 
 <div class="box-danger" markdown="1">
-<div class="title"> Single particle Green's function in the interaction picture </div>
+<div class="title"> Single-particle Green's function in the interaction picture </div>
 
 $$
 \begin{equation}

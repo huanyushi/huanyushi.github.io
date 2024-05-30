@@ -1,5 +1,5 @@
 ---
-title:      "&sect;2.2 Lehmann Representation of Green's functions (fermions)"
+title:      "&sect;2.2 Lehmann Representation of Green's Functions (Fermions)"
 date:       2024-05-22
 categories: [Condensed Matter Physics, Quantum Many-Particle Theory]
 tag: [condensed matter physics, many-particle physics]
@@ -7,7 +7,7 @@ media_subpath : /assets/img/in-post/many-particle-physics/
 math: true
 ---
 
-In this post, we discuss more analytic properties of single-particle Green's functions. Moreover, we will derive the **Lehmann representation** of single particle Green's functions (and **retarded** and **advanced** Green's function) in detail. Although our final expressions are *formally* applicable to both bosons and fermions, the existence of Bose condensation at $T=0$ introduces additional complications, and we shall consider only fermions in next posts. 
+In this post, we discuss more analytic properties of single-particle Green's functions. Moreover, we will derive the **Lehmann representation** of single-particle Green's functions (and **retarded** and **advanced** Green's function) in detail. Although our final expressions are *formally* applicable to both bosons and fermions, the existence of Bose condensation at $T=0$ introduces additional complications, and we shall consider only fermions in next posts. 
 
 ## 1. The Lehmann representation of single-particle Green's functions
 ### 1.1. The Lehmann representation
@@ -170,7 +170,7 @@ Note that the very definition of the thermodynamic limit implies $\mu(N_g+1) = \
 
 <div class="box-danger" markdown="1">
 <div class="title"> The Lehmann representation </div>
-Equations $\eqref{denominator1}$ and $\eqref{denominator2}$ can now be combined with $\eqref{green function k space 1}$ to give the **Lehmann representation** of single particle Green's function
+Equations $\eqref{denominator1}$ and $\eqref{denominator2}$ can now be combined with $\eqref{green function k space 1}$ to give the **Lehmann representation** of single-particle Green's function
 
 $$
 \begin{equation}
@@ -390,7 +390,7 @@ G_{\alpha\beta}^{R,A} = G^{R,A} \delta_{\alpha\beta},\quad  G^{R,A} = \frac{1}{2
 \end{gather}
 $$
 
-which have been shown in previous post. So the Lehmann representation of the single particle Green's function $\eqref{lehmann representation for G}$ becomes
+which have been shown in previous post. So the Lehmann representation of the single-particle Green's function $\eqref{lehmann representation for G}$ becomes
 
 $$
 \begin{equation}
@@ -596,7 +596,7 @@ $$
 <details class="details-inline" markdown="1">
 <summary>Proof of $G$ </summary>
 
-For single particle Green's function, we have
+For single-particle Green's function, we have
 
 $$
 \begin{align*}

@@ -15,7 +15,7 @@ where $k$ denotes different quantum numbers. This can help us calculate observab
 
 There are two common types of operators, **single-particle operators** and **two-particle operators**. Note that the expressions for operators in second-quantized form can be derived from the requirement that they yield the same result as the first quantized-form in a state with a given particle number.
 ## 1. Single particle operators
-The operators which involve sum over only single particles are known as single particle operators
+The operators which involve sum over only single particles are known as single-particle operators
 
 $$
 \begin{equation}
@@ -203,7 +203,7 @@ $$
 {: .prompt-tip}
 
 ## 2. Two particle operators
-The operators which involve sum over two particles are known as two particle operators
+The operators which involve sum over two particles are known as two-particle  operators
 
 $$
 \begin{equation}
@@ -229,7 +229,7 @@ where $\hat{f}_{\alpha\alpha',\beta\beta'}(\vb{x},\vb{x}') = \bra{\alpha}\otimes
 </div>
 
 
-If the two particle operator is independent of spin, we can find
+If the two-particle  operator is independent of spin, we can find
 
 $$
 \begin{align*}
@@ -237,7 +237,7 @@ $$
 \end{align*}
 $$
 
-and the two particle operator can be simplified as
+and the two-particle  operator can be simplified as
 
 $$
 \hat{F}^{(2)} = \frac{1}{2}\sum_{\alpha}\sum_{\beta} \int\dd[3]x \int\dd[3]{x'} \hat{\psi}_{\alpha}^\dagger(\vb{x})\hat{\psi}_{\beta}^\dagger(\vb{x}')\hat{f}(\vb{x},\vb{x}') \hat{\psi}_{\beta}(\vb{x}')\hat{\psi}_{\alpha}(\vb{x}).
@@ -344,7 +344,7 @@ $$
 
 <details class="details-block" markdown="1" open>
 <summary>Jellium model in plane wve presentation </summary>
-As an example for two particle operator, the interaction of the jellium model in plane wave representation is
+As an example for two-particle  operator, the interaction of the jellium model in plane wave representation is
 
 $$
 \begin{align}

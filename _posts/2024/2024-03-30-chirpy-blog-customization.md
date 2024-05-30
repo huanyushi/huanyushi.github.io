@@ -659,6 +659,9 @@ $$
        box-shadow: var(--language-border-color) 1px 1px 2px 1px; /* 借用了代码框的边框颜色变量 */
        margin-bottom: 1rem;
        padding: .6rem 1rem .6rem 1.5rem;
+       > p:last-child{
+        margin-bottom: 0;
+    }
    }
 
     details > summary {
