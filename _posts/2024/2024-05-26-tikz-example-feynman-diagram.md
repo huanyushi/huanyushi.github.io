@@ -15,8 +15,8 @@ math: true
 ![](electron-positron-annilation-photon-dark.PNG){: .dark}
 _Electron–positron annihilation, $e^{-}e^{+}\to \gamma\gamma$_
 
-<details class="nobg-hidden" markdown="1">
-<summary> TikZ code </summary>
+<details class="details-inline" markdown="1">
+<summary>TikZ code </summary>
 
 ```latex
 %!TEX program = lualatex

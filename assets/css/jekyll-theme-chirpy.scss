@@ -62,9 +62,6 @@ blockquote[class^='prompt-']{
 }
 
 
-@import "animation.scss";    // 背景动画样式
-@import "colorbox.scss";     // colorbox 样式
-
 @import 'colors/colors-light.scss';
 @import 'colors/colors-dark.scss';
 
@@ -91,3 +88,8 @@ html {
       }
     }
   }
+
+@import "animation.scss";    // 背景动画样式
+@import "colorbox.scss";     // colorbox 样式
+@import "details.scss";      // details 元素样式
+

@@ -74,8 +74,8 @@ where the upper (lower) sign refers to bosons (fermions).
    $$
 
 
-   <details class="nobg-hidden" markdown="1">
-   <summary> Proof of 1. and 2. </summary>
+   <details class="details-inline" markdown="1">
+   <summary>Proof of 1. and 2. </summary>
 
    Here we just prove the case of *fermions*. Expand the definition of the Green's function,
 
@@ -197,8 +197,8 @@ $$
 
 where the upper (lower) sign refers to bosons (fermions).
 
-<details class="nobg-hidden" markdown="1">
-<summary> Proof </summary>
+<details class="details-inline" markdown="1">
+<summary>Proof </summary>
 Recall the previous section, we have obtained the expression of single particle operator in second quantization:
 
 $$
@@ -372,8 +372,8 @@ $$
 $$
 
 
-<details class="nobg-hidden" markdown="1">
-<summary> Proof </summary>
+<details class="details-inline" markdown="1">
+<summary>Proof </summary>
 
 Consider the Heisenberg equation of Heisenberg field operator $\hat{\psi}_{H\alpha}(\vb{x},t)$:
 
@@ -457,8 +457,8 @@ $$
 
 where the Hamiltonian is written with a variable coupling constant $\lambda$ as $\hat{H}(\lambda) = \hat{T}_k + \lambda \hat{V}$. Then $\hat{H}(1) = \hat{H}$ and $\hat{H}(0) = \hat{H}_0 = \hat{T}_k$, $\hat{T}_k \ket{\phi^0} = E_g^0 \ket{\phi^0}$ where $\ket{\phi^0}$ is the ground state without interaction $\hat{V}$.
 
-<details class="nobg-hidden" markdown="1">
-<summary> Proof </summary>
+<details class="details-inline" markdown="1">
+<summary>Proof </summary>
 The time-independent Schr&ouml;dinger equation for an arbitrary value $\lambda$ is
 
 $$
@@ -627,8 +627,8 @@ $$
 
 where we have set $t_0 =0$. There are two methods to calculate $\hat{C}\_{H,\vb{k}\alpha}(t) = \e^{i\hat{T}_k t/\hbar} \hat{C}\_{\vb{k}\alpha}\e^{-i\hat{T}_k t/\hbar}$ which will be left as an exercise.
 
-<details class="box-hidden" markdown="1" open>
-<summary> Exercise: Calculate $\hat{C}_{H,\vb{k}\alpha}$ </summary>
+<details class="details-block" markdown="1" open>
+<summary>Exercise: Calculate $\hat{C}_{H,\vb{k}\alpha}$ </summary>
 1. Use Baker-Campbell-Hausdorff formula
 
       $$
@@ -708,8 +708,8 @@ $$
 \end{equation}
 $$
 
-<details class="nobg-hidden" markdown="1">
-<summary> Proof </summary>
+<details class="details-inline" markdown="1">
+<summary>Proof </summary>
 We can use an integral representation for the step function
 
 $$
@@ -722,8 +722,8 @@ If $t>t'$, we choose the lower-half $\omega$ plane. If $t<t'$, we choose the upp
 ![step function contour](contour-step-function-dark.PNG){: .dark width="550"}
 _Contour for the step function._
 
-<details class="nobg-hidden" markdown="1">
-<summary> TikZ code </summary>
+<details class="details-inline" markdown="1">
+<summary>TikZ code </summary>
 
 ```latex
 \documentclass[border=10pt]{standalone}
@@ -809,8 +809,8 @@ where we choose the upper-half $z$ plane in third line.
 ![upper-half z plnae](contour-upper-half-plane-dark.PNG){: .dark width="600"}
 _Contour for the third line integral._
 
-<details class="nobg-hidden" markdown="1">
-<summary> TikZ code </summary>
+<details class="details-inline" markdown="1">
+<summary>TikZ code </summary>
 
 ```latex
 \documentclass[border=10pt]{standalone}

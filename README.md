@@ -14,7 +14,7 @@ What I have done:
 - Add background animation (refer to [@NichtsHsu](https://nihil.cc/)).
 - Add GitHub contribution graph (via [gh-contrib-graph](https://github.com/lengthylyova/gh-contrib-graph)).
 
-- Add 4 new colorboxes (see this [discussion](https://github.com/cotes2020/jekyll-theme-chirpy/discussions/1707)).
+- Add 4 new prompts (see this [discussion](https://github.com/cotes2020/jekyll-theme-chirpy/discussions/1707)).
 
 <table>
 <tr>

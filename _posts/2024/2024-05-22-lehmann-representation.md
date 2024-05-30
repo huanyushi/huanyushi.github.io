@@ -1,5 +1,5 @@
 ---
-title:      "&sect;2.2 The Lehmann Representation of Green's functions (fermions)"
+title:      "&sect;2.2 Lehmann Representation of Green's functions (fermions)"
 date:       2024-05-22
 categories: [Condensed Matter Physics, Quantum Many-Particle Theory]
 tag: [condensed matter physics, many-particle physics]
@@ -43,8 +43,8 @@ $$
 \end{align}
 $$
 
-<details class="nobg-hidden" markdown="1">
-<summary> Proof </summary>
+<details class="details-inline" markdown="1">
+<summary>Proof </summary>
 
 Let's take $\mathrm{I}$ as an example to calculate the result,
  
@@ -100,8 +100,8 @@ $$
 
 where the $\pm i\eta$ is necessary to ensure the convergence of the integral over $t-t'$. For simplicity, we just write $A_{\alpha\beta}(n,\hbar \vb{k})$ as $ A_{\alpha\beta}(n,\vb{k})$ and $B_{\alpha\beta}(n,-\hbar \vb{k}) $ as $ B_{\alpha\beta}(n,-\vb{k})$
 
-<details class="nobg-hidden" markdown="1">
-<summary> Proof </summary>
+<details class="details-inline" markdown="1">
+<summary>Proof </summary>
 This result is not obvious, the computation is omitted from the first to the second step, and here we prove it.
 
 $$
@@ -198,8 +198,8 @@ Now we will discuss the analytic properties of the Green's function. The crucial
 _Singularities of $G\_{\alpha\beta}(\mathbf{k},\omega)$ in the complex $\hbar\omega$ plane._
 
 
-<details class="nobg-hidden" markdown="1">
-<summary> TikZ code </summary>
+<details class="details-inline" markdown="1">
+<summary>TikZ code </summary>
 
 ```latex
 \documentclass[border=10pt]{standalone}
@@ -301,8 +301,8 @@ $$
 \end{equation}
 $$
 
-<details class="nobg-hidden" markdown="1">
-<summary> Proof </summary>
+<details class="details-inline" markdown="1">
+<summary>Proof </summary>
 
 $$
 \begin{align*}
@@ -437,8 +437,8 @@ $$
 
 So all three Green's functions can be constructed if $A$ and $B$ are known.
 
-<details class="box-hidden" markdown="1" open>
-<summary> Exercise </summary>
+<details class="details-block" markdown="1" open>
+<summary>Exercise </summary>
 
 Prove the following equation:
 
@@ -501,8 +501,8 @@ $$
 
 This can be proved with $\eqref{Sokhotski-Plemelj theorem}$ directly. However, we will use another method, namely the contour integration to prove it.
 
-<details class="nobg-hidden" markdown="1">
-<summary> Proof of $G^{R,A}$ </summary>
+<details class="details-inline" markdown="1">
+<summary>Proof of $G^{R,A}$ </summary>
 
 Consider the following contour integration
 
@@ -516,8 +516,8 @@ where the contour $C$ is the upper half circle in $z$ plane.
 ![contour](contour-upper-half-plane-pole-dark.PNG){: .dark width="600"}
 _Contour for $G^{R}$_
 
-<details class="nobg-hidden" markdown="1">
-<summary> Tikz code </summary>
+<details class="details-inline" markdown="1">
+<summary>Tikz code </summary>
 
 ```latex
 \documentclass[border=10pt]{standalone}
@@ -593,8 +593,8 @@ $$
 <p style="text-align: right;"> &#x220E; </p>
 </details>
 
-<details class="nobg-hidden" markdown="1">
-<summary> Proof of $G$ </summary>
+<details class="details-inline" markdown="1">
+<summary>Proof of $G$ </summary>
 
 For single particle Green's function, we have
 

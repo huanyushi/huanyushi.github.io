@@ -8,7 +8,7 @@ math: true
 ---
 Preceding posts defined the single particle Green's function and exhibited its relation to observable properties. However, we still do not know how to calculate $G$ for nontrivial physical system. As our general method of attack, we shall evaluate the Green's function with perturbation theory. This procedure is most easily carried out in the interaction picture, where the various terms can be enumerated with a theorem of Wick. We will derive **Wick's theorem** in this post which is very useful with Feynman diagram in **perturbation theory**.
 
-## 1. The single particle Green's function in the interaction picture
+## 1. Green's function in the interaction picture
 In previous post, we defined the single particle Green's function in Heisenberg picture, 
 
 $$
@@ -28,8 +28,8 @@ $$
 
 where $\hat{S}(t,t_0)$ is the time evolution operator in the interaction picture and $\ket{\psi_H^0} = \ket{\psi_I(t_0)} = \ket{\psi_S(t_0)}$.
 
-<details class="nobg-hidden" markdown="1">
-<summary> Proof </summary>
+<details class="details-inline" markdown="1">
+<summary>Proof </summary>
 
 Switch $\hat{\mathsf{T}}\qty[\hat{\psi}\_{H\alpha}(\vb{x},t)\hat{\psi}\_{H\beta}^\dagger(\vb{x}',t')]$ to the interaction picture:
 
@@ -81,8 +81,8 @@ $$
 \end{equation}
 $$
 
-<details class="nobg-hidden" markdown="1">
-<summary> Proof </summary>
+<details class="details-inline" markdown="1">
+<summary>Proof </summary>
 
 The original Hamiltonian is $\hat{H} = \hat{H}\_0 + \hat{V}$. We define a new Hamiltonian $\hat{H}\_{\epsilon}(t) = \hat{H}\_0 + \hat{V}\e^{-\epsilon\abs{t-t\_0}}$ and 
 
@@ -183,7 +183,7 @@ $$
     iG_{\alpha\beta}(\vb{x},t;\vb{x}',t') = \sum_{n=0}^{\infty}\frac{1}{n!}&\qty(\frac{-i}{\hbar})^n \int_{-\infty}^{\infty}\dd{t_1} \cdots \int_{-\infty}^{\infty}\dd{t_n}\\[.2cm]
     &{}\times \frac{\ev{\hat{\mathsf{T}}\qty[\hat{\psi}_{I\alpha}(\vb{x},t)\hat{\psi}_{I\beta}^\dagger(\vb{x}',t')V_I(t_1)\cdots V_I(t_n)]}{\Phi^0}}{\ev{\hat{S}(\infty,-\infty)}{\Phi^0}}.
     \end{split}
-    \label{green-function-1}
+    \label{green-function}
 \end{equation}
 $$
 
@@ -197,7 +197,7 @@ $$
         \hat{V}_I(t) &= \e^{i\hat{H}_0(t-t_0)/\hbar}\hat{V}\e^{-i\hat{H}_0(t-t_0)/\hbar}\\[.2cm]
         &=\frac{1}{2}\sum_{\alpha}\sum_{\beta} \int\dd[3]{x}\int\dd[3]{x'} \hat{\psi}_{I\alpha}^\dagger(\vb{x},t)\hat{\psi}_{I\beta}^\dagger(\vb{x}',t)\hat{V}(\vb{x},\vb{x}')\hat{\psi}_{I\beta}(\vb{x}',t)\hat{\psi}_{I\alpha}(\vb{x},t).
     \end{split}
-    \label{interaction-1}
+    \label{interaction}
 \end{equation}
 $$
 
@@ -218,7 +218,7 @@ $$
 $$
 
 
-So $\eqref{interaction-1}$ can be rewritten as
+So $\eqref{interaction}$ can be rewritten as
 
 $$
 \begin{equation}
@@ -242,7 +242,7 @@ $$
 \end{equation}
 $$
 
-Then the Green's function in $\eqref{green-function-1}$ becomes (just show two leading terms):
+Then the Green's function in $\eqref{green-function}$ becomes (just show two leading terms):
 
 $$
 \begin{equation}
@@ -250,6 +250,7 @@ $$
     iG_{\alpha\beta}(x,x') =&\frac{1}{\ev{\hat{S}}{\Phi^0}}\Bigg[ i G_{\alpha\beta}^{0}(x,x') + \qty(\frac{-i}{\hbar}) \sum_{\lambda\lambda'\mu\mu'} \frac{1}{2} \iint\dd[4]{x_1}\dd[4]{x_1'} \hat{U}(x_1,x_1')\quad \\[.2cm]
     &{}\times  \ev{\hat{\mathsf{T}}\qty[\psi_{I\alpha}(x)\hat{\psi}_{I\beta}(x')\hat{\psi}_{I\lambda}^\dagger(x_1)\hat{\psi}^\dagger_{I\lambda'}(x_1')\hat{\psi}_{I\lambda'}(x_1')\hat{\psi}_{I\lambda}(x_1)]}{\Psi^0} + \cdots \Bigg],
 \end{split}
+\label{green-function-expansion}
 \end{equation}
 $$
 
@@ -285,7 +286,7 @@ Consider the free fermion field where the Hamiltonian is $\displaystyle{\hat{H} 
 For an operator $\hat{C}\_{\vb{k}\alpha}^\dagger$,
 
 - In case of $\abs{\vb{k}}>k_F$, $\hat{C}\_{\vb{k}\alpha}^\dagger\ket{\Phi_H^0} \neq 0$, so $\hat{C}\_{\vb{k}\alpha}^\dagger$ is a creation like operator.
-- In case of $\abs{\vb{k}}<k_F$, $\hat{C}\_{\vb{k}\alpha}^\dagger\ket{\Phi_H^0} = 0$, so $\hat{C}\_{\vb{k}\alpha}^\dagger$ is a annihilation like operator.
+- In case of $\abs{\vb{k}}<k_F$, $\hat{C}\_{\vb{k}\alpha}^\dagger\ket{\Phi_H^0} = 0$, so $\hat{C}\_{\vb{k}\alpha}^\dagger$ is an annihilation like operator.
 
 </div>
 
@@ -344,7 +345,7 @@ $$
 \end{equation}
 $$
 
-$\hat{\psi}_{I\alpha}^{(1)}$ and $\hat{\psi}_{I\alpha}^{(2)}$ are annihilation like operators, while $\hat{\psi}_{I\alpha}^{(1)\dagger}$ and $\hat{\psi}_{I\alpha}^{(2)\dagger}$ are creation like operators.
+$\hat{\psi}\_{I\alpha}^{(1)}$ and $\hat{\psi}\_{I\alpha}^{(2)}$ are annihilation like operators, while $\hat{\psi}\_{I\alpha}^{(1)\dagger}$ and $\hat{\psi}\_{I\alpha}^{(2)\dagger}$ are creation like operators.
 
 </div>
 
@@ -400,8 +401,8 @@ The contraction represents the additional term introduced by rearranging a time-
 
 1. $\displaystyle{\hat{A}^{\bullet}\hat{B}^{\bullet} = - \hat{B}^\bullet\hat{A}^\bullet.}$
 
-   <details class="nobg-hidden" markdown="1">
-   <summary> Proof </summary>
+   <details class="details-inline" markdown="1">
+   <summary>Proof </summary>
 
    $$
    \begin{align*}
@@ -414,8 +415,8 @@ The contraction represents the additional term introduced by rearranging a time-
 
 2. $\displaystyle{\hat{A}^{\bullet}\hat{B}^{\bullet} =0 }$, if $\displaystyle{\qty[\hat{A},\hat{B}]\_+ = 0}$.
 
-   <details class="nobg-hidden" markdown="1">
-   <summary> Proof </summary>
+   <details class="details-inline" markdown="1">
+   <summary>Proof </summary>
 
    $$
    \begin{align*}
@@ -454,8 +455,8 @@ $$
 \end{align}
 $$
 
-<details class="nobg-hidden" markdown="1">
-<summary> Proof </summary>
+<details class="details-inline" markdown="1">
+<summary>Proof </summary>
 We only prove the first and the fifth relations here. Others can be proved in the same way.
 
 $$
@@ -494,8 +495,8 @@ $$
 \end{align}
 $$
 
-<details class="nobg-hidden" markdown="1">
-<summary> Proof </summary>
+<details class="details-inline" markdown="1">
+<summary>Proof </summary>
 The first four equations are trivial. We only prove the fifth equation here.
 
 $$
@@ -508,6 +509,7 @@ $$
 \end{align*}
 $$
 
+<p style="text-align: right;"> &#x220E; </p>
 </details>
 
 
@@ -517,13 +519,13 @@ So the contractions of field operators are
 
 $$
 \begin{align}
-    &\hat{\psi}_{I\alpha}^{\bullet}(x) \hat{\psi}^{\dagger\bullet}_{I\beta}(x') = -\hat{\psi}_{I\beta}^{\dagger\bullet}(x')\hat{\psi}_{I\alpha}^{\bullet}(x)= i G_{\alpha\beta}^0 (\vb{x},t;\vb{x}',t') := iG_{\alpha\beta}^0(x,x') \label{contraction-1}\\[.2cm]
+    &\hat{\psi}_{I\alpha}^{\bullet}(x) \hat{\psi}^{\dagger\bullet}_{I\beta}(x') = -\hat{\psi}_{I\beta}^{\dagger\bullet}(x')\hat{\psi}_{I\alpha}^{\bullet}(x)= i G_{\alpha\beta}^0 (\vb{x},t;\vb{x}',t') := iG_{\alpha\beta}^0(x,x') \label{contraction}\\[.2cm]
     &\hat{\psi}_{I\alpha}^{\bullet}(x) \hat{\psi}_{I\beta}^\bullet(x') = \hat{\psi}_{I\alpha}^{\dagger\bullet}(x) \hat{\psi}_{I\beta}^{\dagger\bullet}(x') = 0.
 \end{align}
 $$
 
-<details class="nobg-hidden" markdown="1">
-<summary> Proof </summary>
+<details class="details-inline" markdown="1">
+<summary>Proof </summary>
 We only proof the first equation.
 
 $$
@@ -536,11 +538,11 @@ $$
 \end{align*}
 $$
 
-
+<p style="text-align: right;"> &#x220E; </p>
 </details>
 </div>
 
-Note that the contractions are c numbers in the occupation-number Hilbert space, not operators. And $\eqref{contraction-1}$ can be simply derived with observation (another method)
+Note that the contractions are c numbers in the occupation-number Hilbert space, not operators. And $\eqref{contraction}$ can be simply derived with observation (another method)
 
 $$
 \begin{align*}
@@ -569,8 +571,8 @@ $$
 \end{equation}
 $$
 
-<details class="nobg-hidden" markdown="1">
-<summary> Proof </summary>
+<details class="details-inline" markdown="1">
+<summary>Proof </summary>
 
 If $\hat{B}$ is an annihilation like operator, then all the contractions vanish since $\hat{\mathsf{T}}\qty[\hat{A}\_i\hat{B}] = \hat{\mathsf{N}}\qty[\hat{A}_i \hat{B}] = \hat{A}_i \hat{B}$. Thus, only the last term in $\eqref{lemma}$ contributes and the lemma is proved.
 
@@ -684,8 +686,8 @@ $$
 
 where $P$ is the number of interchanges of fermion operators from the original given order.
 
-<details class="nobg-hidden" markdown="1">
-<summary> Proof </summary>
+<details class="details-inline" markdown="1">
+<summary>Proof </summary>
 
 Again the theorem will be proved by induction. It is obviously true for $n=2$,
 
@@ -727,6 +729,8 @@ $$
 </div>
 
 Note that we only discuss the case where all  operators are either creation or destruction parts of the field. The $\hat{\mathsf{T}}$ product and the $\hat{\mathsf{N}}$ product are both distributive, however, and *Wick's theorem thus applies to the fields themselves*.
+
+By Wick's theorem, the time-ordered product can transformed to sum of all possible contractions and normal-ordered product. Only the expectation value in the noninteracting ground state of full contractions not equal to zero. So $\eqref{green-function-expansion}$ can be expressed in a series containing $U$ and $G^0$ that can be solved exactly.
 
 ## 3. References
 1. Fetter, A. L., Walecka, J. D., *Quantum Theory of Many-Particle Systems*. Courier Corporation. (2002)

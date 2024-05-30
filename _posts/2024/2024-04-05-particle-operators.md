@@ -35,8 +35,8 @@ $$
 \end{equation}
 $$
 
-<details class="nobg-hidden" markdown="1">
-<summary> Proof </summary>
+<details class="details-inline" markdown="1">
+<summary>Proof </summary>
 
 This can be proven using the method we discussed earlier. Let us choose $\qty{\ket{\tilde{\alpha}}}$ to be the single-particle basis of eigenstates of $\hat{f}$, i.e. $\hat{f}\ket{\tilde{\alpha}} = f_{\tilde{\alpha}} \ket{\tilde{\alpha}}$, where $f_{\tilde{\alpha}}$ is the eigenvalue of $\hat{f}$ associated with the eigenstate $\ket{\tilde{\alpha}}$. Then we claim that the second-quantized representation of $\hat{F}^{(1)}$ can be written as 
 
@@ -243,8 +243,8 @@ $$
 \hat{F}^{(2)} = \frac{1}{2}\sum_{\alpha}\sum_{\beta} \int\dd[3]x \int\dd[3]{x'} \hat{\psi}_{\alpha}^\dagger(\vb{x})\hat{\psi}_{\beta}^\dagger(\vb{x}')\hat{f}(\vb{x},\vb{x}') \hat{\psi}_{\beta}(\vb{x}')\hat{\psi}_{\alpha}(\vb{x}).
 $$
 
-<details class="box-hidden" markdown="1" open>
-<summary> Hamiltonian of the jellium model </summary>
+<details class="details-block" markdown="1" open>
+<summary>Hamiltonian of the jellium model </summary>
 We will talk about the jellium model in detail later. The Hamiltonian is
 
 $$   
@@ -342,8 +342,8 @@ $$
  
 </div>
 
-<details class="box-hidden" markdown="1" open>
-<summary> Jellium model in plane wve presentation </summary>
+<details class="details-block" markdown="1" open>
+<summary>Jellium model in plane wve presentation </summary>
 As an example for two particle operator, the interaction of the jellium model in plane wave representation is
 
 $$

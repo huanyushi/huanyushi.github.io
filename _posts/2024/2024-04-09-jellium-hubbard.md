@@ -60,8 +60,8 @@ $$
 \end{equation*}
 $$
 
-<details class="box-hidden" markdown="1" open>
-<summary> Fourier transform of $1/|\vb{r}|$ </summary>
+<details class="details-block" markdown="1" open>
+<summary>Fourier transform of $1/|\vb{r}|$ </summary>
 As a useful example, we give the calculation of the Fourier transform of $1/|\vb{r}|$. If we try to take the Fourier transform of $1/|\vb{r}|$ directly, we would get a nonsensical answer. So we consider the Fourier transform of the Yukawa potential $V_{\eta}(r) = \frac{\mathrm{e}^{-\eta r}}{r}$:
 
 $$

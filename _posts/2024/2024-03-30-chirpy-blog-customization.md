@@ -481,7 +481,7 @@ _GitHub 贡献图_
 > 我嫌加载太慢就没加进去了，这玩意儿放在 `about.md`{:.filepath} 是个不错的选择。
 </div>
 
-## 9. 增加 4 个新的 colorbox
+## 9. 增加 4 个新的 prompt
 模板作者已经设置了 4 个 prompt，效果如下：
 
 > To be or not to be. That is a question.
@@ -496,7 +496,7 @@ _GitHub 贡献图_
 > To be or not to be. That is a question.
 {: .prompt-danger}
 
-在此基础上，我构建了 4 个新的 colorbox，效果如下：
+在此基础上，我构建了 4 个新的 prompt，效果如下：
 
 <div class="box-info" markdown="1">
 <div class="title"> Shakespeare </div>
@@ -625,10 +625,10 @@ To be or not to be. That is a question.
 {: file="assets/css/jekyll-theme-chirpy.scss"}
 
 ## 10. Details 元素的样式设计
-HTML 中的 `<details class="box-hidden">` 元素可以创建一个组件，仅当被切换为展开状态时，才会显示里面的内容，效果如下：
+HTML 中的 `<details class="details-block">` 元素可以创建一个组件，仅当被切换为展开状态时，才会显示里面的内容，效果如下：
 
-<details class="box-hidden" markdown="1">
-<summary> 详细信息 </summary>
+<details class="details-block" markdown="1">
+<summary>详细信息 </summary>
 床前明月光，疑是地上霜。举头望明月，低头思故乡。
 
 $$
@@ -639,8 +639,8 @@ $$
 
 在 Markdown 文件输入以下代码即可实现，其中 `markdown = "1"` 是为了在 HTML 元素内也可以使用 Markdown 语法，另外在其中加入 open 可以设置它为默认展开的形式（否则为默认关闭）：
 ```markdown
-<details class="box-hidden" markdown="1">
-<summary> 详细信息 </summary>
+<details class="details-block" markdown="1">
+<summary>详细信息 </summary>
 床前明月光，疑是地上霜。举头望明月，低头思故乡。
 
 $$
@@ -686,7 +686,7 @@ $$
         // content: '🙈'; 
         /* content:'\002B9A'; */
         content: '😼';
-        margin-right: .3rem;
+        margin-right: .5rem;
         display: inline-block;
     }
     details[open] > summary::before {
@@ -695,7 +695,7 @@ $$
         /* content: '\002B9B'; */
         content: '🙀';
         animation: my-cat .2s ease-in-out; /*  点击会有动画效果 */
-        margin-right: .3rem;
+        margin-right: .5rem;
     }
 
     details > summary::after {
