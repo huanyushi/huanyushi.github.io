@@ -30,7 +30,7 @@ This is its expression in first quantization. In second quantization (or occupat
 
 $$
 \begin{equation}
-    \hat{F}^{(1)} = \sum_{\alpha}\sum_{\beta} \int \dd[3]{x} \hat{\psi}^{\dagger}_{\alpha}(\vb{x}) \mel{\alpha}{\hat{f}(\vb{x}_i,\hat{\vb{p}}_i,\hat{s}_i)}{\beta} \hat{\psi}_{\beta}(\vb{x}).
+    \hat{F}^{(1)} = \sum_{\alpha}\sum_{\beta} \int \dd[3]{x} \hat{\psi}^{\dagger}_{\alpha}(\vb{x}) \mel{\alpha}{\hat{f}(\vb{x},\hat{\vb{p}},\hat{s})}{\beta} \hat{\psi}_{\beta}(\vb{x}).
     \label{equ:single-particle operator}
 \end{equation}
 $$
@@ -86,6 +86,7 @@ $$
 $$
 
 So, in other bases, it can also be written in a diagonal form. The matrix element $\mel{\alpha}{\hat{f}}{\beta}$ can be written as
+
 $$
 \mel{\alpha}{\hat{f}}{\beta} = \int\dd[3]{x}\dd[3]{x'} \braket{\alpha}{\vb{x}} \mel{\vb{x}}{\hat{f}}{\vb{x}'}\braket{\vb{x}'}{\beta} = \int\dd[3]{x} \braket{\alpha}{\vb{x}}\hat{f} \braket{\vb{x}}{\beta} = \int \dd[3]{x} \psi_{\alpha}^*(\vb{x})\hat{f} \psi_{\beta}(\vb{x}).
 $$

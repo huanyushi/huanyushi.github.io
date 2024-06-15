@@ -8,7 +8,7 @@ math: true
 ---
 Hamiltonian  with interaction can not always be solved exactly, the first few orders of perturbation theory cannot provide an adequate description of an interacting many-particle system. So we must find other methods to obtain all orders in perturbation theory. Luckily, we can get a formal solution through **Green's functions**.
 
-## 1. Definition, symmetry and physical significance of the single-particle Green's function
+## 1. Definition, symmetry and physical significance of the single-particle Green's functions
 ### 1.1. Definition
 <div class="box-info" markdown="1">
 <div class="title"> Single-particle Green's function </div>
@@ -183,7 +183,7 @@ So Green's function is actually proportional to this probability amplitude $\bra
  
 ## 2. Relation to observables
 
-### 2.1. The ground state expectation value of a single-particle operator
+### 2.1. Ground state expectation value of single-particle operators
 The expectation value of any single-particle operator in the ground state of the system can be expressed via Green's function. 
 
 <div class="box-danger" markdown="1">
@@ -203,7 +203,7 @@ Recall the previous section, we have obtained the expression of single-particle 
 
 $$
 \begin{equation*}
-    \hat{F}^{(1)} = \sum_{\alpha}\sum_{\beta}\int \dd[3]{x} \hat{\psi}^\dagger_{\alpha}(\vb{x}) \mel{\alpha}{\hat{f}(\vb{x}_i,\hat{p}_i,\hat{s}_i)}{\beta}\hat{\psi}_{\beta}(\vb{x}).
+    \hat{F}^{(1)} = \sum_{\alpha}\sum_{\beta}\int \dd[3]{x} \hat{\psi}^\dagger_{\alpha}(\vb{x}) \mel{\alpha}{\hat{f}(\vb{x},\hat{p},\hat{s})}{\beta}\hat{\psi}_{\beta}(\vb{x}).
 \end{equation*}
 $$
 
@@ -211,7 +211,7 @@ Then the ground state of a single operator $\hat{F}^{(1)}$ can be expressed as
 
 $$
 \begin{align*}
-    \mel{\psi_H^0}{\hat{F}^{(1)}}{\psi_H^0} & = \sum_{\alpha}\sum_{\beta} \int \dd[3]{x} \mel{\psi_H^0}{\hat{\psi}^\dagger_{\alpha}(\vb{x}) \hat{f}_{\alpha\beta}(\vb{x},-i\hbar\nabla,\hat{s_i})\hat{\psi}_{\beta}(\vb{x})}{\psi_H^0}\\[.2cm]
+    \mel{\psi_H^0}{\hat{F}^{(1)}}{\psi_H^0} & = \sum_{\alpha}\sum_{\beta} \int \dd[3]{x} \mel{\psi_H^0}{\hat{\psi}^\dagger_{\alpha}(\vb{x}) \hat{f}_{\alpha\beta}(\vb{x},-i\hbar\nabla,\hat{s})\hat{\psi}_{\beta}(\vb{x})}{\psi_H^0}\\[.2cm]
     &=\sum_{\alpha}\sum_{\beta} \int \dd[3]{x} \lim_{\vb{x}'\to \vb{x}} \hat{f}_{\alpha\beta}(\vb{x},-i\hbar\nabla,\hat{s})
     \\[.2cm]
     &\qquad \times \mel{\psi_{H}^0}{\cancelto{\e^{-iE_g t/\hbar}}{\e^{-i\hat{H}t/\hbar}}\hat{\psi}_{H\alpha}(\vb{x},t)^\dagger \cancel{\e^{i\hat{H}t/\hbar}}\cancel{\e^{-i\hat{H}t/\hbar}}\hat{\psi}_{H\beta}(\vb{x},t)\cancelto{\e^{iE_g t/\hbar}}{\e^{i\hat{H}t/\hbar}}}{\psi_{H_0}}\\[.2cm]
@@ -248,6 +248,14 @@ $$
 
 <p style="text-align: right;"> &#x220E; </p>
 </details>
+
+If $\hat{f}\_{\alpha\beta} = \mel{\alpha}{\hat{f}}{\beta}$ is independent of particle's spin, i.e. $\hat{f}\_{\alpha\beta} = \hat{f}\delta\_{\alpha\beta}$, then
+
+$$
+\begin{equation}
+    \ev{\hat{F}^{(1)}}{\psi_H^0} = \pm i\sum_{\alpha}\int\dd[3]{x}  \lim_{\substack{\vb{x}'\to\vb{x}\\ t'\to t^+}} \hat{f}(\vb{x},-i\hbar\nabla) G_{\alpha\alpha}(\vb{x},t;\vb{x}',t').
+\end{equation}
+$$
 
 </div>
 
@@ -331,7 +339,7 @@ $$
 </div>
 
 
-### 2.2. The ground state energy
+### 2.2. Ground state energy
 
 We have obtain the total kinetic energy of ground state in $\eqref{Total kinetic energy}$, so what about the potential energy $\langle\hat{V}\rangle$ and thereby determine the total ground state energy? The Hamiltonian $\hat{H}=\hat{H}_0+\hat{V}$ of system in second quantization is
 

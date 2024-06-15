@@ -565,7 +565,7 @@ $$
 \begin{equation}
     \begin{split}
         \hat{\mathsf{N}}\qty[\hat{A}_1\hat{A}_2\cdots \hat{A}_n] \hat{B} &=\hat{\mathsf{N}}\qty[\hat{A}_1\hat{A}_2\cdots\hat{A}_{n-1}]\hat{A}_n^{\bullet}\hat{B}^{\bullet} - \hat{\mathsf{N}}\qty[\hat{A}_1\hat{A}_2\cdots \hat{A}_{n-2}\hat{A}_n]\hat{A}_{n-1}^{\bullet}\hat{B}^{\bullet}  \\[.2cm]
-        &+ \cdots+ (-1)^{n-1}\hat{\mathsf{N}}\qty[\hat{A}_2\cdots \hat{A}_{n-1}\hat{A}_n]\hat{A}_1^\bullet \hat{B} + \hat{\mathsf{N}}\qty[\hat{A}_1\hat{A}_2\cdots\hat{A}_n\hat{B}].
+        &+ \cdots+ (-1)^{n-1}\hat{\mathsf{N}}\qty[\hat{A}_2\cdots \hat{A}_{n-1}\hat{A}_n]\hat{A}_1^\bullet \hat{B}^\bullet + \hat{\mathsf{N}}\qty[\hat{A}_1\hat{A}_2\cdots\hat{A}_n\hat{B}].
     \end{split}
     \label{lemma}
 \end{equation}

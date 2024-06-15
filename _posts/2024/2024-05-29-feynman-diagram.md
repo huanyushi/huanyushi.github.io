@@ -620,7 +620,7 @@ $$
         \displaystyle{U(x-y) = \int\frac{\dd[4]{k}}{(2\pi)^4} U(k)\e^{ik\cdot(x-y)}}.
     \end{cases}\\[.4cm]
     \mathrm{I.F.T.}&\begin{cases}
-        \displaystyle{G_{\alpha\beta}(k) = \int\dd[4]{x-y} G_{\alpha\beta}(x-y)\e^{-ik\cdot(x-y)}},\\[.2cm]
+        \displaystyle{G_{\alpha\beta}(k) = \int\dd[4]{(x-y)} G_{\alpha\beta}(x-y)\e^{-ik\cdot(x-y)}},\\[.2cm]
         \displaystyle{U(k) = \int\dd[4]{k} U(x-y)\e^{-ik\cdot(x-y)} = V(\vb{k})}.
     \end{cases}
 \end{align}
