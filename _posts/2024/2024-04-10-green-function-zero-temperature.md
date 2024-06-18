@@ -429,10 +429,13 @@ $$
 \end{align*}
 $$
 
-In the limit $\vb{x}' \to \vb{x}, t'\to t^+$, we get the expression for $\ev{\hat{V}}{\psi_H^0}$ in fermion case
+In the limit $\vb{x}' \to \vb{x}, t'\to t^+$, integrating $\vb{x}$ and summing $\alpha$, then we get the expression for $\ev{\hat{V}}{\psi_H^0}$ in fermion case
 
 $$
-\ev{\hat{V}}{\psi_H^0}=-\frac{i}{2}  \int \dd[3]{x} \lim_{\substack{\vb{x}'\to \vb{x}\\ t'\to t^+}} \sum_{\alpha} \qty[i\hbar \pdv{t} + \frac{\hbar^2 \nabla^2}{2m}] G_{\alpha\alpha}(\vb{x},t;\vb{x}',t').
+\begin{align*}
+\ev{\hat{V}}{\psi_H^0} &=\qty(i\hbar \pdv{t} + \frac{\hbar^2 \nabla^2}{2m})  \int\dd[3]{x} \sum_{\alpha} \ev{\hat{\psi}_{H\alpha}^\dagger(\vb{x}',t')\hat{\psi}_{H\alpha}(\vb{x},t)}{\psi_H^0} \\[.2cm]
+&=-\frac{i}{2}  \int \dd[3]{x} \lim_{\substack{\vb{x}'\to \vb{x}\\ t'\to t^+}} \sum_{\alpha} \qty[i\hbar \pdv{t} + \frac{\hbar^2 \nabla^2}{2m}] G_{\alpha\alpha}(\vb{x},t;\vb{x}',t').
+\end{align*}
 $$
 
 For *boson case*, the negative sign becomes positive sign. Add the total kinetic energy, and we finally get the total ground state energy,

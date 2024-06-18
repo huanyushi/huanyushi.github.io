@@ -9,9 +9,9 @@ math: true
 
 Our theory of many-particle systems at zero temperature made extensive use of the single-particle Green's function, which was expressed as a perturbation expansion in the interaction picture. Knowledge of $G$ provided both the complete equilibrium properties of the system and the excitation energies of the system containing one more or one less particle (Lehmann representation). At finite temperatures, however, we can not directly calculate $G$ from the same diagrammatic analysis before. It is therefore necessary to introduce another new Green's function, i.e. **Matsubara Green's Function**.
 
-## Matsubara Green's Function
+## 1. Matsubara Green's Function
 
-### Definition
+### 1.1. Definition
 In treating system at finite temperatures, it will be most convenient to use the grand canonical ensemble, which allows for the possibility of a variable number of particles. The Hamiltonian becomes
 
 $$
@@ -77,30 +77,38 @@ $$
 > $$
 >
 > To avoid confusion the adjoint of an operator $\hat{O}$ is explicitly denoted by $[\hat{O}]^\dagger$ in this Chapter.
-{. prompt-warning}
+{: .prompt-warning}
 
 
 <div class="box-info" markdown="1">
 <div class="title"> Matsubara Green's function </div>
 The Matsubara Green's function (or single-particle temperature Green's function) is defined as
-
+ 
 $$
 \begin{equation}
-    \mathcal{G}_{\alpha\beta}(\vb{x},\tau;\vb{x}',\tau') : = \Tr\qty[\hat{\rho}\hat{\mathsf{T}}_{\tau}\qty[\hat{\psi_{H\alpha}(\vb{x},\tau)\hat{\psi}_{H\beta}^\dagger(\vb{x}',\tau')}]] = -\expval{\hat{\mathsf{T}}_{\tau}\qty[\hat{\psi}_{H\alpha}(\vb{x},\tau)\hat{\psi}_{H\beta}^\dagger(\vb{x}',\tau')]}_{T}, 
+    \mathcal{G}_{\alpha\beta}(\vb{x},\tau;\vb{x}',\tau') : = \Tr\qty[\hat{\rho}\hat{\mathsf{T}}_{\tau}\qty[\hat{\psi}_{H\alpha}(\vb{x},\tau)\hat{\psi}_{H\beta}^\dagger(\vb{x}',\tau')]] = -\expval{\hat{\mathsf{T}}_{\tau}\qty[\hat{\psi}_{H\alpha}(\vb{x},\tau)\hat{\psi}_{H\beta}^\dagger(\vb{x}',\tau')]}_{T}, 
 \end{equation}
 $$
 
-where $\hat{\mathsf{T}}_{\tau}$ denotes ordering the operators according to their value of $\tau$, with the smallest at the right. $\hat{\mathsf{T}}_{\tau}$ also includes the signature factor $(-1)^P$, where $P$ is the number of permutations of fermion operators needed to restore the original ordering.
+where $\hat{\mathsf{T}}\_{\tau}$ denotes ordering the operators according to their value of $\tau$, with the smallest at the right. $\hat{\mathsf{T}}\_{\tau}$ also includes the signature factor $(-1)^P$, where $P$ is the number of permutations of fermion operators needed to restore the original ordering.
 
 </div>
 
-## Relation to observables
-### Expectation value of single-particle operators
+## 2. Relation to observables
+### 2.1. Expectation value of single-particle operators
 
 <div class="box-danger" markdown="1">
 <div class="title"> Expectation value of a single-particle operator </div>
 
-For a single-particle operator, its expectation value at finite temperature is
+For a single-particle operator, 
+
+$$
+\begin{equation}
+    \hat{F}^{(1)} = \sum_{\alpha}\sum_{\beta} \int \dd[3]{x} \hat{\psi}_{\alpha}^\dagger(\vb{x}) \mel{\alpha}{\hat{f}(\vb{x},-i\hbar\nabla,\hat{s})}{\beta}\hat{\psi}_{\beta}(\vb{x}),
+\end{equation}
+$$
+
+its expectation value at finite temperature is
 
 $$
 \begin{equation}
@@ -182,4 +190,63 @@ $$
     
 </div>
 
+### 2.2. Expectation value of two-particle operators
 
+<div class="box-danger" markdown="1">
+<div class="title"> Expectation value of a two particle operators </div>
+
+Generally speaking, the ensemble average of an two-particle operator requires a two-particle temperature Green's function. In the special case, consider an interparticle potential
+
+$$
+\begin{equation}
+\hat{V} = \frac{1}{2}\sum_{\alpha\alpha'\beta\beta'} \iint\dd[3]{x}\dd[3]{x'} \hat{\psi}_{\alpha}^\dagger(\vb{x})\hat{\psi}_{\beta}^\dagger(\vb{x}')V_{\alpha\alpha',\beta\beta'}(\vb{x},\vb{x}')\hat{\psi}_{\beta'}(\vb{x}')\hat{\psi}_{\alpha'}(\vb{x}),    
+\end{equation}
+$$
+
+if $\hat{V}$ is spin independent, its expectation value at finite temperature can be expressed in terms of $\mathcal{G}$,
+
+$$
+\begin{equation}
+    \expval*{V}_{T} = \mp \frac{1}{2} \sum_{\alpha}\int \dd[3]{x} \lim_{\substack{\vb{x}'\to\vb{x}\\ \tau'\to \tau^+}} \qty[-\hbar\pdv{\tau} + \frac{\hbar^2 \nabla_{\vb{x}}^2}{2m} + \mu] \mathcal{G}_{\alpha\alpha}(\vb{x},\tau;\vb{x}',\tau'),
+\end{equation}
+$$
+
+where the upper (lower) sign refers to bosons (fermions).
+
+<details class="details-inline" markdown="1">
+<summary>Proof</summary>
+
+Starting from the Heisenberg equation of $\hat{\psi}_{H\alpha}$,
+
+$$
+\hbar \pdv{\tau} \hat{\psi}_{H\alpha}(\vb{x},\tau) = [\hat{K},\hat{\psi}_{H\alpha}(\vb{x},\tau)] = \e^{\hat{K}\tau/\hbar} [\hat{K},\hat{\psi}_{\alpha}(\vb{x},\tau)]\e^{-\hat{K}\tau/\hbar},
+$$
+
+where
+
+$$
+\begin{align*}
+    [\hat{K},\hat{\psi}_{\alpha}(\vb{x})] &= -\frac{\hbar^2 \nabla^2}{2m} \hat{\psi}_{\alpha}(\vb{x}) - \mu \hat{\psi}_{\alpha}(\vb{x}) + \sum_{\sigma
+    } \int \dd[3]{z'} \hat{\psi}_{\sigma}^\dagger(\vb{z})\hat{V}(\vb{x},\vb{z})\hat{\psi}_{\sigma}(\vb{z})\hat{\psi}_\alpha(\vb{x}).
+\end{align*}
+$$
+
+So the Heisenberg equation becomes
+
+$$
+\hbar\pdv{\tau}  \hat{\psi}_{H\alpha}(\vb{x},\tau) = \frac{\hbar^2 \nabla^2}{2m} \hat{\psi}_{H\alpha}(\vb{x},\tau) + \mu \hat{\psi}_{H\alpha}(\vb{x},\tau) - \sum_{\sigma}\int \dd[3]{z} \hat{\psi}_{H\sigma}^\dagger(\vb{z},\tau)V(\vb{x},\vb{z}) \hat{\psi}_{H\sigma}(\vb{z},\tau') \hat{\psi}_{H\alpha}(\vb{x},\tau).
+$$
+
+Multiply both sides left by $\hat{\psi}_{H\alpha}(\vb{x}',\tau)$ and take the ensemble average
+
+$$
+\begin{align*}
+    \expval*{\hat{V}}_{T} = \frac{1}{2}\int\dd[3]{x} \dd[3]{z'} V(\vb{x}-)
+\end{align*}
+$$
+
+The last term is essentially the quantity of interest.
+
+</details>
+
+</div>
