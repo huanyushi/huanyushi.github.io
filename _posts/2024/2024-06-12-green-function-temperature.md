@@ -161,6 +161,7 @@ $$
     $$
     \begin{equation}
         \expval*{\hat{T}}_T  = \mp  \sum_{\alpha} \int \dd[3]{x}  \lim_{\substack{\vb{x}'\to\vb{x}\\ \tau'\to \tau^+}} \qty(-\frac{\hbar^2\nabla^2}{2m}) \mathcal{G}_{\alpha\alpha}(\vb{x},\tau;\vb{x}',\tau').
+        \label{kinetic}
     \end{equation}
     $$
 
@@ -207,7 +208,8 @@ if $\hat{V}$ is spin independent, its expectation value at finite temperature ca
 
 $$
 \begin{equation}
-    \expval*{V}_{T} = \mp \frac{1}{2} \sum_{\alpha}\int \dd[3]{x} \lim_{\substack{\vb{x}'\to\vb{x}\\ \tau'\to \tau^+}} \qty[-\hbar\pdv{\tau} + \frac{\hbar^2 \nabla_{\vb{x}}^2}{2m} + \mu] \mathcal{G}_{\alpha\alpha}(\vb{x},\tau;\vb{x}',\tau'),
+    \expval*{\hat{V}}_{T} = \mp \frac{1}{2} \sum_{\alpha}\int \dd[3]{x} \lim_{\substack{\vb{x}'\to\vb{x}\\ \tau'\to \tau^+}} \qty[-\hbar\pdv{\tau} + \frac{\hbar^2 \nabla_{\vb{x}}^2}{2m} + \mu] \mathcal{G}_{\alpha\alpha}(\vb{x},\tau;\vb{x}',\tau'),
+    \label{potential}
 \end{equation}
 $$
 
@@ -250,3 +252,24 @@ The last term is essentially the quantity of interest.
 </details>
 
 </div>
+
+
+### Internal energy
+<div class="box-danger" markdown="1">
+<div class="title"> Internal energy </div>
+Combining $\eqref{kinetic}$ and $\eqref{potential}$, we can get the ensemble average of the Hamiltonian, which is just the internal energy
+
+$$
+\begin{equation}
+    E = \expval*{\hat{H}} = \expval*{\hat{T}+\hat{V}} = \mp \frac{1}{2} \sum_{\alpha} \int \dd[3]{x} \lim_{\substack{\vb{x}'\to\vb{x}\\ \tau' \to \tau^+}} \qty[-\hbar\pdv{\tau} - \frac{\hbar^2 \nabla^2}{2m} + \mu]\mathcal{G}_{\alpha\alpha}(\vb{x},\tau;\vb{x}',\tau'),
+\end{equation}
+$$
+
+where the upper (lower) sign refers to bosons (fermions).
+</div>
+
+### Thermodynamic potential
+Thermodynamic potential is an important quantity in the grand canonical ensemble
+
+
+## Noninteracting system
