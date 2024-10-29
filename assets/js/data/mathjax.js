@@ -8,7 +8,7 @@ layout: compress
 {%- endcomment -%}
 
 MathJax = {
-  loader: { load: ['[tex]/physics','ui/lazy',] },
+  loader: { load: ['[tex]/physics',] },
   tex: {
     inlineMath: [
       ['$', '$'],
@@ -26,9 +26,6 @@ MathJax = {
         'ZZ': '\\mathbb{Z}',
         'QQ': '\\mathbb{Q}',
       },
-  },
-  options: {
-    lazyMargin: '200px',
   },
   svg: { fontCache: 'global'},
 };
