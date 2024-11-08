@@ -224,7 +224,7 @@ $$
 
 我们可以这样分析，考虑 site $i$ 和 $i+1$ 处的 valence bond，并对其标记 $\alpha_{i+1}=1,2$。如果 valence bond 处于 $\ket{\uparrow_{i}^{r}\downarrow_{i+1}^{l}}/\sqrt{2}$，那我们就标记 $\alpha_{i+1}=1$；如果 valence bond 处于 $\ket{\downarrow_{i}^{r}\uparrow_{i+1}^{l}}/\sqrt{2}$，我们就标记 $\alpha_{i+1} =2$。如下图所示，具体展示了 $\eqref{AKLT-gs}$ 中展开后的其中一项。
 
-![hidden-antiferromagnetic-oredr](hidden-antiferromagnetic-order.png){: width="650"}
+![AKLT-hidden-antiferromagnetic-oredr](AKLT-hidden-antiferromagnetic-order.png){: width="650"}
 _(a) 一个 valence bond 对应一个自旋单态，我们将 $\ket{\uparrow\_{i}^{r}\downarrow\_{i+1}^{l}}/\sqrt{2}$, $\ket{\downarrow\_{i}^{r}\uparrow\_{i+1}^{l}}/\sqrt{2}$ 分别用 $\alpha\_{i+1}=1,2$ 来进行区分。 (b) AKLT 模型基态展开后是特定自旋配置的组合，这里展示的是其中一项。_
 
 如果我们把 $s=0$ 全部删去，显然我们剩下的就是 $s=1,s=-1$ 交替排列的自旋链，它显然是一个反铁磁序。
