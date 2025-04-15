@@ -22,6 +22,7 @@ MathJax = {
     tags: 'ams',
     macros: {
         'e': '\\mathrm{e}',
+        'i': '\\mathrm{i}',
         'RR': '\\mathbb{R}',
         'ZZ': '\\mathbb{Z}',
         'QQ': '\\mathbb{Q}',

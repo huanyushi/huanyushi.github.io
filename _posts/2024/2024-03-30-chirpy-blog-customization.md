@@ -6,30 +6,32 @@ tag: [HTML, CSS]
 math: true
 pin: true
 media_subpath : /assets/img/in-post/2024/2024-03-30/
-description: 基于 Jekyll-Theme-Chirpy v7.0.0 的个性化方案介绍：MathJax 配置、侧边栏样式、页脚站点统计、背景动画、自定义新的 prompt 和 details 元素样式、LQIP 和反色图片的 Python 实现等内容。
+description: 基于 Jekyll-Theme-Chirpy v7.0.0 的个性化设置：MathJax 配置、侧边栏样式、页脚站点统计、背景动画、自定义新的 prompt 和 details 元素样式、LQIP 和反色图片的 Python 实现等内容。
 ---
 ## 1. 简介
-去年我通过 jekyll 在 github 部署了静态博客网站，效果甚合我意。
+去年我通过 jekyll 在 GitHub 部署了静态博客网站，效果甚合我意。
 
 但原先我使用的模板是 [Huxpro](https://github.com/Huxpro/huxpro.github.io)，最近花了一点时间把模板改成了 [Chirpy](https://github.com/cotes2020/jekyll-theme-chirpy/)。以前 Jekyll 把主题样式和博客内容混杂在一起，不利于编辑，但在 3.2.0 版本后，Jekyll 引入了 `gem-based theme`，把网站的样式封装成了一个 gem 包，实现了主题样式和博客内容的分离（这有点类似于 HTML 和 CSS）。Chirpy 模板正是一个 `gem-based theme`，所以利用 Chirpy Starter 生成的 blog，它只包含了内容文件，要想实现对 Chirpy 模板的个性化处理，就必须找到它的样式文件。
 
-有两种方法可供选择。第一种就是直接访问 Chirpy 的 github 项目页面，从它的源码里扒出来样式文件及代码。第二种则利用 git，通过命令 `bundle info --path jekyll-theme-chirpy` 获取封装的样式文件地址，如下图所示
+有两种方法可供选择。第一种就是直接访问 Chirpy 的 GitHub 项目页面，从它的源码里扒出来样式文件及代码。第二种则利用 git，通过命令 `bundle info --path jekyll-theme-chirpy` 获取封装的样式文件地址，如下图所示
 
 ![theme file](theme-file.PNG){: .shadow width="700"}
 _封装的样式文件地址_
 
 在里面找到相应的样式文件后，把它放入自己 blog 对应的文件里，就可以进行个性化定制了。
 
-> 该图片停留在 6.5.5 版本，但新的版本也是类似的便不再更新了。
+> 该图片停留在 6.5.5 版本，但新版本也是类似的，便不再更新了。
 {: .prompt-info}
 
-注意生成博客时，放入自己 `.github.io` 文件夹的样式文件会覆盖原先 gem 包里的同名文件，而未修改的样式文件则照样从 gem 包里读取，所以未修改的样式文件没必要导入，这样也方便后续跟随模板作者进行更新。本篇文章就是记录一些我个人对 Chirpy 进行的部分修改（一些小的修改就不写了）。
+注意生成博客时，放入自己 `.github.io`{: .filepath} 文件夹的样式文件会覆盖原先 gem 包里的同名文件，而未修改的样式文件则照样从 gem 包里读取，所以未修改的样式文件没必要导入，这样也方便后续跟随模板进行更新。
+
+本篇文章就是记录一些我个人对 Chirpy 进行的部分修改（一些小的修改就不写了）。
 
 ## 2. 修改 MathJax 配置
-MathJax 自从进入 3.x 时代后，渲染数学公式的速度几乎比肩 KaTeX，再考虑到 MathJax 支持丰富的拓展包，功能相比 KaTeX 更为强大，所以优先考虑 MathJax。模板作者对 MathJax 的设置在 `assets/js/data/mathjax.js`{: .filepath} 文件中，在隐藏的 gem 包里找到相应代码，即可进行修改。
+MathJax 自从进入 3.x 时代后，渲染数学公式的速度几乎比肩 KaTeX，再考虑到 MathJax 支持丰富的拓展包，功能相比 KaTeX 更为强大，所以我更倾向于使用 MathJax（没有 Physics 包可以要了我半条命）。模板作者对 MathJax 的设置在 `assets/js/data/mathjax.js`{: .filepath} 文件中，在隐藏的 gem 包里找到相应代码，即可进行修改。
 
 ### 2.1. MathJax 添加拓展包
-添加了一些拓展包，如 `physics`，同时也自定义了一些宏（简化公式输入），启用了懒加载模式（可以加快网页加载）。代码修改如下（更多内容可以从 MathJax 官网文档里找到说明）：
+我添加了一些拓展包，如物理专业学生人手必备的 `physics`，同时也自定义了一些宏来简化公式输入。代码修改如下（更多内容可以从 [MathJax](https://docs.mathjax.org/en/latest/) 官网文档里找到说明）：
 
 <!-- {% raw %} -->
 ```javascript
@@ -43,7 +45,7 @@ layout: compress
 {%- endcomment -%}
 
 MathJax = {
-  loader: { load: ['[tex]/physics','ui/lazy',] },
+  loader: { load: ['[tex]/physics',] },
   tex: {
     inlineMath: [
       ['$', '$'],
@@ -57,13 +59,11 @@ MathJax = {
     tags: 'ams',
     macros: {
         'e': '\\mathrm{e}',
+        'i': '\\mathrm{i}',
         'RR': '\\mathbb{R}',
         'ZZ': '\\mathbb{Z}',
         'QQ': '\\mathbb{Q}',
       },
-  }
-  options: {
-    lazyMargin: '200px',
   },
   svg: { fontCache: 'global'},
 };
@@ -72,7 +72,7 @@ MathJax = {
 <!-- {% endraw %} -->
 
 ### 2.2. 增加主页 preview 公式预览
-在 Blog 主页，对每篇文章的预览部分会直接显示数学代码，要想能够在主页也预览公式，可以参考 [issue-1140](https://github.com/cotes2020/jekyll-theme-chirpy/issues/1140)。
+在 blog 主页，每篇文章的预览部分会直接显示数学代码，要想能够在主页也预览公式，可以参考 [issue-1140](https://github.com/cotes2020/jekyll-theme-chirpy/issues/1140)。
 > 暂时没有这个打算，这个功能似乎相对鸡肋。以后有需要再开吧。
 {: .prompt-info}
 
@@ -80,8 +80,9 @@ MathJax = {
 ### 3.1. 侧边栏增加背景图片
 在 `assets/css/jekyll-theme-chirpy.scss`{: .filepath} 文件中，增加对侧边栏样式设置的 CSS 代码，其中 `background-image` 便是用来添加背景图片的基本命令，只需后面添加图片的 url 即可，如下：
 ```scss
+/* 侧边栏背景图片添加 */
 #sidebar {
-    background-image: url(https://cdn.jsdelivr.net/gh/huanyushi/Blog-Image-Bed@main/assets/img/background.jpg); /* <- change background image */
+    background-image: url(https://cdn.jsdelivr.net/gh/huanyushi/huanyushi.github.io@main/assets/img/background.jpg); /* <- change background image */
     background-size: cover; /* <- customize the image size */
     background-repeat: no-repeat; /* <- no-repeat */
     background-position: top; /* <- image position */
@@ -91,7 +92,8 @@ MathJax = {
 
 同样也要注意修改相应文字的颜色，我这里选的是深色背景，所以对应文字都是白色，
 ```css
-#sidebar .site-title a {
+/* 侧边栏相关文字样式设置 */
+#sidebar .site-title {
     color: #ffffff; 
     text-shadow: 5px 5px 10px rgba(0,0,0,0.5);
 }
@@ -113,10 +115,10 @@ MathJax = {
 
 <!-- {% raw %} -->
 ```html
-  <!-- Friends link -->
-  {% if site.data.friends %}
-      {% include friends.html %}
-  {% endif %}
+<!-- Friends link -->
+{% if site.data.friends %}
+    {% include friends.html %}
+{% endif %}
 ```
 {: file="_includes/sidebar.html"}
 <!-- {% endraw %}) -->
@@ -197,55 +199,16 @@ MathJax = {
 <div class="box-warning" markdown="1">
 <div class="title"> 注意 </div>
 1. 友链不能加太多，容易挤占底部社交平台的空间，让它跑到屏幕外面去了（不过这也和系统分辨率有关系）。如果友链太多建议在侧边栏新开一个选项卡，也就是新建一个 `_tabs/friends.md`{: .filepath}。
-2. 我这里设置的是友链沉底，保持在底部社交平台上方。如果分辨率拉大，会发现它和上面侧边栏选项卡之间有很大间距。如果想调整友链位置紧跟选项卡之后，可以在 `_includes/sidebar.html`{: .filepath} 中修改选项卡的样式，将 `<nav class="flex-column flex-grow-1 w-100 ps-0">` 中的 `flex-grow-1` 删除；并加入到友链样式中原先的 `<div class="friends">` 修改为 `<div class="friends flex-grow-1">`。同时 `assets/css/jekyll-theme-chirpy.scss`{: .filepath} 中 `#sidebar .friends` 里的 `margin-bottom: 2rem` 修改为上间距 `margin-top: ? rem`, ? 的值可以自己选定。
+2. 我这里设置的是友链沉底，保持在底部社交平台上方。如果分辨率拉大，会发现它和上面侧边栏选项卡之间有很大间距。如果想调整友链位置紧跟选项卡之后，可以在 `_includes/sidebar.html`{: .filepath} 中修改选项卡的样式，将 `<nav class="flex-column flex-grow-1 w-100 ps-0">` 中的 `flex-grow-1` 删除；并加入到友链样式中，原先的 `<div class="friends">` 修改为 `<div class="friends flex-grow-1">`。同时 `assets/css/jekyll-theme-chirpy.scss`{: .filepath} 中 `#sidebar .friends` 里的 `margin-bottom: 2rem` 修改为上间距 `margin-top: ? rem`, ? 的值可以自己选定。
 </div>
 
-## 4. <del> 修改 further reading 的文章顺序</del>
-<del>按我的理解这应该是模板的一个 bug，所以我把这部分更新写成一个 PR 提交给原作者了，请见 [refactor: make Further Reading display the latest posts.](https://github.com/cotes2020/jekyll-theme-chirpy/pull/1699)。</del>
 
-> 这个 PR 已经被作者**合并**，在 Chirpy 7.0.0 版本及之后就不需要再做修改了，这一节内容请忽略。
-{: .prompt-danger}
-
-先描述一下问题，假设我们有 5 个不同的文章，它们按发布时间从以前到最新依次为 `Post1`, `Post2`, `Post3`, `Post4` 和 `Post5`，即：
-
-```
-_posts
-├─ Post1.md
-├─ Post2.md
-├─ Post3.md
-├─ Post4.md
-└─ Post5.md
-```
-
-在打开每个文章时，底部会推荐跟它最匹配的 3 个文章（匹配分数的算法在 `_includes/related-posts.html`{: .filepath} 中）。但现在的问题是，当这些文章的匹配分数相同时，无论我打开哪篇文章，底部的 Further Reading 永远只会推荐发布时间最早的 3 个文章而不是最新的。
-
-举个例子，当我打开 `Post4` 时，底部显示的是 `Post1`, `Post2`, `Post3`，而不是最新的 3 篇 `Post2`, `Post3`, `Post5`。同理，当我打开 `Post5` 时显示的也是 `Post1`, `Post2`, `Post3` 而不是 `Post2`, `Post3`, `Post4`。这就意味着，无论我后面写了多少篇文章，它永远只会显示最早的那 3 篇。
-
-在匹配分数一样的情况下，我们可能更希望推荐的是最近更新的 3 篇文章而不是最早的（当然，也可以设置随机数，匹配随机文章）。所以我做了以下更改，在 `_includes/related-posts.html`{: .filepath} （这个文件也在 gem 包里）中，
-
-<!-- {% raw %} -->
-```diff
-{% for category in page.categories %}
-  {% assign match_posts = match_posts | push: site.categories[category] | uniq %}
-{% endfor %}
-
-{% for tag in page.tags %}
-  {% assign match_posts = match_posts | push: site.tags[tag] | uniq %}
-{% endfor %}
-
-+ {% assign match_posts = match_posts | reverse %}
-{% assign last_index = match_posts.size | minus: 1 %}
-{% assign score_list = '' | split: '' %}
-```
-{: file='_includes/related-posts.html'}
-<!-- {% endraw %} -->
-
-## 5. 增加评论区
+## 4. 增加评论区
 评论区使用 giscus，模板作者已经将相关选项封装好了，在 `_config.yml`{: .filepath} 文件中填上个人信息即可。
 
 教程请见 [giscus](https://giscus.app/) 项目，关于它的高级功能设置请见 [Advanced usage](https://github.com/giscus/giscus/blob/main/ADVANCED-USAGE.md)。
 
-## 6. 增加站点统计
+## 5. 增加站点统计
 模板作者贴心的在页脚使用了 flex 格式，直接找到 `_includes/footer.html`{: .filepath} 文件（这个文件在 gem 包里），复制后在中间插入[不蒜子](https://busuanzi.ibruce.info/)即可成功在页脚显示站点统计，`uv` 和 `pv` 就是访问量的两种统计算法，具体解释请见[教程](https://ibruce.info/2015/04/04/busuanzi/)。
 
 <!-- {% raw %} -->
@@ -269,7 +232,7 @@ _posts
 
 另外更多详细的站点统计信息（如用户量、用户地区、用户访问了哪些页面等内容）可以使用 [Google Analytics](https://analytics.google.com/analytics/web/#/provision) 来获取，在 `_config.yml` 中加入 ID 即可。
 
-## 7. 增加背景动画
+## 6. 增加背景动画
 参考 [@NichtsHsu](https://nihil.cc/) 的博客设计，增加了背景动画功能。在 `_layouts/default.html`{: .filepath} （这个文件也在 gem 包里）中加入
 
 <!-- {% raw %} -->
@@ -342,6 +305,7 @@ _posts
 而样式设计在 `assets/css/jekyll-theme-chirpy.scss`{: .filepath} 中，
 ```scss
 /* 生成动画 */
+@use 'sass:math';
 @keyframes infirot {
     from {
       -webkit-transform: rotate(0deg);
@@ -359,8 +323,8 @@ _posts
   }
   
   @function random_range($min, $max) {
-    $rand: random();
-    $random_range: $min + floor($rand * (($max - $min) + 1));
+    $rand: math.random();
+    $random_range: $min + math.floor($rand * (($max - $min) + 1));
     @return $random_range;
   }
   
@@ -431,7 +395,7 @@ _posts
 4. `#animation` 是一个具有固定位置的容器，用于包含动画效果。它包含了另一个关键帧动画 `animate`，定义了元素在页面上的运动轨迹和透明度变化。这个动画使元素沿着垂直方向向上移动并旋转，逐渐消失，同时边框半径也发生变化。
 5. `#animation` 中包含了两个媒体查询，根据视口宽度的不同应用不同的样式。在大于等于 1200px 的情况下，会生成一系列彩色圆形动画效果，每个圆形的位置、颜色、大小、持续时间和延迟时间都是随机生成的。在小于 1200px 的情况下，圆形动画被隐藏起来，不显示。所以移动端看不到动画效果，但是 PC 端是可以的。
 
-## 8. 增加 GitHub 贡献图
+## 7. 增加 GitHub 贡献图
 
 利用 GitHub 上的一个项目 [gh-contrib-graph](https://github.com/lengthylyova/gh-contrib-graph)，在 HTML 里加入以下代码：
 
@@ -446,14 +410,14 @@ _posts
 <script src="http://lengthylyova.pythonanywhere.com/static/gh-contrib-graph/gh.js"></script>
 ```
 
-将其中的 `YOUR_GITHUB_LOGIN` 改成 github 用户名即可。
+将其中的 `YOUR_GITHUB_LOGIN` 改成 GitHub 用户名即可。
 
 <div class="box-info" markdown="1">
 <div class="title"> 建议 </div>
 我个人建议在 `assets/css/jekyll-theme-chirpy.scss`{: .filepath} 导入外部 CSS 样式文件，即（下面是我自己设置的样式代码）
 
 ```scss
-@import url('http://lengthylyova.pythonanywhere.com/static/gh-contrib-graph/gh.css');
+@use url('http://lengthylyova.pythonanywhere.com/static/gh-contrib-graph/gh.css');
 
 .ghCalendarHeader {
   margin-bottom: 1rem;
@@ -481,7 +445,7 @@ _GitHub 贡献图_
 > 我嫌加载太慢就没加进去了，这玩意儿放在 `about.md`{:.filepath} 是个不错的选择。
 </div>
 
-## 9. 增加 4 个新的 prompt
+## 8. 增加 4 个新的 prompt
 模板作者已经设置了 4 个 prompt，效果如下：
 
 > To be or not to be. That is a question.
@@ -624,7 +588,7 @@ To be or not to be. That is a question.
 ```
 {: file="assets/css/jekyll-theme-chirpy.scss"}
 
-## 10. Details 元素的样式设计
+## 9. Details 元素的样式设计
 HTML 中的 `<details class="details-block">` 元素可以创建一个组件，仅当被切换为展开状态时，才会显示里面的内容，效果如下：
 
 <details class="details-block" markdown="1">
@@ -650,83 +614,83 @@ $$
 </details>
 ```
 
-样式的设计添加到了 `assets/css/jekyll-theme-chirpy.scss`{: .filepath} 中，加入以下代码即可（注意我的样式在下面的基础上做了更改）：
+样式的设计添加到了 `assets/css/jekyll-theme-chirpy.scss`{: .filepath} 中，加入以下代码即可（注意我在下面的基础上更改了颜色，并不完全一样）：
 ```scss
-    // details 样式设计
-   details {
-       border-radius: .25rem;
-       border-left: .2rem solid var(--prompt-tip-icon-color);
-       box-shadow: var(--language-border-color) 1px 1px 2px 1px; /* 借用了代码框的边框颜色变量 */
-       margin-bottom: 1rem;
-       padding: .6rem 1rem .6rem 1.5rem;
-       > p:last-child{
+// details class="details-block" 样式设计
+details.details-block {
+    border-radius: .25rem;
+    border-left: .2rem solid var(--prompt-tip-icon-color);
+    box-shadow: var(--language-border-color) 1px 1px 2px 1px; /* 借用了代码框的边框颜色变量 */
+    margin-bottom: 1rem;
+    padding: .6rem 1rem .6rem 1.5rem;
+    > p:last-child{
         margin-bottom: 0;
     }
-   }
+}
 
-    details > summary {
-        padding: .5rem 1.0rem .5rem 1.0rem; 
-        margin: -.6rem -1rem -.6rem -1.5rem;
-        font-weight: 600;
-        background-color: var(--prompt-tip-bg);
-        color: var(--prompt-tip-icon-color);
-        text-decoration: underline;
-        position: relative;
-        list-style: none; /* 隐藏默认的箭头 */
-        transition: background-color 0.3s ease; /* 添加颜色过渡效果 */
-    }
+details.details-block > summary {
+    padding: .5rem 1.0rem .5rem 1.0rem; 
+    margin: -.6rem -1rem -.6rem -1.5rem;
+    font-weight: 600;
+    background-color: var(--prompt-tip-bg);
+    color: var(--prompt-tip-icon-color);
+    text-decoration: underline;
+    position: relative;
+    list-style: none; /* 隐藏默认的箭头 */
+}
 
-    details > summary::-webkit-details-marker {
-        display: none; /* 隐藏默认的箭头 */
-    }
-    details > summary::marker {
-        content: none; /* 隐藏默认的箭头 */
-    }
+details.details-block > summary::-webkit-details-marker {
+    display: none; /* IOS 隐藏默认的箭头 */
+}
+details.details-block > summary::marker {
+    content: none; /* 隐藏默认的箭头 */
+}
 
-    details > summary::before {
-        /* 关闭状态下 */
-        /* 也可以用其他符号或自定义图标，比如 Unicode 字符 */
-        // content: '🙈'; 
-        /* content:'\002B9A'; */
-        content: '😼';
-        margin-right: .5rem;
-        display: inline-block;
-    }
-    details[open] > summary::before {
-        /* 展开状态下 */
-        /* content: '🐵';*/  
-        /* content: '\002B9B'; */
-        content: '🙀';
-        animation: my-cat .2s ease-in-out; /*  点击会有动画效果 */
-        margin-right: .5rem;
-    }
+details.details-block > summary::before {
+    /* 关闭状态下 */
+    /* 也可以用其他符号或自定义图标，比如 Unicode 字符 */
+    // content: '🙈'; 
+    /* content:'\002B9A'; */
+    content: '😼';
+    margin-right: .5rem;
+    display: inline-block;
+}
+details.details-block[open] > summary::before {
+    /* 展开状态下 */
+    /* content: '🐵';*/  
+    /* content: '\002B9B'; */
+    content: '🙀';
+    animation: my-cat .2s ease-in-out; /*  点击会有动画效果 */
+    margin-right: .5rem;
+}
 
-    details > summary::after {
-        font-family: 'Font Awesome 6 Free';
-        content: "\f105"; /* Unicode for fa-angle-down */
-        display: inline-block;
-        transition: transform 0.2s ease; /* 添加旋转动画 */
-        position: absolute;
-        right: 1rem; /* 调整箭头在最右边的位置 */
-    }
-    details[open] > summary::after {
-        transform: rotate(90deg);
-    }
+details.details-block > summary::after {
+    font-family: 'Font Awesome 6 Free';
+    content: "\f105"; /* Unicode for fa-angle-down */
+    display: inline-block;
+    transition: transform 0.2s ease; /* 添加旋转动画 */
+    position: absolute;
+    right: 1rem; /* 调整箭头在最右边的位置 */
+}
 
-    details[open] > summary{
-        // transition: margin 200ms ease-out; /* 展开会有动画效果 */
-        margin-bottom: .6rem;
-    }
+details.details-block[open] > summary::after {
+    transform: rotate(90deg);
+}
 
-    @keyframes my-cat {
-        50%  { transform: scale(1.3); } /* 动画效果代码 */
-    }
+details.details-block[open] > summary{
+    // transition: margin 200ms ease-out; /* 展开会有动画效果 */
+    margin-bottom: .6rem;
+}
+
+@keyframes my-cat {
+    50%  { transform: scale(1.2); } /* 动画效果代码 */
+}
 ```
 {: file="assets/css/jekyll-theme-chirpy.scss" }
 
 
 
-## 11. LQIP 的 Python 实现
+## 10. LQIP 的 Python 实现
 LQIP (Low Quality Image Placeholder) 指的是低质量图像占位符，这是一种网页性能优化技术，在加载高质量图像之前，先加载一个轻量级、低分辨率的模糊图像来提供一种预览。这种预览图像可以帮助减少页面加载时间和带宽消耗，提高访问者的视觉体验。
 
 ![LQIP](lqip.png)
@@ -803,8 +767,8 @@ base64_string = "/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBk
 save_base64_image(base64_string, "decoded_image.webp")
 ```
 
-## 12. 反色图片的 Python 实现
-Blog 支持暗色模式，同时文中的图片也可以相应转换至暗色模式，对于部分图片可以直接通过反色的方式将亮色转换至暗色（但不是所有，注意反色不等于暗色！），我写了一个 Python 程序可以将图片转换至暗色模式，有需要可以自取。同样地，文件路径也是根据我自己实际情况来设置的，需要做相应修改：
+## 11. 反色图片的 Python 实现
+Blog 支持暗色模式，同时文中的图片也可以相应转换至暗色模式，对于部分图片可以直接通过反色的方式将亮色转换至暗色（但不是所有，注意反色不等于暗色！），我写了一个 Python 程序可以将图片转换至暗色模式，有需要可以自取。同样，文件路径也是根据我自己实际情况来设置的，需要做相应修改：
 
 ```python
 from PIL import Image, ImageChops
@@ -844,43 +808,43 @@ image_output.save(image_start + image_end.replace('.', '-dark.')) # 如：test.P
 _反色图片与原图片对比_
 
 
-## 13. 其他问题
-### 13.1. git push 失败: couldn't connet to server
+## 12. 其他问题
+### 12.1. git push 失败: couldn't connet to server
 将本地文件 push 到 github 远程仓库里，经常出现 `couldn't connet to server` 的报错，经过查询没有明显有效的办法。以下是**可能有效**的措施（目前来看第三种最有效）：
 
 1. 关掉梯子 (VPN) 再 push 一下试试；
 2. 在命令行中运行以下代码来取消代理。
-```bash
-git config --global --unset http.proxy 
-git config --global --unset https.proxy 
-```
-1. 打开梯子的情况下。对右下角网络点击右键，打开`网络和 Internet 设置`，点击代理，查看地址和端口号，如 `127.0.0.1:7890`。在命令行中输入 
-```shell 
-git config --global http.proxy http://127.0.0.1:7890
-```
+   ```bash
+   git config --global --unset http.proxy 
+   git config --global --unset https.proxy 
+   ```
+3. 打开梯子的情况下。对右下角网络点击右键，打开`网络和 Internet 设置`，点击代理，查看地址和端口号，如 `127.0.0.1:7890`。在命令行中输入 
+   ```shell 
+   git config --global http.proxy http://127.0.0.1:7890
+   ```
+   可通过 `git config --global -l` 查看是否设置成功。之后再进行 push 即可。
 
-可通过 `git config --global -l` 查看是否设置成功。之后再进行 push 即可。
-
-### 13.2. jekyll serve 预览速度较慢
+### 12.2. jekyll serve 预览速度较慢
 方法很多，比如减少文件夹数量、压缩图片大小等。以下罗列一些我摸索出来的方法：
 
-1. 对博客设置增量构建（即只重新建构发生更改的文件，而不是每次重新构建整个站点），
-可以在 `_config.yml`{: .filepath} 中添加 `incremental: true`，之后每次 jekyll 都将重新构建发生更改的文件。当然更合适的方法是使用 `bundle exec jekyll s --incremental` 或者 `bundle exec jekyll s --I` 来构建博客，这样手动可调更灵活。
+1. 对博客设置增量构建（即只重新建构发生更改的文件，而不是每次重新构建整个站点），可以在 `_config.yml`{: .filepath} 中添加 `incremental: true`，之后每次 jekyll 都将重新构建发生更改的文件。
+
+   当然更合适的方法是使用 `bundle exec jekyll s --incremental` 或者 `bundle exec jekyll s --I` 来构建博客，这样手动可调更灵活。
 2. 压缩图片大小，这也是加速博客构建和浏览的一种方式。
 
-### 13.3. 在 blog 中插入文件
+### 12.3. 在 blog 中插入文件
 使用 `<iframe>` 元素即可，如
 ```html
 <iframe src="file path" width="100%" height='800'></iframe>
 ```
-利用这个技巧可以在 post 中插入 html, pdf 等文件进行预览。
+利用这个技巧可以在 post 中插入 `.html`{: .filepath}, `.pdf`{: .filepath} 等文件进行预览。
 
 <div class="box-danger" markdown="1">
 <div class="title"> 警告</div>
 这个功能在谷歌浏览器上可以正常使用，但是其他浏览器不一定支持，且加 overflow 在移动端也不能产生滚动条，慎用！
 </div>
 
-### 13.4. 在 blog 中在线运行 Python
+### 12.4. 在 blog 中在线运行 Python
 在 post 里加入以下代码，可以在线运行 Python （虽然感觉有点鸡肋，但还是记录在这里）
 
 ```html
@@ -891,11 +855,11 @@ git config --global http.proxy http://127.0.0.1:7890
 </iframe>
 ```
 
-### 13.5. 可能有用的资源
+### 12.5. 可能有用的资源
 
 <div class="box-tip" markdown="1">
 <div class="title"> 可能有用的资源 </div>
-- [TinyPNG](https://tinypng.com/)：一个免费的在线图片压缩网站，虽然说是有损压缩，但视觉上几乎没有影响，且图片压缩甚至能达到 70%。
+- [TinyPNG](https://tinypng.com/), [Website Planet](https://www.websiteplanet.com/zh-hans/webtools/imagecompressor/)：免费的在线图片压缩网站，虽然说是有损压缩，但视觉上几乎没有影响，且图片压缩甚至能达到 80%。
 - [PageSpeed Insights](https://pagespeed.web.dev/)：谷歌推出的网站性能检测工具，输入网址后会提供一个报告和优化方案，顺带看看哪里拖慢了加载速度。
 - [Coolors](https://coolors.co/), [Color Hunt](https://www.colorhunt.co/)：在线调色网站，可以用来提供推荐配色。
 </div>

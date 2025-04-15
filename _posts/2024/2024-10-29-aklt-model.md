@@ -29,7 +29,7 @@ $$
 - 当自旋 $s$ 是半整数时，系统是无能隙的（gapless），关联函数呈幂律衰减。
 
 
-这一猜想在当时凝聚态物理学界引起了很大的反响。从经典的角度来看，$s$ 仅仅是自旋的大小，为什么 $s$ 是整数还是半整数会引来如此大的差别？对于 $s=1$ 的情况很快就得到了数值（密度矩阵重整化群，DMRG）和实验（$\mathrm{CsNiCl_3}$）上的验证。
+这一猜想在当时凝聚态物理学界引起了很大的反响。从经典的角度来看，$s$ 仅仅是自旋的大小，为什么 $s$ 是整数还是半整数会引来如此大的差别？对于 $s=1$ 的情况很快就得到了数值（密度矩阵重整化群，DMRG）和实验（$\mathrm{CsNiCl_3}$）上的验证，与 Haldane 猜想相符。
 
 整数自旋系统的能隙不受微扰的影响，这个稳定存在的有能隙的量子态构成了一个非平庸的量子相（其基态没有对称性破缺，但因为存在边界态，而与平庸的有能隙的直积态有本质区别），后来被称为 **Haldane phase**，它也是一种**对称性保护拓扑相**[^Gu-Wen-2009]（symmetry protected topological phase, SPT phase）。
 
@@ -46,7 +46,7 @@ $$
 \end{equation}
 $$
 
-次近邻相互作用实际上会引入阻挫（frustration），这就是另外的故事了。我们考虑一个特殊情况，即 $J_1= 2 J_2 =J$，这就是 Majumdar-Ghosh 模型[^Majumdar-Ghosh-1969]，
+次近邻相互作用实际上会引入阻挫（frustration），这就是另外的故事了，暂且不表。我们考虑一个特殊情况，即 $J_1= 2 J_2 =J$，这就是 Majumdar-Ghosh 模型[^Majumdar-Ghosh-1969]，
 
 $$
 \begin{equation}
@@ -63,7 +63,7 @@ $$
 \end{align*}
 $$
 
-其中括号里的正是 site $i$, $i+1$, $i+2$ 处三个自旋耦合后投影到总自旋 $s=3/2$ 子空间的投影算符。我们知道三个自旋-1/2 粒子耦合后的总自旋可以是 $s=1/2$, $3/2$，如果我们能设法使得每一组三个粒子耦合后的总自旋为 1/2，那我们就找到了系统能量的最低态（也就是基态）。
+其中括号里的正是 site $i$, $i+1$, $i+2$ 处三个自旋耦合后投影到总自旋 $s=3/2$ 子空间的投影算符 $P_ {3/2}$。我们知道三个自旋-1/2 粒子耦合后的总自旋可以是 $s=1/2$, $3/2$，对于总自旋 $s=1/2$ 的态，经投影算符 $P_ {3/2}$ 作用后为零，而总自旋 $s=3/2$ 的态，经投影算符 $P_ {3/2}$ 作用后并未发生改变。那么如果我们能设法使得每一组三个粒子耦合后的总自旋为 1/2，我们就找到了系统能量的最低态（也就是基态）。
 
 这种构造显然是可以的，我们以前三个粒子为例，若它们的态矢量可以写为：
 
@@ -94,9 +94,9 @@ $$
 ![](MG-gs.png){: width="550"}
 _Majumdar-Ghosh 模型的基态，其中 $\ket{\psi\_+}$, $\ket{\psi\_-}$ 就是 $\vert\Phi\_{\mathrm{MG}}^{(1)}\rangle$, $\vert\Phi\_{\mathrm{MG}}^{(2)}\rangle$，图源 [Milez](https://commons.wikimedia.org/wiki/File:Majumdar-ghosh_gs.png)。_
 
-其中每一条线段都代表连接相邻 site 自旋-1/2 粒子构成的自旋单态，这其实就有点类似于化学里的化学键，每个自旋单态被称为 valence bond，显然 Majumdar-Ghosh 模型里不同的 valence bond 之间没有关联，系统基态仅仅是不同 valence bond 的直积。
+其中每一条蓝色线段都代表连接相邻 site 自旋-1/2 粒子构成的自旋单态，这其实就有点类似于化学里的化学键，每个自旋单态被称为 valence bond，显然 Majumdar-Ghosh 模型里不同的 valence bond 之间没有关联，系统基态仅仅是不同 valence bond 的直积。
 
-如果将其中一组自旋单态变为自旋三重态，我们就得到了 Majumdar-Ghosh 模型的第一激发态，显然它和基态之间存在着一个非零的能隙。注意这一点并不违反 Lieb-Schultz-Mattis 定理，因为 Majumdar-Ghosh 模型的基态是二重简并的。
+如果将其中一组自旋单态改为自旋三重态，我们就得到了 Majumdar-Ghosh 模型的第一激发态，显然它和基态之间存在着一个非零的能隙。注意这一点并不违反 Lieb-Schultz-Mattis 定理，因为 Majumdar-Ghosh 模型的基态是二重简并的。
 
 <div class="box-danger" markdown="1">
 <div class="title"> Ground states of the Majumdar-Ghosh model </div>
@@ -110,7 +110,7 @@ $$
 \end{align*}
 $$
 
-并且注意到 $\braket*{\phi_{\mathrm{MG}}^{(1)}}{\phi_{MG}^{(2)}} = 2(-1/2)^N$，如果自旋链长度 $2N\to\infty$，那么这两个基态就是正交的。
+并且注意到 $\braket*{\Phi_{\mathrm{MG}}^{(1)}}{\Phi_{MG}^{(2)}} = 2(-1/2)^N$，如果自旋链长度 $2N\to\infty$，那么这两个基态就是正交的。
 
 </div>
 
@@ -161,8 +161,7 @@ $$
 这种方法和传统凝聚态的套路是反过来的，一般我们是先写下一个模型的哈密顿量，然后进行一通暴算得到模型的各种性质，比如基态、激发态、关联函数等。但在这里我们其实是先确定一个特定的态，
 再基于这个态构造以它为基态的 parent Hamiltonian。
 
-出于以上想法，我们可以将每个 site 的自旋-1 粒子视作两个自旋-1/2 粒子耦合成的自旋三重态，再令相邻 site 的自旋-1/2 粒子耦合成自旋单态。这样任意两个相邻 site 的两个自旋-1 粒子（或者说四个自旋-1/2 粒子）耦合后
-的总自旋是 $s=0,1$，我们便得到了 AKLT 模型的基态，
+出于以上想法，我们可以将每个 site 的自旋-1 粒子视作两个自旋-1/2 粒子耦合成的自旋三重态，再令相邻 site 的自旋-1/2 粒子耦合成自旋单态。这样任意两个相邻 site 的两个自旋-1 粒子（或者说四个自旋-1/2 粒子）耦合后的总自旋是 $s=0,1$，我们便得到了 AKLT 模型的基态，
 
 $$
 \begin{equation}
@@ -176,9 +175,9 @@ $$
 如下图所示：
 
 ![](AKLT-gs.png){: width="550"}
-_AKLT 模型的基态，每个 site 处的自旋-1 粒子可以分解为两个自旋-1/2 粒子耦合成的自旋三重态。相邻 site 的自旋-1/2 粒子耦合成自旋单态，用线段表示。图中的圆圈代表两个自旋-1/2 粒子投影到 $s=1$ 的投影算符。图源 [Milez](https://commons.wikimedia.org/wiki/File:AKLT_GroundState.png)。_
+_AKLT 模型的基态，每个 site 处的自旋-1 粒子可以分解为两个自旋-1/2 粒子耦合成的自旋三重态。相邻 site 的自旋-1/2 粒子耦合成自旋单态，用蓝色线段表示。图中的圆圈代表两个自旋-1/2 粒子投影到 $s=1$ 的投影算符。图源 [Milez](https://commons.wikimedia.org/wiki/File:AKLT_GroundState.png)。_
 
-可以证明[^Affleck-Kennedy-Lieb-Tasaki-1988]，在周期性边界条件下，AKLT 模型的基态是唯一的，系统的激发态和基态之间有非零的能隙 $\Delta E_0$，基态的关联函数满足：
+可以证明[^Affleck-Kennedy-Lieb-Tasaki-1988]，在周期性边界条件下，AKLT 模型的基态是非简并的，系统的激发态和基态之间有非零的能隙 $\Delta E_0$，基态的关联函数满足：
 
 $$
 \begin{equation}
@@ -229,10 +228,10 @@ _(a) 一个 valence bond 对应一个自旋单态，我们将 $\ket{\uparrow\_{i
 
 如果我们把 $s=0$ 全部删去，显然我们剩下的就是 $s=1,s=-1$ 交替排列的自旋链，它显然是一个反铁磁序。
 
-> 注意：上述交替排列的 $1,-1$ 并不意味着基态有长程反铁磁序，这是因为在自旋链中还随机穿插着 $s=0$，因此并不违反 Haldane conjecture。
+> 注意：上述交替排列的 $1,-1$ 并不意味着基态有长程反铁磁序，这是因为在自旋链中还随机穿插着 $s=0$，这和 AKLT 模型基态是一种 SPT 相并不矛盾，因为 SPT 相没有长程纠缠。
 {: .prompt-warning}
 
-对于一般情况，我们也可以从延长自旋链的角度一步步考虑。假设 site 1 处的自旋是 $\cdots\uparrow\uparrow\cdots$，它对应的是 $s_1=1$。为了保证 bond 的总自旋为 0，则下一个连接的就必须是 $\downarrow$，也即 $\cdots\uparrow\uparrow\cdots\downarrow?$。这里的 $?$ 表示待定：
+对于一般自旋配置情况，我们也可以从延长自旋链的角度一步步考虑来说明。假设 site 1 处的自旋是 $\cdots\uparrow\uparrow\cdots$，它对应的是 $s_1=1$。为了保证 bond 的总自旋为 0，则下一个连接的就必须是 $\downarrow$，也即 $\cdots\uparrow\uparrow\cdots\downarrow?$。这里的 $?$ 表示待定：
 
 - 它可以取 $\uparrow$，那么 site 2 处就对应 $s_2=0$，即 $\cdots\uparrow\uparrow\cdots\downarrow\uparrow\cdots\downarrow?$;
 - 也可以取 $\downarrow$，那么 site 2 处就对应 $s_2=-1$，即 $\cdots\uparrow\uparrow\cdots\downarrow\downarrow\cdots\uparrow?$。

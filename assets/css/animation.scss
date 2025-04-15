@@ -1,4 +1,5 @@
 /* 生成动画 */
+@use 'sass:math';
 @keyframes infirot {
     from {
       -webkit-transform: rotate(0deg);
@@ -16,8 +17,8 @@
   }
   
   @function random_range($min, $max) {
-    $rand: random();
-    $random_range: $min + floor($rand * (($max - $min) + 1));
+    $rand: math.random();
+    $random_range: $min + math.floor($rand * (($max - $min) + 1));
     @return $random_range;
   }
   

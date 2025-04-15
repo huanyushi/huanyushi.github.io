@@ -1,13 +1,18 @@
 ---
 ---
 
-@import 'main
+@use 'main
 {%- if jekyll.environment == 'production' -%}
   .bundle
 {%- endif -%}
 ';
 
 /* append your custom style below */
+@use 'colors/light';
+@use 'colors/dark';
+@use "animation.scss";    // 背景动画样式
+@use "colorbox.scss";     // colorbox 样式
+@use "details.scss";      // details 元素样式
 
 /* 首页预览 post 标题字体加粗 */
 // #post-list .card-title {
@@ -61,35 +66,29 @@ blockquote[class^='prompt-']{
   max-height: none !important;
 }
 
-
-@import 'colors/colors-light.scss';
-@import 'colors/colors-dark.scss';
-
 html {
-    @media (prefers-color-scheme: light) {
-      &:not([data-mode]),
-      &[data-mode='light'] {
-        @include light-colors;
-      }
-  
-      &[data-mode='dark'] {
-        @include dark-colors;
-      }
+  @media (prefers-color-scheme: light) {
+    &:not([data-mode]),
+    &[data-mode='light'] {
+      @include light.styles;
     }
-  
-    @media (prefers-color-scheme: dark) {
-      &:not([data-mode]),
-      &[data-mode='dark'] {
-        @include dark-colors;
-      }
-  
-      &[data-mode='light'] {
-        @include light-colors;
-      }
+
+    &[data-mode='dark'] {
+      @include dark.styles;
     }
   }
 
-@import "animation.scss";    // 背景动画样式
-@import "colorbox.scss";     // colorbox 样式
-@import "details.scss";      // details 元素样式
+  @media (prefers-color-scheme: dark) {
+    &:not([data-mode]),
+    &[data-mode='dark'] {
+      @include dark.styles;
+    }
+
+    &[data-mode='light'] {
+      @include light.styles;
+    }
+  }
+}
+
+
 
