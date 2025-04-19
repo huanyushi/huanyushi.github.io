@@ -21,7 +21,7 @@ Welcome to my Blog! It's generated from a static web page built using Jekyll on 
 * Physics Doctoral Student / Mathematics Enthusiasts / Integration Lover 
 * Painting / Stiff Pen Calligraphy
 * C / Fortran / Python / MATLAB / Mathematica / LaTeX / HTML / CSS
-* Chinese / English / Japanese (learning) / French (newbie).
+* Chinese / English / Japanese (learning)
 * 2019-2020 / 2020-2021 / National Scholarship
 
 🌐 **Online Presence:**
@@ -53,7 +53,7 @@ Welcome to my Blog! It's generated from a static web page built using Jekyll on 
 * 物理学博士牲 / 数学爱好者 / 积佬
 * 绘画 / 硬笔书法
 * C / Fortran / Python / MATLAB / Mathematica / LaTeX / HTML / CSS
-* 中文 / 英语 / 日语（学习中） / 法语（学习中）
+* 中文 / 英语 / 日语（学习中）
 * 2019-2020 / 2020-2021 / 国家奖学金
 
 🌐 **互联网影分身：**

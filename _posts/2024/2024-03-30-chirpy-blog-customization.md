@@ -6,7 +6,7 @@ tag: [HTML, CSS]
 math: true
 pin: true
 media_subpath : /assets/img/in-post/2024/2024-03-30/
-description: 基于 Jekyll-Theme-Chirpy v7.0.0 的个性化设置：MathJax 配置、侧边栏样式、页脚站点统计、背景动画、自定义新的 prompt 和 details 元素样式、LQIP 和反色图片的 Python 实现等内容。
+description: 基于 Jekyll-Theme-Chirpy v7.1.0 的个性化设置：MathJax 配置、侧边栏样式、页脚站点统计、背景动画、自定义新的 prompt 和 details 元素样式、LQIP 和反色图片的 Python 实现等内容。
 ---
 ## 1. 简介
 去年我通过 jekyll 在 GitHub 部署了静态博客网站，效果甚合我意。
