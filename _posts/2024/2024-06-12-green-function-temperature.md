@@ -3,7 +3,7 @@ title:      "&sect;4.1 Matsubara Green's Function at Finite Temperature"
 date:       2024-06-12
 categories: [Condensed Matter Physics, Quantum Many-Particle Theory]
 tag: [condensed matter physics, many-particle physics]
-media_subpath : /assets/img/in-post/many-particle-physics/
+media_subpath : /img/in-post/many-particle-physics/
 math: true
 ---
 

@@ -3,7 +3,7 @@ title:      "&sect;2.2 Lehmann Representation of Green's Functions (Fermions)"
 date:       2024-05-22
 categories: [Condensed Matter Physics, Quantum Many-Particle Theory]
 tag: [condensed matter physics, many-particle physics]
-media_subpath : /assets/img/in-post/many-particle-physics/
+media_subpath : /img/in-post/many-particle-physics/
 math: true
 ---
 

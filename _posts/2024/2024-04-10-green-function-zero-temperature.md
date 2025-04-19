@@ -3,7 +3,7 @@ title:      "&sect;2.1 Single-Particle Green's Functions at Zero Temperature"
 date:       2024-04-10
 categories: [Condensed Matter Physics, Quantum Many-Particle Theory]
 tag: [condensed matter physics, many-particle physics]
-media_subpath : /assets/img/in-post/many-particle-physics/
+media_subpath : /img/in-post/many-particle-physics/
 math: true
 ---
 Hamiltonian  with interaction can not always be solved exactly, the first few orders of perturbation theory cannot provide an adequate description of an interacting many-particle system. So we must find other methods to obtain all orders in perturbation theory. Luckily, we can get a formal solution through **Green's functions**.

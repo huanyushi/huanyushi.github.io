@@ -3,7 +3,7 @@ title:      "&sect;2.4 Diagrammatic Analysis of Perturbation Theory (Fermions)"
 date:       2024-05-29
 categories: [Condensed Matter Physics, Quantum Many-Particle Theory]
 tag: [condensed matter physics, many-particle physics]
-media_subpath : /assets/img/in-post/many-particle-physics/
+media_subpath : /img/in-post/many-particle-physics/
 render_with_liquid: false
 math: true
 ---

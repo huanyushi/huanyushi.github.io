@@ -5,7 +5,7 @@ categories: [LaTeX]
 tag: [LaTeX]
 description: 利用 LaTeX 制作的中山大学物理与天文学院本科实验报告模板。
 image: 
-  path: /assets/img/in-post/2023/2023-04-10/preface.PNG
+  path: /img/in-post/2023/2023-04-10/preface.PNG
   lqip: data:image/jpg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQgJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAAIABADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD3RJmaTHarQbNFFNiR/9k=
 ---
 > "The laws of physics is the canvas God laid down on which to paint his masterpiece"
@@ -21,7 +21,7 @@ image:
 * [GitHub](https://github.com/huanyushi/SYSU-SPA-Labreport-Template) 
 * [知乎](https://zhuanlan.zhihu.com/p/620722147)
 
-Demo 请见 [PDF](/assets/pdf/SYSU-SPA-LabReport-Template.pdf) ，源码可在 [release](https://github.com/huanyushi/SYSU-SPA-Labreport-Template/releases) 上下载。 
+Demo 请见 [PDF](https://cdn.jsdelivr.net/gh/huanyushi/blog-images@main/pdf/SYSU-SPA-LabReport-Template.pdf) ，源码可在 [release](https://github.com/huanyushi/SYSU-SPA-Labreport-Template/releases) 上下载。 
 
 ![GitHub license](https://img.shields.io/github/license/huanyushi/SYSU-SPA-labreport-Template.svg){: .normal} ![Github Version](https://img.shields.io/github/release/huanyushi/SYSU-SPA-labreport-Template.svg){: .normal}
 
@@ -70,7 +70,7 @@ stepnumber=1,
 rulesepcolor=\color{gray!30!white}
 }
 ```
-![code](/assets/img/in-post/2023/2023-04-10/readme1.jpg)
+![code](/img/in-post/2023/2023-04-10/readme1.jpg)
 3. 本模板定义了两种形式的 `box` ，可参考 `tcolorbox` 宏包的手册进行修改，
 ```latex
 \usepackage{tcolorbox}
@@ -100,9 +100,9 @@ rulesepcolor=\color{gray!30!white}
   #1
 }
 ```
-![colorbox](/assets/img/in-post/2023/2023-04-10/readme2.jpg)
+![colorbox](/img/in-post/2023/2023-04-10/readme2.jpg)
 4. TikZ 是一个知名的绘图宏包（其文档说明高达1000多页，超乎常人想象），在此补充了一些 TikZ 实例
-![TikZ example](/assets/img/in-post/2023/2023-04-10/readme3.JPG)
+![TikZ example](/img/in-post/2023/2023-04-10/readme3.JPG)
 
 ## 声明
 * 本模板仅供学习交流所用，_非学院官方模板_。

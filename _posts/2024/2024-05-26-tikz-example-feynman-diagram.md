@@ -3,7 +3,7 @@ title:      "TikZ: Feynman Diagram Examples"
 date:       2024-05-26
 categories: [LaTeX]
 tag: [quantum field theory, LaTeX]
-media_subpath: /assets/img/in-post/feynman-diagram/
+media_subpath: /img/in-post/feynman-diagram/
 description: A gallery of TikZ examples featuring numerous Feynman diagrams with TikZ codes for quantum field theory and condensed matter field theory.
 published: false
 math: true

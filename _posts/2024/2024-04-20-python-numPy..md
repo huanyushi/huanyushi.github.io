@@ -3,15 +3,15 @@ title:      "&sect;6 Python: Introduction to the NumPy Package"
 date:       2024-04-20
 categories: [Python]
 tag: [Python]
-media_subpath : /assets/img/in-post/python-notes/
+media_subpath : /img/in-post/python-notes/
 math: true
 image:
     path: numpy.png
     lqip: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAICAYAAADwdn+XAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAD1SURBVChTvY6/K4VhGIbv+3WcOjHoWJQzHAZJspwyGFhkOWHyRZ3Zf2B+N8nAH2C1yKR8szIYcJKTxWL4bMonJD+/5/YefaNkkGt7rq7n6cGfUd8565/dPV+CxFz9CsJ7Vx+Yb6ALFUq3IIeh4uZ+NJrkzY9wwV8UX57fj1HGqqqYYIdugu/BiXsV7F7gYXAlZq7XUWkGNMJaImZxvFZruvYVQaYUHk9MzfQAUwLqUkA1LE0zYxSayQ9wMNSP4tu2k1v8+iAIzq20hoy27kZwZyVdiYU4jsaa7eA7asunnZVu69vbGL/OFTDlDwozW0flfPwvgE+Z2VwwKjTetQAAAABJRU5ErkJggg==
 ---
 > &#x1F447; 在此下载本文对应的 Jupyter Notebook 和 html 文件 
-> - **[sec6_numpy_introduction.ipynb](/assets/python/sec6_numpy_introduction.ipynb)**
-> - **[sec6_numpy_introduction.html](/assets/python/sec6_numpy_introduction.html)**
+> - **[sec6_numpy_introduction.ipynb](https://cdn.jsdelivr.net/gh/huanyushi/blog-images@main/python/sec6_numpy_introduction.ipynb)**
+> - **[sec6_numpy_introduction.html](https://cdn.jsdelivr.net/gh/huanyushi/blog-images@main/python/sec6_numpy_introduction.html)**
 {: .prompt-info}
 
 NumPy（Numerical Python） 是 Python 语言的一个扩展程序库，支持大量的维度数组与矩阵运算，此外也针对数组运算提供大量的数学函数库。它主要用于数组计算，包含：

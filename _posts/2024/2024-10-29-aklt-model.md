@@ -3,7 +3,7 @@ title:      "Affleck–Kennedy–Lieb–Tasaki Model"
 date:       2024-10-29
 categories: [Condensed Matter Physics, Quantum Many-Particle Theory]
 tag: [condensed matter physics, many-particle physics]
-media_subpath : /assets/img/in-post/2024/2024-10-29/
+media_subpath : /img/in-post/2024/2024-10-29/
 math: true
 ---
 AKLT 模型（Affleck-Kennedy-Lieb-Tasaki 模型）作为量子自旋链中的一个重要模型，不仅在凝聚态物理中为拓扑量子相变的研究开辟了新路径，也为理解量子纠缠、拓扑序与边界效应提供了典型的理论范例。自 1980 年代以来，AKLT 模型在量子信息和量子计算等领域的理论研究中不断显示出其独特的价值，尤其是其基态的 Valence Bond Solid (VBS) 态，为未来拓扑量子态的物理实现提供了基本思路。

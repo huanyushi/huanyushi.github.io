@@ -17,8 +17,8 @@ I have answered this question on Zhihu, you can find it [here](https://www.zhihu
 ## Solution:
 We define $ f(z) = z \ln(1+z)/(1+z^4) $ firstly, and choose the following quarter-circle contour:
 
-![contour](/assets/img/in-post/contour/2023-05-10.jpg){: .light width="400"}
-![contour](/assets/img/in-post/contour/2023-05-10-dark.jpg){: .dark width="400"}
+![contour](/img/in-post/contour/2023-05-10.jpg){: .light width="400"}
+![contour](/img/in-post/contour/2023-05-10-dark.jpg){: .dark width="400"}
 
 Note that $ z = \mathrm{e}^{\pi i/4}$ is a singularity. Since there are no singularities within the contour, we can know from Cauchy's theorem that:
 

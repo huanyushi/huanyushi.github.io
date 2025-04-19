@@ -5,7 +5,7 @@ categories: [HTML and CSS]
 tag: [HTML, CSS]
 math: true
 pin: true
-media_subpath : /assets/img/in-post/2024/2024-03-30/
+media_subpath : /img/in-post/2024/2024-03-30/
 description: 基于 Jekyll-Theme-Chirpy v7.1.0 的个性化设置：MathJax 配置、侧边栏样式、页脚站点统计、背景动画、自定义新的 prompt 和 details 元素样式、LQIP 和反色图片的 Python 实现等内容。
 ---
 ## 1. 简介
@@ -82,7 +82,7 @@ MathJax = {
 ```scss
 /* 侧边栏背景图片添加 */
 #sidebar {
-    background-image: url(https://cdn.jsdelivr.net/gh/huanyushi/huanyushi.github.io@main/assets/img/background.jpg); /* <- change background image */
+    background-image: url(https://cdn.jsdelivr.net/gh/huanyushi/huanyushi.github.io@mainhttps://cdn.jsdelivr.net/gh/huanyushi/blog-images@main/img/background.jpg); /* <- change background image */
     background-size: cover; /* <- customize the image size */
     background-repeat: no-repeat; /* <- no-repeat */
     background-position: top; /* <- image position */
@@ -783,7 +783,7 @@ def invert_color(fname):
     return im, im_inverted
 
 # 这部分是调整至图片文件路径
-path_start = "../huanyushi.github.io/assets/img/in-post/"
+path_start = "../img/in-post/"
 path_end = '2023-03-23/preface.PNG'
 image_path = path_start + path_end
 

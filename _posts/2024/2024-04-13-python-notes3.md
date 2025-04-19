@@ -4,13 +4,13 @@ date:       2024-04-13
 categories: [Python]
 tag: [Python]
 image: 
-    path: /assets/img/in-post/python-notes/python.jpg
+    path: /img/in-post/python-notes/python.jpg
     lqip: data:image/jpg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQgJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAAIABADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDQsPDL3GCRXSWfhWKIAsKKK+fxmZ4jmcb6GtDC0rXsf//Z
 math: true
 ---
 > &#x1F447; 在此下载本文对应的 Jupyter Notebook 和 html 文件 
-> - **[sec3_control_flow_statement.ipynb](/assets/python/sec3_control_flow_statement.ipynb)**
-> - **[sec3_control_flow_statement.html](/assets/python/sec3_control_flow_statement.html)**
+> - **[sec3_control_flow_statement.ipynb](https://cdn.jsdelivr.net/gh/huanyushi/blog-images@main/python/sec3_control_flow_statement.ipynb)**
+> - **[sec3_control_flow_statement.html](https://cdn.jsdelivr.net/gh/huanyushi/blog-images@main/python/sec3_control_flow_statement.html)**
 {: .prompt-info}
 
 编程真正的力量不仅在于运行（或执行）一条接一条的指令，它还可以决定跳过指令，重复指令，或从几条指令中选择一条运行。控制流语句可以决定在什么条件下执行哪些 Python 语句。

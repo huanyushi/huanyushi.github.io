@@ -6,7 +6,7 @@ tag: [integration, LaTeX]
 toc: false
 description: 使用 TikZ 绘制复分析中圆形围道、半圆形围道、扇形围道、玦形围道等各种围道的实例。
 image: 
-    path: /assets/img/in-post/2023/2023-03-23/preface.PNG
+    path: /img/in-post/2023/2023-03-23/preface.PNG
     lqip: data:image/jpg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQgJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAAIABADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD3gDD0ZbfRRQB//9k=
 ---
 TikZ 作为 LaTeX 著名的绘图宏包，拥有十分强大的功能，基本上你能想到可以精确描述的矢量图，它都能帮你画出来，关于它的学习指导在网络上有很多资源，在此就不一一列举。
@@ -18,7 +18,7 @@ TikZ 作为 LaTeX 著名的绘图宏包，拥有十分强大的功能，基本�
 本文内容首发于[知乎](https://zhuanlan.zhihu.com/p/616112259)。
 
 > &#x1F447; TikZ 实例总结请见此 PDF 文件：
-> - **[TikZ-Example-Contour-Integration.pdf](/assets/pdf/TikZ-Example-Contour-Integration.pdf)**
+> - **[TikZ-Example-Contour-Integration.pdf](https://cdn.jsdelivr.net/gh/huanyushi/blog-images@main/pdf/TikZ-Example-Contour-Integration.pdf)**
 {: .prompt-info}
 
 ## Update:

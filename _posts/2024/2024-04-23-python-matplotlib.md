@@ -3,7 +3,7 @@ title:      "&sect;7 Python: Introduction to the Matplotlib Package"
 date:       2024-04-22
 categories: [Python]
 tag: [Python]
-media_subpath : /assets/img/in-post/python-notes/
+media_subpath : /img/in-post/python-notes/
 math: true
 image:
     path: matplotlib.png

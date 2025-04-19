@@ -29,8 +29,8 @@ $$
 
 So we can define $f(z) = \dfrac{1}{\ln(1-iz)}\dfrac{1}{1+z^2}$ and use the following contour,
 
-![contour](/assets/img/in-post/contour/2023-05-03.jpg){: .light width="500"}
-![contour](/assets/img/in-post/contour/2023-05-03-dark.jpg){: .dark width="500"}
+![contour](/img/in-post/contour/2023-05-03.jpg){: .light width="500"}
+![contour](/img/in-post/contour/2023-05-03-dark.jpg){: .dark width="500"}
 
 The branch point is $z=-i$, so $f(z)$ is single-valued and analytic in the upper half-plane. There is only one simple pole $z=i$ within the contour, and its corresponding residue is
 
