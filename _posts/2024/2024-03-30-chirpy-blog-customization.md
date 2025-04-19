@@ -832,7 +832,44 @@ _反色图片与原图片对比_
    当然更合适的方法是使用 `bundle exec jekyll s --incremental` 或者 `bundle exec jekyll s --I` 来构建博客，这样手动可调更灵活。
 2. 压缩图片大小，这也是加速博客构建和浏览的一种方式。
 
-### 12.3. 在 blog 中插入文件
+### 12.3. GitHub Commits 提交规范
+[Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) 是一种规范化的 Git 提交信息格式，能有效提升 commit message 的可读性，也方便历史记录和版本控制。
+
+最基础的格式如下：
+
+```swift
+<type>[optional scope]: <description>
+
+[optional body]
+
+[optional footer(s)]
+```
+
+其中 `<type>` 表示提交类型（必填），也决定它在 changelog 中的分类，通常有以下几种：
+
+- **feat:** 新功能；
+- **fix:** 修复 bug；
+- **docs:** 仅修改文档；
+- **style:** 不影响代码逻辑的修改，比如格式、空格、缩进、缺失的分号；
+- **refactor:** 代码重构（不包含功能变更或 bug 修复）；
+- **perf:** 性能优化；
+- **test:** 添加测试或修改测试；
+- **build:** 构建系统或依赖的变动（例如 webpack、rollup）
+- **chore:** 杂项、不属于其他类型的更改（比如改 .gitignore、更新依赖）；
+- **ci:** 持续集成相关（GitHub Actions、Travis CI、Circle 等）；
+- **revert:** 回滚某个提交（会自动生成 footer）。
+
+而 `[optional scope]` 表示影响范围（可选），`[description]` 表示简短的描述（必填），例如：
+
+```bash
+feat(blog): add comment system
+fix(pdf): correct link to external document
+docs(readme): update usage instructions
+```
+
+`[optional body]` 在解释提交的动机、问题背景、修改细节，尤其是重大提交或 refactor 时有用。`[optional footer(s)]` 则用于关闭 issue、BREAKING CHANGE 等信息。
+
+### 12.4. 在 blog 中插入文件
 使用 `<iframe>` 元素即可，如
 ```html
 <iframe src="file path" width="100%" height='800'></iframe>
@@ -844,7 +881,7 @@ _反色图片与原图片对比_
 这个功能在谷歌浏览器上可以正常使用，但是其他浏览器不一定支持，且加 overflow 在移动端也不能产生滚动条，慎用！
 </div>
 
-### 12.4. 在 blog 中在线运行 Python
+### 12.5. 在 blog 中在线运行 Python
 在 post 里加入以下代码，可以在线运行 Python （虽然感觉有点鸡肋，但还是记录在这里）
 
 ```html
@@ -855,7 +892,7 @@ _反色图片与原图片对比_
 </iframe>
 ```
 
-### 12.5. 可能有用的资源
+### 12.6. 可能有用的资源
 
 <div class="box-tip" markdown="1">
 <div class="title"> 可能有用的资源 </div>
