@@ -249,3 +249,30 @@ $$
 
 这是可数个可数集合的并，因此它是可数的几何。根据 (a) 可知，这个集合是 $X$ 的一个基底。所以 $X$ 有一个可数基底，即 $X$ 是第二可数空间。 <span style="float: right;">&#x220E;</span>
 </details>
+
+## Ch. 3 New Spaces from Old
+### Exercises
+
+**Ex. 3.7.** Suppose $X$ is a topological space and $U\subseteq S\subseteq X$.
+- **(a)** Show that the closure of $U$ in $S$ is equal to $\overline{U}\cap S$.
+- **(b)** Show that the interior of $U$ in $S$ contains $\operatorname{Int} U\cap S$; give an example to show that they might not be equal.
+
+<details class="details-inline" markdown="1">
+<summary>Proof</summary>
+**(a):** 已知 $\overline{U}$ 是 $U$ 在 $X$ 中的闭包，我们需要证明 $U$ 在子空间 $S$ 中的闭包 $\overline{U}^{S}$ 等于 $\overline{U} \cap S$，这只需要证明两个集合双向包含即可。
+
+先证明 $\overline{U}^S \subseteq \overline{U}\cap S$。设 $x\in \overline{U}^{S}$，则对于 $S$ 中的任意开集 $V \subseteq S$，只要 $x\in V$，则 $V\cap U \neq \emptyset$。由于 $S\subseteq X$，子空间拓扑的开集 $V\subseteq S$ 形如 $V = W\cap S$，其中 $W\subseteq X$ 是 $X$ 中的开集。因此对于任意 $X$ 中的开集 $W$，若 $x \in W\cap S$，则 $(W\cap S) \cap U \neq \emptyset$，即 $W\cap U \cap S \neq \emptyset$，则 $W \cap U \neq \emptyset$，这说明 $x\in \overline{U}$。又因为 $x\in S$ （这是显然的），则 $x\in \overline{U}\cap S$。
+
+再证明 $\overline{U}\cap S \subseteq \overline{U}^S$。设 $x \in \overline{U}\cap S$，则 $x\in \overline{U}$ 且 $x \in S$。我们要证明 $x\in \overline{U}^{S}$，即对于任意 $S$ 中的开集 $V\ni x$，有 $V \cap U \neq \emptyset$。由于 $V\subseteq S \subseteq X$，且 $V$ 是 $S$ 中的开集，则存在 $X$ 中开集 $W \subseteq X$ 使得 $V = W \cap S$。又因为 $x\in \overline{U}$，所以 $W \cap U \neq \emptyset$，这就意味着 $V \cap U = (W \cap S) \cap U = W \cap U \cap S \neq \emptyset$，因此 $x\in \overline{U}^S$。
+
+综上，我们便证明了 $\overline{U}^S = \overline{U} \cap S$。 <span style="float: right;">&#x220E;</span>
+
+**(b):** 我们需要证明 $\operatorname{Int} U \cap S \subseteq \operatorname{Int} _{S} U$。设 $x\in \operatorname{Int} U \cap S$，则 $x \in \operatorname{Int} U$，即存在 $X$ 中的开集 $V \subseteq X$，使得 $x\in V\subseteq U$。且 $x\in S$，因此 $x\in V \cap S \subseteq U \cap S = U$（因为 $U \subseteq S$）。注意 $V \cap S$ 是 $S$ 中的开集，则立即得到 $x\in \operatorname{Int} _{S} U$，于是 $\operatorname{Int} U \cap S \subseteq \operatorname{Int} _{S} U$。 <span style="float: right;">&#x220E;</span>
+
+尽管上面我们证明了 $\operatorname{Int} U \cap S \subseteq \operatorname{Int} _{S} U$，这两者并不一定相等（和 (a) 中不同），这里我们找一个例子使得 $\operatorname{Int} _{S}(U) \supsetneq \operatorname{Int} U \cap S$。
+
+设 $X = \RR$，带有欧式拓扑。$S = [0,1] \subseteq \RR$，$U = [0,1) \subseteq S$。显然 $\operatorname{Int} U = (0,1)$，则 $\operatorname{Int}(U) \cap S = (0,1)$，而 $\operatorname{Int} _{S}(U) = [0,1)$。显然这两个集合并不相等，于是 $\operatorname{Int} U \cap S \subsetneq \operatorname{Int} _{S} U$。
+</details>
+
+
+### Problems
