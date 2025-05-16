@@ -274,5 +274,14 @@ $$
 设 $X = \RR$，带有欧式拓扑。$S = [0,1] \subseteq \RR$，$U = [0,1) \subseteq S$。显然 $\operatorname{Int} U = (0,1)$，则 $\operatorname{Int}(U) \cap S = (0,1)$，而 $\operatorname{Int} _{S}(U) = [0,1)$。显然这两个集合并不相等，于是 $\operatorname{Int} U \cap S \subsetneq \operatorname{Int} _{S} U$。
 </details>
 
+**Ex. 3.17.** Give an example of a topological embedding that is neither an open map nor a closed map.
+
+<details class="details-inline" markdown="1">
+<summary>Proof</summary>
+只需注意到任意子空间（$X\subseteq Y$）的包含映射 $\imath_{X}\colon X \hookrightarrow Y$ 都是拓扑嵌入，那么我们只需找到一个既不是开集也不是闭集的子集即可。
+
+令 $Y = \RR$，带有欧式拓扑。取 $X = [0,1)$，带有从 $Y$ 继承的子空间拓扑。显然 $X = [0,1]$ 在 $\RR$ 中既不是开集也不是闭集，所以 $\imath_X\colon X \hookrightarrow Y$ 既不是开映射也不是闭映射，但它是一个拓扑嵌入。这就得到了我们想要的一个例子。 <span style="float: right;">&#x220E;</span>
+</details>
+
 
 ### Problems
