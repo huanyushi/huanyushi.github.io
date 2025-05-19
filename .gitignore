@@ -18,4 +18,5 @@ package-lock.json
 .idea
 
 # Misc
+_sass/vendors
 assets/js/dist

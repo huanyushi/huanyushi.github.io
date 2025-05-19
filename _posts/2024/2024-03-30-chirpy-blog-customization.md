@@ -6,7 +6,8 @@ tag: [HTML, CSS]
 math: true
 pin: true
 media_subpath : /img/in-post/2024/2024-03-30/
-description: 基于 Jekyll-Theme-Chirpy v7.1.0 的个性化设置：MathJax 配置、侧边栏样式、页脚站点统计、背景动画、自定义新的 prompt 和 details 元素样式、LQIP 和反色图片的 Python 实现等内容。
+render_with_liquid: false
+description: 基于 Jekyll-Theme-Chirpy v7.3.0 的个性化设置：MathJax 配置、侧边栏样式、页脚站点统计、背景动画、自定义新的 prompt 和 details 元素样式、LQIP 和反色图片的 Python 实现等内容。
 ---
 ## 1. 简介
 去年我通过 jekyll 在 GitHub 部署了静态博客网站，效果甚合我意。
@@ -15,7 +16,7 @@ description: 基于 Jekyll-Theme-Chirpy v7.1.0 的个性化设置：MathJax 配�
 
 有两种方法可供选择。第一种就是直接访问 Chirpy 的 GitHub 项目页面，从它的源码里扒出来样式文件及代码。第二种则利用 git，通过命令 `bundle info --path jekyll-theme-chirpy` 获取封装的样式文件地址，如下图所示
 
-![theme file](theme-file.PNG){: .shadow width="700"}
+![theme file](theme-file.PNG){: .shadow .rounded-10 width="700" }
 _封装的样式文件地址_
 
 在里面找到相应的样式文件后，把它放入自己 blog 对应的文件里，就可以进行个性化定制了。
@@ -33,7 +34,6 @@ MathJax 自从进入 3.x 时代后，渲染数学公式的速度几乎比肩 KaT
 ### 2.1. MathJax 添加拓展包
 我添加了一些拓展包，如物理专业学生人手必备的 `physics`，同时也自定义了一些宏来简化公式输入。代码修改如下（更多内容可以从 [MathJax](https://docs.mathjax.org/en/latest/) 官网文档里找到说明）：
 
-<!-- {% raw %} -->
 ```javascript
 ---
 layout: compress
@@ -69,7 +69,6 @@ MathJax = {
 };
 ```
 {: file="assets/js/data/mathjax.js"}
-<!-- {% endraw %} -->
 
 ### 2.2. 增加主页 preview 公式预览
 在 blog 主页，每篇文章的预览部分会直接显示数学代码，要想能够在主页也预览公式，可以参考 [issue-1140](https://github.com/cotes2020/jekyll-theme-chirpy/issues/1140)。
@@ -101,11 +100,11 @@ MathJax = {
     color: #ffffff;
     text-shadow: 2px 2px 3px rgba(0,0,0, 0.7);
 }
-#sidebar .sidebar-bottom .mode-toggle, #sidebar a {
-    color: #ffffff;
+#sidebar ul li.nav-item a.nav-link span{
+    font-size: 100%;
 }
-#sidebar .sidebar-bottom .btn {
-    color: var(--sidebar-btn-color);
+#sidebar ul li.nav-item a.nav-link {
+    color: #ffffff;
 }
 ```
 {: file="assets/css/jekyll-theme-chirpy.scss"}
@@ -113,7 +112,6 @@ MathJax = {
 ### 3.2. 侧边栏增加友链
 在隐藏的 gem 包里找到 `_includes/sidebar.html`{: .filepath} 文件，在其中添加以下代码（当有友链时，则插入 `friends.html`{: .filepath} 文件）：
 
-<!-- {% raw %} -->
 ```html
 <!-- Friends link -->
 {% if site.data.friends %}
@@ -121,11 +119,9 @@ MathJax = {
 {% endif %}
 ```
 {: file="_includes/sidebar.html"}
-<!-- {% endraw %}) -->
 
 新建一个 `_includes/friends.html`{: .filepath} 文件，将友链设置放入其中（这样模板更新时可以尽可能减少对模板代码的修改）：
 
-<!-- {% raw %} -->
 ```html
 <!-- 友链设置，在 sidebar.html 中插入 -->
 <div class="friends">
@@ -139,7 +135,6 @@ MathJax = {
 </div>
 ```
 {: file="_includes/friends.html"}
-<!-- {% endraw %}) -->
 
 而相关的样式设置添加到了 `assets/css/jekyll-theme-chirpy.scss`{: .filepath} 中，如下：
 ```css
@@ -190,9 +185,9 @@ MathJax = {
 
 <table>
 <tr>
-  <td><img src="friend1.png" alt="friend example1"></td>
-  <td><img src="friend2.png" alt="friend example2"></td>
-  <td><img src="friend3.png" alt="friend example3"></td>
+  <td><img src="friend1.png" alt="friend example1" class="shadow rounded-10"></td>
+  <td><img src="friend2.png" alt="friend example2" class="shadow rounded-10"></td>
+  <td><img src="friend3.png" alt="friend example3" class="shadow rounded-10"></td>
 </tr>
 </table>
 
@@ -211,7 +206,6 @@ MathJax = {
 ## 5. 增加站点统计
 模板作者贴心的在页脚使用了 flex 格式，直接找到 `_includes/footer.html`{: .filepath} 文件（这个文件在 gem 包里），复制后在中间插入[不蒜子](https://busuanzi.ibruce.info/)即可成功在页脚显示站点统计，`uv` 和 `pv` 就是访问量的两种统计算法，具体解释请见[教程](https://ibruce.info/2015/04/04/busuanzi/)。
 
-<!-- {% raw %} -->
 ```html
 <!-- 站点统计 -->
 <p> 
@@ -219,7 +213,6 @@ MathJax = {
 </p>
 ```
 {: file="_includes/footer.html"}
-<!-- {% endraw %}) -->
 
 不蒜子的代码设置在 `_includes/footer-busuanzi.html`{: .filepath} 中：
 ```html
@@ -235,70 +228,21 @@ MathJax = {
 ## 6. 增加背景动画
 参考 [@NichtsHsu](https://nihil.cc/) 的博客设计，增加了背景动画功能。在 `_layouts/default.html`{: .filepath} （这个文件也在 gem 包里）中加入
 
-<!-- {% raw %} -->
 ```html
 {% if site.backgroud_animation %}
   {% include animated-background.html %}
 {% endif %}
 ```
 {: file="_layouts/default.html"}
-<!-- {% endraw %}) -->
 
 新建一个文件 `_includes/animated-background.html`{: .filepath} 用于设置动画，其实就是添加了一堆 `animation-circle` 对象，影响的是生成动画的元素个数。
 
 ```html
 <div id="animation">
+  {% for i in (1..50) %}
     <div class="animation-circle"></div>
-    <div class="animation-circle"></div>
-    <div class="animation-circle"></div>
-    <div class="animation-circle"></div>
-    <div class="animation-circle"></div>
-    <div class="animation-circle"></div>
-    <div class="animation-circle"></div>
-    <div class="animation-circle"></div>
-    <div class="animation-circle"></div>
-    <div class="animation-circle"></div>
-    <div class="animation-circle"></div>
-    <div class="animation-circle"></div>
-    <div class="animation-circle"></div>
-    <div class="animation-circle"></div>
-    <div class="animation-circle"></div>
-    <div class="animation-circle"></div>
-    <div class="animation-circle"></div>
-    <div class="animation-circle"></div>
-    <div class="animation-circle"></div>
-    <div class="animation-circle"></div>
-    <div class="animation-circle"></div>
-    <div class="animation-circle"></div>
-    <div class="animation-circle"></div>
-    <div class="animation-circle"></div>
-    <div class="animation-circle"></div>
-    <div class="animation-circle"></div>
-    <div class="animation-circle"></div>
-    <div class="animation-circle"></div>
-    <div class="animation-circle"></div>
-    <div class="animation-circle"></div>
-    <div class="animation-circle"></div>
-    <div class="animation-circle"></div>
-    <div class="animation-circle"></div>
-    <div class="animation-circle"></div>
-    <div class="animation-circle"></div>
-    <div class="animation-circle"></div>
-    <div class="animation-circle"></div>
-    <div class="animation-circle"></div>
-    <div class="animation-circle"></div>
-    <div class="animation-circle"></div>
-    <div class="animation-circle"></div>
-    <div class="animation-circle"></div>
-    <div class="animation-circle"></div>
-    <div class="animation-circle"></div>
-    <div class="animation-circle"></div>
-    <div class="animation-circle"></div>
-    <div class="animation-circle"></div>
-    <div class="animation-circle"></div>
-    <div class="animation-circle"></div>
-    <div class="animation-circle"></div>
-  </div>
+  {% endfor %}
+</div>
 ```
 {: file="_includes/animated-background.html"}
 
@@ -387,14 +331,6 @@ MathJax = {
 
 在 `_config.yml`{: .filepath} 中设置 `backgroud_animation: true` 即可产生动画效果。
 
-这部分代码就是用来创建一个动画效果，它主要包含以下几个部分：
-
-1. `@keyframes infirot` 定义了一个名为 `infirot` 的关键帧动画，使元素旋转从 0 度到 360 度。
-2. `.icon-loading1` 应用了 `infirot` 动画，并设置为无限循环。
-3. `@function random_range($min, $max)` 定义了一个函数，用来生成一个指定范围内的随机数。
-4. `#animation` 是一个具有固定位置的容器，用于包含动画效果。它包含了另一个关键帧动画 `animate`，定义了元素在页面上的运动轨迹和透明度变化。这个动画使元素沿着垂直方向向上移动并旋转，逐渐消失，同时边框半径也发生变化。
-5. `#animation` 中包含了两个媒体查询，根据视口宽度的不同应用不同的样式。在大于等于 1200px 的情况下，会生成一系列彩色圆形动画效果，每个圆形的位置、颜色、大小、持续时间和延迟时间都是随机生成的。在小于 1200px 的情况下，圆形动画被隐藏起来，不显示。所以移动端看不到动画效果，但是 PC 端是可以的。
-
 ## 7. 增加 GitHub 贡献图
 
 利用 GitHub 上的一个项目 [gh-contrib-graph](https://github.com/lengthylyova/gh-contrib-graph)，在 HTML 里加入以下代码：
@@ -439,7 +375,7 @@ MathJax = {
 
 然后在需要加入的地方插入剩下两行代码即可（`.md`支持 HTML 语言），效果如下图所示：
 
-![github-contrib](github-contrib.PNG)
+![github-contrib](github-contrib.PNG){: .shadow .rounded-10}
 _GitHub 贡献图_
 
 > 我嫌加载太慢就没加进去了，这玩意儿放在 `about.md`{:.filepath} 是个不错的选择。
@@ -803,36 +739,13 @@ plt.show()
 # 保存图片
 image_output.save(image_start + image_end.replace('.', '-dark.')) # 如：test.PNG 生成的反色图片保存为 test-dark.PNG 
 ```
-![inverse comparison](inverse.png){:.light}
-![inverse comparison](inverse-dark.png){:.dark}
+![inverse comparison](inverse.png){:.light .rounded-10}
+![inverse comparison](inverse-dark.png){:.dark .rounded-10}
 _反色图片与原图片对比_
 
 
 ## 12. 其他问题
-### 12.1. git push 失败: couldn't connet to server
-将本地文件 push 到 github 远程仓库里，经常出现 `couldn't connet to server` 的报错，经过查询没有明显有效的办法。以下是**可能有效**的措施（目前来看第三种最有效）：
-
-1. 关掉梯子 (VPN) 再 push 一下试试；
-2. 在命令行中运行以下代码来取消代理。
-   ```bash
-   git config --global --unset http.proxy 
-   git config --global --unset https.proxy 
-   ```
-3. 打开梯子的情况下。对右下角网络点击右键，打开`网络和 Internet 设置`，点击代理，查看地址和端口号，如 `127.0.0.1:7890`。在命令行中输入 
-   ```shell 
-   git config --global http.proxy http://127.0.0.1:7890
-   ```
-   可通过 `git config --global -l` 查看是否设置成功。之后再进行 push 即可。
-
-### 12.2. jekyll serve 预览速度较慢
-方法很多，比如减少文件夹数量、压缩图片大小等。以下罗列一些我摸索出来的方法：
-
-1. 对博客设置增量构建（即只重新建构发生更改的文件，而不是每次重新构建整个站点），可以在 `_config.yml`{: .filepath} 中添加 `incremental: true`，之后每次 jekyll 都将重新构建发生更改的文件。
-
-   当然更合适的方法是使用 `bundle exec jekyll s --incremental` 或者 `bundle exec jekyll s --I` 来构建博客，这样手动可调更灵活。
-2. 压缩图片大小，这也是加速博客构建和浏览的一种方式。
-
-### 12.3. GitHub Commits 提交规范
+### 12.1. GitHub Commits 提交规范
 [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) 是一种规范化的 Git 提交信息格式，能有效提升 commit message 的可读性，也方便历史记录和版本控制。
 
 最基础的格式如下：
@@ -869,19 +782,61 @@ docs(readme): update usage instructions
 
 `[optional body]` 在解释提交的动机、问题背景、修改细节，尤其是重大提交或 refactor 时有用。`[optional footer(s)]` 则用于关闭 issue、BREAKING CHANGE 等信息。
 
-### 12.4. 在 blog 中插入文件
+### 12.2. git push 失败: couldn't connet to server
+将本地文件 push 到 github 远程仓库里，经常出现 `couldn't connet to server` 的报错，经过查询没有明显有效的办法。以下是**可能有效**的措施（目前来看第三种最有效）：
+
+1. 关掉梯子 (VPN) 再 push 一下试试；
+2. 在命令行中运行以下代码来取消代理。
+   ```bash
+   git config --global --unset http.proxy 
+   git config --global --unset https.proxy 
+   ```
+3. 打开梯子的情况下。对右下角网络点击右键，打开`网络和 Internet 设置`，点击代理，查看地址和端口号，如 `127.0.0.1:7890`。在命令行中输入 
+   ```shell 
+   git config --global http.proxy http://127.0.0.1:7890
+   ```
+   可通过 `git config --global -l` 查看是否设置成功。之后再进行 push 即可。
+
+### 12.3. jekyll serve 预览速度较慢
+方法很多，比如减少文件夹数量、压缩图片大小等。以下罗列一些我摸索出来的方法：
+
+1. 对博客设置增量构建（即只重新建构发生更改的文件，而不是每次重新构建整个站点），可以在 `_config.yml`{: .filepath} 中添加 `incremental: true`，之后每次 jekyll 都将重新构建发生更改的文件。
+
+   当然更合适的方法是使用 `bundle exec jekyll s --incremental` 或者 `bundle exec jekyll s --I` 来构建博客，这样手动可调更灵活。
+2. 压缩图片大小，这也是加速博客构建和浏览的一种方式。
+
+### 12.4. 避免 Liquid 标签被解析
+在 Jekyll 中，`{{ ... }}` 和 `{% ... %}` 是 Liquid 模板语言的语法。如果在 post 中不小心使用了它们（比如用了花括号），可能会被 Jekyll 当作模板语法解析，导致渲染出错。
+
+有两种常用的[解决办法](https://jekyllrb.com/docs/liquid/tags/)。
+
+1. 禁用整篇文章的 Liquid 渲染。只需在文章的 Front Matter 中添加
+   ```markdown
+   ---
+   render_with_liquid: false
+   ---
+   ```
+2. 用 `{% raw %}` 包裹需要保留的 Liquid 代码段。一个例子如下所示：
+   ```markdown
+   <!-- {% raw %} -->
+   {% if user %}
+     Hello, {{ user.name }}!
+   {% endif %}
+   <!-- {% endraw %} -->
+   ```
+   与第一种方法相比，第二种方法更灵活，只影响局部代码块，其它部分仍可正常使用 Liquid 模板。
+
+### 12.5. 在 blog 中插入文件
 使用 `<iframe>` 元素即可，如
 ```html
 <iframe src="file path" width="100%" height='800'></iframe>
 ```
 利用这个技巧可以在 post 中插入 `.html`{: .filepath}, `.pdf`{: .filepath} 等文件进行预览。
 
-<div class="box-danger" markdown="1">
-<div class="title"> 警告</div>
-这个功能在谷歌浏览器上可以正常使用，但是其他浏览器不一定支持，且加 overflow 在移动端也不能产生滚动条，慎用！
-</div>
+> 这个功能在谷歌浏览器上可以正常使用，但是其他浏览器不一定支持，且加 overflow 在移动端也不能产生滚动条，慎用！
+{: .prompt-danger}
 
-### 12.5. 在 blog 中在线运行 Python
+### 12.6. 在 blog 中在线运行 Python
 在 post 里加入以下代码，可以在线运行 Python （虽然感觉有点鸡肋，但还是记录在这里）
 
 ```html
@@ -892,7 +847,7 @@ docs(readme): update usage instructions
 </iframe>
 ```
 
-### 12.6. 可能有用的资源
+### 12.7. 其他可能有用的资源
 
 <div class="box-tip" markdown="1">
 <div class="title"> 可能有用的资源 </div>

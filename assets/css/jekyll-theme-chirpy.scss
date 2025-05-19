@@ -39,14 +39,14 @@ blockquote[class^='prompt-']{
 
 /* 侧边栏背景图片添加 */
 #sidebar {
-    background-image: url(https://cdn.jsdelivr.net/gh/huanyushi/blog-images@main/img/background.jpg); /* <- change background image */
+    background-image: url(https://cdn.jsdelivr.net/gh/huanyushi/blog-images@main/img/background2.png); /* <- change background image */
     background-size: cover; /* <- customize the image size */
     background-repeat: no-repeat; /* <- no-repeat */
     background-position: top; /* <- image position */
 }
 
 /* 侧边栏相关文字样式设置 */
-#sidebar .site-title a {
+#sidebar .site-title {
     color: #ffffff; 
     text-shadow: 5px 5px 10px rgba(0,0,0,0.5);
 }
@@ -54,11 +54,11 @@ blockquote[class^='prompt-']{
     color: #ffffff;
     text-shadow: 2px 2px 3px rgba(0,0,0, 0.7);
 }
-#sidebar .sidebar-bottom .mode-toggle, #sidebar a {
-    color: #ffffff;
+#sidebar ul li.nav-item a.nav-link span{
+    font-size: 100%;
 }
-#sidebar .sidebar-bottom .btn {
-    color: var(--sidebar-btn-color);
+#sidebar ul li.nav-item a.nav-link {
+    color: #ffffff;
 }
 
 // 让目录不产生折叠效果
