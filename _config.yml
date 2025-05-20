@@ -62,7 +62,7 @@ analytics:
   google:
     id: G-F61F79XQDG
   goatcounter:
-    id: # fill in your GoatCounter ID
+    id: huanyushi # fill in your GoatCounter ID
   umami:
     id: # fill in your Umami ID
     domain: # fill in your Umami domain
@@ -76,7 +76,7 @@ analytics:
 
 # Page views settings
 pageviews:
-  provider: # now only supports 'goatcounter'
+  provider: goatcounter # now only supports 'goatcounter'
 
 # Prefer color scheme setting.
 #
