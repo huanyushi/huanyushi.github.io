@@ -278,10 +278,36 @@ $$
 
 <details class="details-inline" markdown="1">
 <summary>Proof</summary>
-只需注意到任意子空间（$X\subseteq Y$）的包含映射 $\imath_{X}\colon X \hookrightarrow Y$ 都是拓扑嵌入，那么我们只需找到一个既不是开集也不是闭集的子集即可。
+只需注意到任意子空间（$X\subseteq Y$）的包含映射 $\iota_{X}\colon X \hookrightarrow Y$ 都是拓扑嵌入，那么我们只需找到一个既不是开集也不是闭集的子集即可。
 
-令 $Y = \RR$，带有欧式拓扑。取 $X = [0,1)$，带有从 $Y$ 继承的子空间拓扑。显然 $X = [0,1]$ 在 $\RR$ 中既不是开集也不是闭集，所以 $\imath_X\colon X \hookrightarrow Y$ 既不是开映射也不是闭映射，但它是一个拓扑嵌入。这就得到了我们想要的一个例子。 <span style="float: right;">&#x220E;</span>
+令 $Y = \RR$，带有欧式拓扑。取 $X = [0,1)$，带有从 $Y$ 继承的子空间拓扑。显然 $X = [0,1]$ 在 $\RR$ 中既不是开集也不是闭集，所以 $\iota_X\colon X \hookrightarrow Y$ 既不是开映射也不是闭映射，但它是一个拓扑嵌入。这就得到了我们想要的一个例子。 <span style="float: right;">&#x220E;</span>
 </details>
 
 
-### Problems
+**Ex. 3.25.** Show that the product otpology on $\mathbb{R}^n = \mathbb{R} \times \cdots \times \mathbb{R}$ is the same as the metric topology induced by the Euclidean distance function.
+
+<details class="details-inline" markdown="1">
+<summary>Proof</summary>
+我们只需证明这两种拓扑彼此包含（即两种基可以互相用对方的基来表示）即可。
+
+- **先证明乘积拓扑包含于欧式拓扑。**乘积拓扑的基是形如 $U = U_1\times \cdots \times U_n$ 的集合，其中每个 $U_i$ 都是 $\RR$ 中的开集。取 $x = (x_1,\dots,x_n)$ 和 $U = \prod\limits_{i=1}^n(x_i - \epsilon_i, x_i + \epsilon_i)$。令 $\epsilon = \min\set{\epsilon_1, \dotsm, \epsilon_n}$，则欧式开球 $B_{\epsilon}(x)$ 内任意一点 $y$ 都满足
+
+  $$
+  \vert x_i - y_i \vert \leq d(x,y) < \epsilon \leq \epsilon_i \quad \Rightarrow \quad  \vert x_i - y_i \vert <\epsilon_i.
+  $$
+
+  所以 $y_i \in (x_i -\epsilon_i, x_i + \epsilon_i)$，也即 $y\in U$。因此 $B_{\epsilon}(x)\subseteq U$，即乘积拓扑包含于欧式拓扑。
+
+- **再证明欧式拓扑包含于乘积拓扑。**仍然设 $x = (x_1,\dots,x_n)$，设 $B_{r}(x)$ 是欧式开球。考虑乘积开集 $U= \prod\limits_{i=1}^n (x_i - \frac{r}{\sqrt{n}}, x_{i} + \frac{r}{\sqrt{n}})$。那么对于任意 $y\in U$，都有
+
+  $$
+  |x_i - y_i| < \frac{r}{\sqrt{n}} \quad \Rightarrow \quad \sum_{i=1}^n (x_i - y_i)^2 < n \cdot \qty(\frac{r}{\sqrt{n}})^2 = r^2,
+  $$
+
+  也即 $d(x,y)<r$，所以 $y\in B_{r}(x)$，即 $U \subseteq B_{r}(x)$，$B_{r}(x)$ 是乘积拓扑中的开集，从而欧式拓扑包含于乘积拓扑。
+
+由于乘积拓扑与欧式拓扑互为子集，则二者相同。于是在 $\RR^n$ 上，乘积拓扑与欧式拓扑相同。 <span style="float: right;">&#x220E;</span>
+
+</details>
+
+### Problemsz

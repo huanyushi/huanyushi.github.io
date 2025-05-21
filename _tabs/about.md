@@ -8,13 +8,13 @@ order: 4
 > To each individual the world will take on a different connotation of meaning-the important lies in the desire to search for an answer.  
 > --- T.S. Eliot
 
-Hey there, I'm Huanyu Shi, a first-year PhD student in physics.
+Hey there, I'm Huanyu Shi, a second-year PhD candidate in physics.
 
 Welcome to my Blog! It's generated from a static web page built using Jekyll on Github. Here, I share study notes and ideas related to my research journey. While updates may be irregular, feel free to drop by anytime to explore.
 
 🎓 **Education:**
 - 2019/09 - 2023/06: B. S. in Physics, School of Physics and Astronomy, Sun Yat-sen University, China.
-- 2023/09 - Present: PhD student in Physics, Kavli Institute for Theoretical Sciences, University of Chinese Academy of Sciences, China.
+- 2023/09 - Present: PhD candidate in Physics, Kavli Institute for Theoretical Sciences, University of Chinese Academy of Sciences, China.
 
 🔍 **Keywords:**
 
@@ -41,7 +41,7 @@ Welcome to my Blog! It's generated from a static web page built using Jekyll on 
 > 天地有正气，杂然赋流形。  
 > --- 文天祥
 
-你好，我是 Huanyu Shi，一位物理学一年级博士牲。
+你好，我是 Huanyu Shi，一位物理学二年级博士牲。
 
 欢迎来到我的 Blog！这是一个由在 Github 上使用 Jekyll 构建的静态网页生成的 Blog。此 Blog 主要用于记录一些学习笔记、个人感想和生活日常，不定期更新。随时欢迎你来访问探索。
 
