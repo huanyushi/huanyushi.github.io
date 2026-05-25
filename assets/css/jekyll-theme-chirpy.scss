@@ -10,9 +10,10 @@
 /* append your custom style below */
 @use 'colors/light';
 @use 'colors/dark';
-@use "animation.scss";    // 背景动画样式
-@use "colorbox.scss";     // colorbox 样式
-@use "details.scss";      // details 元素样式
+@use "animation";    // 背景动画样式
+@use "colorbox";     // colorbox 样式
+@use "details";      // details 元素样式
+@use "card-hover";    // 首页 post 卡片 hover 效果
 
 /* 首页预览 post 标题字体加粗 */
 // #post-list .card-title {
@@ -27,7 +28,7 @@
 
 // prompt 边框阴影
 blockquote[class^='prompt-']{
-    box-shadow: var(--language-border-color) 1px 1px 2px 1px; /* 借用了代码框的边框颜色变量 */
+    box-shadow: var(--language-border-color) 0px 0px 0px 1px; /* 借用了代码框的边框颜色变量 */
 }
 
 // 代码框左上角颜色
@@ -36,29 +37,38 @@ blockquote[class^='prompt-']{
 //   box-shadow: 1.25rem 0 0 #fdbc40, 2.5rem 0 0 #35cd4b;
 // }
 
-
 /* 侧边栏背景图片添加 */
 #sidebar {
-    background-image: url(https://cdn.jsdelivr.net/gh/huanyushi/blog-images@main/img/background2.png); /* <- change background image */
-    background-size: cover; /* <- customize the image size */
-    background-repeat: no-repeat; /* <- no-repeat */
-    background-position: top; /* <- image position */
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0)),
+    url("https://cdn.jsdelivr.net/gh/huanyushi/blog-images@main/img/background2.png");
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
 }
 
-/* 侧边栏相关文字样式设置 */
-#sidebar .site-title {
-    color: #ffffff; 
-    text-shadow: 5px 5px 10px rgba(0,0,0,0.5);
-}
-#sidebar .site-subtitle {
+/* 侧边栏样式设置 */
+#sidebar{
+  .site-title,
+  .site-subtitle,
+  .nav-link {
     color: #ffffff;
-    text-shadow: 2px 2px 3px rgba(0,0,0, 0.7);
-}
-#sidebar ul li.nav-item a.nav-link span{
-    font-size: 100%;
-}
-#sidebar ul li.nav-item a.nav-link {
-    color: #ffffff;
+  }
+
+  .site-title {
+    transition: color 0.2s ease;
+    &:hover {
+      color: #f6d6a0;
+    }
+  }
+
+  ul li.nav-item > a.nav-link {
+    transition: transform 0.2s ease, color 0.2s ease;
+    &:hover {
+      transform: translateX(4px);
+    }
+  }
 }
 
 // 让目录不产生折叠效果
@@ -67,28 +77,46 @@ blockquote[class^='prompt-']{
 }
 
 html {
-  @media (prefers-color-scheme: light) {
-    &:not([data-mode]),
-    &[data-mode='light'] {
-      @include light.styles;
-    }
+  &:not([data-mode]),
+  &[data-mode='light'] {
+    @include light.styles;
+  }
 
-    &[data-mode='dark'] {
-      @include dark.styles;
-    }
+  &[data-mode='dark'] {
+    @include dark.styles;
   }
 
   @media (prefers-color-scheme: dark) {
-    &:not([data-mode]),
-    &[data-mode='dark'] {
+    &:not([data-mode]) {
       @include dark.styles;
-    }
-
-    &[data-mode='light'] {
-      @include light.styles;
     }
   }
 }
 
+/* 暗色模式下，降低普通文章图片亮度，避免白底图片刺眼 */
 
+/* 用户手动切换为暗色模式 */
+html[data-mode='dark'] article img {
+  filter: brightness(.7) contrast(.95);
+}
 
+/* 已经专门指定为 dark 模式的图片，不再额外压暗 */
+html[data-mode='dark'] article .dark img,
+html[data-mode='dark'] article .no-dark-filter,
+html[data-mode='dark'] article .no-dark-filter img {
+  filter: none;
+}
+
+/* 用户没有手动指定模式，且系统是暗色模式 */
+@media (prefers-color-scheme: dark) {
+  html:not([data-mode]) article img {
+    filter: brightness(.7) contrast(.95);
+  }
+
+  /* 已经专门指定为 dark 模式的图片，不再额外压暗 */
+  html:not([data-mode]) article .dark img,
+  html:not([data-mode]) article .no-dark-filter,
+  html:not([data-mode]) article .no-dark-filter img {
+    filter: none;
+  }
+}

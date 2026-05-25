@@ -1,71 +1,85 @@
-// details class="details-block" 样式设计
+/* details class="details-block" 样式设计 */
 details.details-block {
-    border-radius: .25rem;
-    border-left: .2rem solid var(--details-border-color);
-    box-shadow: var(--language-border-color) 1px 1px 2px 1px; /* 借用了代码框的边框颜色变量 */
-    margin-bottom: 1rem;
-    padding: .6rem 1rem .6rem 1.5rem;
-    > p:last-child{
-        margin-bottom: 0;
-    }
+  border-radius: .25rem;
+  border-left: .2rem solid var(--details-border-color);
+  box-shadow: 0px 0px 0px 1px var(--details-shadow-color, var(--language-border-color));
+  margin-bottom: 1rem;
+  padding: .6rem 1rem .6rem 1.5rem;
+  overflow: hidden;
+
+  > :last-child:not(summary) {
+    margin-bottom: 0;
+  }
 }
 
 details.details-block > summary {
-    padding: .5rem 1.0rem .5rem 1.0rem; 
-    margin: -.6rem -1rem -.6rem -1.5rem;
-    font-weight: 600;
-    background-color: var(--details-bg);
-    color: var(--details-border-color);
-    text-decoration: underline;
-    position: relative;
-    list-style: none; /* 隐藏默认的箭头 */
+  padding: .5rem 2.5rem .5rem 1rem;
+  margin: -.6rem -1rem -.6rem -1.5rem;
+  font-weight: 600;
+  background-color: var(--details-bg);
+  color: var(--details-border-color);
+  position: relative;
+  list-style: none;
+  cursor: pointer;
+  user-select: none;
+}
+
+details.details-block > summary:focus-visible {
+  outline: 2px solid var(--details-border-color);
+  outline-offset: 2px;
 }
 
 details.details-block > summary::-webkit-details-marker {
-    display: none; /* IOS 隐藏默认的箭头 */
+  display: none;
 }
+
 details.details-block > summary::marker {
-    content: none; /* 隐藏默认的箭头 */
+  content: "";
 }
 
 details.details-block > summary::before {
-    /* 关闭状态下 */
-    /* 也可以用其他符号或自定义图标，比如 Unicode 字符 */
-    // content: '🙈'; 
-    /* content:'\002B9A'; */
-    content: '😼';
-    margin-right: .5rem;
-    display: inline-block;
+  content: '😼';
+  margin-right: .5rem;
+  display: inline-block;
+  width: 1.4em;
+  text-align: center;
 }
+
 details.details-block[open] > summary::before {
-    /* 展开状态下 */
-    /* content: '🐵';*/  
-    /* content: '\002B9B'; */
-    content: '🙀';
-    animation: my-cat .2s ease-in-out; /*  点击会有动画效果 */
-    margin-right: .5rem;
+  content: '🙀';
+  animation: my-cat .2s ease-in-out;
 }
 
 details.details-block > summary::after {
-    font-family: 'Font Awesome 6 Free';
-    content: "\f105"; /* Unicode for fa-angle-down */
-    display: inline-block;
-    transition: transform 0.2s ease; /* 添加旋转动画 */
-    position: absolute;
-    right: 1rem; /* 调整箭头在最右边的位置 */
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  content: "\f105"; /* fa-angle-right */
+  display: inline-block;
+  transition: transform .2s ease;
+  position: absolute;
+  right: 1rem;
 }
 
 details.details-block[open] > summary::after {
-    transform: rotate(90deg);
+  transform: rotate(90deg);
 }
 
-details.details-block[open] > summary{
-    // transition: margin 200ms ease-out; /* 展开会有动画效果 */
-    margin-bottom: .6rem;
+details.details-block[open] > summary {
+  margin-bottom: .6rem;
 }
 
 @keyframes my-cat {
-    50%  { transform: scale(1.2); } /* 动画效果代码 */
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  details.details-block > summary::after,
+  details.details-block[open] > summary::before {
+    animation: none;
+    transition: none;
+  }
 }
 
 

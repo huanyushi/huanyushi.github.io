@@ -26,7 +26,7 @@ $$
 This is its expression in first quantization. In second quantization (or occupation number formalism), it can be expressed as
 
 <div class="box-danger" markdown="1">
-<div class="title"> Single particle operators in second quantization </div>
+<div class="box-title"> Single particle operators in second quantization </div>
 
 $$
 \begin{equation}
@@ -215,7 +215,7 @@ $$
 For simplicity, we will omit the summation over indices $i$ and $j$ in the future, only keep $i\neq j$. 
 
 <div class="box-danger" markdown="1">
-<div class="title"> Two particle operators in second quantization </div>
+<div class="box-title"> Two particle operators in second quantization </div>
 
 In second quantization, it is
 
@@ -295,7 +295,7 @@ $$
 $$
 
 <div class="box-tip" markdown="1">
-<div class="title"> Examples </div>
+<div class="box-title"> Examples </div>
 
 - Total kinetic energy operator:
 
@@ -387,7 +387,7 @@ $$
 $$
 
 <div class="box-tip" markdown="1">
-<div class="title"> Example: total kinetic energy operator </div>
+<div class="box-title"> Example: total kinetic energy operator </div>
 Total kinetic energy operator in Bloch representation is
 
 $$
@@ -437,7 +437,7 @@ $$
 $$
 
 <div class="box-tip" markdown="1">
-<div class="title"> Example: total kinetic energy operator </div>
+<div class="box-title"> Example: total kinetic energy operator </div>
 Total kinetic energy operator in Wannier representation is
 
 $$

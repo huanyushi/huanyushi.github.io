@@ -169,7 +169,7 @@ $$
 Note that the very definition of the thermodynamic limit implies $\mu(N_g+1) = \mu(N_g) + \mathcal{O}(N_{g}^{-1})$, so we can neglect the difference between them. 
 
 <div class="box-danger" markdown="1">
-<div class="title"> The Lehmann representation </div>
+<div class="box-title"> The Lehmann representation </div>
 Equations $\eqref{denominator1}$ and $\eqref{denominator2}$ can now be combined with $\eqref{green function k space 1}$ to give the **Lehmann representation** of single-particle Green's function
 
 $$
@@ -240,7 +240,7 @@ So the Green's function $G$ is analytic in *neither* the upper *nor* the lower $
 For contour integrations, it is useful to consider functions that are analytic in one half plane or the other. We therefore define a new pair of functions, known as **retarded** and **advanced** Green's functions.
 
 <div class="box-info" markdown="1">
-<div class="title"> Definition: retarded and advanced Green's functions </div>
+<div class="box-title"> Definition: retarded and advanced Green's functions </div>
 
 1. Retarded Green's function:
 
@@ -265,7 +265,7 @@ where the plus signs denote anticommutator for fermions.
 In the same way we derived $\eqref{lehmann representation for G}$, we can also get the Lehmann representation of retarded and advanced Green's functions:
 
 <div class="box-danger" markdown="1">
-<div class="title"> The Lehmann representation of $G^{R,A}$ </div>
+<div class="box-title"> The Lehmann representation of $G^{R,A}$ </div>
 
 In a *homogeneous* system, we find the Lehmann representation of $G^{R,A}$:
 
@@ -290,7 +290,7 @@ _Singularities of $G\_{\alpha\beta}^{R,A}(\mathbf{k},\omega)$ in the complex $\h
 ### 2.2. The relation between $G^{R,A}$ and $G$
 
 <div class="box-warning" markdown="1">
-<div class="title"> The relation between $G^{R}$ and $G^A$ </div>
+<div class="box-title"> The relation between $G^{R}$ and $G^A$ </div>
 
 For *real* $\omega$, we have 
 
@@ -323,7 +323,7 @@ $$
 The retarded and advanced Green's functions differ from each other and from the time-ordered Green's function only in the convergence factors $\pm i\eta$, which are important near the singularities. If $\omega$ is real and greater than $\hbar^{-1}\mu$, then the infinitesimal imaginary parts $\pm i\eta$ in the second term of $\eqref{lehmann representation for G}$ and $\eqref{lehmann representation for G R}$, $\eqref{lehmann representation for G A}$ play no role. And $\omega < \hbar^{-1}\mu$ is similar.
 
 <div class="box-warning" markdown="1">
-<div class="title"> The relation between $G$ and $G^{R,A}$ </div>
+<div class="box-title"> The relation between $G$ and $G^{R,A}$ </div>
 
 $$
 \begin{align}
@@ -407,7 +407,7 @@ $$
 And we introduce two positive-definite weight functions $A(\vb{k},\omega)$ and $B(\vb{k},\omega)$ called the **spectral functions**:
 
 <div class="box-info" markdown="1">
-<div class="title"> Definition: spectral functions </div>
+<div class="box-title"> Definition: spectral functions </div>
 
 $$
 \begin{align}
@@ -484,7 +484,7 @@ Through it we can also get the relations $\eqref{relation 1}$, $\eqref{relation 
 ### 3.2. Dispersion relations
 
 <div class="box-warning" markdown="1">
-<div class="title"> Dispersion relations of $G$ and $G^{R,A}$ </div>
+<div class="box-title"> Dispersion relations of $G$ and $G^{R,A}$ </div>
 
 $$
 \begin{align}

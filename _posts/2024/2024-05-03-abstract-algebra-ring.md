@@ -8,7 +8,7 @@ description: My ring theory notes while studying abstract algebra. Ring theory e
 ---
 ## Introduction to rings
 <div class="box-info" markdown="1">
-<div class="title"> Definition: ring </div>
+<div class="box-title"> Definition: ring </div>
 A **ring** $R$ is a set together with two binary operations $+$ and $\times$ (called addition and multiplication) satisfying the following axioms:
 1. $(R,+)$ is an abelian group,
 2. $\times$ is *associative*: $(a\times b) \times c = a\times (b\times c)$, for all $a,b,c\in R$,
@@ -34,7 +34,7 @@ $$
 A ring $R$ with identity $1$, where $1 \neq 0$, is called a **division ring** (or **skew field**) if every nonzero element $a\in R$ has a multiplicative inverse, i.e., there exists $b \in R$ such that $ab=ba=1$. A commutative division ring is called a **field**.
 
 <div class="box-warning" markdown="1">
-<div class="title"> Proposition </div>
+<div class="box-title"> Proposition </div>
 Let $R$ be a ring. Then
 1. $0a=a0=0$ for all $a\in R$.
 2. $(-a)b = a(-b) = -(ab)$ for all $a,b\in R$ (recall $-a$ is the additive inverse of $a$).

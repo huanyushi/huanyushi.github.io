@@ -131,7 +131,7 @@ $$
 Combine these results $\eqref{equ:Jellium-cancel-1}$, $\eqref{equ:Jellium-cancel-2}$ and $\eqref{equ:Jellium-cancel-3}$, only $-\frac{1}{2}\frac{e^2N}{V} \frac{4\pi}{\eta^2}$ left. It represents an energy $-\frac{1}{2}4\pi e^2 (V\eta^2)^{-1}$ per particle and vanishes in the proper physical limit: first $L\to \infty$ and then $\eta \to 0$ (always keeping $\eta^{-1}\ll L$). Note that we use the thermodynamic limit $N\to\infty, V\to\infty$, but $N/V$ constant. 
 
 <div class="box-info" markdown="1">
-<div class="title"> Hamiltonian of the Jellium model </div>
+<div class="box-title"> Hamiltonian of the Jellium model </div>
 Thus the Hamiltonian of the Jellium model is
 
 $$

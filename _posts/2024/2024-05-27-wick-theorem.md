@@ -18,7 +18,7 @@ $$
 but it is not convenient for perturbation theory with Hamiltonian $\hat{H} = \hat{H}_0 + \hat{V}$. We must switch it to the interaction picture. 
 
 <div class="box-danger" markdown="1">
-<div class="title"> Single-particle Green's function in the interaction picture </div>
+<div class="box-title"> Single-particle Green's function in the interaction picture </div>
 
 $$
 \begin{equation}
@@ -65,7 +65,7 @@ One more thing to note, $\ket{\psi_H^0}$ is the exact ground state which satisfi
 
 
 <div class="box-danger" markdown="1">
-<div class="title"> Single-particle Green's function in the interaction picture </div>
+<div class="box-title"> Single-particle Green's function in the interaction picture </div>
 
 $$
 \begin{equation}
@@ -165,7 +165,7 @@ $$
 </div>
 
 <div class="box-warning" markdown="1">
-<div class="title"> Series expressions of Green's function and $S$-matrix </div>
+<div class="box-title"> Series expressions of Green's function and $S$-matrix </div>
 
 In perturbation theory, it is very useful to expand the $S$-matrix into a series:
 
@@ -276,7 +276,7 @@ $$
 $$
 
 <div class="box-tip" markdown="1">
-<div class="title"> Example </div>
+<div class="box-title"> Example </div>
 
 Consider the free fermion field where the Hamiltonian is $\displaystyle{\hat{H} = \hat{H}\_0 = \sum\_{\vb{k},\alpha}\epsilon\_{\vb{k}}^0 \hat{C}\_{\vb{k}\alpha}^\dagger \hat{C}\_{\vb{k}\alpha}}$ and the ground state is $\displaystyle{\ket{\Phi\_H^0} = \prod_{\vb{k}\leq k_F}\prod_{\alpha}\hat{C}_{\vb{k}\alpha}\ket{0}}$. For an operator $\hat{C}\_{\vb{k}\alpha}$,
 
@@ -313,7 +313,7 @@ $$
 So $\hat{\psi}^{(1)\dagger}\_{I\alpha}(x)$ is a creation part of $\hat{\psi}\_{I\alpha}(x)$  while $\hat{\psi}^{(2)}_{I\alpha}(x)$ is a destruction parts of $\hat{\psi}\_{I\alpha}(x)$ (i.e. creation like operator).
 
 <div class="box-warning" markdown="1">
-<div class="title"> Destruction and creation parts of field operators </div>
+<div class="box-title"> Destruction and creation parts of field operators </div>
 
 $$
 \begin{equation}
@@ -350,7 +350,7 @@ $\hat{\psi}\_{I\alpha}^{(1)}$ and $\hat{\psi}\_{I\alpha}^{(2)}$ are annihilation
 </div>
 
 <div class="box-info" markdown="1">
-<div class="title"> Definition: Normal ordering </div>
+<div class="box-title"> Definition: Normal ordering </div>
 Normal ordering represents a different ordering of a product of field operators, in which all the annihilation like operators are placed to the right of all the creation like operators, again including a factor of $-1$ for every interchange of fermion operators. 
 
 </div>
@@ -378,7 +378,7 @@ Thus the ground state expectation value of a $\hat{\mathsf{T}}$ product of opera
 
 ### 2.2. Contractions
 <div class="box-info" markdown="1">
-<div class="title"> Definition: contractions </div>
+<div class="box-title"> Definition: contractions </div>
 
 The contraction of two operators $\hat{A}$ and $\hat{B}$ is denoted $\hat{A}^{\bullet} \hat{B}^\bullet$ and is equal to the difference between the $\hat{\mathsf{T}}$ product and the $\hat{\mathsf{N}}$ product.
 
@@ -514,7 +514,7 @@ $$
 
 
 <div class="box-danger" markdown="1">
-<div class="title"> Contractions of field operators </div>
+<div class="box-title"> Contractions of field operators </div>
 So the contractions of field operators are
 
 $$
@@ -557,7 +557,7 @@ $$
 Before our proof of the Wick's theorem, we will introduce a basic lemma.
 
 <div class="box-warning" markdown="1">
-<div class="title"> Lemma </div>
+<div class="box-title"> Lemma </div>
 
 If $\hat{\mathsf{N}}\qty[\hat{A}\_1\hat{A}\_2\cdots\hat{A}\_n]$ is a normal-ordered product and $\hat{B}$ is a factor labeled with a time earlier than the times for $\hat{A}_1,\hat{A}_2,\cdots,\hat{A}_n$, i.e. $t_B < t\_{A\_1},t\_{A\_2},\dots, t\_{A\_n}$, then
 
@@ -653,7 +653,7 @@ So this lemma is indeed true for $n=m+1$. Then we have proved this basic lemma.
 Thus if a normal-ordered product is multiplied on the right with any operator at an earlier time, we obtain a sum of normal-ordered products containing the extra operator contracted in turn with all the operators standing in the original product, along with a term where the extra operator is included within the normal-ordered product.
 
 <div class="box-tip" markdown="1">
-<div class="title"> Example: $n=4$ </div>
+<div class="box-title"> Example: $n=4$ </div>
 
 As an example, we write a case of $n=4$ explicitly:
 
@@ -667,7 +667,7 @@ $$
 </div>
 
 <div class="box-danger" markdown="1">
-<div class="title"> Wick's theorem </div>
+<div class="box-title"> Wick's theorem </div>
 
 The time ordering of $\hat{A}_1\hat{A}_2\cdots \hat{A}_n$ can be expressed through contractions of some pair operators, while the remaining operators yield the normal-ordered product, and then take sum of all the possible choices.
 
@@ -713,7 +713,7 @@ Note that on the right side, we use the basic lemma $\eqref{lemma}$ to introduce
 </div>
 
 <div class="box-tip" markdown="1">
-<div class="title"> Example: $n=4$ </div>
+<div class="box-title"> Example: $n=4$ </div>
 
 Maybe Wick's theorem looks a little complicated, but let's write down the case where $n=4$ explicitly.
 

@@ -12,7 +12,7 @@ description: My group theory notes while studying abstract algebra. Group theory
 ## 1. Basic axioms
 
 <div class="box-info" markdown="1">
-<div class="title"> Definition: binary operation </div>
+<div class="box-title"> Definition: binary operation </div>
 A **binary operation** $\star$ on a set $G$ is a function $\star$: $G\times G \to G$.
 </div>
 
@@ -31,7 +31,7 @@ Note that for any $a,b\in G$, we shall write $a\star b $ for $\star(a,b)$.
 </details>
 
 <div class="box-info" markdown="1">
-<div class="title"> Definition: group </div>
+<div class="box-title"> Definition: group </div>
 A **group** is an order pair $(G,\star)$ where $G$ is a set and $\star$ is a binary operation on $G$ satisfying the following axioms:
    1. $\star$ is *associative*, i.e., $\forall a,b,c\in G$,$(a\star b)\star c = a\star (b\star c)$,
    2. $\exists e \in G$ called *identity*, such that $\forall a\in G$, $a\star e =e \star a = a$,
@@ -61,7 +61,7 @@ $$
  
 
 <div class="box-warning" markdown="1">
-<div class="title">Proposition</div> 
+<div class="box-title">Proposition</div> 
 If $G$ is a group under the operation $\star$, then
 1. the identity of $G$ is unique;
 2. $\forall a\in G$, $a^{-1}$ is unique;
@@ -71,14 +71,14 @@ If $G$ is a group under the operation $\star$, then
 </div>
 
 <div class="box-warning" markdown="1">
-<div class="title">Proposition</div> 
+<div class="box-title">Proposition</div> 
 Let $G$ (operation $\cdot$ will be omitted) be a group and $a,b\in G$. The equations $ax=b$ and $ya=b$ have unique solutions for $x,y\in G$. In particular,
 1. if $au = av$ , then $u=v$;
 2. if $ub=vb$, then $u=v$.
 </div>
 
 <div class="box-info" markdown="1">
-<div class="title">Definition: the order of a group and its element</div> 
+<div class="box-title">Definition: the order of a group and its element</div> 
 For $G$ a group and $x\in G$, define the **order** of $G$ is its *cardinality*, i.e., the number of its elements, and denote this integer by $\abs{G}$. If $G$ is not finite, we say its order is *infinite*.
 
 Define the **order** of $x$ to be the smallest positive integer $n$ such that $x^n=e$ and  denote this integer by $\vert x\vert$, $x$ is said to be of order $n$.
@@ -87,7 +87,7 @@ Define the **order** of $x$ to be the smallest positive integer $n$ such that $x
 If no positive power of $x$ is the identity, the order of $x$ is defined to be *infinity* and $x$ is said to be of *infinite order*. E.g., in the additive groups $\mathbb{Z},\mathbb{Q},\mathbb{R}$ or $\mathbb{C}$ every nonzero (i.e., nonidentity) element has infinite order.
 
 <div class="box-info" markdown="1">
-<div class="title">Definition: group table.</div> 
+<div class="box-title">Definition: group table.</div> 
  Let $G = \{g_1,g_2,\dots,g_n\}$ be a finite group with $g_1= e$. The **multiplication table** or **group table** of $G$ is the $n\times n$ matrix whose $i,j$ entry is the group element $g_ig_j$.
 
 $$
@@ -112,7 +112,7 @@ $$
 
 ### 2.1. Dihedral groups
 <div class="box-info" markdown="1">
-<div class="title">Definition: dihedral group</div>
+<div class="box-title">Definition: dihedral group</div>
 For $n\in\mathbb{Z}^{+}, n\geq 3$, the **dihedral group** $D_n$ is defined to be the group consisting of the symmetry actions of a regular $n$-gon, where the operation is composition of actions.
 </div>
 
@@ -133,7 +133,7 @@ where $r$ and $s$ are a set of **generators** of $D_{n}$.
 
 ### 2.2. Symmetric groups
 <div class="box-info" markdown="1">
-<div class="title"> Definition: symmetric group </div> 
+<div class="box-title"> Definition: symmetric group </div> 
 1. For $\Omega \neq \emptyset$, $S_{\Omega}$ is defined to be the set of all bijections from $\Omega$ to itself (i.e., the set of all permutations of $\Omega$). The set of $S_{\Omega}$ is a group under function composition, and $S_{\Omega}$ is called the **symmetric group on the set** $\Omega$.
 2. In the special case when $\Omega = \qty{1,2,\dots,n}$, the symmetric group on $\Omega$ is denoted $S_n$, the **symmetric group of degree** $n$, and $\abs{S_n} = n!$.
 </div>
@@ -178,7 +178,7 @@ Since $(1\ 2) \circ (1\ 3) = (1 \ 3 \ 2)$, $(1 \ 3)\circ(1\ 2) = (1\ 2\ 3)$, it 
 
 ### 2.3. Matrix groups
 <div class="box-info" markdown="1">
-<div class="title"> Definition: field</div>
+<div class="box-title"> Definition: field</div>
 A **field** is a set $F$ together with two binary operations $+$ and $\cdot$ on $F$ such that $(F,+)$ is an abelian group (call its identity $0$) and ($F - \qty{0},\cdot$) is also an abelian group, and the following **distributive** law holds:
 
 $$
@@ -191,7 +191,7 @@ For any field $F$ let $F^{\times} = F- \{0\}$.
 </div>
 
 <div class="box-info" markdown="1">
-<div class="title"> Definition: general linear group </div> 
+<div class="box-title"> Definition: general linear group </div> 
 Let $F$ be a field, then the **general linear group** $GL_n(f)$ is the group of invertible $n\times n$ with entries in $F$ under matrix multiplication.
 </div>
 
@@ -202,7 +202,7 @@ If $F$ is a finite field, then $GL_n(F)$ has only finitely many elements:
 
 ### 2.4. The quaternion group
 <div class="box-info" markdown="1">
-<div class="title"> Definition: the quaternion group </div>
+<div class="box-title"> Definition: the quaternion group </div>
 The **quaternion group**, $Q_8$ is defined by
 
 $$
@@ -218,7 +218,7 @@ Note that $Q_8$ is a non-abelian group of order $8$.
 ## 3. Homomorphisms and isomorphisms
 ### 3.1. Homomorphisms
 <div class="box-info" markdown="1">
-<div class="title"> Definition: homomorphism </div>
+<div class="box-title"> Definition: homomorphism </div>
 Let $(G,\star)$ and $(H,\diamond)$ be groups. A map $\varphi:G\to H$ such that
 
 $$
@@ -231,7 +231,7 @@ is called a **homomorphism**. In cases where no confusion arises, we always writ
 </div>
 
 <div class="box-warning" markdown="1">
-<div class="title"> Proposition </div>
+<div class="box-title"> Proposition </div>
 Let $G$ and $H$ be groups and let $\varphi:G\to H$ be a homomorphism.
 1. $\varphi(e_{G})= e_H$.
 2. $\varphi(g^{-1}) = \varphi(g)^{-1}, \forall g\in G$.
@@ -271,7 +271,7 @@ Let $G$ and $H$ be groups and let $\varphi:G\to H$ be a homomorphism.
 
 ### 3.2. Isomorphisms
 <div class="box-info" markdown="1">
-<div class="title"> Definition: isomorphism </div> 
+<div class="box-title"> Definition: isomorphism </div> 
 Let $(G,\star)$ and $(H,\diamond)$ be groups. A map $\varphi:G\to H$ is called an **isomorphism** and $G$ and $H$ are said to be *isomorphic* or of the same **isomorphism type**, written $G \cong H$, if
 1. $\varPhi$ is a homomorphism (i.e., $\varphi(xy) = \varphi(x)\varphi(y)$ where the group operations are not explicitly written), and
 2. $\varphi$ is a bijection.
@@ -290,7 +290,7 @@ Let $(G,\star)$ and $(H,\diamond)$ be groups. A map $\varphi:G\to H$ is called a
 
 ### 4.1. Definition of subgroup
 <div class="box-info" markdown="1">
-<div class="title"> Definition: subgroup </div>
+<div class="box-title"> Definition: subgroup </div>
 Let $G$ be a group. The subset $H\subset G$ is a **subgroup** of $G$ if $H\neq \emptyset$ and $H$ is closed under product and inverses. Note that the binary operation of $H$ is the same as $G$.
 </div>
 - If $H$ is a subgroup of $G$ we shall write $H\leq G$. 
@@ -306,7 +306,7 @@ Let $G$ be a group. The subset $H\subset G$ is a **subgroup** of $G$ if $H\neq \
 </details>
 
 <div class="box-warning" markdown="1">
-<div class="title"> Proposition: the subgroup criterion </div>
+<div class="box-title"> Proposition: the subgroup criterion </div>
 A subset $H$ of a group $G$ is a subgroup if and only if
 1. $H\neq \emptyset$, and
 2. $\forall x,y\in H$, $xy^{-1}\in H$.
@@ -316,22 +316,22 @@ A subset $H$ of a group $G$ is a subgroup if and only if
 ### 4.2. Centralizers and normalizers, stabilizers and kernels
 
 <div class="box-info" markdown="1">
-<div class="title"> Definition: centralizer </div>
+<div class="box-title"> Definition: centralizer </div>
 Define $C_{G}(A) = \qty{g\in G \vert gag^{-1} = a, \forall a\in A}$. This subset $C_{G}(A)$ of $G$ is called the **centralizer** of $A$ in $G$.
 </div>
 
 <div class="box-info" markdown="1">
-<div class="title"> Definition: center</div>
+<div class="box-title"> Definition: center</div>
 Define $Z(G) = \qty{g\in G\vert gx=xg, \forall x\in G}$, the set of elements commuting with all the elements of $G$. This subset $Z(G)$ of $G$ is called the **center** of $G$.
 </div>
 
 <div class="box-info" markdown="1">
-<div class="title"> Definition: normalizer</div>
+<div class="box-title"> Definition: normalizer</div>
 Define $gAg^{-1} = \qty{gag^{-1}\vert \forall a\in A}$. Define the **normalizer** of $A$ in $G$ to be the set $N_{G}(A) = \qty{g\in G \vert gA g^{-1} = A}$.
 </div>
 
 <div class="box-warning" markdown="1">
-<div class="title"> Proposition </div>
+<div class="box-title"> Proposition </div>
 1. $C_{G}(A) \leq G$;
 2. $Z(G) = C_{G}(G)\leq G$;
 3. $C_{G}(A)\leq N_{G}(A)\leq G$.
@@ -345,18 +345,18 @@ Define $gAg^{-1} = \qty{gag^{-1}\vert \forall a\in A}$. Define the **normalizer*
 </details>
 
 <div class="box-info" markdown="1">
-<div class="title"> Definition: stabilizer </div>
+<div class="box-title"> Definition: stabilizer </div>
 If $G$ is a group acting on a set $S$ and $s$ is some fixed element of $S$, the **stabilizer** of $s$ in $G$ is the set $G_{s} = \qty{g\in G \vert g\cdot s =s}$ and $G_{s}\leq G$.
 </div>
 
 <div class="box-info" markdown="1">
-<div class="title"> Definition: kernel </div>
+<div class="box-title"> Definition: kernel </div>
 Define the **kernel** of the action of $G$ on a set $S$ to be the set $\qty{g\in G \vert g\cdot s = s, \forall s\in S}$, and it is also a subgroup of $G$. 
 </div>
 
 ### 4.3. Cyclic groups and cyclic subgroups
 <div class="box-info" markdown="1">
-<div class="title"> Definition: cyclic groups </div>
+<div class="box-title"> Definition: cyclic groups </div>
 A group $H$ is **cyclic** if $H$ can be generated by a single element, i.e., $H = \qty{x^n | n\in \ZZ} = \expval{x}$, where $x$ os a **generator** of $H$.
 </div> 
 
@@ -367,13 +367,13 @@ A group $H$ is **cyclic** if $H$ can be generated by a single element, i.e., $H 
 </details>
 
 <div class="box-warning" markdown="1">
-<div class="title"> Proposition </div>
+<div class="box-title"> Proposition </div>
 1. If $H = \expval{x}$, then $\abs{H} = \abs{x}$.
 2. Let $G$ be an arbitrary group, $x\in G$ and let $m,n\in \ZZ$. If $x^n=e$ and $x^m=e$, then $x^d = e$, where $d=(m,n)$. In particular, if $x^m=e$ for some $m\in Z$, then $\abs{x}$ divides $m$.
 </div>
 
 <div class="box-danger" markdown="1">
-<div class="title"> Theorem: any two cyclic groups of the same order are isomorphic </div>
+<div class="box-title"> Theorem: any two cyclic groups of the same order are isomorphic </div>
 Any two cyclic groups of the same order are isomorphic. More specifically,
 
 1. if $n\in\mathbb{Z}^{+}$ and $\abs{\expval{x}} = \abs{\expval{y}} = n $, then the map  
@@ -399,7 +399,7 @@ Any two cyclic groups of the same order are isomorphic. More specifically,
 The following two propositions determine precisely which powers of $x$ generate the group $\expval{x}$.
 
 <div class="box-warning" markdown="1">
-<div class="title"> Proposition </div>
+<div class="box-title"> Proposition </div>
 Let $G$ be a group, let $x\in G$ and let $a \in \ZZ-\qty{0}$
 1. If $\abs{x}=\infty$, then $\abs{x^a} = \infty$.
 2. If $\abs{x} = n <\infty$ , then $\abs{x^a} = \frac{n}{(n,a)}$.
@@ -407,14 +407,14 @@ Let $G$ be a group, let $x\in G$ and let $a \in \ZZ-\qty{0}$
 </div>
 
 <div class="box-warning" markdown="1">
-<div class="title"> Proposition </div>
+<div class="box-title"> Proposition </div>
 Let $H = \expval{x}$.
 1. Assume $\abs{x} = \infty$. Then $H = \expval{x^a}$ if and only if $a=\pm 1$.
 2. Assume $\abs{x} = n<\infty$. Then $H=\expval{x^a}$ if and only if $(a,n)=1$. In particular, the number of generators of $H$ is $\varphi(n)$ (where $\varphi$ is Euler's $\varphi$-function).
 </div>
 
 <div class="box-danger" markdown="1">
-<div class="title"> Theorem:  complete subgroup structure of a cyclic group  </div>
+<div class="box-title"> Theorem:  complete subgroup structure of a cyclic group  </div>
 Let $H=\expval{x}$ be a cyclic group.
 1. Every subgroup of $H$ is cyclic.
 2. If $\abs{H} = \infty$, then for any $a\neq b$ and $a,b \in \ZZ^{+}$, $\expval{x^a}\neq \expval{x^b}$.
@@ -446,14 +446,14 @@ $$
 
 ### 4.4. Subgroups generated by subsets of a group
 <div class="box-warning" markdown="1">
-<div class="title"> Proposition </div>
+<div class="box-title"> Proposition </div>
 Let $G$ be a group, if $\mathcal{A}$ is *any* nonempty collection of subgroups of $G$, then $K = \displaystyle{\bigcap_{H\in \mathcal{A}}} H \leq G$.
 </div>
 
 In the above proposition, let $\mathcal{A}=\qty{H\leq G \vert A \subseteq H}$, we can get a special subgroup:
 
 <div class="box-info" markdown="1">
-<div class="title"> Definition: subgroup generated by  subsets of a group</div>
+<div class="box-title"> Definition: subgroup generated by  subsets of a group</div>
 If $A$ is any subset of the group $G$, define
 
 $$
@@ -466,7 +466,7 @@ This is called the **subgroup of** $G$ **generated by** $A$. Note that $\expval{
 </div>
 
 <div class="box-warning" markdown="1">
-<div class="title"> Proposition </div>
+<div class="box-title"> Proposition </div>
 If $A$ is any subset of the group $G$, then
 
 $$
@@ -687,7 +687,7 @@ _Subgroup lattice of $D_8$._
 
 ### 4.6. Cosets and Lagrange's theorem
 <div class="box-info" markdown="1">
-<div class="title"> Definition: coset </div>
+<div class="box-title"> Definition: coset </div>
 Let $G$ be a group and $H$ a subgroup of $G$. 
 
 1. Define a **left coset** of $H$ with *representative* $g\in G$ to be the set
@@ -760,14 +760,14 @@ Let $H$ be a subgroup of a group $G$ and suppose that $g_1,g_2\in G$. The follow
 5. $g_1^{-1} g_2 \in H$.
 
 <div class="box-warning" markdown="1">
-<div class="title"> Proposition </div>
+<div class="box-title"> Proposition </div>
 Let $H$ be a subgroup of a group $G$. Then the left (right) cosets of $H$ in $G$ *partition* $G$. That is, the group $G$ is the disjoint union of the left (right) cosets of $H$ in $G$.
 </div>
 
 Define the **index** of $H$ in $G$ to be the number of left cosets of $H$ in $G$, denoted as $[G: H]$. Note that the number of left cosets of $H$ in $G$ is the same as the number of right cosets of $H$ in $G$.
 
 <div class="box-danger" markdown="1">
-<div class="title"> Theorem: Lagrange's theorem </div>
+<div class="box-title"> Theorem: Lagrange's theorem </div>
 Let $G$ be a *finite* group and let $H$ be a subgroup of $G$. Then $\abs{G}/\abs{H} = [G:H]$. In particular, the number of elements in $H$ must divide the number of elements in $G$.
 
 <details class="details-inline" markdown="1">
@@ -805,16 +805,16 @@ $$
 $$
 
 <div class="box-danger" markdown="1">
-<div class="title"> Theorem: Cauchy's theorem </div>
+<div class="box-title"> Theorem: Cauchy's theorem </div>
 If $G$ is a finite group and $p$ is a prime dividing $\abs{G}$, then $G$ has an element of order $p$.
 </div>
 <div class="box-danger" markdown="1">
-<div class="title"> Theorem: Sylow's theorem </div>
+<div class="box-title"> Theorem: Sylow's theorem </div>
 If $G$ is a finite group of order $p^{\alpha} m$, where $p$ is a prime and $p$ does not dive $m$, then $G$ has a subgroup of order $p^{\alpha}$.
 </div>
 
 <div class="box-warning" markdown="1">
-<div class="title"> Proposition </div>
+<div class="box-title"> Proposition </div>
 Let $H$ and $K$ be subgroups of a group $G$ and define
 
 $$
@@ -840,7 +840,7 @@ $$
 ## 5. Normal subgroups and Quotient groups
 ### 5.1. Definition of normal subgroup and quotient group
 <div class="box-info" markdown="1">
-<div class="title"> Definition: normal subgroup </div>
+<div class="box-title"> Definition: normal subgroup </div>
 A subgroup $N$ of a group $G$ is **normal** in $G$ if $g N = Ng$ for all $g\in G$. That is, a normal subgroup of a group $G$ is one in which the right and left cosets are precisely the same. 
 
 If $N$ is a normal subgroup of $G$, we shall write $N \trianglelefteq G$.
@@ -866,7 +866,7 @@ Let $N$ be a subgroup of the group $G$. The following are equivalent:
 Note that normal subgroups *do not* have transitivity. For example, $\expval{s}\trianglelefteq \expval{s,r^2}$ and $\expval{s,r^2}\trianglelefteq D_8$ but $\expval{s}\ntrianglelefteq  D_8$ because $rsr^{-1} = sr^2 \notin \expval{s}$. 
 
 <div class="box-info" markdown="1">
-<div class="title"> Definition: quotient group </div>
+<div class="box-title"> Definition: quotient group </div>
 Let $G$ be a group and $N \trianglelefteq G$, then the cosets of $N$ in $G$ form a group $G/N$ under the operation $(aN)(bN) = abN$. This group is called the **factor** or **quotient group** of $N$ in $G$ and read "$G$ modulo $N$".
 </div>
 
@@ -898,18 +898,18 @@ $$
 </details>
 
 <div class="box-info" markdown="1">
-<div class="title"> Definition: natural projection </div>
+<div class="box-title"> Definition: natural projection </div>
 Let $N\trianglelefteq G$. The homomorphism $\pi: G \to G/N$ defined by $\pi(g) = gN$ is called the **natural projection (homomorphism)** of $G$ onto $G/N$. The kernel of this homomorphism is $N$.
 </div>
 
 ### 5.2. The isomorphism theorems
 <div class="box-danger" markdown="1">
-<div class="title"> Theorem: the first isomorphism theorem </div>
+<div class="box-title"> Theorem: the first isomorphism theorem </div>
 If $\varphi:G\to H$ is a homomorphism of groups, then $\mathrm{ker}\ \varphi \trianglelefteq G$ and $G/ \mathrm{ker}\ \varphi \cong \varphi(G)$. 
 </div>
 
 <div class="box-danger" markdown="1">
-<div class="title"> Theorem: the second or diamond isomorphism theorem </div>
+<div class="box-title"> Theorem: the second or diamond isomorphism theorem </div>
 Let $G$ be a group, let $A$ and $B$ be subgroups of $G$ and assume $A \leq N_{G}(B)$. Then $AB$ is a subgroup of $G$, $B \trianglelefteq AB$, $A\cap B \trianglelefteq A$ and $AB/B \cong A/ A\cap B$.
 
 <details class="details-inline" markdown="1">
@@ -944,7 +944,7 @@ For the second equal sign, we take advantage of the properties of cosets. Altern
 _Subgroup lattice (looks like a diamond)._
 
 <div class="box-danger" markdown="1">
-<div class="title"> Theorem: the third isomorphism theorem </div>
+<div class="box-title"> Theorem: the third isomorphism theorem </div>
 Let $G$ be a group and let $H\trianglelefteq G, K\trianglelefteq G$ with $H\leq K$. Then $K/H\trianglelefteq G/H$ and 
 
 $$
@@ -975,7 +975,7 @@ By the first isomorphism theorem, $(G/H)/(K/H) \cong G/K$.
 
 
 <div class="box-danger" markdown="1">
-<div class="title"> Theorem: the fourth or lattice isomorphism theorem </div>
+<div class="box-title"> Theorem: the fourth or lattice isomorphism theorem </div>
 Let $G$ be a group and let $N \trianglelefteq G$. Then there is a bijection from the set of subgroups $A$ of $G$ which contain $N$ onto the set of subgroups $\bar{A} = A/N$ of $G/N$. 
 
 In particular, every subgroup of $\bar{G}$ is of the form $A/N$ for some subgroup $A$ of $G$ containing $N$ (namely, its preimage in $G$ under the natural projection homomorphism from $G$ to $G/N$). This bijection has the following properties: for all $A,B \leq G$ with $N\leq A$ and $N\leq B$,
@@ -1043,7 +1043,7 @@ _Subgroup lattice of $D_4$ and the double lines give the lattice of $D_4/\langle
 
 ### 5.3. H&ouml;lder program
 <div class="box-info" markdown="1">
-<div class="title">  Definition: composition series </div>
+<div class="box-title">  Definition: composition series </div>
 In a group $G$ a sequence of subgroups
 
 $$
@@ -1065,7 +1065,7 @@ are two composition series for $D_4$ and in each series there are $3$ compositio
 </details>
 
 <div class="box-danger" markdown="1">
-<div class="title"> Theorem: Jordan-H&ouml;lder theorem </div>
+<div class="box-title"> Theorem: Jordan-H&ouml;lder theorem </div>
 
 Let $G$ be a finite group with $G\neq\qty{e}$. Then
 1. $G$ has a composition series and
@@ -1082,7 +1082,7 @@ $$
 This motivates a two-part program for classifying all *finite* groups up to isomorphism:
 
 <div class="box-danger" markdown="1">
-<div class="title"> The H&ouml;lder program </div>
+<div class="box-title"> The H&ouml;lder program </div>
 1. Classify all finite simple groups.
 2. Find all ways of "putting simple groups together" to form other groups.
 </div>
@@ -1098,17 +1098,17 @@ Note that for any $\sigma \in S_n$, there may be many ways of writing $\sigma$ a
 Let $\epsilon(\sigma)$ be called the *sign* of $\sigma$. $\sigma$ is called an **even permutation** if $\epsilon(\sigma) = 1$ and an **odd permutation** if $\epsilon(\sigma)=-1$.
 
 <div class="box-warning" markdown="1">
-<div class="title"> Proposition </div>
+<div class="box-title"> Proposition </div>
 The map $\epsilon:S_n \to \qty{\pm 1}$ is a homomorphism which means that $\epsilon(\sigma \tau) = \epsilon(\sigma) \epsilon(\tau)$.
 </div>
 
 <div class="box-warning" markdown="1">
-<div class="title"> Proposition </div>
+<div class="box-title"> Proposition </div>
 Transpositions are all odd permutations and $\epsilon$ is a surjective homomorphism.
 </div>
 
 <div class="box-info" markdown="1">
-<div class="title"> Definition: alternating group </div>
+<div class="box-title"> Definition: alternating group </div>
 The **alternating groups of degree $n$**, denoted by $A_n$, is the kernel of the homomorphism (i.e., the ser of even permutations). 
 </div>
 Note that $\abs{A_N} = \frac{1}{2}\abs{S_n} =\frac{n!}{2}$ and $A_n$ is a non-abelian simple group for all $n\geq 5$. The signs of permutation obey the usual $\ZZ_2$ laws:
@@ -1135,7 +1135,7 @@ $$
 So an $m$-cycle is an odd permutation if and only if $m$ is even. And $m$-cycle is an even permutation if and only if $m$ is odd.
 
 <div class="box-warning" markdown="1">
-<div class="title"> Proposition </div>
+<div class="box-title"> Proposition </div>
 The permutation $\sigma$ is odd if and only if the number of cycles of even length in its cycle decomposition is odd.
 </div>
 
@@ -1165,7 +1165,7 @@ _Subgroup lattice of $A_4$._
 
 ### 6.1. Definition of group action and permutation representation
 <div class="box-info" markdown="1">
-<div class="title"> Definition: group action </div>
+<div class="box-title"> Definition: group action </div>
 A **group action** of a group $G$ on a set $A$ is a map: $G\times A \to A$ (written as $g\cdot a$, $\forall g\in G$ and $\forall a\in A$) satisfying the following properties:
 1. $g_1\cdot(g_2\cdot a) = (g_1g_2)\cdot a$, $\forall g_1,g_2\in G,a\in A$, and
 2. $e\cdot a = a$, $\forall a\in A$.
@@ -1176,7 +1176,7 @@ Note that $\cdot$ is not a binary operation and $ga$ is always a member of $A$. 
 This definition of an action is more precisely named a *left* action. We could similarly define a *right* action, i.e., $(a\cdot g_2)\cdot g_1 = a\cdot (g_2g_1)$. 
 
 <div class="box-warning" markdown="1">
-<div class="title"> Proposition </div>
+<div class="box-title"> Proposition </div>
 Let the group $G$ act on the set $A$. For each fixed $g\in G$ we get a map $\sigma_g$ defined by
 
 $$
@@ -1199,28 +1199,28 @@ Let $G$ be a group and $A\neq\emptyset$. Then, let $ga=a$, $\forall a\in G, a\in
 </details>
 
 <div class="box-info" markdown="1">
-<div class="title"> Definition: kernel, stabilzer, fithful </div>
+<div class="box-title"> Definition: kernel, stabilzer, fithful </div>
 1. The **kernel** of the action is the set of elements of $G$ that act trivially on every element of $A:\qty{g\in G \ \vert \ g\cdot a = a, \forall a\in A}$.
 2. For each $a\in A$ the **stabilizer** of $a$ in $G$ is the set of elements of $G$ that fix the element $a: \qty{g\in G\ \vert \ g\cdot a = a}$ and is denoted by $G_a$.
 3. An action is **faithful** if its kernel is the identity.
 </div>
 
 <div class="box-warning" markdown="1">
-<div class="title"> Proposition </div>
+<div class="box-title"> Proposition </div>
 For any group $G$ and any nonempty set $A$ there is a bijection between the actions of $G$ on $A$ and the homomorphisms of $G$ into $S_{A}$.
 </div>
 
 Then the definition of a permutation representation may be rephrased.
 
 <div class="box-info" markdown="1">
-<div class="title"> Definition: permutation representation </div>
+<div class="box-title"> Definition: permutation representation </div>
 If $G$ is a group, a **permutation representation** of $G$ is any homomorphism of $G$ into the symmetric group $S_{A}$ for some nonempty set $A$.
 
 We shall say a given action of $G$ on $A$ *affords* or *induces* the associated permutation representation of $G$.
 </div>
 
 <div class="box-warning" markdown="1">
-<div class="title"> Proposition </div>
+<div class="box-title"> Proposition </div>
 Let $G$ be a group acting on the nonemtpy set $A$. The relation of $A$ defined by
 
 $$
@@ -1233,7 +1233,7 @@ is an equivalence relation. For each $a\in A$, the number of elements in the equ
 </div>
 
 <div class="box-info" markdown="1">
-<div class="title"> Definition: orbit </div>
+<div class="box-title"> Definition: orbit </div>
 Let $G$ be a group acting on the nonempty set $A$.
 1. The equivalence class $\qty{g\cdot a \ \vert \ g\in G}$ is called the **orbit** of $G$ containing $a$.
 2. The action of $G$ on $A$ is called **transitive** if there is only one orbit.
@@ -1255,7 +1255,7 @@ Let $G$ be a group acting on the nonempty set $A$.
 ### 6.2. Cayley's theorem
 
 <div class="box-warning" markdown="1">
-<div class="title"> Theorem </div>
+<div class="box-title"> Theorem </div>
 Let $G$ be a group, let $H$ be a subgroup of $G$ and let $G$ act by left multiplication on the set $A$ of left cosets of $H$ in $G$. Let $\pi_{H}$ be the associated permutation representation afforded by this action. Then
 1. $G$ acts transitively on $A$;
 2. the stabilizer in $G$ of the point $e H \in A$ is the subgroup $H$;
@@ -1291,7 +1291,7 @@ This shows that $\mathrm{ker}\ \pi_H$ is the largest normal subgroup of $G$ cont
 
 
 <div class="box-danger" markdown="1">
-<div class="title"> Theorem: Cayley's theorem </div>
+<div class="box-title"> Theorem: Cayley's theorem </div>
 Every group is isomorphic to a subgroup of some symmetric group. If $G$ is a group of order $n$, then $G$ is isomorphic to a subgroup of $S_n$.
 </div>
 
@@ -1304,20 +1304,20 @@ It has the following corollary:
 ### 6.3. The calss equation
 
 <div class="box-info" markdown="1">
-<div class="title"> Definition: conjugation </div>
+<div class="box-title"> Definition: conjugation </div>
 1. Two elements $a$ and $b$ of $G$ are said to be **conjugate in** $G$ if there is some $g\in G$ such that $b = gag^{-1}$. The orbits of $G$ acting on itself by conjugation are called the **conjugacy classes of ** $G$.
 2. Two subsets $S$ and $T$ are said to be **conjugate in** $G$ if there is some $g\in G$ such that $T= gSg^{-1}$.
 </div>
 
 <div class="box-warning" markdown="1">
-<div class="title"> Proposition </div>
+<div class="box-title"> Proposition </div>
 The number of conjugates of a subset $S$ in a group $G$ is the index of the normalizer of $S$, $\abs{G:N_{G}(S)}$. 
 
 In particular, the number of conjugates of an element $s$ of $G$ is the index of the centralizer of $s$, $\abs{G:C_{G}(s)}$.
 </div>
 
 <div class="box-danger" markdown="1">
-<div class="title"> Theorem: the calss equation </div>
+<div class="box-title"> Theorem: the calss equation </div>
 Let $G$ be a *finite* group and let $g_1,g_2,\dots,g_r$ be representatives of the distinct conjugacy classes of $G$ not contained in the center $Z(G)$ of $G$. Then
 
 $$
@@ -1335,14 +1335,14 @@ From the calss equation, we can get two important consequences:
 ### 6.4. Automorphisms
 
 <div class="box-info" markdown="1">
-<div class="title"> Definition: automorphism </div>
+<div class="box-title"> Definition: automorphism </div>
 Let $G$ be a group. An isomorphism from $G$ onto itself is called an **automorphism** of $G$. The set of all automorphisms of $G$ is denoted by $\mathrm{Aut}(G)$.
 </div>
 
 $\mathrm{Aut}(G)$ is a group under composition of automorphisms, the **automorphism group** of $G$. And $\mathrm{Aut}(G)$ is a subgroup of $S_G$.
 
 <div class="box-warning" markdown="1">
-<div class="title"> Proposition </div>
+<div class="box-title"> Proposition </div>
 Let $H$ be a normal subgroup of the group $G$. Then $G$ acts by conjugation on $H$ as automorphisms of $H$. More specifically, the action of $G$ on $H$ by conjugation is defined for each $g\in G$ by
 
 $$
@@ -1359,12 +1359,12 @@ It has the following corollaries:
 2. For any subgroup $H$ of a group $G$, the quotient group $N_{G}(H)/C_G(H)$ i isomorphic to a subgroup of $\mathrm{Aut}(H)$. In particular, $G/Z(G)$ is isomorphic to a subgroup of $\mathrm{Aut}(G)$.
 
 <div class="box-info" markdown="1">
-<div class="title"> Definition: inner automorphism </div>
+<div class="box-title"> Definition: inner automorphism </div>
 Let $G$ be a group and let $g\in G$. Conjugation by $g$ is called an **inner automorphism** of $G$ and the subgroup of $\mathrm{Aut}(G)$ consisting of all inner automorphisms is denoted by $\mathrm{Inn}(G)$. 
 </div>
 
 <div class="box-info" markdown="1">
-<div class="title"> Definition: characteristic subgroup </div>
+<div class="box-title"> Definition: characteristic subgroup </div>
 A subgroup $H$ of a group is called **characteristic** in $G$, denoted $H$ char $G$, if every automorphism of $G$ maps $H$ to itself, i.e., $\sigma(H)=H$ for all $\sigma \in \mathrm{Aut}(G)$.
 </div>
 
@@ -1378,7 +1378,7 @@ For some specific groups, we have the following consequences:
 
 ### 6.5. Sylow's theorem
 <div class="box-info" markdown="1">
-<div class="title"> Definition: $p$-group </div>
+<div class="box-title"> Definition: $p$-group </div>
 Let $G$ be a group and let $p$ be a prime.
 1. A group of order $p^{\alpha}$ for some $\alpha\geq 1$ is called a $p$**-group**. Subgroups of $G$ which are $p$-groups are called $p$**-subgroups**.
 2. If $G$ is a group of order $p^{\alpha}m$, where $p \nmid m$, then a subgroup of order $p^{\alpha}$ is called a **Sylow $p$-subgroup** of $G$.
@@ -1386,7 +1386,7 @@ Let $G$ be a group and let $p$ be a prime.
 </div>
 
 <div class="box-danger" markdown="1">
-<div class="title"> Theorem: Sylow's theorem</div>
+<div class="box-title"> Theorem: Sylow's theorem</div>
 Let $G$ be a group of order $p^{\alpha}m$, where $p$ is a prime number and $p\nmid m$.
 1. Sylow $p$-subgroups of $G$ exist, i.e., $\mathrm{Syl}_p(G)\neq \emptyset$
 2. If $P$ is a Sylow $p$-subgroup of $G$ and $Q$ is any $p$-subgroup of $G$, then there exists $g\in G$ such that $Q\leq g Pg^{-1}$, i.e., $Q$ is contained in some conjugate of $P$. In particular, any two Sylow $p$-subgroups of $G$ are conjugate in $G$.

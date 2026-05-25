@@ -59,7 +59,7 @@ $$
 $$
 
 <div class="box-info" markdown="1">
-<div class="title"> Field operators in Heisenberg picture </div>
+<div class="box-title"> Field operators in Heisenberg picture </div>
 In particular, the field operators in the Heisenberg picture assume the form
 
 $$
@@ -81,7 +81,7 @@ $$
 
 
 <div class="box-info" markdown="1">
-<div class="title"> Matsubara Green's function </div>
+<div class="box-title"> Matsubara Green's function </div>
 The Matsubara Green's function (or single-particle temperature Green's function) is defined as
  
 $$
@@ -98,7 +98,7 @@ where $\hat{\mathsf{T}}\_{\tau}$ denotes ordering the operators according to the
 ### 2.1. Expectation value of single-particle operators
 
 <div class="box-danger" markdown="1">
-<div class="title"> Expectation value of a single-particle operator </div>
+<div class="box-title"> Expectation value of a single-particle operator </div>
 
 For a single-particle operator, 
 
@@ -154,7 +154,7 @@ $$
 </div>
 
 <div class="box-tip" markdown="1">
-<div class="title"> Examples </div>
+<div class="box-title"> Examples </div>
 
 - For total kinetic energy operator:
 
@@ -194,7 +194,7 @@ $$
 ### 2.2. Expectation value of two-particle operators
 
 <div class="box-danger" markdown="1">
-<div class="title"> Expectation value of a two particle operators </div>
+<div class="box-title"> Expectation value of a two particle operators </div>
 
 Generally speaking, the ensemble average of an two-particle operator requires a two-particle temperature Green's function. In the special case, consider an interparticle potential
 
@@ -256,7 +256,7 @@ The last term is essentially the quantity of interest.
 
 ### Internal energy
 <div class="box-danger" markdown="1">
-<div class="title"> Internal energy </div>
+<div class="box-title"> Internal energy </div>
 Combining $\eqref{kinetic}$ and $\eqref{potential}$, we can get the ensemble average of the Hamiltonian, which is just the internal energy
 
 $$

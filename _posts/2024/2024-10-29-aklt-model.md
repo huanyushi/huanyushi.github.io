@@ -99,7 +99,7 @@ _Majumdar-Ghosh 模型的基态，其中 $\ket{\psi\_+}$, $\ket{\psi\_-}$ 就是
 如果将其中一组自旋单态改为自旋三重态，我们就得到了 Majumdar-Ghosh 模型的第一激发态，显然它和基态之间存在着一个非零的能隙。注意这一点并不违反 Lieb-Schultz-Mattis 定理，因为 Majumdar-Ghosh 模型的基态是二重简并的。
 
 <div class="box-danger" markdown="1">
-<div class="title"> Ground states of the Majumdar-Ghosh model </div>
+<div class="box-title"> Ground states of the Majumdar-Ghosh model </div>
 
 Majumdar-Ghosh 模型二重简并的基态是（周期性边界条件）：
 
@@ -191,7 +191,7 @@ $$
 另外，在不破坏 $\mathrm{SU}(2)$ 对称性和时间反演对称性的条件下，我们对系统施加一个小扰动，基态总是唯一的，且激发态和基态之间依然有非零的能隙[^Michalakis-Zwolak-2013]。这说明系统的能隙和基态唯一性不受微扰的影响，它其实就是一种 Haldane phase。
 
 <div class="box-danger" markdown="1">
-<div class="title"> Unique ground state of the AKLT model </div>
+<div class="box-title"> Unique ground state of the AKLT model </div>
 
 AKLT 模型唯一的基态是（周期性边界条件）：
 
@@ -398,7 +398,7 @@ $$
 这与之前提到的 $\eqref{correlation-function}$ 是一致的。
 
 <div class="box-danger" markdown="1">
-<div class="title"> MPS representation of the AKLT model </div>
+<div class="box-title"> MPS representation of the AKLT model </div>
 
 AKLT 模型的基态可以用 MPS 表示：
 

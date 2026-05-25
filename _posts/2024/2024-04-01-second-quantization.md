@@ -64,7 +64,7 @@ $$
 Particles with a symmetric wave function are called **bosons**, particles with an antisymmetric wave function are called **fermions**.
 
 <div class="box-info" markdown="1">
-<div class="title"> Anyons </div>
+<div class="box-title"> Anyons </div>
 For particles restricted to move in 2 spatial dimensions there also turns out to be more exotic possibilities than just bosons and fermions, namely so- called **anyons**.
 </div>
 
@@ -127,7 +127,7 @@ $$
 These properties are easily proven and will be omitted here.
 
 <div class="box-tip" markdown="1">
-<div class="title"> Example </div>
+<div class="box-title"> Example </div>
 
 Considering a bosonic system where two particles are in state $1$ and one particle is in state $2$, its wave function can be written as
 
@@ -166,7 +166,7 @@ $$
 $$
 
 <div class="box-tip" markdown="1">
-<div class="title"> Example </div>
+<div class="box-title"> Example </div>
 
 Considering a fermionic system where one particle is in state $1$ and another particle is in state $2$, the wave function of the system can be expressed as:
 
@@ -269,7 +269,7 @@ where the phase factor $S_k$ is defined by $S_{k} = n_1+n_2 +\cdots n_{k-1}$.
 It is often convenient to form the linear combinations of the creation and destruction operators (denoted $$\hat{a}_{k\alpha}^\dagger$$ and $$\hat{a}_{k\alpha}$$ for generality),
 
 <div class="box-danger" markdown="1">
-<div class="title"> Field operators </div>
+<div class="box-title"> Field operators </div>
 
 $$
 \begin{equation}

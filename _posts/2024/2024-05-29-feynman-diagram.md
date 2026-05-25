@@ -346,7 +346,7 @@ _The first order Feynman diagrams._
 So the contribution of the denominator in $\eqref{green-function}$ exactly cancels the contribution of the disconnected diagrams in the numerator. We therefore obtain the fundamental formula
 
 <div class="box-danger" markdown="1">
-<div class="title"> Single-particle Green's function for the perturbation theory </div>
+<div class="box-title"> Single-particle Green's function for the perturbation theory </div>
 
 $$
 \begin{equation}
@@ -362,7 +362,7 @@ where $C$ denotes **connected**, we therefore only need to consider the contribu
 We summary the following rule for the $n$th-order contribution to the single-particle Green's function $G\_{\alpha\beta}(x,x')$.
 
 <div class="box-info" markdown="1">
-<div class="title"> Feynman rules for single-particle Green's functions in coordinate space</div>
+<div class="box-title"> Feynman rules for single-particle Green's functions in coordinate space</div>
 1. Draw all **topologically distinct** connected diagrams with $n$ interaction lines $U$ and $2n+1$ directed Green's functions $G^0$.
 2. Label each vertex with a four-dimensional space-time point $x_i$ and its spin index.
 3. Each solid line represents a Green's function $G_{\alpha\beta}^0(x,y)$ running from $y,\beta$ to $x,\alpha$.
@@ -383,7 +383,7 @@ We summary the following rule for the $n$th-order contribution to the single-par
 {: .prompt-warning}
 
 <div class="box-tip" markdown="1">
-<div class="title"> Topologically equivalent diagrams </div>
+<div class="box-title"> Topologically equivalent diagrams </div>
 
 For the 2nd-order contribution to the single-particle Green's function $G\_{\alpha\beta}(x,x')$, it has $2!\times 2^2=8$ topologically equivalent diagrams.
 
@@ -397,7 +397,7 @@ Note that interchange between lines from left to right and within lines from top
 </div>
 
 <div class="box-tip" markdown="1">
-<div class="title"> Topologically distinct connected diagrams </div>
+<div class="box-title"> Topologically distinct connected diagrams </div>
 There are 10 topologically distinct connected diagrams of 2nd-order contribution.
 
 ![topologically-distinct-connected-diagram](feynman-7.PNG){: .light}
@@ -661,7 +661,7 @@ $$
 We can now state the Feynman rules for the $n$th-order contribution to $G\_{\alpha\beta}(\vb{k},\omega) := G\_{\alpha\beta}(k)$:
 
 <div class="box-info" markdown="1">
-<div class="title"> Feynman rules for single-particle Green's functions in momentum space </div>
+<div class="box-title"> Feynman rules for single-particle Green's functions in momentum space </div>
 1. Draw all topologically distinct connected diagrams with $n$ interaction lines and $2n+1$ directed Green's functions.
 2. Assign a direction to each interaction line; associate a directed four-momentum with each line and conserve four-momentum at each vertex.
 3. Each Green's function corresponds to a factor
@@ -925,7 +925,7 @@ where $\Sigma(k)$ is the **self-energy**. A **self-energy insertion** is defined
 We next introduce the concept of a **proper self-energy insertion**, which is a self-energy insertion that cannot be separated into two pieces by cutting a single particle line $G^0$. 
 
 <div class="box-tip" markdown="1">
-<div class="title"> Self-energy insertions of 2nd-order contribution </div>
+<div class="box-title"> Self-energy insertions of 2nd-order contribution </div>
 For examples, consider the 10 topologically distinct connected diagrams of 2nd-order contribution, which have been listed in the previous secion. Their self-energy insertions are listed in the following figure.
 
 ![self-energy-insertion](feynman-12.PNG){: .light width="550"}
@@ -1023,7 +1023,7 @@ By definition, the **proper self-energy** is the sum of all proper self-energy i
 
 
 <div class="box-danger" markdown="1">
-<div class="title"> Dyson's equation for self-energy $\Sigma$ in coordinate space </div>
+<div class="box-title"> Dyson's equation for self-energy $\Sigma$ in coordinate space </div>
 By this diagrammatic analysis, we can get the Dyson's equation for self-energy $\Sigma$.
 
 $$
@@ -1179,7 +1179,7 @@ Then we can rewritte the exact Green's function,
 </details>
 
 <div class="box-danger" markdown="1">
-<div class="title"> Dyson's equation-2  in coordinate space</div>
+<div class="box-title"> Dyson's equation-2  in coordinate space</div>
 
 We therefore obtain another form of Dyson's equation,
 
@@ -1206,7 +1206,7 @@ $$
 where $\Sigma_{\alpha\beta}^\star (k) = \delta_{\alpha\beta} \Sigma^\star(k)$ if the interatcion is independent of particle's spin. 
 
 <div class="box-danger" markdown="1">
-<div class="title"> Dyson's equation for the self-energy $\Sigma$ in momentum space </div>
+<div class="box-title"> Dyson's equation for the self-energy $\Sigma$ in momentum space </div>
 
 The Dyson's equation $\eqref{dyson-1}$ in momentum space becomes
 
@@ -1220,7 +1220,7 @@ $$
 
 
 <div class="box-danger" markdown="1">
-<div class="title"> Dyson's equation for the exact Green's function $G$ in momentum space</div>
+<div class="box-title"> Dyson's equation for the exact Green's function $G$ in momentum space</div>
 And the Dyson's equation $\eqref{dyson-2}$ in momentum space becomes
 
 $$
@@ -1496,7 +1496,7 @@ which defines the **polarization insertion** $\Pi(q)$. It is also convenient to 
 
 
 <div class="box-danger" markdown="1">
-<div class="title"> Dyson's equation for the polorization $\Pi$ in momentum space </div>
+<div class="box-title"> Dyson's equation for the polorization $\Pi$ in momentum space </div>
 So we can get the Dyson's equation for polorization $\Pi$.
 
 $$

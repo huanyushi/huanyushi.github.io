@@ -1,0 +1,56 @@
+/* 首页 post 卡片 hover 强化效果：不改变默认状态 */
+#post-list > article.card-wrapper.card {
+  position: relative;
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    outline-color 0.35s ease;
+}
+
+#post-list > article.card-wrapper.card .card-title {
+  transition: color 0.35s ease;
+}
+
+/* hover 时整体上浮，并额外加一圈描边 */
+#post-list > article.card-wrapper.card:is(:hover, :focus-within) {
+  transform: translateY(-4px);
+  box-shadow:
+    0 0.85rem 2rem rgba(0, 0, 0, 0.10),
+    0 0 0 1px color-mix(in srgb, var(--link-color) 38%, transparent);
+}
+
+html[data-mode='dark'] #post-list > article.card-wrapper.card:is(:hover, :focus-within) {
+  box-shadow:
+    0 0.85rem 2rem rgba(0, 0, 0, 0.35),
+    0 0 0 1px color-mix(in srgb, var(--link-color) 42%, transparent);
+}
+
+/* 左侧强调线 */
+#post-list > article.card-wrapper.card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 1rem;
+  bottom: 1rem;
+  width: 4px;
+  border-radius: 999px;
+  background: var(--link-color);
+  opacity: 0;
+  transform: scaleY(0.35);
+  transform-origin: center;
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease;
+  z-index: 2;
+  pointer-events: none;
+}
+
+#post-list > article.card-wrapper.card:hover::before {
+  opacity: 1;
+  transform: scaleY(1);
+}
+
+/* Chirpy 的标题颜色有 !important，所以这里也必须加 */
+#post-list > article.card-wrapper.card:hover .card-title {
+  color: var(--link-color) !important;
+}

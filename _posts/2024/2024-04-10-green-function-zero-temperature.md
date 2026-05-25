@@ -11,7 +11,7 @@ Hamiltonian  with interaction can not always be solved exactly, the first few or
 ## 1. Definition, symmetry and physical significance of the single-particle Green's functions
 ### 1.1. Definition
 <div class="box-info" markdown="1">
-<div class="title"> Single-particle Green's function </div>
+<div class="box-title"> Single-particle Green's function </div>
 The single-particle Green's function is defined as:
 
 $$
@@ -187,7 +187,7 @@ So Green's function is actually proportional to this probability amplitude $\bra
 The expectation value of any single-particle operator in the ground state of the system can be expressed via Green's function. 
 
 <div class="box-danger" markdown="1">
-<div class="title"> The ground state expectation value of a single-particle operator </div>
+<div class="box-title"> The ground state expectation value of a single-particle operator </div>
 
 $$
 \begin{equation}
@@ -260,7 +260,7 @@ $$
 </div>
 
 <div class="box-tip" markdown="1">
-<div class="title"> Examples </div>
+<div class="box-title"> Examples </div>
 
 - For total kinetic energy operator:
 
@@ -369,7 +369,7 @@ $$
 $$
 
 <div class="box-danger" markdown="1">
-<div class="title"> The ground state energy </div>
+<div class="box-title"> The ground state energy </div>
 Then we can express the total ground state energy solely in terms of the single-particle Green's function,
 
 $$
@@ -451,7 +451,7 @@ $$
 
 
 <div class="box-danger" markdown="1">
-<div class="title"> The ground state energy (with Hellman- Feynman theorem) </div>
+<div class="box-title"> The ground state energy (with Hellman- Feynman theorem) </div>
 
 We can write the ground state energy in another form
 
@@ -698,7 +698,7 @@ $$
 $$
 
 <div class="box-danger" markdown="1">
-<div class="title"> Single-particle Green's function for free fermions </div>
+<div class="box-title"> Single-particle Green's function for free fermions </div>
 Thus we finally obtain the single-particle Green's function for free fermions
 
 $$
