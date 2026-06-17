@@ -22,7 +22,7 @@ math: true
 
 在传统的 Landau paradigm 中，我们通常通过对称性和 order parameter 来理解不同的物质相。一个相如果破缺了某个 global symmetry，那么往往可以找到相应的 local order parameter。
 
-然而，topologically ordered phases 的出现说明这种图像并不完整。最典型的例子包括 fractional quantum Hall states, toric code，以及更一般的 intrinsic topological order。它们的不同相并不能简单地通过某个 local order parameter 来区分。与之伴随的是，它们有一系列非局域性质，例如 ground state degeneracy, anyonic excitations, fractional statistics, topological entanglement entropy 等。这些属于老生常谈的内容，就不再过多赘述。
+然而，topologically ordered phases 的出现说明这种图像并不完整。最典型的例子比如 fractional quantum Hall states, toric code 等。它们的不同相并不能简单地通过某个 local order parameter 来区分。与之伴随的是，它们有一系列非局域性质，例如 ground state degeneracy, anyonic excitations, fractional statistics, topological entanglement entropy 等。这些属于老生常谈的内容，就不再过多赘述。
 
 因此，如果我们想理解 topological order，就需要一种能够直接描述多体纠缠结构的语言，这正是 tensor network 能发挥长处的地方，尤其是 PEPS （Projected Entangled Pair States），它本身就是为描述二维量子多体态而设计的。Tensor network 提供了一种用 local tensors 组装全局波函数的表示方法，在这种框架里，拓扑性质是通过 virtual indices 上的纠缠结构和对称性结构来体现的。
 
@@ -58,5 +58,5 @@ Anyon 的信息正是出现在这些 fixed point sectors 以及它们之间的�
 
 ## 5. References
 
-[^Haegeman-2015]:Haegeman, J., Zauner, V., Schuch, N. et al. Shadows of anyons and the entanglement structure of topological phases. Nat Commun 6, 8284 (2015).
-[^Zauner-2015]:V Zauner et al 2015 New J. Phys. 17 053002.
+[^Haegeman-2015]:Haegeman, J., Zauner, V., Schuch, N. et al. *Shadows of anyons and the entanglement structure of topological phases*. Nat Commun 6, 8284 (2015).
+[^Zauner-2015]:Zauner, V., Draxler, D., Vanderstraeten, L., Degroote, M., Haegeman, J., Rams, M. M., Stojevic, V., Schuch, N., & Verstraete, F. *Transfer matrices and excitations with matrix product states*. New Journal of Physics 17, 053002 (2015).
