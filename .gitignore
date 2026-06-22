@@ -1,3 +1,8 @@
+# Local preview copies of post images, PDFs and other media files
+assets/img/in-post/**
+!assets/img/in-post/
+!assets/img/in-post/.gitkeep
+
 # Bundler cache
 .bundle
 vendor
