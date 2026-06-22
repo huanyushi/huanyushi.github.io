@@ -52,6 +52,14 @@ Anyon 的信息正是出现在这些 fixed point sectors 以及它们之间的�
 
 ## 2. General Framework: From Anyon Excitations to Transfer Matrix Spectra
 
+在上一节里，我们已经讨论了 motivation 和整篇 paper 的核心框架。在本节中，我们从理论上把这个框架具体细化一下。
+
+我们从一个无限大、平移不变的 PEPS 出发，每个格点上的 local tensor 为 $A^{s}_{\alpha\beta\gamma\delta}$，其中 $s=1,\dots,d$ 为 physical index，而 $\alpha,\beta,\gamma,\delta=1,\dots,D$ 是 virtual indices，整个系统放置在 square lattice 上。如下图所示，我们可以用图形化的方式表示该 PEPS：
+
+
+
+
+
 ## 3. Example: Filtered Toric Code
 
 ## 4. Reading the Spectrum Figures
