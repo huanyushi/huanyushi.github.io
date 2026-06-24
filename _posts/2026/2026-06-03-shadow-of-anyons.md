@@ -52,14 +52,13 @@ Anyon 的信息正是出现在这些 fixed point sectors 以及它们之间的�
 
 ## 2. General Framework: From Anyon Excitations to Transfer Matrix Spectra
 
-在上一节里，我们已经讨论了 motivation 和整篇 paper 的核心框架。在本
-节中，我们从理论上把这个框架具体细化一下。
+在上一节里，我们已经讨论了 motivation 和整篇 paper 的核心框架。在本节中，我们从理论上把这个框架具体细化一下。
 
 ### 2.1. Virtual symmetry and $G$-injective PEPS
 
 我们从一个无限大、平移不变的 PEPS 出发，设每个格点上的 local tensor 为 $A^{s}_{\alpha\beta\gamma\delta}$，其中 $s=1,\dots,d$ 为 physical index，而 $\alpha,\beta,\gamma,\delta=1,\dots,D$ 是 virtual indices，整个系统放置在 square lattice 上。如 Fig. 1 所示，我们可以用图形化的方式表示该 PEPS：
 
-![PEPS](PEPS.png){: .rounded width="700"}
+![PEPS](PEPS.png){: .rounded width="500"}
 _Fig. 1. 定义在 square lattice 上的无限大、平移不变的 PEPS，整个系统的量子态 $\ket{\Psi}$ 由 local tensor $A$ 收缩得到。_
 
 不过，一个完全一般的 PEPS 并不一定描述 topologically ordered phase，我们还需要对 PEPS 进一步施加限制条件。粗略地说，对于一个有限区域 $R$， PEPS tensor network 可以看成一个从该区域边界的 virtual indices 到区域内部 physical indices 的线性映射，
@@ -68,11 +67,11 @@ $$
 \Gamma_{R}: \mathcal{H}_{\partial R}^{\mathrm{virtual}} \longrightarrow \mathcal{H}_{R}^{\mathrm{phys}}.
 $$
 
-如果在一个足够大的区域上（或者经过 blocking 之后），这个映射是 injective 的，那我们称这个 PEPS 是 **injective PEPS**。这里的 injective 可以理解为：边界 virtual degrees of freedom 中的信息可以被唯一地编码到区域内部的 physical wavefunction 中。换句话说，这意味着可以只通过 physical degrees of freedom 来访问边界 virtual degrees of freedom。
+如果在一个足够大的区域上（或者经过 blocking 之后），这个映射是 injective 的，那我们称这个 PEPS 是 **injective PEPS**。这里的 injective 可以理解为：边界 virtual degrees of freedom 中的信息可以被唯一地编码到区域内部的 physical wavefunction 中。换句话说，这意味着可以只通过 physical degrees of freedom 来访问边界的整个 virtual degrees of freedom。
 
 对于 injective PEPS 来说，它的 parent Hamiltonian 通常有唯一的 ground state。相应地，如果我们通过局域地修改某个 tensor 来构造 excitation，那么这类 excitation 通常只能描述 topologically trivial excitation。
 
-然而，这和 topologically ordered phase 的物理图像是不一样的。Topological order 的一个基本特征是系统中存在 topologically nontrivial excitations。这类 excitation 不能仅仅通过局域地修改某个 tensor 来完整描述，因为它们携带非平凡的 topological charge 或 flux。它们无法被 local operators 单独创建，在有限系统中，通常只能成对产生，并由一条 string operator 连接。比如在 toric code 中，绕 torus 的 non-contractible Wilson loops 可以标记不同的 ground states；而 open string 的 endpoints 则对应 anyon excitations。
+然而，这和 topologically ordered phase 的物理图像不同。Topological order 的一个基本特征是系统中存在 topologically nontrivial excitations。这类 excitation 不能仅仅通过局域地修改某个 tensor 来完整描述，因为它们携带非平凡的 topological charge 或 flux。它们无法被 local operators 单独创建，在有限系统中，通常只能成对产生，并由一条 string operator 连接。比如在 toric code 中，绕 torus 的 non-contractible Wilson loops 可以标记不同的 ground states；而 open string 的 endpoints 则对应 anyon excitations。
 
 如果 PEPS 要描述这种结构，那么 virtual indices 上必须存在某些非平凡操作在 physical level 上不可见。也就是说，需要存在一些 virtual transformations，它们作用在 virtual legs 上，却不会改变 local tensor 所表示的 physical state。这正是 virtual symmetry 或 IGG (Invariant Gauge Group) 的来源。因此，如果 PEPS 要描述 topologically nontrivial excitations，就不能只依赖普通的 local tensor defect，而需要在 virtual level 上保留某种可以支持 string-like operators 的 symmetry structure。
 
@@ -85,13 +84,13 @@ $$
 \end{equation}
 $$
 
-其中 $g\in G$。我们称这样的 PEPS 是 **G-injective PEPS**，它虽然并不是说 $\Gamma_R$ 在整个 virtual boundary Hilbert space 上都是 injective，但它却是在 $G$-invariant subspace 上 injective。
+其中 $g\in G$。我们称这样的 PEPS 是 **G-injective PEPS**，虽然 $\Gamma_R$ 在整个 virtual boundary Hilbert space 上不是 injective，但它却是在 $G$-invariant subspace 上 injective。
 
 <div class="box-info" markdown="1">
 <div class="box-title"> Injective PEPS vs. $G$-injective PEPS </div>
 
-- *Injective PEPS*: $\Gamma_R$ 在整个 virtual boundary space 上 injective；
-- *$G$-injective PEPS*: $\Gamma_R$ 只在 $G$-invariant subspace 上 injective。
+- **Injective PEPS**: $\Gamma_R$ 在整个 virtual boundary Hilbert space 上 injective；
+- **$G$-injective PEPS**: $\Gamma_R$ 只在 virtual boundary Hilbert space 的 $G$-invariant subspace 上 injective。
 
 </div>
 
@@ -99,10 +98,40 @@ $$
 
 以 $\mathbb{Z}_2$ topological order 为例，最简单的情形是每个 tensor 都满足一个非平凡的 $\mathbb{Z}_2$ virtual symmetry 条件（也即 $\eqref{sym-condition}$），这意味着在 virtual bonds 上插入一串闭合的 $\mathbb{Z}_2$ 对称算符时，可以利用 $\eqref{sym-condition}$ 将这条 string 在网络中连续地变形或移动，而不改变整体态，这其实就是 topological PEPS 中重要的图像，Fig. 2 给出了相应的 pull-through condition：
 
-![pull-through condition](pull-through.png){: .rounded width="500"}
+![pull-through condition](pull-through.png){: .rounded width="550"}
 _Fig. 2. Local tensor 满足的 virtual symmetry condition 和 pull-through condition。_
 
-### 2.2. Anyon excitations from virtual strings
+### 2.2. Anyon excitations
+前面我们提到，对于 injective PEPS，如果我们想构造一个局域激发，最自然的做法就是直接把某个位置的 tensor $A$ 替换成另一个 tensor $B$。由于 injectivity 的性质，这种局域替换可以通过对 $A$ 的 physical leg 作用某个 local operator $L$ 来得到，也就是 $B = LA$。不过这样的 excitation 只是 topologically trivial excitation。
+
+对于 $G$-injective PEPS，单纯的 physical local deformation $B=LA$ 仍然是 topologically trivial，因为 $B$ 同样继承了 $A$ 的 $G$-invariance。为了描述 topologically non-trivial excitations，我们需要在 virtual level 引入能够区分不同 topological sector 的非平庸结构。和 *shadows of anyons* 不同，我们这里避免直接给出一般的 ansatz，先介绍 $G$-injective PEPS 中三类可能的激发，即 **electric excitation**, **magnetic excitation** 以及同时携带两者的 **dyonic excitation**[^Duivenvoorden-2017]。注意，我们仍然只考虑 finite abelian group $G$。
+
+首先考虑 **electric excitation**。如果我们像 injective PEPS 里一样，对 $G$-injective PEPS 的某个 local tensor $A$ 替换成一般的 local tensor $B$，它不一定是 $G$-invariant，它可以按照 $G$ 的不可约表示分解为
+
+$$
+B = \sum_{\alpha} B_\alpha ,
+$$
+
+每个分量 $B_\alpha$ 在 virtual symmetry 下具有确定的变换性质：
+
+![electric excitation](electric-excitation.png){: .rounded width="300"}
+
+当 $\alpha(g)=1$ 对所有 $g\in G$ 都成立时，$B_\alpha$ 属于 trivial representation 所对应的分量，这就又回到了前面我们提到的 $G$-invariant tensor。这个分量可以由局域物理操作产生，因此是 topological trivial。反之，当 $\alpha(g)$ 并不恒等于 $1$，则 $B_\alpha$ 在 virtual symmetry 下带有非平凡 charge，不能写成 $B_\alpha = L A$，这样的 tensor replacement 就对应一个 **electric excitation with charge** $\alpha$。
+
+与 electric excitation 不同，**magnetic excitation** 是通过在 virtual bonds 上插入一条 group element string 来构造的。给定一个群元素 $g\in G$，我们可以沿着某条路径在 virtual bonds 上插入 $U_g$。由于 local tensor $A$ 满足 virtual symmetry condition（见 Fig. 2），这条 string 可以通过 pull-through condition 被移动。因此，string 的主体不是局域可观测的，真正有物理意义的是 string 的 endpoint。如果 string 是闭合的，它在局域上不可见；但如果 string 是 open string，那么它的 endpoint 就对应一个局域激发，我们称其为 **magnetic excitation with flux** $g$。
+
+![magnetic excitation](magnetic-excitation.png){: .rounded width="400"}
+
+这一点和 electric excitation 很不一样。Electric excitation 的非平凡性主要来自 endpoint tensor 的 transformation property；而 magnetic excitation 的非平凡性主要来自是否存在 nontrivial virtual string。
+
+更一般地，一个 anyon 可以同时携带 magnetic flux 和 electric charge。这类激发称为 **dyonic excitation**。它由一条携带 flux $g$ 的 virtual string 以及端点处携带 charge $\alpha$ 的 local tensor 共同描述。于是，一般的 anyon 类型可以用二元组 $[\\![g;\alpha]\\!]$ 来标记。其中，$[\\![1,\alpha]\\!]$ 表示 pure electric excitation，而 $[\\![g,1]\\!]$ 表示 pure magnetic excitation。
+
+在有限闭合系统中，一个 open string 有两个端点，因此 anyons 通常成对产生。但是在无限大系统中，我们可以把其中一个端点推到无穷远处。这样在有限观测区域内，系统看起来就包含一个 single anyon excitation，如 Fig. 3 所示
+
+![single anyon excitation](single-anyon-excitation.png){: .rounded width="350"}
+_Fig. 3. 放置在无限大系统中的 single anyon excitation $\ket{\Psi\_{\mathbf{r}}(B,g,\alpha)}$，其中 $\mathbf{r}$ 表示 anyon 的位置，$g,\alpha$ 分别表示 anyon 的 flux lable 和 charge label。_
+
+因此，在 infinite PEPS 中，我们可以把 single anyon ansatz 写成一种局域 endpoint tensor 与 half-infinite virtual string 的组合，这也正是 *shadows of anyons* 里给出的 ansatz。
 
 ## 3. Example: Filtered Toric Code
 
@@ -112,3 +141,4 @@ _Fig. 2. Local tensor 满足的 virtual symmetry condition 和 pull-through cond
 
 [^Haegeman-2015]:Haegeman, J., Zauner, V., Schuch, N. et al. *Shadows of anyons and the entanglement structure of topological phases*. Nat Commun 6, 8284 (2015).
 [^Zauner-2015]:Zauner, V., Draxler, D., Vanderstraeten, L., Degroote, M., Haegeman, J., Rams, M. M., Stojevic, V., Schuch, N., & Verstraete, F. *Transfer matrices and excitations with matrix product states*. New Journal of Physics 17, 053002 (2015).
+[^Duivenvoorden-2017]:Duivenvoorden, K., Iqbal, M., Haegeman, J., Verstraete, F., & Schuch, N. *Entanglement phases as holographic duals of anyon condensates*. Physical Review B 95, 235119 (2017).

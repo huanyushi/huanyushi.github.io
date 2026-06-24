@@ -786,7 +786,7 @@ _反色图片与原图片对比_
 
 /* 用户手动切换为暗色模式 */
 html[data-mode='dark'] article img {
-  filter: brightness(.7) contrast(.95);
+  filter: brightness(.8) contrast(.95);
 }
 
 /* 已经专门指定为 dark 模式的图片，不再额外压暗 */
@@ -799,7 +799,7 @@ html[data-mode='dark'] article .no-dark-filter img {
 /* 用户没有手动指定模式，且系统是暗色模式 */
 @media (prefers-color-scheme: dark) {
   html:not([data-mode]) article img {
-    filter: brightness(.7) contrast(.95);
+    filter: brightness(.8) contrast(.95);
   }
 
   /* 已经专门指定为 dark 模式的图片，不再额外压暗 */
