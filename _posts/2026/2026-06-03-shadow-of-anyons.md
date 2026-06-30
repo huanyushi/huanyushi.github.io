@@ -118,9 +118,9 @@ $$
 
 当 $\alpha(g)=1$ 对所有 $g\in G$ 都成立时，$B_\alpha$ 属于 trivial representation 所对应的分量，这就又回到了前面我们提到的 $G$-invariant tensor。这个分量可以由局域物理操作产生，因此是 topological trivial。反之，当 $\alpha(g)$ 并不恒等于 $1$，则 $B_\alpha$ 在 virtual symmetry 下带有非平凡 charge，不能写成 $B_\alpha = L A$，这样的 tensor replacement 就对应一个 **electric excitation with charge** $\alpha$。
 
-与 electric excitation 不同，**magnetic excitation** 是通过在 virtual bonds 上插入一条 group element string 来构造的。给定一个群元素 $g\in G$，我们可以沿着某条路径在 virtual bonds 上插入 $U_g$。由于 local tensor $A$ 满足 virtual symmetry condition（见 Fig. 2），这条 string 可以通过 pull-through condition 被移动。因此，string 的主体不是局域可观测的，真正有物理意义的是 string 的 endpoint。如果 string 是闭合的，它在局域上不可见；但如果 string 是 open string，那么它的 endpoint 就对应一个局域激发，我们称其为 **magnetic excitation with flux** $g$。
+与 electric excitation 不同，**magnetic excitation** 是通过在 virtual bonds 上插入一条 group element string 来构造的。给定一个群元素 $g\in G$，我们可以沿着某条路径在 virtual bonds 上插入 $U_g$。由于 local tensor $A$ 满足 virtual symmetry condition（见 Fig. 2），这条 string 可以通过 pull-through condition 被移动。因此，string 的主体不是局域可观测的，真正有物理意义的是 string 的 endpoint。如果 string 是闭合的，它在局域上不可见；但如果 string 是 open string，那么它的 endpoint 就对应一个局域激发，我们称其为 **magnetic excitation with flux** $g$，见下图，其中 $C$ 可以是任意的 $G$-invariant tensor：
 
-![magnetic excitation](magnetic-excitation.png){: .rounded width="400"}
+![magnetic excitation](magnetic-excitation.png){: .rounded width="350"}
 
 这一点和 electric excitation 很不一样。Electric excitation 的非平凡性主要来自 endpoint tensor 的 transformation property；而 magnetic excitation 的非平凡性主要来自是否存在 nontrivial virtual string。
 
