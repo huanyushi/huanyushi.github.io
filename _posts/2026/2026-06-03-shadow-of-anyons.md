@@ -3,7 +3,7 @@ title:      "Reading Shadows of Anyons: Anyon Signatures in PEPS Transfer Matrix
 date:       2026-06-03
 categories: [Condensed Matter Physics, Tensor Network]
 tag: [condensed matter physics, tensor network, PEPS]
-media_subpath : /img/in-post/2026/2026-06-03/
+media_subpath : /assets/img/in-post/2026/2026-06-03/
 math: true
 ---
 

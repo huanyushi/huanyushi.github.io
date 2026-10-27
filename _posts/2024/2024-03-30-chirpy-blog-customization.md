@@ -5,7 +5,7 @@ categories: [HTML and CSS]
 tag: [HTML, CSS]
 math: true
 pin: true
-media_subpath : /img/in-post/2024/2024-03-30/
+media_subpath : /assets/img/in-post/2024/2024-03-30/
 render_with_liquid: false
 description: 基于 Jekyll-Theme-Chirpy v7.3.0 的个性化设置：MathJax 配置、侧边栏样式、页脚站点统计、背景动画、自定义新的 prompt 和 details 元素样式、LQIP 和反色图片的 Python 实现等内容。
 ---
@@ -91,7 +91,7 @@ MathJax = {
 #sidebar {
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0)),
-    url("https://cdn.jsdelivr.net/gh/huanyushi/blog-images@main/img/background2.png");
+    url("../img/background2.png");
 
   background-size: cover;
   background-repeat: no-repeat;
@@ -751,7 +751,7 @@ def invert_color(fname):
     return im, im_inverted
 
 # 这部分是调整至图片文件路径
-path_start = "../img/in-post/"
+path_start = "../assets/img/in-post/"
 path_end = '2023-03-23/preface.PNG'
 image_path = path_start + path_end
 
