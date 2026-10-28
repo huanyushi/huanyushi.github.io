@@ -9,6 +9,9 @@ layout: compress
 
 MathJax = {
   loader: { load: ['[tex]/physics',] },
+  output: {
+    displayOverflow: 'scroll'
+  },
   tex: {
     inlineMath: [
       ['$', '$'],

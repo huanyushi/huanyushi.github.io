@@ -19,7 +19,7 @@
     0 0 0 1px color-mix(in srgb, var(--link-color) 38%, transparent);
 }
 
-html[data-mode='dark'] #post-list > article.card-wrapper.card:is(:hover, :focus-within) {
+html[data-bs-theme='dark'] #post-list > article.card-wrapper.card:is(:hover, :focus-within) {
   box-shadow:
     0 0.85rem 2rem rgba(0, 0, 0, 0.35),
     0 0 0 1px color-mix(in srgb, var(--link-color) 42%, transparent);

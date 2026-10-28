@@ -77,17 +77,17 @@ blockquote[class^='prompt-']{
 }
 
 html {
-  &:not([data-mode]),
-  &[data-mode='light'] {
+  &:not([data-bs-theme]),
+  &[data-bs-theme='light'] {
     @include light.styles;
   }
 
-  &[data-mode='dark'] {
+  &[data-bs-theme='dark'] {
     @include dark.styles;
   }
 
   @media (prefers-color-scheme: dark) {
-    &:not([data-mode]) {
+    &:not([data-bs-theme]) {
       @include dark.styles;
     }
   }
@@ -96,27 +96,27 @@ html {
 /* 暗色模式下，降低普通文章图片亮度，避免白底图片刺眼 */
 
 /* 用户手动切换为暗色模式 */
-html[data-mode='dark'] article img {
+html[data-bs-theme='dark'] article img {
   filter: brightness(.8) contrast(.95);
 }
 
 /* 已经专门指定为 dark 模式的图片，不再额外压暗 */
-html[data-mode='dark'] article .dark img,
-html[data-mode='dark'] article .no-dark-filter,
-html[data-mode='dark'] article .no-dark-filter img {
+html[data-bs-theme='dark'] article .dark img,
+html[data-bs-theme='dark'] article .no-dark-filter,
+html[data-bs-theme='dark'] article .no-dark-filter img {
   filter: none;
 }
 
 /* 用户没有手动指定模式，且系统是暗色模式 */
 @media (prefers-color-scheme: dark) {
-  html:not([data-mode]) article img {
+  html:not([data-bs-theme]) article img {
     filter: brightness(.8) contrast(.95);
   }
 
   /* 已经专门指定为 dark 模式的图片，不再额外压暗 */
-  html:not([data-mode]) article .dark img,
-  html:not([data-mode]) article .no-dark-filter,
-  html:not([data-mode]) article .no-dark-filter img {
+  html:not([data-bs-theme]) article .dark img,
+  html:not([data-bs-theme]) article .no-dark-filter,
+  html:not([data-bs-theme]) article .no-dark-filter img {
     filter: none;
   }
 }

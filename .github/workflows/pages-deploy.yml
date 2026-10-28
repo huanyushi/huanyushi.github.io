@@ -52,6 +52,7 @@ jobs:
 
       - name: Test site
         run: |
+          python3 -m json.tool "_site${{ steps.pages.outputs.base_path }}/assets/js/data/search.json" > /dev/null
           bundle exec htmlproofer _site \
             \-\-disable-external \
             \-\-ignore-urls "/^http:\/\/127.0.0.1/,/^http:\/\/0.0.0.0/,/^http:\/\/localhost/,/^http:\/\/zhiqihuang.top/"
