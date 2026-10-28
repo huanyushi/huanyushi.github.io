@@ -1,120 +1,121 @@
-/* details class="details-block" 样式设计 */
+/* Shared interaction for lightweight proofs and card-style disclosures. */
+details.details-inline,
 details.details-block {
-  border-radius: .25rem;
-  border-left: .2rem solid var(--details-border-color);
-  box-shadow: 0px 0px 0px 1px var(--details-shadow-color, var(--language-border-color));
-  margin-bottom: 1rem;
-  padding: .6rem 1rem .6rem 1.5rem;
-  overflow: hidden;
+  margin: 1.125rem 0;
+
+  > summary {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    min-height: 2.75rem;
+    border-radius: 0.3125rem;
+    color: var(--statement-title-color);
+    font-weight: 600;
+    line-height: 1.7;
+    list-style: none;
+    cursor: pointer;
+    touch-action: manipulation;
+    transition: background-color 0.15s ease;
+
+    &::marker {
+      content: "";
+    }
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      flex: none;
+      width: 0.4375rem;
+      height: 0.4375rem;
+      border-right: 1.5px solid currentColor;
+      border-bottom: 1.5px solid currentColor;
+      margin-top: calc(0.85em - 0.21875rem);
+      transform: rotate(-45deg);
+      transition: transform 0.15s ease;
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--details-accent-color);
+      outline-offset: -3px;
+    }
+  }
+
+  &[open] > summary::before {
+    transform: rotate(45deg);
+  }
 
   > :last-child:not(summary) {
     margin-bottom: 0;
   }
 }
 
-details.details-block > summary {
-  padding: .5rem 2.5rem .5rem 1rem;
-  margin: -.6rem -1rem -.6rem -1.5rem;
-  font-weight: 600;
-  background-color: var(--details-bg);
-  color: var(--details-border-color);
-  position: relative;
-  list-style: none;
-  cursor: pointer;
-  user-select: none;
+details.details-inline {
+  padding-left: 0.5rem;
+  border-left: 2px solid var(--statement-border-color);
+
+  > summary {
+    padding: 0.5rem 0.75rem;
+    color: var(--details-accent-color);
+
+    &:hover {
+      background: var(--details-hover-bg);
+    }
+  }
+
+  > :not(summary) {
+    margin-left: 0.75rem;
+    margin-right: 0.75rem;
+  }
+
+  > summary + * {
+    margin-top: 0.75rem;
+  }
+
+  &[open] {
+    padding-bottom: 0.75rem;
+  }
 }
 
-details.details-block > summary:focus-visible {
-  outline: 2px solid var(--details-border-color);
-  outline-offset: 2px;
-}
+details.details-block {
+  --details-padding-x: 1rem;
 
-details.details-block > summary::-webkit-details-marker {
-  display: none;
-}
+  background: var(--statement-bg);
+  border: 1px solid var(--statement-border-color);
+  border-radius: 0.3125rem;
 
-details.details-block > summary::marker {
-  content: "";
-}
+  > summary {
+    border-radius: 0.25rem;
+    padding: 0.75rem var(--details-padding-x);
+    background: var(--statement-title-bg);
 
-details.details-block > summary::before {
-  content: '😼';
-  margin-right: .5rem;
-  display: inline-block;
-  width: 1.4em;
-  text-align: center;
-}
+    &:hover {
+      background: var(--details-hover-bg);
+    }
+  }
 
-details.details-block[open] > summary::before {
-  content: '🙀';
-  animation: my-cat .2s ease-in-out;
-}
+  &[open] {
+    padding: 0 var(--details-padding-x) 0.75rem;
 
-details.details-block > summary::after {
-  font-family: 'Font Awesome 6 Free';
-  font-weight: 900;
-  content: "\f105"; /* fa-angle-right */
-  display: inline-block;
-  transition: transform .2s ease;
-  position: absolute;
-  right: 1rem;
-}
-
-details.details-block[open] > summary::after {
-  transform: rotate(90deg);
-}
-
-details.details-block[open] > summary {
-  margin-bottom: .6rem;
-}
-
-@keyframes my-cat {
-  50% {
-    transform: scale(1.2);
+    > summary {
+      margin: 0 calc(-1 * var(--details-padding-x)) 0.75rem;
+      border-bottom: 1px solid var(--statement-border-color);
+      border-radius: 0.25rem 0.25rem 0 0;
+    }
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  details.details-block > summary::after,
-  details.details-block[open] > summary::before {
-    animation: none;
+  details.details-inline > summary,
+  details.details-block > summary {
     transition: none;
-  }
-}
 
-
-// details class = "details-inline"
-details.details-inline {
-    margin-bottom: 1rem;
-    padding-left: 1rem; 
-    border-left: 2px solid var(--blockquote-border-color); 
-    > p:last-child{
-        margin-bottom: 0;
+    &::before {
+      transition: none;
     }
-}
-details.details-inline > summary {
-    color: var(--link-color);
-    display: inline-block;
-    line-height: normal;
-    // border-bottom: 1px solid var(--link-underline-color);
-}
-details.details-inline > summary:hover {
-    color: #d2603a; /* 鼠标悬停时的颜色 */
-    border-bottom: 1px solid #d2603a;
-}
-details.details-inline > summary::marker {
-    content: none; /* 隐藏默认的箭头 */
-}
-details.details-inline > summary::-webkit-details-marker {
-    display: none; /* IOS 隐藏默认的箭头 */
-}
-details.details-inline > summary::before {
-    content: '+';
-    scale: 1.3;
-    display: inline-block;
-    margin-right: .4rem;
-    transition: transform 0.2s ease; /* 添加旋转动画 */
-}
-details.details-inline[open] > summary::before {
-    transform: rotate(135deg);
+  }
 }

@@ -10,73 +10,20 @@
 /* append your custom style below */
 @use 'colors/light';
 @use 'colors/dark';
-@use "animation";    // 背景动画样式
-@use "colorbox";     // colorbox 样式
+@use "statement";    // 文章重点内容块
 @use "details";      // details 元素样式
 @use "card-hover";    // 首页 post 卡片 hover 效果
+@use "sidebar";       // 插画侧栏与导航交互
 
-/* 首页预览 post 标题字体加粗 */
-// #post-list .card-title {
-//   font-weight: bold;
-// }
-
-/* 主页 post 列表加阴影 */
-// #post-list .card {
-//     border-radius: 0.7rem;
-//     box-shadow: var(--language-border-color) 1px 1px 2px 1px;
-// }
-
-// prompt 边框阴影
-blockquote[class^='prompt-']{
-    box-shadow: var(--language-border-color) 0px 0px 0px 1px; /* 借用了代码框的边框颜色变量 */
-}
-
-// 代码框左上角颜色
-// div[class^=language-] .code-header::before{
-//   background-color: #fc625d;
-//   box-shadow: 1.25rem 0 0 #fdbc40, 2.5rem 0 0 #35cd4b;
-// }
-
-/* 侧边栏背景图片添加 */
-#sidebar {
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0)),
-    url("../img/background2.png");
-
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center top;
-}
-
-/* 侧边栏样式设置 */
-#sidebar{
-  .site-title,
-  .site-subtitle,
-  .nav-link {
-    color: #ffffff;
-  }
-
-  .site-title {
-    transition: color 0.2s ease;
-    &:hover {
-      color: #f6d6a0;
-    }
-  }
-
-  ul li.nav-item > a.nav-link {
-    transition: transform 0.2s ease, color 0.2s ease;
-    &:hover {
-      transform: translateX(4px);
-    }
-  }
-}
 
 // 让目录不产生折叠效果
 .is-collapsed {
   max-height: none !important;
 }
 
-html {
+:root {
+  --prompt-border-color: var(--main-border-color);
+
   &:not([data-bs-theme]),
   &[data-bs-theme='light'] {
     @include light.styles;

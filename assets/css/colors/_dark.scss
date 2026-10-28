@@ -1,8 +1,34 @@
 @mixin styles {
-    // 定义的颜色
-    --details-border-color: #865ab7;
-    --details-bg: #222a3aa6;
-    --colorbox-shadow-color: var(--language-border-color);
+    // 保留 Chirpy 原生底色，仅调整文字与交互强调。
+    --text-color: #bcb9c2;
+    --heading-color: #d5d2da;
+    --text-muted-color: #a09ba9;
+    --text-muted-highlight-color: #b5afbf;
+    --label-color: var(--text-muted-color);
+    --link-color: #c0a8ea;
+    --home-card-hover-color: #c6a6f2;
+    --link-underline-color: #796494;
+    --main-border-color: #403c48;
+    --toc-highlight: var(--link-color);
+    // 轻量标题栏：正文跟随页面，深色标题仅略微提亮。
+    --statement-bg: var(--main-bg);
+    --statement-title-bg: color-mix(in srgb, var(--main-bg) 94%, var(--link-color));
+    --statement-title-color: var(--heading-color);
+    --statement-border-color: var(--main-border-color);
+    --details-accent-color: var(--link-color);
+    --details-hover-bg: color-mix(in srgb, var(--main-bg) 90%, var(--link-color));
+    --topbar-text-color: var(--text-muted-color);
+    --post-list-text-color: var(--text-color);
+    --btn-border-color: var(--main-border-color);
+    --search-border-color: var(--main-border-color);
+    --search-icon-color: var(--text-muted-color);
+    --input-focus-border-color: var(--link-color);
+    --tag-border: var(--main-border-color);
+    --blockquote-border-color: var(--main-border-color);
+    --blockquote-text-color: var(--text-muted-color);
+    --toc-popup-border-color: var(--main-border-color);
+    --btn-backtotop-color: var(--link-color);
+    --btn-backtotop-border-color: var(--main-border-color);
     // 修改了黑暗模式下原主题的颜色
     --prompt-info-bg: rgb(6 36 62);
     --prompt-tip-bg: rgb(32 40 26 / 60%);

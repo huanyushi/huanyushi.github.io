@@ -1,0 +1,105 @@
+/* 插画侧栏在明暗模式下保持一致。 */
+#sidebar {
+  --sidebar-bg: #25203b;
+  --site-title-color: #fff;
+  --site-subtitle-color: #e5def2;
+  --sidebar-muted-color: #e5def2;
+  --sidebar-active-color: #f0ebf7;
+  --sidebar-hover-bg: rgba(218, 202, 246, .14);
+  --sidebar-btn-bg: #242037;
+  --sidebar-btn-color: #f0ebf7;
+  --sidebar-border-color: rgba(255, 255, 255, .25);
+  --sidebar-accent-color: #d8c9ed;
+
+  background-color: var(--sidebar-bg);
+  background-image:
+    linear-gradient(rgba(27, 20, 48, .18), rgba(27, 20, 48, .24) 45%, rgba(27, 20, 48, .28)),
+    url('../img/background2.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
+
+  .site-title {
+    color: var(--site-title-color);
+    transition: color .2s ease;
+
+    &:is(:hover, :focus-visible) {
+      color: var(--sidebar-accent-color);
+    }
+  }
+
+  .site-subtitle {
+    color: var(--site-subtitle-color);
+  }
+
+  ul li.nav-item {
+    opacity: 1;
+
+    > a.nav-link {
+      color: #f8f5fc;
+      text-shadow: 0 1px 2px rgba(15, 10, 25, .85), 0 0 5px rgba(15, 10, 25, .45);
+      border: 1px solid transparent;
+      background: transparent;
+      transition: background-color .16s ease, border-color .16s ease, color .16s ease;
+
+      i { opacity: 1; }
+
+      &:is(:hover, :focus-visible) {
+        color: #fff;
+        background: var(--sidebar-hover-bg);
+      }
+    }
+
+    &.active > a.nav-link {
+      color: #fff;
+      border-color: rgba(229, 222, 242, .32);
+      background: rgba(218, 202, 246, .18);
+
+      &:is(:hover, :focus-visible) {
+        background: rgba(218, 202, 246, .25);
+      }
+    }
+  }
+
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid var(--sidebar-accent-color);
+    outline-offset: 3px;
+  }
+
+  .sidebar-bottom {
+    > a:is(:hover, :focus-visible),
+    #mode-toggle:is(:hover, :focus-visible, [aria-expanded='true']) {
+      color: #fff;
+      background: #625276;
+      box-shadow: 0 0 0 1px var(--sidebar-accent-color);
+    }
+
+    /* 菜单与深色侧栏一致，避免浅色模式下浅字落在浅底上。 */
+    #mode-toggle + .dropdown-menu {
+      --menu-bg: #292333;
+      --menu-border-color: #625276;
+      --menu-shadow-color: rgba(0, 0, 0, .3);
+      --menu-active-color: #fff;
+      --menu-highlight-bg: #493d59;
+
+      .dropdown-item:is(:hover, :focus-visible) {
+        color: #fff;
+        background: var(--menu-highlight-bg);
+      }
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .site-title,
+    .sidebar-bottom > a,
+    .sidebar-bottom #mode-toggle,
+    ul li.nav-item > a.nav-link {
+      transition: none;
+    }
+
+    .sidebar-bottom #mode-toggle + .dropdown-menu.show {
+      animation: none;
+    }
+  }
+}

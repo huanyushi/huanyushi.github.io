@@ -1,56 +1,56 @@
-/* 首页 post 卡片 hover 强化效果：不改变默认状态 */
+/* 首页卡片：静态描边和主题色标题，不移动卡片或叠加遮罩。 */
 #post-list > article.card-wrapper.card {
+  --home-card-highlight: 0;
+  --home-card-title-color: var(--heading-color);
+
   position: relative;
-  transition:
-    transform 0.35s ease,
-    box-shadow 0.35s ease,
-    outline-color 0.35s ease;
-}
 
-#post-list > article.card-wrapper.card .card-title {
-  transition: color 0.35s ease;
-}
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: 1px solid var(--link-color);
+    border-radius: 0.625rem;
+    opacity: var(--home-card-highlight);
+    pointer-events: none;
+    z-index: 2;
+    transition: opacity 0.16s ease;
+  }
 
-/* hover 时整体上浮，并额外加一圈描边 */
-#post-list > article.card-wrapper.card:is(:hover, :focus-within) {
-  transform: translateY(-4px);
-  box-shadow:
-    0 0.85rem 2rem rgba(0, 0, 0, 0.10),
-    0 0 0 1px color-mix(in srgb, var(--link-color) 38%, transparent);
-}
+  > .post-preview {
+    /* 去掉 Chirpy 的灰色 hover 遮罩，保持摘要和元数据的对比度。 */
+    &::before {
+      display: none;
+    }
 
-html[data-bs-theme='dark'] #post-list > article.card-wrapper.card:is(:hover, :focus-within) {
-  box-shadow:
-    0 0.85rem 2rem rgba(0, 0, 0, 0.35),
-    0 0 0 1px color-mix(in srgb, var(--link-color) 42%, transparent);
-}
+    &:focus-visible {
+      outline: 2px solid var(--link-color);
+      outline-offset: 3px;
+    }
+  }
 
-/* 左侧强调线 */
-#post-list > article.card-wrapper.card::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 1rem;
-  bottom: 1rem;
-  width: 4px;
-  border-radius: 999px;
-  background: var(--link-color);
-  opacity: 0;
-  transform: scaleY(0.35);
-  transform-origin: center;
-  transition:
-    opacity 0.35s ease,
-    transform 0.35s ease;
-  z-index: 2;
-  pointer-events: none;
-}
+  .card-title {
+    /* 覆盖 Chirpy 的标题颜色 !important，默认仍跟随主题。 */
+    color: var(--home-card-title-color) !important;
+    transition: color 0.16s ease;
+  }
 
-#post-list > article.card-wrapper.card:hover::before {
-  opacity: 1;
-  transform: scaleY(1);
-}
+  &:has(> .post-preview:focus-visible) {
+    --home-card-highlight: 1;
+    --home-card-title-color: var(--home-card-hover-color);
+  }
 
-/* Chirpy 的标题颜色有 !important，所以这里也必须加 */
-#post-list > article.card-wrapper.card:hover .card-title {
-  color: var(--link-color) !important;
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      --home-card-highlight: 1;
+      --home-card-title-color: var(--home-card-hover-color);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    &::after,
+    .card-title {
+      transition: none;
+    }
+  }
 }

@@ -23,9 +23,12 @@ MathJax = {
     ],
     packages: {'[+]': ['physics']},
     tags: 'ams',
+    preFilters: [({math}) => {
+      math.math = math.math.replace(/\\\\(?!\[)/g, '\\\\[.1cm]');
+    }],
     macros: {
-        e: '\\mathrm{e}',
-        i: '\\mathrm{i}',
+        eu: '\\mathrm{e}',
+        iu: '\\mathrm{i}',
         RR: '\\mathbb{R}',
         ZZ: '\\mathbb{Z}',
         QQ: '\\mathbb{Q}',

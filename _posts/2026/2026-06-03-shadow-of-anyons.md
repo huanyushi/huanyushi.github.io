@@ -86,8 +86,8 @@ $$
 
 其中 $g\in G$。我们称这样的 PEPS 是 **G-injective PEPS**，虽然 $\Gamma_R$ 在整个 virtual boundary Hilbert space 上不是 injective，但它却是在 $G$-invariant subspace 上 injective。
 
-<div class="box-info" markdown="1">
-<div class="box-title"> Injective PEPS vs. $G$-injective PEPS </div>
+<div class="statement" markdown="1">
+<div class="statement-title">Injective PEPS vs. $G$-injective PEPS</div>
 
 - **Injective PEPS**: $\Gamma_R$ 在整个 virtual boundary Hilbert space 上 injective；
 - **$G$-injective PEPS**: $\Gamma_R$ 只在 virtual boundary Hilbert space 的 $G$-invariant subspace 上 injective。

@@ -47,7 +47,7 @@ social:
 
 # Site Verification Settings
 webmaster_verifications:
-  google: google-site-verification=J-aXydM02O-L4PE2xTK9NQfmeeKUMfGGts3GkUnJ7rc # fill in your Google verification code
+  google: J-aXydM02O-L4PE2xTK9NQfmeeKUMfGGts3GkUnJ7rc # fill in your Google verification code
   bing: # fill in your Bing verification code
   alexa: # fill in your Alexa verification code
   yandex: # fill in your Yandex verification code
@@ -154,7 +154,6 @@ paginate: 10
 # The base URL of your site
 baseurl: ""
 
-background_animation: true
 # ------------ The following options are not recommended to be modified ------------------
 
 kramdown:

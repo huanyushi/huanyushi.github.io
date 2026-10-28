@@ -20,7 +20,7 @@ description: John M. Lee 的 Introduction to Topological Manifolds（拓扑流�
 $$
 \begin{equation*}
     d(x,y) = \begin{cases}
-        0, \quad &\text{if $x=y$}\\[.2cm]
+        0, \quad &\text{if $x=y$}\\
         1, & \text{if $x\neq y$}
     \end{cases}
 \end{equation*}
@@ -126,7 +126,7 @@ $$
 $$
 f((x,y)) = 
 \begin{cases}
-    (1,0), \quad &\text{if $(x,y) = (0,0)$,}\\[.2cm]
+    (1,0), \quad &\text{if $(x,y) = (0,0)$,}\\
     (x,y), & \text{otherwise}.
 \end{cases}
 $$
@@ -138,7 +138,7 @@ $$
 $$
 f(x) = 
 \begin{cases}
-    0, \quad &\text{if $x\in \mathbb{Q}$,}\\[.2cm]
+    0, \quad &\text{if $x\in \mathbb{Q}$,}\\
     1, & \text{if $x\in \RR\setminus\mathbb{Q}$}.
 \end{cases}
 $$
@@ -156,7 +156,7 @@ $$
 $$
 f((x,y)) = 
 \begin{cases}
-    (0,0), \quad & x\ge 0,\\[.2cm]
+    (0,0), \quad & x\ge 0,\\
     (1,0), & x<0.
 \end{cases}
 $$
@@ -194,7 +194,7 @@ $$
 $$
 g(x)=
 \begin{cases}
-a, \quad & x\neq 0,\\[.2cm]
+a, \quad & x\neq 0,\\
 b,& x=0. 
 \end{cases}
 $$

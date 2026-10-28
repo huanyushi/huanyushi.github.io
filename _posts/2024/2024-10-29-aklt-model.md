@@ -6,9 +6,9 @@ tag: [condensed matter physics, many-particle physics]
 media_subpath : /assets/img/in-post/2024/2024-10-29/
 math: true
 ---
-AKLT 模型（Affleck-Kennedy-Lieb-Tasaki 模型）作为量子自旋链中的一个重要模型，不仅在凝聚态物理中为拓扑量子相变的研究开辟了新路径，也为理解量子纠缠、拓扑序与边界效应提供了典型的理论范例。自 1980 年代以来，AKLT 模型在量子信息和量子计算等领域的理论研究中不断显示出其独特的价值，尤其是其基态的 Valence Bond Solid (VBS) 态，为未来拓扑量子态的物理实现提供了基本思路。
+AKLT 模型（Affleck-Kennedy-Lieb-Tasaki 模型）作为量子自旋链中的一个重要模型，不仅为理解 Haldane 相提供了严格的理论实例，也为研究量子纠缠、对称性保护拓扑相与边界效应提供了典型范例。自 1980 年代以来，AKLT 模型在量子信息和量子计算等领域的理论研究中不断显示出其独特的价值，尤其是其基态的 Valence Bond Solid (VBS) 态，为构造和理解量子多体态提供了基本思路。
 
-本文第一节介绍 AKLT 模型的相关背景，它和凝聚态物理中的 Haldane conjecture 有密切联系。第二节介绍了 Majumdar-Ghosh 模型，它和 AKLT 模型一样都可以被严格求解，它的基态被称为二聚体态（dimer state）。第三节具体介绍 AKLT 模型哈密顿量和基态的构造，第四节以隐性反铁磁序、矩阵乘积态、边缘态三个方面分析了 AKLT 模型的性质。
+本文第一节介绍 AKLT 模型的相关背景，它和凝聚态物理中的 Haldane conjecture 有密切联系。第二节介绍了 Majumdar-Ghosh 模型，它和 AKLT 模型一样，基态都可以被精确构造，它的基态被称为二聚体态（dimer state）。第三节具体介绍 AKLT 模型哈密顿量和基态的构造，第四节以隐性反铁磁序、矩阵乘积态、边缘态三个方面分析了 AKLT 模型的性质。
 
 ## 1. Haldane 猜想
 我们从最简单的一维自旋链模型出发，也就是自旋-1/2 Heisenberg 模型，它的哈密顿量是
@@ -20,7 +20,7 @@ $$
 \end{equation}
 $$
 
-这里我们只计及了最近邻格点间的相互作用，且考虑周期性边界条件，即 $\mathbf{S}\_{N+1} = \mathbf{S}\_{1}$。我们知道，当 $J<0$ 时，$\eqref{Heisenberg-model}$ 的基态为铁磁序；当 $J>0$ 时，$\eqref{Heisenberg-model}$ 的基态为反铁磁序，由 Hans Bethe 于 1931 年精确求解[^Bethe-1931]，相关资料可以查询 [Bethe ansatz](https://en.wikipedia.org/wiki/Bethe_ansatz)。在热力学极限下，反铁磁 Heisenberg 模型的能谱是无能隙的（gapless），系统的关联函数呈现幂律衰减。
+这里我们只计及了最近邻格点间的相互作用，且考虑周期性边界条件，即 $\mathbf{S}\_{N+1} = \mathbf{S}\_{1}$。我们知道，当 $J<0$ 时，$\eqref{Heisenberg-model}$ 的基态为铁磁序；当 $J>0$ 时，$\eqref{Heisenberg-model}$ 的基态具有反铁磁关联，但不存在 Néel 长程序。该模型由 Hans Bethe 于 1931 年精确求解[^Bethe-1931]，相关资料可以查询 [Bethe ansatz](https://en.wikipedia.org/wiki/Bethe_ansatz)。在热力学极限下，反铁磁 Heisenberg 模型的能谱是无能隙的（gapless），系统的关联函数呈现幂律衰减。
 
 我们现在只考虑 $J>0$ 时的反铁磁自旋 Heisenberg 模型。从上面的结果我们自然而然地有这样一个疑问，对于其他自旋量子数情况下的自旋链，它的能谱是否也是无能隙的？系统的关联函数是否也是幂次衰减的？
 
@@ -29,13 +29,13 @@ $$
 - 当自旋 $s$ 是半整数时，系统是无能隙的（gapless），关联函数呈幂律衰减。
 
 
-这一猜想在当时凝聚态物理学界引起了很大的反响。从经典的角度来看，$s$ 仅仅是自旋的大小，为什么 $s$ 是整数还是半整数会引来如此大的差别？对于 $s=1$ 的情况很快就得到了数值（密度矩阵重整化群，DMRG）和实验（$\mathrm{CsNiCl_3}$）上的验证，与 Haldane 猜想相符。
+这一猜想在当时凝聚态物理学界引起了很大的反响。从经典的角度来看，$s$ 仅仅是自旋的大小，为什么 $s$ 是整数还是半整数会引来如此大的差别？对于 $s=1$ 的情况，后续的数值研究（包括密度矩阵重整化群，DMRG）和准一维材料（如 $\mathrm{CsNiCl_3}$）的实验结果都支持了 Haldane 猜想。
 
-整数自旋系统的能隙不受微扰的影响，这个稳定存在的有能隙的量子态构成了一个非平庸的量子相（其基态没有对称性破缺，但因为存在边界态，而与平庸的有能隙的直积态有本质区别），后来被称为 **Haldane phase**，它也是一种**对称性保护拓扑相**[^Gu-Wen-2009]（symmetry protected topological phase, SPT phase）。
+对于自旋-1 链，这个有能隙、没有对称性破缺的量子相被称为 **Haldane phase**，它也是一种**对称性保护拓扑相**[^Gu-Wen-2009]（symmetry protected topological phase, SPT phase）。只要保持适当的保护对称性，在不闭合体能隙的情况下，不能它连续变成平庸的直积态。
 
-对于一般情况的自旋 Heisenberg 模型难以求解，Haldane conjecture 至今也没有得到纯数学意义上的证明，但从数值、场论、实验等多个角度都验证了它的正确性。
+对于一般情况的自旋 Heisenberg 模型，严格求解仍然很困难。截至本文最初写作时（2024 年），纯自旋-1 Heisenberg 链的 Haldane 能隙还没有严格证明，但已经得到数值、场论和实验等多方面的支持。关于自旋-1 周期链在 2026 年提出的计算机辅助证明，可参考 [Tasaki 的介绍](https://haltasaki.github.io/writings/AI/OpenAI_Haldane.html)。
 
-本文将要介绍的 AKLT 模型就是基于 $s=1$ 的反铁磁 Heisenberg 模型添加了一个修正项得来的，这种精心设计的哈密顿量的基态可以被严格求解，验证了 Haldane conjecture。虽然 AKLT 模型和 $s=1$ 的反铁磁 Heisenberg 模型并不完全一致，但它们的基态都属于 Haldane phase，具有共同的性质，我们会发现，在 AKLT 模型自旋链的边缘会出现自旋-1/2 自由度，它们并不与主体链形成配对态，从而形成了一种非局域的拓扑特性。这一现象也说明 AKLT 模型具有**边缘态**和**拓扑保护**的特性。
+本文将要介绍的 AKLT 模型就是基于 $s=1$ 的反铁磁 Heisenberg 模型添加了一个修正项得来的，这种精心设计的哈密顿量的基态可以被精确构造，体能隙也可以严格证明，为 Haldane 猜想所描述的物理图像提供了一个具体实例。虽然 AKLT 模型和 $s=1$ 的反铁磁 Heisenberg 模型并不完全一致，但它们的基态都属于 Haldane phase，具有共同的性质。我们会发现，在开边界 AKLT 自旋链的两端会出现未配对的自旋-1/2 自由度，这正是它的**边缘态**。
 
 ## 2. Majumdar-Ghosh 模型
 推广自旋-1/2 Heisenberg 模型的一个自然想法就是引入次近邻相互作用，也即 $J_1$-$J_2$ 模型，
@@ -63,7 +63,16 @@ $$
 \end{align*}
 $$
 
-其中括号里的正是 site $i$, $i+1$, $i+2$ 处三个自旋耦合后投影到总自旋 $s=3/2$ 子空间的投影算符 $P_ {3/2}$。我们知道三个自旋-1/2 粒子耦合后的总自旋可以是 $s=1/2$, $3/2$，对于总自旋 $s=1/2$ 的态，经投影算符 $P_ {3/2}$ 作用后为零，而总自旋 $s=3/2$ 的态，经投影算符 $P_ {3/2}$ 作用后并未发生改变。那么如果我们能设法使得每一组三个粒子耦合后的总自旋为 1/2，我们就找到了系统能量的最低态（也就是基态）。
+我们知道三个自旋-1/2 粒子耦合后的总自旋可以是 $s=1/2$, $3/2$，总自旋平方的本征值分别是 $3/4$, $15/4$。因此，投影到 site $i$, $i+1$, $i+2$ 总自旋 $s=3/2$ 子空间的投影算符是
+
+$$
+\begin{equation*}
+    P_{3/2}^{(i)} = \frac{1}{3}\qty[\qty(\mathbf{S}_i+\mathbf{S}_{i+1}+\mathbf{S}_{i+2})^2-\frac{3}{4}],\qquad
+    H_{\mathrm{MG}} = \frac{3}{4}\sum_{i=1}^{2N}P_{3/2}^{(i)}-\frac{3N}{4}.
+\end{equation*}
+$$
+
+对于总自旋 $s=1/2$ 的态，经 $P_{3/2}^{(i)}$ 作用后为零，而总自旋 $s=3/2$ 的态则保持不变。那么如果我们能设法使得每一组相邻三个粒子耦合后的总自旋为 $1/2$，就找到了系统的基态，能量为 $E_0=-3N/4$。
 
 这种构造显然是可以的，我们以前三个粒子为例，若它们的态矢量可以写为：
 
@@ -81,7 +90,7 @@ $$
 \end{align}
 $$
 
-由于系统具有平移不变性，我们把上述基态中的每个自旋都翻过来（相当于整体平移了一个位置），它仍然是系统的基态，也即
+由于系统具有平移不变性，我们把上述基态整体平移一个格点，就得到了另一种单态配对方式，它仍然是系统的基态，也即
 
 $$
 \begin{align}
@@ -94,18 +103,18 @@ $$
 ![](MG-gs.png){: width="550"}
 _Majumdar-Ghosh 模型的基态，其中 $\ket{\psi\_+}$, $\ket{\psi\_-}$ 就是 $\vert\Phi\_{\mathrm{MG}}^{(1)}\rangle$, $\vert\Phi\_{\mathrm{MG}}^{(2)}\rangle$，图源 [Milez](https://commons.wikimedia.org/wiki/File:Majumdar-ghosh_gs.png)。_
 
-其中每一条蓝色线段都代表连接相邻 site 自旋-1/2 粒子构成的自旋单态，这其实就有点类似于化学里的化学键，每个自旋单态被称为 valence bond，显然 Majumdar-Ghosh 模型里不同的 valence bond 之间没有关联，系统基态仅仅是不同 valence bond 的直积。
+其中每一条蓝色线段都代表连接相邻 site 自旋-1/2 粒子构成的自旋单态，这其实就有点类似于化学里的化学键，每个自旋单态被称为 valence bond。对于上面两个二聚体态中的任意一个，不同的 valence bond 之间没有关联，整个态就是这些 valence bond 的直积。
 
-如果将其中一组自旋单态改为自旋三重态，我们就得到了 Majumdar-Ghosh 模型的第一激发态，显然它和基态之间存在着一个非零的能隙。注意这一点并不违反 Lieb-Schultz-Mattis 定理，因为 Majumdar-Ghosh 模型的基态是二重简并的。
+Majumdar-Ghosh 模型在热力学极限下具有非零能隙，但它的激发态并不能简单地由一个单态替换为三重态得到。一个更有用的图像是把上述两种二聚体态的 domain wall 看作携带自旋-1/2 的 spinon，周期链中的这类激发成对出现。关于激发谱的变分分析，可以参考 Caspers 等人的工作[^Caspers-Emmett-Magnus-1984]。有隙并不违反 Lieb-Schultz-Mattis 定理，因为这里的基态是二重简并的。
 
-<div class="box-danger" markdown="1">
-<div class="box-title"> Ground states of the Majumdar-Ghosh model </div>
+<div class="statement" markdown="1">
+<div class="statement-title">Majumdar–Ghosh 模型的基态</div>
 
 Majumdar-Ghosh 模型二重简并的基态是（周期性边界条件）：
 
 $$
 \begin{align*}
-  \ket{\Phi_{\mathrm{MG}}^{(1)}}& =\bigotimes_{i=1}^{N} \frac{1}{\sqrt{2}}\qty(\ket{\uparrow_{2i-1}\downarrow_{2i}} - \ket{\downarrow_{2i-1}\uparrow_{2i}}), \\[.2cm]
+  \ket{\Phi_{\mathrm{MG}}^{(1)}}& =\bigotimes_{i=1}^{N} \frac{1}{\sqrt{2}}\qty(\ket{\uparrow_{2i-1}\downarrow_{2i}} - \ket{\downarrow_{2i-1}\uparrow_{2i}}), \\
     \ket{\Phi_{\mathrm{MG}}^{(2)}}  &= \bigotimes_{i=1}^{N} \frac{1}{\sqrt{2}}\qty(\ket{\uparrow_{2i}\downarrow_{2i+1}} - \ket{\downarrow_{2i}\uparrow_{2i+1}}).
 \end{align*}
 $$
@@ -115,7 +124,7 @@ $$
 </div>
 
 ## 3. AKLT 模型
-受到 Majumdar-Ghosh 模型的启发，如果我们希望找到由自旋单态组成的量子态作为系统基态的哈密顿量，一种简单而有效的方法是将哈密顿量表示为一串投影算符的组合，这些投影算符的作用是将量子态投影到与自旋单态正交的子空间中，因此，系统的基态能量为零，因为投影后的部分与自旋单态正交，最小能量对应着基态。
+受到 Majumdar-Ghosh 模型的启发，如果我们希望找到以某个态为基态的哈密顿量，一种简单而有效的方法是构造一组局域投影算符，使它们分别湮灭这个态。把这些投影算符以正系数相加，就得到了一个正半定的哈密顿量，而这个态的能量为零，自然就是基态。整体加减一个常数不会改变基态，只会改变能量零点。
 
 我们可以把这种套路用到更高自旋量子数的情况，在 1987 年， Affleck, Kennedy, Lieb 和 Tasaki 就提出了 AKLT 模型[^Affleck-Kennedy-Lieb-Tasaki-1987]，
 
@@ -126,7 +135,7 @@ $$
 \end{equation}
 $$
 
-其中 $s_i = 1$，且考虑了周期性边界条件，而这其实就是两个自旋-1 粒子耦合后投影到总自旋 $s=2$ 子空间的投影算符。注意 $\eqref{AKLT-model}$ 有着丰富的对称性，除了时间反演对称性（$\mathbf{S}\to  - \mathbf{S}$）之外，还有 $\mathrm{SU}(2)$ 对称性。
+其中 $s_i = 1$，且考虑了周期性边界条件。它的局域项与两个自旋-1 粒子耦合后投影到总自旋 $s=2$ 子空间的投影算符只相差比例系数和常数项。注意 $\eqref{AKLT-model}$ 有着丰富的对称性，除了时间反演对称性（$\mathbf{S}\to  - \mathbf{S}$）之外，还有 $\mathrm{SU}(2)$ 自旋旋转对称性。
 
 ![AKLT](AKLT.png){: width="600"}
 _从左至右分别是 Ian Affleck, Tom Kennedy, Elliott H. Lieb, 和 Hal Tasaki，令人遗憾的是 Ian Affleck 已于本月初离世。_
@@ -134,12 +143,12 @@ _从左至右分别是 Ian Affleck, Tom Kennedy, Elliott H. Lieb, 和 Hal Tasaki
 在这里我们做一个简短的说明。考虑两个自旋-1 粒子耦合后的投影算符 $P_0$, $P_1$, $P_2$，分别代表投影到总自旋 $s=0,1,2$ 的子空间，而总自旋算符的平方 $\mathbf{S}^2 = (\mathbf{S}\_i+\mathbf{S}\_{i+1})^2$（其实就是 Casimir 算符）和投影算符是对易的，它们有共同的本征态 $\ket{s=0,m}$,$\ket{s=1,m}$, $\ket{s=2,m}$，我们可以依此列一个本征值表格：
 
 $$
-\begin{array}{c||c}
-    \ket{s,m} & \mathbf{S}^2 & P_0 & P_1 &P_2\\[.2cm]
+\begin{array}{c||c|c|c|c}
+    \ket{s,m} & \mathbf{S}^2 & P_0 & P_1 &P_2\\
     \hline
-    s=0 & 0 & 1 & 0 & 0 \\[.2cm]
+    s=0 & 0 & 1 & 0 & 0 \\
     \hline
-    s=1 & 2 & 0 & 1 & 0 \\[.2cm]
+    s=1 & 2 & 0 & 1 & 0 \\
     \hline
     s=2 & 6 &0 &0 & 1
 \end{array}
@@ -149,14 +158,22 @@ $$
 
 $$
 \begin{align}
-    P_0 &= \frac{1}{12}(\mathbf{S}^2 -2)(\mathbf{S}^2 -6) = \frac{1}{3}(\mathbf{S}_i\cdot\mathbf{S}_{i+1})^2 - \frac{1}{3},\\[.2cm]
-    P_1 &= -\frac{1}{8} \mathbf{S}^2(\mathbf{S}^2-6) = -\frac{1}{2} (\mathbf{S}_i\cdot\mathbf{S}_{i+1})^2 - \frac{1}{2}\mathbf{S}_i\cdot\mathbf{S}_{i+1} + 1,\\[.2cm]
+    P_0 &= \frac{1}{12}(\mathbf{S}^2 -2)(\mathbf{S}^2 -6) = \frac{1}{3}(\mathbf{S}_i\cdot\mathbf{S}_{i+1})^2 - \frac{1}{3},\\
+    P_1 &= -\frac{1}{8} \mathbf{S}^2(\mathbf{S}^2-6) = -\frac{1}{2} (\mathbf{S}_i\cdot\mathbf{S}_{i+1})^2 - \frac{1}{2}\mathbf{S}_i\cdot\mathbf{S}_{i+1} + 1,\\
     P_2 & = \frac{1}{24}\mathbf{S}^2(\mathbf{S}^2-2) = \frac{1}{6}(\mathbf{S}_i\cdot\mathbf{S}_{i+1})^2 + \frac{1}{2} \mathbf{S}_i\cdot\mathbf{S}_{i+1} + \frac{1}{3}. 
     \label{projector of AKLT}
 \end{align}
 $$
 
-显然 $\eqref{projector of AKLT}$ 正是 AKLT 模型中哈密顿量的局域项（改变了比例系数，并求丢掉了常数项），如果系统中每对耦合的两个自旋组成 $s=0$ 或者 $s=1$ 的态，那么整个系统就处于能量最低的态，也即基态。关于这部分内容的解释，也可以参考 [AKLT 模型的哈密顿量是怎么得出的](https://www.zhihu.com/question/396879646/answer/22073260576)。
+由 $\eqref{projector of AKLT}$ 可知，
+
+$$
+\begin{equation*}
+    H_{\mathrm{AKLT}} = 2\sum_{i=1}^{N}P_2^{(i,i+1)}-\frac{2N}{3}.
+\end{equation*}
+$$
+
+如果每对相邻自旋都只有 $s=0,1$ 分量，没有 $s=2$ 分量，那么所有 $P_2^{(i,i+1)}$ 都会湮灭这个态，它就是基态，能量为 $E_0=-2N/3$。关于这部分内容的解释，也可以参考 [AKLT 模型的哈密顿量是怎么得出的](https://www.zhihu.com/question/396879646/answer/22073260576)。
 
 这种方法和传统凝聚态的套路是反过来的，一般我们是先写下一个模型的哈密顿量，然后进行一通暴算得到模型的各种性质，比如基态、激发态、关联函数等。但在这里我们其实是先确定一个特定的态，
 再基于这个态构造以它为基态的 parent Hamiltonian。
@@ -170,14 +187,14 @@ $$
 \end{equation}
 $$
 
-其中 $\mathcal{P}\_j = \ket{1} \bra{\uparrow_{j}^{l}\uparrow_j^{r}} +\ket{0}\qty(\bra{\uparrow_{j}^{l}\downarrow_{j}^{r}} +\bra{\downarrow_{j}^{l}\uparrow_{j}^{r}})/\sqrt{2} + \ket{-1}\bra{\downarrow_{j}^{l}\downarrow_{j}^{r}}$ 表示同一个 site 的两个自旋-1/2 粒子投影到 $s=1$ 自旋三重态的投影算符。AKLT 模型的基态被称为 VBS (valence-bond solid) state，其中一组自旋单态也被称为 valence bond，通过投影算符 $\mathcal{P}\_j$ 把相邻的 valence bond 耦合到了一起，这一点与 Majumdar-Ghosh 模型是不同的。
+其中 $\mathcal{P}\_j = \ket{1} \bra{\uparrow_{j}^{l}\uparrow_j^{r}} +\ket{0}\qty(\bra{\uparrow_{j}^{l}\downarrow_{j}^{r}} +\bra{\downarrow_{j}^{l}\uparrow_{j}^{r}})/\sqrt{2} + \ket{-1}\bra{\downarrow_{j}^{l}\downarrow_{j}^{r}}$ 把同一个 site 的两个虚拟自旋-1/2 的三重态映射到物理自旋-1 空间，并去掉单态分量。上式暂未归一化。AKLT 模型的基态被称为 VBS (valence-bond solid) state，其中一组自旋单态也被称为 valence bond，通过 $\mathcal{P}\_j$ 把相邻的 valence bond 耦合到了一起，这一点与 Majumdar-Ghosh 模型是不同的。
 
 如下图所示：
 
 ![](AKLT-gs.png){: width="550"}
 _AKLT 模型的基态，每个 site 处的自旋-1 粒子可以分解为两个自旋-1/2 粒子耦合成的自旋三重态。相邻 site 的自旋-1/2 粒子耦合成自旋单态，用蓝色线段表示。图中的圆圈代表两个自旋-1/2 粒子投影到 $s=1$ 的投影算符。图源 [Milez](https://commons.wikimedia.org/wiki/File:AKLT_GroundState.png)。_
 
-可以证明[^Affleck-Kennedy-Lieb-Tasaki-1988]，在周期性边界条件下，AKLT 模型的基态是非简并的，系统的激发态和基态之间有非零的能隙 $\Delta E_0$，基态的关联函数满足：
+可以证明[^Affleck-Kennedy-Lieb-Tasaki-1988]，在周期性边界条件下（$N\geq 3$），AKLT 模型的基态是非简并的，系统的激发态和基态之间有非零的能隙 $\Delta E_0$，不同格点 $i\ne j$ 之间的基态关联函数满足：
 
 $$
 \begin{equation}
@@ -186,14 +203,14 @@ $$
 \end{equation}
 $$
 
-其中关联长度 $\xi = 1/\ln 3 \simeq 0.91$，符合 Haldane conjecture 的指数衰减。Knabe 在 1988 年证明了能隙的下界 $\Delta E_0 \geq 0.496$，与自旋链的长度无关[^Knabe-1988]。 
+其中关联长度 $\xi = 1/\ln 3 \simeq 0.91$，符合 Haldane conjecture 的指数衰减。Knabe 在 1988 年给出了热力学能隙的下界[^Knabe-1988]：对 $\sum_i P_2^{(i,i+1)}$ 的约定，下界约为 $0.24806$；换成本文 $\eqref{AKLT-model}$ 的约定，就得到 $\Delta E_0\geq 0.496$。
 
-另外，在不破坏 $\mathrm{SU}(2)$ 对称性和时间反演对称性的条件下，我们对系统施加一个小扰动，基态总是唯一的，且激发态和基态之间依然有非零的能隙[^Michalakis-Zwolak-2013]。这说明系统的能隙和基态唯一性不受微扰的影响，它其实就是一种 Haldane phase。
+另外，在周期链上施加足够弱的局域扰动，基态仍然唯一，体能隙也保持非零，尽管能隙的具体数值会改变[^Michalakis-Zwolak-2013]。如果扰动还保持保护对称性，例如时间反演对称性或绕正交轴旋转 $\pi$ 的 $D_2$ 自旋旋转对称性，系统就仍处于非平庸的 Haldane SPT 相[^Pollmann-2012]。
 
-<div class="box-danger" markdown="1">
-<div class="box-title"> Unique ground state of the AKLT model </div>
+<div class="statement" markdown="1">
+<div class="statement-title">AKLT 模型的唯一基态</div>
 
-AKLT 模型唯一的基态是（周期性边界条件）：
+AKLT 模型唯一的基态是（周期性边界条件，$N\geq 3$，未归一化）：
 
 $$
 \begin{equation*}
@@ -208,10 +225,10 @@ $$
 
 
 ## 4. AKLT 模型的性质
-AKLT 模型除了提供 Haldane conjecture 的一个严格可解实例之外，还蕴藏了非常多的奇妙性质，我们这里具体探讨其中几个[^Tasaki-2020]。
+AKLT 模型除了为 Haldane 猜想的物理图像提供一个基态精确可解的实例之外，还蕴藏了非常多的奇妙性质，我们这里具体探讨其中几个[^Tasaki-2020]。
 
 ### 4.1. 隐性反铁磁序
-在经典的反铁磁材料中，反铁磁序的特点是相邻的自旋（例如自旋-1/2）朝向相反，形成交替排列的 Néel 序。例如，一个简单的自旋-1/2 反铁磁链可以表示为：
+在最简单的经典反铁磁图像中，相邻自旋朝向相反，形成交替排列的 Néel 序。用上下箭头表示，就是：
 
 $$
 \begin{equation*}
@@ -221,28 +238,28 @@ $$
 
 隐性反铁磁序并不像上面传统的反铁磁序那样可以通过直接观察自旋的空间排列来发现。在 AKLT 模型中，我们从基态 $\eqref{AKLT-gs}$ 中没有直接看到自旋“朝上和朝下交替排列”，但它其实仍然表现出反铁磁性，我们称它为**隐性反铁磁序**（hidden antiferromagnetic order）。
 
-我们可以这样分析，考虑 site $i$ 和 $i+1$ 处的 valence bond，并对其标记 $\alpha_{i+1}=1,2$。如果 valence bond 处于 $\ket{\uparrow_{i}^{r}\downarrow_{i+1}^{l}}/\sqrt{2}$，那我们就标记 $\alpha_{i+1}=1$；如果 valence bond 处于 $\ket{\downarrow_{i}^{r}\uparrow_{i+1}^{l}}/\sqrt{2}$，我们就标记 $\alpha_{i+1} =2$。如下图所示，具体展示了 $\eqref{AKLT-gs}$ 中展开后的其中一项。
+我们可以这样分析，把 site $i$ 和 $i+1$ 之间的 valence bond 展开为两个分量，并用 $\alpha_{i+1}=1,2$ 标记：$\ket{\uparrow_{i}^{r}\downarrow_{i+1}^{l}}$ 对应 $\alpha_{i+1}=1$，$\ket{\downarrow_{i}^{r}\uparrow_{i+1}^{l}}$ 对应 $\alpha_{i+1}=2$，它们的振幅分别是 $1/\sqrt{2}$ 和 $-1/\sqrt{2}$。如下图所示，具体展示了 $\eqref{AKLT-gs}$ 中展开后的其中一项。
 
 ![AKLT-hidden-antiferromagnetic-oredr](AKLT-hidden-antiferromagnetic-order.png){: width="650"}
 _(a) 一个 valence bond 对应一个自旋单态，我们将 $\ket{\uparrow\_{i}^{r}\downarrow\_{i+1}^{l}}/\sqrt{2}$, $\ket{\downarrow\_{i}^{r}\uparrow\_{i+1}^{l}}/\sqrt{2}$ 分别用 $\alpha\_{i+1}=1,2$ 来进行区分。 (b) AKLT 模型基态展开后是特定自旋配置的组合，这里展示的是其中一项。_
 
-如果我们把 $s=0$ 全部删去，显然我们剩下的就是 $s=1,s=-1$ 交替排列的自旋链，它显然是一个反铁磁序。
+这里用 $m_i$ 表示物理自旋的 $S_i^z$ 本征值。如果把配置中的 $m_i=0$ 全部删去，剩下的就是 $m_i=1,-1$ 交替排列的序列，这正是隐性反铁磁序的图像。
 
-> 注意：上述交替排列的 $1,-1$ 并不意味着基态有长程反铁磁序，这是因为在自旋链中还随机穿插着 $s=0$，这和 AKLT 模型基态是一种 SPT 相并不矛盾，因为 SPT 相没有长程纠缠。
+> 上述交替排列是对基态在 $S^z$ 基底中有非零振幅的配置而言的。完整基态是这些配置的量子叠加，普通自旋关联仍呈指数衰减，并不存在 Néel 长程序。
 {: .prompt-warning}
 
-对于一般自旋配置情况，我们也可以从延长自旋链的角度一步步考虑来说明。假设 site 1 处的自旋是 $\cdots\uparrow\uparrow\cdots$，它对应的是 $s_1=1$。为了保证 bond 的总自旋为 0，则下一个连接的就必须是 $\downarrow$，也即 $\cdots\uparrow\uparrow\cdots\downarrow?$。这里的 $?$ 表示待定：
+对于一般自旋配置情况，我们也可以从延长自旋链的角度一步步考虑来说明。假设 site 1 处的两个虚拟自旋是 $\cdots\uparrow\uparrow\cdots$，它对应的是 $m_1=1$。由于单态展开中的两个虚拟自旋方向相反，下一个连接的就必须是 $\downarrow$，也即 $\cdots\uparrow\uparrow\cdots\downarrow?$。这里的 $?$ 表示待定：
 
-- 它可以取 $\uparrow$，那么 site 2 处就对应 $s_2=0$，即 $\cdots\uparrow\uparrow\cdots\downarrow\uparrow\cdots\downarrow?$;
-- 也可以取 $\downarrow$，那么 site 2 处就对应 $s_2=-1$，即 $\cdots\uparrow\uparrow\cdots\downarrow\downarrow\cdots\uparrow?$。
+- 它可以取 $\uparrow$，那么 site 2 处就对应 $m_2=0$，即 $\cdots\uparrow\uparrow\cdots\downarrow\uparrow\cdots\downarrow?$;
+- 也可以取 $\downarrow$，那么 site 2 处就对应 $m_2=-1$，即 $\cdots\uparrow\uparrow\cdots\downarrow\downarrow\cdots\uparrow?$。
 
-依次不断连接下去，我们就会发现 $1,-1$ 必定是交错出现的，必不可能出现 $1,1$ 或 $-1,-1$ 的结构，比如 $\cdots\uparrow\uparrow\cdots\uparrow\uparrow\cdots$ 显然是不允许的，因为 bond 的总自旋必须是 $0$。
+依次不断连接下去，我们就会发现，跳过所有 $m=0$ 的 site 后，$1,-1$ 必定交错出现。不论中间穿插多少个 $0$，下一个非零的 $m$ 都必须反号。
 
 
-值得一提的是，尽管 AKLT 模型的基态是 VBS 态，通过 valence bond 进行连接，看起来就像是固体一样，但从我们上面的讨论来说并非如此，它更像是某种液体，每个 site 处的 $s=1,-1$ 并不固定，并且自旋链中可以随意穿插 $s=0$。这正是量子液体的一个典型特征，即系统的局部态不是固定不动的，而是充满了量子涨落。因此，**VBS 态也可以被看作是带有隐性反铁磁序的量子自旋液体**。
+值得一提的是，VBS 名字里的 solid 并不意味着每个 site 的自旋方向都固定不动。AKLT 基态充满了量子涨落，但并不破坏平移对称性；它是一个**具有隐性反铁磁序的短程纠缠 Haldane SPT 态**。
 
 ### 4.2. 矩阵乘积表示
-张量网络是一类用于处理量子多体系统复杂问题的强有力工具，最近一二十年在凝聚态物理和量子信息领域取得了显著的进展[^Orus-2013]。它的核心思想是通过将一个高阶量子态分解为多个低阶张量的缩并形式，从而将量子态的全局表示转化为局部张量的网络表示，显著减少所需的参数量，巧妙规避了高纠缠态的指数增长问题，同时保持了对态的高精度近似。
+张量网络是一类用于处理量子多体系统复杂问题的强有力工具，最近一二十年在凝聚态物理和量子信息领域取得了显著的进展[^Orus-2013]。它的核心思想是将量子态的系数张量分解为多个低阶张量的缩并。对于具有适当纠缠结构的态，这能显著减少所需的参数量，同时保持高精度近似；一般的高纠缠态则仍可能需要指数增长的键维数。
 
 ![tensor-network](tensor-network.png){: width="700"}
 _几类常见的张量网络，分别是矩阵乘积态（MPS）、投影纠缠对态（PEPS）、树状张量网络（TTN）、多尺度纠缠重整化（MERA），图源 [Tensor Network](https://tensornetwork.org/)_
@@ -254,7 +271,7 @@ _几类常见的张量网络，分别是矩阵乘积态（MPS）、投影纠缠�
 ![spin-chain](spin-chain.png){: width="600"}
 _更一般的自旋链，每个 site 处的自旋用 $s\_i$ 来表示，它可以被看作是两个自旋 $\alpha\_i,\beta\_i$ 耦合后投影得到的，相邻 site 的自旋形成 entangled bond。图源 Honghao Tu's Lectures。_
 
-我们把每个 site 上的物理自由度用 $s_i$ 来表示，它被分解为两个虚拟自由度 $\alpha_i,\beta_i$，经过投影算符 $\mathcal{P}\_i$ 可以回到物理自由度上，其中
+我们把每个 site 上的物理基底用 $s_i=1,\dots,d$ 来标记，引入两个虚拟自由度 $\alpha_i,\beta_i$，通过局域线性映射 $\mathcal{P}\_i$ 回到物理空间，其中
 
 $$
 \begin{equation}
@@ -282,11 +299,11 @@ $$
 
 $$
 \begin{align*}
-    \ket{\psi_{\mathrm{PBC}}} &= \Big(\bigotimes_{j=1}^{N} \mathcal{P_j}\Big)\Big(\bigotimes_{i=1}^{N}\ket{I}_{i,i+1}\Big)\\[.2cm]
-    & = \sum_{s_1,\dots, s_N=1}^{d} \sum_{\alpha_1,\beta_1,\dots,\alpha_{N},\beta_{N}=1}^{D} \qty(B_{\alpha_1\beta_1}^{s_1}\cdots B_{\alpha_{N}\beta_N}^{s_N}) \ket{s_1,\dots, s_N} \bra{\alpha_1,\beta_1,\dots,\alpha_N,\beta_N}\\[.2cm]
-    &\qquad \times \sum_{\alpha_1',\beta_1',\dots,\alpha_{N}',\beta_{N}'=1}^{D}\qty(R_{\beta_1'\alpha_2'}\cdots R_{\beta_N'\alpha_1'}) \ket{\alpha_1',\beta_1',\dots,\alpha_N',\beta_N'}\\[.2cm]
-    &=\sum_{s_1,s_N=1}^{d} \sum_{\alpha_1,\beta_1,\dots,\alpha_N,\beta_N=1}^{D}\qty(B_{\alpha_1\beta_1}^{s_1}R_{\beta_1\alpha_2}\cdots B_{\alpha_N\beta_N}^{s_N} R_{\beta_N\alpha_1}) \ket{s_1,\dots,s_N}\\[.2cm]
-    &=\sum_{s_1,s_N=1}^{d} \mathrm{Tr}(B^{s_1}R\cdots B^{s_2}R)\ket{s_1,\dots,s_N}.
+    \ket{\psi_{\mathrm{PBC}}} &= \Big(\bigotimes_{j=1}^{N} \mathcal{P_j}\Big)\Big(\bigotimes_{i=1}^{N}\ket{I}_{i,i+1}\Big)\\
+    & = \sum_{s_1,\dots, s_N=1}^{d} \sum_{\alpha_1,\beta_1,\dots,\alpha_{N},\beta_{N}=1}^{D} \qty(B_{\alpha_1\beta_1}^{s_1}\cdots B_{\alpha_{N}\beta_N}^{s_N}) \ket{s_1,\dots, s_N} \bra{\alpha_1,\beta_1,\dots,\alpha_N,\beta_N}\\
+    &\qquad \times \sum_{\alpha_1',\beta_1',\dots,\alpha_{N}',\beta_{N}'=1}^{D}\qty(R_{\beta_1'\alpha_2'}\cdots R_{\beta_N'\alpha_1'}) \ket{\alpha_1',\beta_1',\dots,\alpha_N',\beta_N'}\\
+    &=\sum_{s_1,\dots,s_N=1}^{d} \sum_{\alpha_1,\beta_1,\dots,\alpha_N,\beta_N=1}^{D}\qty(B_{\alpha_1\beta_1}^{s_1}R_{\beta_1\alpha_2}\cdots B_{\alpha_N\beta_N}^{s_N} R_{\beta_N\alpha_1}) \ket{s_1,\dots,s_N}\\
+    &=\sum_{s_1,\dots,s_N=1}^{d} \mathrm{Tr}(B^{s_1}R\cdots B^{s_N}R)\ket{s_1,\dots,s_N}.
 \end{align*}
 $$
 
@@ -317,7 +334,7 @@ _MPS 示意图：(a) 代表周期性边界条件。(b) 代表开边界条件。�
 
 $$
 \begin{align*}
-    \mathcal{P}_i &= \ket{1} \bra{\uparrow_{i}^{l}\uparrow_i^{r}} +\ket{0}\frac{\bra{\uparrow_{i}^{l}\downarrow_{i}^{r}} +\bra{\downarrow_{i}^{l}\uparrow_{i}^{r}}}{\sqrt{2}} + \ket{-1}\bra{\downarrow_{i}^{l}\downarrow_{i}^{r}},\\[.2cm]
+    \mathcal{P}_i &= \ket{1} \bra{\uparrow_{i}^{l}\uparrow_i^{r}} +\ket{0}\frac{\bra{\uparrow_{i}^{l}\downarrow_{i}^{r}} +\bra{\downarrow_{i}^{l}\uparrow_{i}^{r}}}{\sqrt{2}} + \ket{-1}\bra{\downarrow_{i}^{l}\downarrow_{i}^{r}},\\
     \ket{I}_{i,i+1} &= \frac{1}{\sqrt{2}}\qty(\ket{\uparrow_{i}^{r}\downarrow_{i+1}^{l}} - \ket{\downarrow_{i}^{r}\uparrow_{i+1}^{l}}).
 \end{align*}
 $$
@@ -365,7 +382,7 @@ AKLT 模型的基态 $\eqref{AKLT-gs}$ 就可以表示成：
 $$
 \begin{equation}
     \begin{split}
-        \ket{\Phi_{\mathrm{AKLT}}} &= \sum_{s_1,\dots,s_N} \mathrm{Tr}(A^{s_1}A^{s_2} \cdots A^{s_N}) \ket{s_1,s_2,\dots,s_N}\\[.2cm]
+        \ket{\Phi_{\mathrm{AKLT}}} &= \sum_{s_1,\dots,s_N} \mathrm{Tr}(A^{s_1}A^{s_2} \cdots A^{s_N}) \ket{s_1,s_2,\dots,s_N}\\
         & = \mathrm{Tr}(g_1g_2\cdots g_N).
     \end{split}
 \end{equation}
@@ -375,7 +392,7 @@ $$
 
 $$
 \begin{equation}
-    g_i = \sum_{s_i=-1,0,1} A^{s_i}\ket{s_i} = \frac{1}{\sqrt{2}} \begin{pmatrix}
+    g_i = \sum_{s_i=-1,0,1} A^{s_i}\ket{s_i} = \frac{1}{2} \begin{pmatrix}
         -\ket{0}_i & \sqrt{2}\ket{1}_i \\ 
         -\sqrt{2}\ket{-1}_i & \ket{0}_i
     \end{pmatrix}.
@@ -391,21 +408,21 @@ _利用 MPS 表示计算关联函数，图源 Honghao Tu's Lectures。_
 
 $$
 \begin{equation}
-    \lim_{N\to\infty} \frac{\expval{\mathbf{S}_{i}\cdot\mathbf{S}_{i+r}}{\Phi_{\mathrm{AKLT}}}}{\braket{\Phi_{\mathrm{AKLT}}}} = 4 \qty(-\frac{1}{3})^{r},
+    \lim_{N\to\infty} \frac{\expval{\mathbf{S}_{i}\cdot\mathbf{S}_{i+r}}{\Phi_{\mathrm{AKLT}}}}{\braket{\Phi_{\mathrm{AKLT}}}} = 4 \qty(-\frac{1}{3})^{r},\qquad r\geq 1,
 \end{equation}
 $$
 
 这与之前提到的 $\eqref{correlation-function}$ 是一致的。
 
-<div class="box-danger" markdown="1">
-<div class="box-title"> MPS representation of the AKLT model </div>
+<div class="statement" markdown="1">
+<div class="statement-title">AKLT 模型的矩阵乘积态表示</div>
 
 AKLT 模型的基态可以用 MPS 表示：
 
 $$
 \begin{equation*}
     \begin{split}
-        \ket{\Phi_{\mathrm{AKLT}}} &= \sum_{s_1,\dots,s_N} \mathrm{Tr}(A^{s_1}A^{s_2} \cdots A^{s_N}) \ket{s_1,s_2,\dots,s_N}\\[.2cm]
+        \ket{\Phi_{\mathrm{AKLT}}} &= \sum_{s_1,\dots,s_N} \mathrm{Tr}(A^{s_1}A^{s_2} \cdots A^{s_N}) \ket{s_1,s_2,\dots,s_N}\\
         & = \mathrm{Tr}(g_1g_2\cdots g_N).
     \end{split}
 \end{equation*}
@@ -425,8 +442,8 @@ $$
     \end{pmatrix},\quad
     A^{s=-1} = \frac{1}{\sqrt{2}}\begin{pmatrix}
         0& 0 \\ -1 &0
-    \end{pmatrix},\\[.2cm]
-    g_i = \sum_{s_i=-1,0,1} A^{s_i}\ket{s_i} = \frac{1}{\sqrt{2}} \begin{pmatrix}
+    \end{pmatrix},\\
+    g_i = \sum_{s_i=-1,0,1} A^{s_i}\ket{s_i} = \frac{1}{2} \begin{pmatrix}
         -\ket{0}_i & \sqrt{2}\ket{1}_i \\ 
         -\sqrt{2}\ket{-1}_i & \ket{0}_i
     \end{pmatrix}.
@@ -436,7 +453,7 @@ $$
 </div>
 
 ### 4.3. 边缘态
-之前我们的讨论都是基于周期性边界条件，如果我们考虑开边界条件下的 AKLT 模型，显然首尾两端的自旋-1/2 粒子的自旋状态并不确定，因此 AKLT 模型的基态是四重简并的。
+之前我们的讨论都是基于周期性边界条件。如果考虑开边界条件下的 AKLT 模型（$N\geq 2$），并且不额外加入边界项，首尾两端各留下一个未配对的虚拟自旋-1/2，因此基态是四重简并的。
 
 这一点从 $\eqref{OBC}$ 我们也可以具体看出来，其中 $\alpha_1,\beta_N$ 都是不固定的，而
 
@@ -446,7 +463,9 @@ $$
 \end{equation}
 $$
 
-是线性独立的四个基态，基态子空间的简并度其实就是由边界两个自旋-1/2 粒子来决定的，这也是 AKLT 模型所体现出的新奇的性质——整数自旋 $s=1$ 的自旋链，在边界处会出现半整数自旋 $s=1/2$ 的自由度，它也是**边缘态**的一个典型例子。这类边缘态普遍出现在具有某种**拓扑性质**的量子多体系统中，体现了拓扑保护下的量子相变或长程纠缠。这种特征不仅在自旋链中常见，还在广泛的拓扑相系统中展现出稳健的边界效应[^Wen-2007]。
+是线性独立的四个基态，基态子空间的简并度其实就是由边界两个自旋-1/2 自由度来决定的。这也是 AKLT 模型所体现出的新奇性质——整数自旋 $s=1$ 的自旋链，在边界处会出现半整数自旋 $s=1/2$ 的自由度，它是**边缘态**的一个典型例子。
+
+在一般的有限长度 Haldane 链中，两端自旋之间可以存在随链长指数衰减的有效耦合，使边缘单态和三重态发生微小劈裂；AKLT 点则具有精确的四重简并。保持保护对称性时，单个边缘的自旋-1/2 自由度不能被局域扰动单独劈裂，这体现了 Haldane 相的 SPT 性质[^Pollmann-2012]。
 
 
 
@@ -456,6 +475,7 @@ $$
 [^Bethe-1931]: Bethe H. Zur Theorie der Metalle. Z. Physik 71, 205–226 (1931).
 [^Haldane-1983]: F. D. M. Haldane. Continuum dynamics of the 1-D Heisenberg antiferromagnet: Identification with the O(3) nonlinear sigma model. Physics Letters A, 93(9): 464-468 (1983).
 [^Gu-Wen-2009]: Z.-C. Gu, and X.-G. Wen. Tensor-entanglement-filtering renormalization approach and symmetry-protected topological order. Phys. Rev.B, (80):155131 (2009).
+[^Pollmann-2012]: F. Pollmann, E. Berg, A. M. Turner, and M. Oshikawa. Symmetry protection of topological order in one-dimensional quantum spin systems. Phys. Rev. B 85, 075125 (2012).
 [^Affleck-Kennedy-Lieb-Tasaki-1987]: I. Affleck, T. Kennedy, E. H. Lieb, and H. Tasaki. Rigorous results on valence-bond ground states in antiferromagnets. Phys. Rev.Lett., (59):799 (1987).
 [^Affleck-Kennedy-Lieb-Tasaki-1988]: I. Affleck, T. Kennedy, E. H. Lieb, H. Tasaki, Valence bond ground states in isotropic quantum antiferromagnets. Commun. Math. Phys. 115,477–528 (1988).
 [^Majumdar-Ghosh-1969]: C. K. Majumdar, D. K. Ghosh. On next nearest-neighbor interaction in linear chain. I, II. J. Math. Phys. 10, 1388–1402 (1969).
@@ -464,4 +484,3 @@ $$
 [^Michalakis-Zwolak-2013]: S. Michalakis, J.P. Zwolak, Stability of frustration-free hamiltonians. Commun. Math. Phys. 322, 277–302 (2013).
 [^Tasaki-2020]: H. Tasaki. Physics and mathematics of quantum many-body systems. Berlin: Springer, (2020).
 [^Orus-2013]: R. Orus. A Practical Introduction to Tensor Networks: Matrix Product States and Projected Entangled Pair States. 	arXiv:1306.2164 [cond-mat.str-el] (2013).
-[^Wen-2007]: X.-G. Wen, Quantum Field Theory of Many-Body Systems: From the Origin of Sound to an Origin of Light and Electrons. Oxford University Press, Oxford, (2007).

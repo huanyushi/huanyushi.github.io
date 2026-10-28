@@ -65,7 +65,7 @@ In cylindrical coordinates, this equation with Dirichlet boundary conditions (be
 $$
 \begin{equation}
     \begin{cases}
-\displaystyle{\frac{1}{r}\pdv{r}(r\pdv{\Phi}{r}) + \frac{1}{r^2} \pdv[2]{\Phi}{\phi} + \pdv[2]{\Phi}{z} = - \frac{Q}{\epsilon_0r_0}\ \delta(r-r_0)\delta(\phi-\phi_0)\delta(z)},\\[.2cm]
+\displaystyle{\frac{1}{r}\pdv{r}(r\pdv{\Phi}{r}) + \frac{1}{r^2} \pdv[2]{\Phi}{\phi} + \pdv[2]{\Phi}{z} = - \frac{Q}{\epsilon_0r_0}\ \delta(r-r_0)\delta(\phi-\phi_0)\delta(z)},\\
 \displaystyle{\eval{\Phi}_{\phi=0} = \eval{\Phi}_{\phi=\alpha}=0.}
 \end{cases}
 \end{equation}
@@ -147,7 +147,7 @@ where $I_m(x)$ and $K_m(x)$ are the modified Bessel functions of the first and s
 
 $$
 \begin{gather*}
-I_{m}(x) \xrightarrow{x\to 0} \frac{1}{\Gamma(m+1)}\qty(\frac{x}{2})^m,\quad  I_{m}(x) \xrightarrow{x\to \infty} \frac{1}{\sqrt{2\pi x}}e^x \qty[1+\order{\frac{1}{x}}],\\[.2cm]
+I_{m}(x) \xrightarrow{x\to 0} \frac{1}{\Gamma(m+1)}\qty(\frac{x}{2})^m,\quad  I_{m}(x) \xrightarrow{x\to \infty} \frac{1}{\sqrt{2\pi x}}e^x \qty[1+\order{\frac{1}{x}}],\\
 K_{m}(x) \xrightarrow[m\neq 0]{x\to 0} \frac{\Gamma(m)}{2}\qty(\frac{2}{x})^{m}, \quad K_{m}(x) \xrightarrow{x\to\infty} \sqrt{\frac{\pi}{2x}} e^{-x} \qty[1+\order{\frac{1}{x}}].
 \end{gather*}
 $$
@@ -158,7 +158,7 @@ $$
 \begin{equation}
 \textcolor{DodgerBlue}{
 R(r) = \begin{cases}
-            I_{m}(\mu r), \quad r\in(0,r_0)\\[.2cm]
+            I_{m}(\mu r), \quad r\in(0,r_0)\\
             K_{m}(\mu r),\quad r\in(r_0,\infty)
         \end{cases}}
 \label{equ:r eigen}
@@ -171,7 +171,7 @@ $$
 \begin{equation*}
     \Phi_{k\mu}(r,\phi,z) = \left\{
             \begin{array}{l}
-            \displaystyle{I_{k\pi/\alpha}(\mu r)\cos(\mu z) \sin(\frac{k\pi}{\alpha}\phi)},\quad r\in(0,r_0)\\[.2cm]
+            \displaystyle{I_{k\pi/\alpha}(\mu r)\cos(\mu z) \sin(\frac{k\pi}{\alpha}\phi)},\quad r\in(0,r_0)\\
             \displaystyle{K_{k\pi/\alpha}(\mu r)\cos(\mu z) \sin(\frac{k\pi}{\alpha}\phi)}, \quad r\in(r_0,\infty)
             \end{array}
         \right\}, (k\in \mathbb{Z}^{+}; \text{$\mu$ is continuous , $\mu >0$})
@@ -184,10 +184,10 @@ $$
 \begin{equation}
 \textcolor{crimson}{
 \begin{split}
-  \Phi(r,\phi,z) &= \sum_{k=1}^{\infty}\int_{0}^{\infty}\dd{\mu}\  a_{k\mu} \Phi_{k\mu}(r,\phi,z) \\[.2cm]
+  \Phi(r,\phi,z) &= \sum_{k=1}^{\infty}\int_{0}^{\infty}\dd{\mu}\  a_{k\mu} \Phi_{k\mu}(r,\phi,z) \\
   &=
   \begin{cases}
-      \displaystyle{\sum_{k=1}^{\infty}\int_{0}^{\infty}\dd{\mu} A_{k\mu}I_{k\pi/\alpha}(\mu r)\cos(\mu z) \sin(\frac{k\pi}{\alpha}\phi)}, &r<r_0\\[.2cm]
+      \displaystyle{\sum_{k=1}^{\infty}\int_{0}^{\infty}\dd{\mu} A_{k\mu}I_{k\pi/\alpha}(\mu r)\cos(\mu z) \sin(\frac{k\pi}{\alpha}\phi)}, &r<r_0\\
       \displaystyle{\sum_{k=1}^{\infty}\int_{0}^{\infty}\dd{\mu} B_{k\mu}K_{k\pi/\alpha}(\mu r)\cos(\mu z) \sin(\frac{k\pi}{\alpha}\phi)}, &r> r_0
   \end{cases}
 \end{split}
@@ -235,7 +235,7 @@ Next, using the second condition and substituting the general solution into Pois
 
 $$
 \begin{multline*}
-    \sum_{k=1}^{\infty} \int_{0}^{\infty}\dd{\mu} a_{k\mu}\bigg[ \sin(\frac{k\pi\phi}{\alpha})\cos(\mu z)\dv[2]{R}{r}+\frac{\sin(k\pi\phi/\alpha)\cos(\mu z)}{r}\dv{R}{r}+ \frac{R\cos(\mu z)}{r^2}\dv[2]{\sin(k\pi\phi)}{\phi}\\[.2cm]
+    \sum_{k=1}^{\infty} \int_{0}^{\infty}\dd{\mu} a_{k\mu}\bigg[ \sin(\frac{k\pi\phi}{\alpha})\cos(\mu z)\dv[2]{R}{r}+\frac{\sin(k\pi\phi/\alpha)\cos(\mu z)}{r}\dv{R}{r}+ \frac{R\cos(\mu z)}{r^2}\dv[2]{\sin(k\pi\phi)}{\phi}\\
     +R\sin(\frac{k\pi\phi}{\alpha})\dv[2]{\cos(\mu z)}{z}\bigg] = - \frac{Q}{\epsilon_0r_0} \delta(r-r_0)\delta(\phi-\phi_0)\delta(z).
 \end{multline*}
 $$
@@ -250,8 +250,8 @@ Similarly, integrate $z$ on both sides,
 
 $$
 \begin{align*}
-    &\lim_{\delta\to 0}\sum_{k=1}^{\infty}\int_{0}^{\infty} \dd{\mu} \int_{r_0-\delta}^{r_0+\delta}\dd{r} a_{k\mu}\qty{\sin(\frac{k\pi\phi}{\alpha})\qty[\int_{-\infty}^{\infty}\dd{z}\cos(\mu z)]\dv[2]{R}{r} }\\[.2cm] 
-    ={}& \lim_{\delta\to 0}\sum_{k=1}^{\infty}\int_{0}^{\infty} \dd{\mu} \int_{r_0-\delta}^{r_0+\delta}\dd{r} 2\pi a_{k\mu}\delta(\mu)\qty[\sin(\frac{k\pi\phi}{\alpha})\dv[2]{R}{r} ]\\[.2cm]
+    &\lim_{\delta\to 0}\sum_{k=1}^{\infty}\int_{0}^{\infty} \dd{\mu} \int_{r_0-\delta}^{r_0+\delta}\dd{r} a_{k\mu}\qty{\sin(\frac{k\pi\phi}{\alpha})\qty[\int_{-\infty}^{\infty}\dd{z}\cos(\mu z)]\dv[2]{R}{r} }\\
+    ={}& \lim_{\delta\to 0}\sum_{k=1}^{\infty}\int_{0}^{\infty} \dd{\mu} \int_{r_0-\delta}^{r_0+\delta}\dd{r} 2\pi a_{k\mu}\delta(\mu)\qty[\sin(\frac{k\pi\phi}{\alpha})\dv[2]{R}{r} ]\\
     ={}& \lim_{\delta\to 0}\sum_{k=1}^{\infty} \int_{r_0-\delta}^{r_0+\delta}\dd{r} \pi a_{k\mu}\qty[\sin(\frac{k\pi\phi}{\alpha})\dv[2]{R}{r}] = -\frac{Q}{\epsilon_0r_0}\delta(\phi-\phi_0).
 \end{align*}
 $$
@@ -279,7 +279,7 @@ Combining $\eqref{equ:AB1}$ and $\eqref{equ:AB2}$, we can get the coefficient $A
 $$
 \begin{equation}
     \begin{cases}
-    \displaystyle{A_{k\mu}  = \frac{2Q}{\mu\alpha\epsilon_0r_0\pi}\sin(\frac{k\pi\phi_0}{\alpha}) \frac{K_{k\pi/\alpha}(\mu r_0)}{K_{k\pi/\alpha}(\mu r_0)I_{k\pi/\alpha}'(\mu r_0)-K_{k\pi/\alpha}'(\mu r_0)I_{k\pi/\alpha}(\mu r_0)}}, \\[.2cm]
+    \displaystyle{A_{k\mu}  = \frac{2Q}{\mu\alpha\epsilon_0r_0\pi}\sin(\frac{k\pi\phi_0}{\alpha}) \frac{K_{k\pi/\alpha}(\mu r_0)}{K_{k\pi/\alpha}(\mu r_0)I_{k\pi/\alpha}'(\mu r_0)-K_{k\pi/\alpha}'(\mu r_0)I_{k\pi/\alpha}(\mu r_0)}}, \\
     \displaystyle{B_{k\mu}  = \frac{2Q}{\mu\alpha\epsilon_0r_0\pi}\sin(\frac{k\pi\phi_0}{\alpha}) \frac{I_{k\pi/\alpha}(\mu r_0)}{K_{k\pi/\alpha}(\mu r_0)I_{k\pi/\alpha}'(\mu r_0)-K_{k\pi/\alpha}'(\mu r_0)I_{k\pi/\alpha}(\mu r_0)}}.
     \end{cases}
 \end{equation}
@@ -305,7 +305,7 @@ $$
 \begin{equation}
         \textcolor{crimson}{
     \begin{cases}
-    \displaystyle{A_{k\mu}  = \frac{2Q}{\alpha\epsilon_0\pi}\sin(\frac{k\pi\phi_0}{\alpha}) K_{k\pi/\alpha}(\mu r_0)}, \\[.2cm]
+    \displaystyle{A_{k\mu}  = \frac{2Q}{\alpha\epsilon_0\pi}\sin(\frac{k\pi\phi_0}{\alpha}) K_{k\pi/\alpha}(\mu r_0)}, \\
     \displaystyle{B_{k\mu}  = \frac{2Q}{\alpha\epsilon_0\pi}\sin(\frac{k\pi\phi_0}{\alpha}) I_{k\pi/\alpha}(\mu r_0)}.
     \end{cases}
         }
@@ -320,7 +320,7 @@ $$
 \begin{equation*}
     \Phi(r,\phi,z) =
     \begin{cases}
-        \displaystyle{\sum_{k=1}^{\infty}\int_{0}^{\infty}\dd{\mu}\ \frac{2Q}{\alpha\epsilon_0\pi}\sin(\frac{k\pi\phi_0}{\alpha}) K_{k\pi/\alpha}(\mu r_0)I_{k\pi/\alpha}(\mu r)\cos(\mu z) \sin(\frac{k\pi}{\alpha}\phi)},\quad r<r_0\\[.2cm]
+        \displaystyle{\sum_{k=1}^{\infty}\int_{0}^{\infty}\dd{\mu}\ \frac{2Q}{\alpha\epsilon_0\pi}\sin(\frac{k\pi\phi_0}{\alpha}) K_{k\pi/\alpha}(\mu r_0)I_{k\pi/\alpha}(\mu r)\cos(\mu z) \sin(\frac{k\pi}{\alpha}\phi)},\quad r<r_0\\
         \displaystyle{\sum_{k=1}^{\infty}\int_{0}^{\infty}\dd{\mu}\ \frac{2Q}{\alpha\epsilon_0\pi}\sin(\frac{k\pi\phi_0}{\alpha}) K_{k\pi/\alpha}(\mu r)I_{k\pi/\alpha}(\mu r_0)\cos(\mu z) \sin(\frac{k\pi}{\alpha}\phi)}, \quad r> r_0
     \end{cases}
 \end{equation*}
@@ -379,7 +379,7 @@ Before our proof, we need to know
 
 $$
 \begin{gather}
-    \frac{1}{|\vb{r}-\vb{r}_{k}|} = \frac{1}{\sqrt{r^2+r_0^2+z^2-2r_0r\cos(\phi-\phi_k)}},\\[.2cm]
+    \frac{1}{|\vb{r}-\vb{r}_{k}|} = \frac{1}{\sqrt{r^2+r_0^2+z^2-2r_0r\cos(\phi-\phi_k)}},\\
     \nabla^2\qty( \frac{1}{|\vb{r}-\vb{r}_k|})= - \frac{4\pi}{r_0}\ \delta(r-r_0)\delta(\phi-\phi_k)\delta(z).
 \end{gather}
 $$
@@ -390,7 +390,7 @@ $$
 \begin{equation}
     \textcolor{ForestGreen}{
     \begin{split}
-        \frac{1}{|\vb{r}-\vb{r}_k|} &= \frac{2}{\pi} \sum_{m=-\infty}^{\infty} \int_{0}^{\infty} \dd{\mu} e^{im(\phi-\phi_k)} \cos[\mu(z-z_k)] I_m(\mu r_<)K_m(\mu r_>)\\[.1cm]
+        \frac{1}{|\vb{r}-\vb{r}_k|} &= \frac{2}{\pi} \sum_{m=-\infty}^{\infty} \int_{0}^{\infty} \dd{\mu} e^{im(\phi-\phi_k)} \cos[\mu(z-z_k)] I_m(\mu r_<)K_m(\mu r_>)\\
         &=\frac{4}{\pi} \int_{0}^{\infty} \dd{\mu} \cos[\mu(z-z_k)]\qty{\frac{1}{2}I_0(\mu r_<)K_0(\mu r_>)+ \sum_{m=1}^{\infty}\cos[m(\phi-\phi_k)]I_{m}(\mu r_<)K_m(\mu r_>)}.
     \end{split}
     }
@@ -409,9 +409,9 @@ Then
 
 $$
 \begin{align*}
-    &{}\sqrt{2r_0r}\sum_{k=1}^{2n} \frac{(-1)^{k+1}}{\sqrt{r^2+r_0^2+z^2-2r_0r\cos(\phi-\phi_k)}}\\[.2cm]
-    =&{}\frac{\sqrt{2}}{\pi} \sum_{k=1}^{2n}(-1)^{k+1}\qty{Q_{-\frac{1}{2}}\qty(\frac{r^2+r_0^2+z^2}{2r_0r})+2\sum_{m=1}^{\infty}\cos[m(\phi-\phi_k)]Q_{m-\frac{1}{2}}\qty(\frac{r^2+r_0^2+z^2}{2r_0r})}\\[.2cm]
-    =&{} \frac{\sqrt{2}}{\pi} Q_{-\frac{1}{2}}\qty(\frac{r^2+r_0^2+z^2}{2r_0r})\sum_{k=1}^{2n}(-1)^{k+1} + \frac{2\sqrt{2}}{\pi} \sum_{k=1}^{2n}(-1)^{k+1}\sum_{m=1}^{\infty}\cos[m(\phi-\phi_k)]Q_{m-\frac{1}{2}}\qty(\frac{r^2+r_0^2+z^2}{2r_0r})\\[.2cm]
+    &{}\sqrt{2r_0r}\sum_{k=1}^{2n} \frac{(-1)^{k+1}}{\sqrt{r^2+r_0^2+z^2-2r_0r\cos(\phi-\phi_k)}}\\
+    =&{}\frac{\sqrt{2}}{\pi} \sum_{k=1}^{2n}(-1)^{k+1}\qty{Q_{-\frac{1}{2}}\qty(\frac{r^2+r_0^2+z^2}{2r_0r})+2\sum_{m=1}^{\infty}\cos[m(\phi-\phi_k)]Q_{m-\frac{1}{2}}\qty(\frac{r^2+r_0^2+z^2}{2r_0r})}\\
+    =&{} \frac{\sqrt{2}}{\pi} Q_{-\frac{1}{2}}\qty(\frac{r^2+r_0^2+z^2}{2r_0r})\sum_{k=1}^{2n}(-1)^{k+1} + \frac{2\sqrt{2}}{\pi} \sum_{k=1}^{2n}(-1)^{k+1}\sum_{m=1}^{\infty}\cos[m(\phi-\phi_k)]Q_{m-\frac{1}{2}}\qty(\frac{r^2+r_0^2+z^2}{2r_0r})\\
     =&{}\frac{2\sqrt{2}}{\pi} \sum_{m=1}^{\infty} Q_{m-\frac{1}{2}}\qty(\frac{r^2+r_0^2+z^2}{2r_0r}) \textcolor{DodgerBlue}{\sum_{k=1}^{2n} (-1)^{k+1}\cos\qty[m\qty(\phi-\qty[\frac{k}{2}]\frac{2\pi}{n}+(-1)^{k}\phi_0)]}.
 \end{align*}
 $$
@@ -420,7 +420,7 @@ Calculate the blue part and simplify the rounding function. Obviously, the sum o
 
 $$
 \begin{align*}
-    &\sum_{k=1}^{2n} (-1)^{k+1}\cos\qty[m\qty(\phi-\qty[\frac{k}{2}]\frac{2\pi}{n}+(-1)^{k}\phi_0)] \\[.2cm]
+    &\sum_{k=1}^{2n} (-1)^{k+1}\cos\qty[m\qty(\phi-\qty[\frac{k}{2}]\frac{2\pi}{n}+(-1)^{k}\phi_0)] \\
     ={}& \sum_{k \ \text{odd}} \cos\qty[m\qty(\phi-\frac{(k-1)\pi}{n}-\phi_0)]- \sum_{k \ \text{even}} \cos\qty[m\qty(\phi-\frac{k\pi}{n}+\phi_0)],
 \end{align*}
 $$
@@ -430,9 +430,9 @@ where the first part is ($p\in\mathbb{Z}^{+}$)
 $$
 \begin{equation*}
 \begin{split}
-     &\sum_{l=1}^{n} \cos\qty[m\qty(\phi-\frac{(2l-2)\pi}{n}-\phi_0)] \\[.2cm]
+     &\sum_{l=1}^{n} \cos\qty[m\qty(\phi-\frac{(2l-2)\pi}{n}-\phi_0)] \\
      ={}& \Re\qty[ e^{im(\phi-\phi_0)}e^{i \frac{2m\pi}{n}} \sum_{l=1}^{n} \qty(e^{-i\frac{2m\pi}{n}})^{l}] = \begin{cases}
-        0, &\qty(\dfrac{m}{n} \neq p)\\[.2cm]
+        0, &\qty(\dfrac{m}{n} \neq p)\\
         n\cos[m(\phi-\phi_0)] ,\quad &\qty(\dfrac{m}{n} = p)
     \end{cases}
 \end{split}
@@ -444,9 +444,9 @@ and the second part is
 $$
 \begin{equation*}
 \begin{split}
-    &\sum_{l=1}^{n} \cos\qty[m\qty(\phi-\frac{2l\pi}{n}+\phi_0)] \\[.2cm]
+    &\sum_{l=1}^{n} \cos\qty[m\qty(\phi-\frac{2l\pi}{n}+\phi_0)] \\
     ={}& \Re\qty[ e^{im(\phi+\phi_0)} \sum_{l=1}^{n} \qty(e^{-i\frac{2m\pi}{n}})^{l}] = \begin{cases}
-        0, &\qty(\dfrac{m}{n} \neq p)\\[.2cm]
+        0, &\qty(\dfrac{m}{n} \neq p)\\
         n\cos[m(\phi+\phi_0)] ,\quad &\qty(\dfrac{m}{n} = p)
     \end{cases}
 \end{split}
@@ -458,7 +458,7 @@ So the blue part is
 $$
 \begin{equation*}
     \sum_{k=1}^{2n} (-1)^{k+1}\cos\qty[m\qty(\phi-\qty[\frac{k}{2}]\frac{2\pi}{n}+(-1)^{k}\phi_0)] = \begin{cases}
-        0, &\qty(\dfrac{m}{n} \neq p)\\[.2cm]
+        0, &\qty(\dfrac{m}{n} \neq p)\\
         2n\sin(m\phi)\sin(m\phi_0) ,\quad &\qty(\dfrac{m}{n} = p)
     \end{cases}
 \end{equation*}
@@ -517,10 +517,10 @@ So the general solution must also be modified,
 $$
 \begin{equation*}
 \begin{split}
-        \Phi(r,\phi,z) &= \sum_{k=0}^{\infty}\int_{0}^{\infty}\dd{\mu}\  a_{k\mu} \Phi_{k\mu}(r,\phi,z) \\[.2cm]
+        \Phi(r,\phi,z) &= \sum_{k=0}^{\infty}\int_{0}^{\infty}\dd{\mu}\  a_{k\mu} \Phi_{k\mu}(r,\phi,z) \\
         &=
         \begin{cases}
-            \displaystyle{\sum_{k=0}^{\infty}\int_{0}^{\infty}\dd{\mu} A_{k\mu}I_{k\pi/\alpha}(\mu r)\cos(\mu z) \cos(\frac{k\pi}{\alpha}\phi)}, &r<r_0\\[.2cm]
+            \displaystyle{\sum_{k=0}^{\infty}\int_{0}^{\infty}\dd{\mu} A_{k\mu}I_{k\pi/\alpha}(\mu r)\cos(\mu z) \cos(\frac{k\pi}{\alpha}\phi)}, &r<r_0\\
             \displaystyle{\sum_{k=0}^{\infty}\int_{0}^{\infty}\dd{\mu} B_{k\mu}K_{k\pi/\alpha}(\mu r)\cos(\mu z) \cos(\frac{k\pi}{\alpha}\phi)}, &r> r_0
         \end{cases}
 \end{split}
@@ -532,12 +532,12 @@ The coefficients can be solved using the same method as before:
 $$
 \begin{equation*}
     \begin{cases}
-        \displaystyle{A_{0\mu}= \frac{Q}{\alpha\epsilon_0\pi}K_0(\mu r_0)}\\[.2cm]
+        \displaystyle{A_{0\mu}= \frac{Q}{\alpha\epsilon_0\pi}K_0(\mu r_0)}\\
         \displaystyle{B_{0\mu}= \frac{Q}{\alpha\epsilon_0\pi}I_0(\mu r_0)}
     \end{cases},
     \quad
     \begin{cases}
-        \displaystyle{A_{k\mu}= \frac{2Q}{\alpha\epsilon_0\pi}\cos(\frac{k\pi\phi_0}{\alpha})K_{k\pi/\alpha}(\mu r_0)}\\[.2cm]
+        \displaystyle{A_{k\mu}= \frac{2Q}{\alpha\epsilon_0\pi}\cos(\frac{k\pi\phi_0}{\alpha})K_{k\pi/\alpha}(\mu r_0)}\\
         \displaystyle{A_{k\mu}= \frac{2Q}{\alpha\epsilon_0\pi}\cos(\frac{k\pi\phi_0}{\alpha})I_{k\pi/\alpha}(\mu r_0)}
     \end{cases}
     \ (k=1,2,\dots)
@@ -566,11 +566,11 @@ Also use formula $\eqref{equ:green function expansion}$,
 
 $$
 \begin{align*}
-    &\sum_{k=1}^{2n} \frac{1}{\sqrt{ \xi-\cos(\phi-\phi_k)}}\\[.2cm]
-    ={}&\sqrt{2r_0r}\sum_{k=1}^{2n} \frac{1}{\sqrt{r^2+r_0^2+z^2-2r_0r\cos(\phi-\phi_k)}}\\[.2cm]
+    &\sum_{k=1}^{2n} \frac{1}{\sqrt{ \xi-\cos(\phi-\phi_k)}}\\
+    ={}&\sqrt{2r_0r}\sum_{k=1}^{2n} \frac{1}{\sqrt{r^2+r_0^2+z^2-2r_0r\cos(\phi-\phi_k)}}\\
     ={}&\sqrt{2r_0r}\qty{ 
         \frac{1}{\pi\sqrt{r r_0}}\sum_{k=1}^{2n}Q_{-\frac{1}{2}}\qty(\frac{r^2+r_0^2+z^2}{2r_0r}) + \frac{2}{\pi\sqrt{rr_0}}\sum_{m=1}^{\infty} \cos[m(\phi-\phi_k)] Q_{m-\frac{1}{2}}\qty(\frac{r^2+r_0^2+z^2}{2r r_0})
-    }\\[.2cm]
+    }\\
     ={}&\frac{4\sqrt{2}n}{\pi} \Bigg\{\frac{1}{2}Q_{-\frac{1}{2}}(\xi) + \sum_{m=1}^{\infty}Q_{m-\frac{1}{2}}(\xi)\sum_{k=1}^{\infty}\frac{\cos\qty[\phi-\qty[\dfrac{k}{2}]\dfrac{2\pi}{n}+(-1)^{k}\phi_0]}{2n}\Bigg\}.
 \end{align*}
 $$
@@ -580,7 +580,7 @@ For the summation of $k$ on the right side, it can be calculated directly
 $$
 \begin{equation*}
     \frac{1}{2n}\sum_{k=1}^{2n}\cos\qty[m\qty(\phi-\qty[\frac{k}{2}]\frac{2\pi}{n}+(-1)^{k}\phi_0)] = \begin{cases}
-        0, &\qty(\dfrac{m}{n} \neq p)\\[.2cm]
+        0, &\qty(\dfrac{m}{n} \neq p)\\
         \cos(m\phi)\cos(m\phi_0) ,\quad &\qty(\dfrac{m}{n} = p)
     \end{cases}
 \end{equation*}
@@ -592,7 +592,7 @@ $$
 \begin{equation}
 \textcolor{ForestGreen}{
     \begin{split}
-    &\sum_{k=1}^{2n} \frac{1}{\sqrt{ \xi-\cos(\phi-\phi_k)}}\\[.2cm]
+    &\sum_{k=1}^{2n} \frac{1}{\sqrt{ \xi-\cos(\phi-\phi_k)}}\\
     ={}& \frac{4\sqrt{2}n}{\pi} \left\{\frac{1}{2}Q_{-\frac{1}{2}}(\xi) + \sum_{k=1}^{\infty} Q_{nk-\frac{1}{2}} \qty(\xi) \cos(nk\phi_0)\cos(nk\phi) \right\}.
     \end{split}
 }
@@ -641,10 +641,10 @@ The general solution is
 $$
 \begin{equation*}
 \begin{split}
-        \Phi(r,\phi,z) &= \sum_{k=1}^{\infty}\int_{0}^{\infty}\dd{\mu}\  a_{k\mu} \Phi_{k\mu}(r,\phi,z) \\[.2cm]
+        \Phi(r,\phi,z) &= \sum_{k=1}^{\infty}\int_{0}^{\infty}\dd{\mu}\  a_{k\mu} \Phi_{k\mu}(r,\phi,z) \\
         &=
         \begin{cases}
-            \displaystyle{\sum_{k=1}^{\infty}\int_{0}^{\infty}\dd{\mu} A_{k\mu}I_{\frac{(2k-1)\pi}{2\alpha}}(\mu r)\cos(\mu z) \sin(\frac{(2k-1)\pi}{2\alpha}\phi)}, &r<r_0\\[.2cm]
+            \displaystyle{\sum_{k=1}^{\infty}\int_{0}^{\infty}\dd{\mu} A_{k\mu}I_{\frac{(2k-1)\pi}{2\alpha}}(\mu r)\cos(\mu z) \sin(\frac{(2k-1)\pi}{2\alpha}\phi)}, &r<r_0\\
             \displaystyle{\sum_{k=1}^{\infty}\int_{0}^{\infty}\dd{\mu} B_{k\mu}K_{\frac{(2k-1)\pi}{2\alpha}}(\mu r)\cos(\mu z) \sin(\frac{(2k-1)\pi}{2\alpha}\phi)}, &r> r_0
         \end{cases}
 \end{split}
@@ -656,7 +656,7 @@ And the coefficients are
 $$
 \begin{equation}
     \begin{cases}
-    \displaystyle{A_{k\mu}  = \frac{2Q}{\alpha\epsilon_0\pi}\sin(\frac{(2k-1)\pi}{2\alpha}\phi_0) K_{\frac{(2k-1)\pi}{2\alpha}}(\mu r_0),} \\[.2cm]
+    \displaystyle{A_{k\mu}  = \frac{2Q}{\alpha\epsilon_0\pi}\sin(\frac{(2k-1)\pi}{2\alpha}\phi_0) K_{\frac{(2k-1)\pi}{2\alpha}}(\mu r_0),} \\
     \displaystyle{B_{k\mu}  = \frac{2Q}{\alpha\epsilon_0\pi}\sin(\frac{(2k-1)\pi}{2\alpha}\phi_0) I_{\frac{(2k-1)\pi}{2\alpha}}(\mu r_0).}
     \end{cases}
 \end{equation}
@@ -678,9 +678,9 @@ $$
 
 $$
 \begin{align*}
-    &\sum_{k=1}^{2n}\qty{ \frac{(-1)^{k+1}}{\sqrt{\xi-\cos(\phi-\phi_{2k-1})}} + \frac{(-1)^{k+1}}{\sqrt{\xi-\cos(\phi-\phi_{2k})}}}\\[.2cm]
-    ={}&\sqrt{2r_0r}\left\{ \sum_{k=1}^{2n} \frac{(-1)^{k+1}}{\sqrt{r^2+r_0^2+z^2-2r_0r\cos(\phi-\phi_{2k-1})}}+\sum_{k=1}^{2n} \frac{(-1)^{k+1}}{\sqrt{r^2+r_0^2+z^2-2r_0r\cos(\phi-\phi_{2k})}} \right\}\\[.2cm]
-    ={}&\frac{2\sqrt{2}}{\pi} \sum_{m=1}^{\infty} Q_{m-\frac{1}{2}}(\xi) \qty{\sum_{k=1}^{2n}(-1)^{k+1}\cos[m(\phi-\phi_{2k-1})]+\sum_{k=n}^{2n}(-1)^{k+1}\cos[m(\phi-\phi_{2k})]}\\[.2cm]
+    &\sum_{k=1}^{2n}\qty{ \frac{(-1)^{k+1}}{\sqrt{\xi-\cos(\phi-\phi_{2k-1})}} + \frac{(-1)^{k+1}}{\sqrt{\xi-\cos(\phi-\phi_{2k})}}}\\
+    ={}&\sqrt{2r_0r}\left\{ \sum_{k=1}^{2n} \frac{(-1)^{k+1}}{\sqrt{r^2+r_0^2+z^2-2r_0r\cos(\phi-\phi_{2k-1})}}+\sum_{k=1}^{2n} \frac{(-1)^{k+1}}{\sqrt{r^2+r_0^2+z^2-2r_0r\cos(\phi-\phi_{2k})}} \right\}\\
+    ={}&\frac{2\sqrt{2}}{\pi} \sum_{m=1}^{\infty} Q_{m-\frac{1}{2}}(\xi) \qty{\sum_{k=1}^{2n}(-1)^{k+1}\cos[m(\phi-\phi_{2k-1})]+\sum_{k=n}^{2n}(-1)^{k+1}\cos[m(\phi-\phi_{2k})]}\\
     ={}&\frac{4\sqrt{2}}{\pi} \sum_{m=1}^{\infty} Q_{m-\frac{1}{2}}(\xi) \cos\qty(m\phi_0-\frac{m\pi}{2n})\sum_{k=1}^{2n}(-1)^{k+1}\cos\qty[m\phi-\frac{(2k-1)m\pi}{2n}].
 \end{align*}
 $$
@@ -690,7 +690,7 @@ Calculate the second sum of the above equation,
 $$
 \begin{align*}
     \sum_{k=1}^{2n}(-1)^{k+1}\cos\qty[m\phi-\frac{(2k-1)m\pi}{2n}]=\begin{cases}
-        \displaystyle{-2n\cos(m\phi+\frac{m\pi}{2n})}, \quad &\qty(\dfrac{m}{n} = 2p-1)\\[.2cm]
+        \displaystyle{-2n\cos(m\phi+\frac{m\pi}{2n})}, \quad &\qty(\dfrac{m}{n} = 2p-1)\\
         0, \quad &\qty(\dfrac{m}{n} = 2p-1)
     \end{cases}
 \end{align*}
@@ -700,7 +700,7 @@ then
 
 $$
 \begin{align*}
-    &\sum_{k=1}^{2n}\qty{ \frac{(-1)^{k+1}}{\sqrt{\xi-\cos(\phi-\phi_{2k-1})}} + \frac{(-1)^{k+1}}{\sqrt{\xi-\cos(\phi-\phi_{2k})}}}\\[.2cm]
+    &\sum_{k=1}^{2n}\qty{ \frac{(-1)^{k+1}}{\sqrt{\xi-\cos(\phi-\phi_{2k-1})}} + \frac{(-1)^{k+1}}{\sqrt{\xi-\cos(\phi-\phi_{2k})}}}\\
     ={}& - \frac{8\sqrt{2}n}{\pi}\sum_{p=1}^{\infty} Q_{(2p-1)n-\frac{1}{2}}(\xi) \cos((2p-1)n\phi_0-\frac{(2p-1)\pi}{2})\cos((2p-1)n\phi+\frac{(2p-1)\pi}{2}).
 \end{align*}
 $$
@@ -711,7 +711,7 @@ $$
 \begin{equation}
 \textcolor{ForestGreen}{
     \begin{split}
-     &\sum_{k=1}^{2n}\qty{ \frac{(-1)^{k+1}}{\sqrt{\xi-\cos(\phi-\phi_{2k-1})}} + \frac{(-1)^{k+1}}{\sqrt{\xi-\cos(\phi-\phi_{2k})}}}\\[.2cm]
+     &\sum_{k=1}^{2n}\qty{ \frac{(-1)^{k+1}}{\sqrt{\xi-\cos(\phi-\phi_{2k-1})}} + \frac{(-1)^{k+1}}{\sqrt{\xi-\cos(\phi-\phi_{2k})}}}\\
      ={}&
     \frac{8\sqrt{2}n}{\pi}\sum_{k=1}^{\infty} Q_{(2p-1)n-\frac{1}{2}}(\xi) \sin[(2p-1)n\phi_0]\sin[(2p-1)n\phi],
     \end{split}
@@ -734,8 +734,8 @@ we calculate the integration of $J_{\nu}(ax)J_{\nu}(bx)\mathrm{e}^{-cx}$,
 
 $$
 \begin{align*}
-    &\frac{\pi\Gamma(2\nu)}{2^{\nu-1}\Gamma(\nu)}\frac{1}{a^{\nu}b^{\nu}}\int_{0}^{\infty} J_{\nu}(at)J_{\nu}(bt)\mathrm{e}^{-ct}\dd{t}\\[.2cm]
-    ={}&\int_{0}^{\infty}\qty(\int_{0}^{\pi}\frac{t^{\nu}J_{\nu}(t\sqrt{a^2+b^2-2ab\cos\theta})}{(a^2+b^2-2ab\cos\theta)^{\nu/2}}\sin^{2\nu}\theta\dd{\theta})\mathrm{e}^{-ct}\dd{t}\\[.2cm]
+    &\frac{\pi\Gamma(2\nu)}{2^{\nu-1}\Gamma(\nu)}\frac{1}{a^{\nu}b^{\nu}}\int_{0}^{\infty} J_{\nu}(at)J_{\nu}(bt)\mathrm{e}^{-ct}\dd{t}\\
+    ={}&\int_{0}^{\infty}\qty(\int_{0}^{\pi}\frac{t^{\nu}J_{\nu}(t\sqrt{a^2+b^2-2ab\cos\theta})}{(a^2+b^2-2ab\cos\theta)^{\nu/2}}\sin^{2\nu}\theta\dd{\theta})\mathrm{e}^{-ct}\dd{t}\\
     ={}&\int_0^{\pi}\frac{\sin^{2\nu}\theta}{(a^2+b^2-2ab\cos\theta)^{\nu/2}}\qty(\int_{0}^{\infty}t^{\nu}J_{\nu}(t\sqrt{a^2+b^2-2ab\cos\theta})\mathrm{e}^{-ct}\dd{t})\dd{\theta}
 \end{align*}
 $$
@@ -751,7 +751,7 @@ and
 $$
 \begin{equation*}
 \begin{split}
-&\int_{0}^{\infty} t^{\nu}J_{\nu}(t\sqrt{a^2+b^2-2ab\cos\theta}) \mathrm{e}^{-ct}\dd{t} \\[.2cm]
+&\int_{0}^{\infty} t^{\nu}J_{\nu}(t\sqrt{a^2+b^2-2ab\cos\theta}) \mathrm{e}^{-ct}\dd{t} \\
 ={}& \frac{(\sqrt{a^2+b^2-2ab\cos\theta})^{\nu}\Gamma(2\nu+1)}{2^{\nu}\Gamma(\nu+1)}\frac{1}{(c^2+a^2+b^2-2ab\cos\theta)^{\nu+1/2}}.
 \end{split}
 \end{equation*}
@@ -761,7 +761,7 @@ Substituting into the above formula, we can get
 
 $$
 \begin{align*}
-    \frac{\pi\Gamma(2\nu)}{2^{\nu-1}\Gamma(\nu)}\frac{1}{a^{\nu}b^{\nu}}\int_{0}^{\infty} J_{\nu}(at)J_{\nu}(bt)\mathrm{e}^{-ct}\dd{t} &=\frac{\Gamma(2\nu+1)}{2^{\nu}\Gamma(\nu+1)}\int_{0}^{\pi}\frac{\sin^{2\nu}\theta}{(c^2+a^2+b^2-2ab\cos\theta)^{\nu+1/2}}\dd{\theta}\\[.2cm]
+    \frac{\pi\Gamma(2\nu)}{2^{\nu-1}\Gamma(\nu)}\frac{1}{a^{\nu}b^{\nu}}\int_{0}^{\infty} J_{\nu}(at)J_{\nu}(bt)\mathrm{e}^{-ct}\dd{t} &=\frac{\Gamma(2\nu+1)}{2^{\nu}\Gamma(\nu+1)}\int_{0}^{\pi}\frac{\sin^{2\nu}\theta}{(c^2+a^2+b^2-2ab\cos\theta)^{\nu+1/2}}\dd{\theta}\\
     &=\frac{\Gamma(2\nu+1)}{2^{\nu}\Gamma(\nu+1)}\frac{2^{\nu+1/2}}{(2ab)^{\nu+1/2}}Q_{\nu-\frac{1}{2}}\qty(\frac{c^2+a^2+b^2}{2ab}).
 \end{align*}
 $$
